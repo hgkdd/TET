@@ -9,6 +9,8 @@ Zugehörige Videos finden Sie auf [YouTube](https://www.youtube.com/channel/UCDW
 
 `latexmk -pdf` sollte alles bauen. 
 
-Prof. Dr. Hans Georg Krauthäuser
-Professur für Theoretische Elektrotechnik und EMV
-TU Dresden
+## Kontakt
+
+Prof. Dr. Hans Georg Krauthäuser  
+Professur für Theoretische Elektrotechnik und EMV  
+TU Dresden  
