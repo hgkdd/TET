@@ -1,0 +1,127 @@
+\input{head.inc}
+  
+% Präambelbefehle für die Präsentation
+\title[TET: Elektromagnetische Wellen II - Homogene Wellengleichung]{Elektromagnetische Wellen II - Homogene Wellengleichung}
+
+\begin{document}
+% 
+% Frontmatter 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%% inserts the title page and the table of contents
+\maketitle
+
+% 
+% Content 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Elektromagnetische Wellen II - Homogene Wellengleichung}
+
+\begin{frame}
+  \frametitle{Ausgangspunkt}
+  \begin{itemize}[<+->]
+  \item Entkoppelte Gleichungen für Felder und Potentiale in \alert{Lorenzeichung}:
+    \begin{align*}
+      \laplace \efeld[v]-\varepsilon\mu \frac{\d^2}{\d t^2}\efeld[v] &= \gradient \frac{\laddichte{V}}{\varepsilon}+\mu \frac{\d \elstromdichte[v]}{\d t} && \laplace\elpotential-\varepsilon\mu \frac{\d^2}{\d t^2}\elpotential = -\frac{\laddichte{V}}{\varepsilon}\\
+      \laplace\magfeld[v]-\varepsilon\mu\frac{\d^2}{\d t^2}\magfeld[v]& = -\rotation\elstromdichte[v] && \laplace\magvekpot[v]-\varepsilon\mu \frac{\d^2}{\d t^2}\magvekpot[v] = -\mu \elstromdichte[v]
+      \end{align*}
+  \item Für \(\laddichte{V}=0\) und \(\elstromdichte[v]=\vec{0}\) (\(\rightarrow\) keine Quellen im Lösungsgebiet) besteht immer die gleiche formale Struktur:
+\begin{equation*}
+(\laplace -\varepsilon\mu\frac{\d^2}{\d t^2})\Psi = \square\Psi = 0\pointspace ; \pointspace \square = \laplace - \varepsilon\mu\frac{\d^2}{\d t^2} \text{ \alert{Wellenoperator}, \alert{D'Alembert-O.}, \alert{Quabla}} 
+\end{equation*}    
+\item   \(\Psi = \Psi(\ortsvektor[v], t)\): Eine Komponente von \(\efeld[v]\), \(\tetB[v]\), \(\verschiebung[v]\), \(\magfeld[v]\), \(\magvekpot[v]\) oder \(\elpotential\) (Potentiale in Lorenz-Eichung)
+\item Im Vakuum: \(\varepsilon\mu = \varepsilon_0 \mu_0 = \frac{1}{\lichtgeschw^2}\); \(\mu_0 = \SI{4\pi e-7}{\henry\per\metre}\) (rel. Fehler \(\approx \SI{2e-10}{}\))
+ \begin{equation*}
+ \text{\alert{Vakuum-Lichtgeschwindigkeit}: }\boxed{\lichtgeschw = \SI{299792458}{\metre\per\second}} \approx \SI{3e8}{\metre\per\second}
+\end{equation*}
+\item Sonst: \(\varepsilon\mu = \frac{1}{\geschw_{c}^2}\); \(\geschw_{c}\) Lichtgeschwindigkeit im Medium
+ \begin{equation*}
+c\ge \geschw_{c} = \frac{1}{\sqrt{\varepsilon\mu}} = \frac{1}{\sqrt{\varepsilon_0\mu_0}\sqrt{\varepsilon_\mathrm{r}\mu_\mathrm{r}}} = \frac{\lichtgeschw}{\sqrt{\varepsilon_\mathrm{r}\mu_\mathrm{r}}} =\frac{\lichtgeschw}{\brechind} \pointspace ; \pointspace \brechind = \sqrt{\varepsilon_\mathrm{r}\mu_\mathrm{r}} \text{ \alert{Brechungsindex}}
+\end{equation*}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Homogene Wellengleichung - Ebene Wellen}
+  \begin{itemize}[<+->]
+\item Wir betrachten im Folgenden die \alert{Homogene Wellengleichung}
+    \begin{equation*}
+\laplace\Psi (\ortsvektor[v], t) - \frac{1}{\geschw_{c}^2}\frac{\d ^2}{\d t^2}\Psi (\ortsvektor[v], t) = 0 \qquad \boxed{\square \Psi (\ortsvektor[v], t) = 0} 
+\end{equation*}
+\item Wir suchen und analysieren Lösungen der Wellengleichung
+\item Zunächst: Lösungen die sich nur in \alert{einer Dimension ausbreiten} \(\to\) \alert{Ebene Wellen}
+\item Ansatz:
+  \begin{equation*}
+    \Psi(\ortsvektor[v], t) = \Psi (\omega t + \wellenzahl[v]\cdot\ortsvektor[v]) \pointspace ; \pointspace \varphi (\ortsvektor[v], t) = \omega t + \wellenzahl[v]\cdot\ortsvektor[v] \quad \alert{Phasenfunktion} 
+  \end{equation*}
+\item Einsetzen in die homogene Wellengleichung:
+  \begin{align*}
+& \laplace\Psi = \wellenzahl^2\cdot\frac{\d^2 \Psi}{\d \varphi^2}\pointspace ; \pointspace \frac{\d^2}{\d t^2}\Psi = \omega^2\frac{\d^2 \Psi}{\d \varphi^2}\quad\wellenzahl[v]:\text{ \alert{Wellenvektor}};\quad\wellenzahl:\text{ \alert{Wellenzahl}}\\
+\Rightarrow &\left( \wellenzahl^2 -\frac{\omega^2}{\geschw_{c}^2}\right)\frac{\d^2 \Psi}{\d \varphi^2} = 0\\
+\Rightarrow & \wellenzahl^2 = \frac{\omega^2}{\geschw_{c}^2} \to \quad\wellenzahl_{1,2}=\wellenzahl_\pm=\pm\frac{\omega}{\geschw_{c}}=\pm \frac{\brechind\cdot \omega}{\lichtgeschw}\pointspace;\quad \text{oBdA:}\pointspace \omega\geq 0
+\end{align*}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Homogene Wellengleichung - Ebene Wellen (\dots)}
+  \begin{itemize}[<+->]
+  \item Für jeden Wert des Parameters \(\omega\) (\alert{Kreisfrequenz}) gibt es zwei mögliche Werte für die \alert{Wellenzahl} \(\wellenzahl = |\wellenzahl[v]|\). Die allgemeine Lösung (zum gewählten Ansatz) der homogenen Wellengleichung ist somit
+    \begin{equation*}
+       \boxed{ \Psi (\ortsvektor[v], t) = \sum_\omega \left( \Psi_+ (\omega t + \wellenzahl[v]\cdot\ortsvektor[v]) + \Psi_- (\omega t - \wellenzahl[v]\cdot\ortsvektor[v]) \right) } \pointspace ; \pointspace \wellenzahl[v] = \wellenzahl \frac{\wellenzahl[v]}{\wellenzahl} = \frac{\omega}{\geschw_{c}}\frac{\wellenzahl[v]}{\wellenzahl} =\frac{\omega}{\geschw_{c}} \vu{\wellenzahl}  
+     \end{equation*}
+  \item Betrachtung der \alert{Phasenfunktion} \(\varphi_\pm (\ortsvektor[v], t) = \omega t \pm \wellenzahl[v]\cdot\ortsvektor[v] \)
+  \item Offenbar: \( \varphi (\ortsvektor[v], t) = \text{const} \Rightarrow \Psi = \text{const} \to\) \alert{\enquote{Flächen gleicher Phase = Flächen gleicher Werte}}
+  \item Momentaufnahme zum Zeitpunkt \(t=t_0\):
+    \begin{equation*}
+      \varphi_\pm (\ortsvektor[v], t_0) = \omega t_0 \pm \wellenzahl[v]\cdot\ortsvektor[v] \to \varphi_\pm=\text{const} \Leftrightarrow  \wellenzahl[v]\cdot\ortsvektor[v]=\text{const}
+      \end{equation*}
+  \item Bedeutung von \( \wellenzahl[v]\cdot\ortsvektor[v]\): \(|\wellenzahl[v]|\) mal Projektion von \(\ortsvektor[v]\)  auf \(\wellenzahl[v]\)
+    \begin{columns}<+->
+      \begin{column}{.25\linewidth}
+        \xincfig{ebeneWelle}{\columnwidth}
+      \end{column}
+      \begin{column}{.75\linewidth}
+        \begin{itemize}[<+->]
+        \item Orte mit \(\wellenzahl[v]\cdot\ortsvektor[v]=\text{const} \to\) Ebenen \(\perp \wellenzahl[v]\)
+        \item Orte, die zu einem Zeitpunkt \(t=t_0\) gleiche Werte \(\Psi\) haben, liegen auf Ebenen senkrecht zu \(\wellenzahl[v]\)
+          \item \(\to\) \alert{ebene Wellenfront} \(\to\) \alert{ebene Wellen}
+  \end{itemize}
+        \end{column}
+\end{columns}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Homogene Wellengleichung - Ebene Wellen (\dots)}
+  \begin{columns}<+->
+    \begin{column}{.4\linewidth}
+      \centerline{\xincfig{ebeneWelle2}{\columnwidth}}
+    \end{column}
+    \begin{column}{.6\linewidth}
+        \begin{itemize}[<+->]
+        \item Betrachte \(t_1 > t_0\) mit gleichem Wert für $\Psi$:
+        \item Dies sind Orte wiederkehrender Phase:
+          \begin{align*}
+            \varphi_0 &= \omega t_0 + \wellenzahl[v]\cdot\ortsvektor[v]_0 \stackrel{!}{=} \omega t_1 \cpm \wellenzahl[v]\cdot\ortsvektor[v]_1\\
+            \Rightarrow &\cpm \wellenzahl[v]\cdot\ortsvektor[v]_1 = \varphi_0 - \omega t_1\pointspace ; \pointspace \wellenzahl[v]\cdot\ortsvektor[v]_1 = k r_{1\parallel} \text{ mit } r_{1\parallel}=\frac{\wellenzahl[v]\cdot\ortsvektor[v]_1}{\wellenzahl}  \\
+            \Rightarrow &\cpm \ortsvektor_{1\parallel} =\frac{\varphi_0}{\wellenzahl} - \frac{\omega}{k} t_1\Rightarrow \ortsvektor_{1\parallel} = \cpm\frac{\varphi_0}{\wellenzahl} \cmp \frac{\omega}{k} t_1\\
+            \end{align*}
+  \end{itemize}
+        \end{column}
+    \end{columns}
+  \begin{itemize}[<+->]
+  \item \textcolor{green!70}{Lösungen} \((\omega t \textcolor{green!70}{+} \wellenzahl[v]\cdot\ortsvektor[v])\): Wellenfront bewegt sich in Richting \(-\wellenzahl[v]\)
+  \item \textcolor{red}{Lösungen} \((\omega t \textcolor{red}{-} \wellenzahl[v]\cdot\ortsvektor[v])\): Wellenfront bewegt sich in Richting \(+\wellenzahl[v]\)
+  \item Für die weitere Analyse: \((\omega t \textcolor{red}{-} \wellenzahl[v]\cdot\ortsvektor[v])\): Wellenfront bewegt sich in Richting \(+\wellenzahl[v]\)
+    \item \alert{Phasengeschwindigkeit}: \(\boxed{\geschw_p =\frac{\upd r_{\parallel}}{\upd t} = \frac{\omega}{\wellenzahl}} \stackrel{\text{hier}}{=}{\geschw_c}\)
+  \end{itemize}
+\end{frame}
+
+
+\input{finalframe.inc}
+   
+\end{document}

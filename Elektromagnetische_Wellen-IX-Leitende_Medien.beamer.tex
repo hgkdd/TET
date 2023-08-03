@@ -1,0 +1,130 @@
+\input{head.inc}
+  
+% Präambelbefehle für die Präsentation
+\title[TET: Elektromagnetische Wellen IX - Leitende Medien]{Elektromagnetische Wellen IX - Leitende Medien}
+
+\begin{document}
+% 
+% Frontmatter 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%% inserts the title page and the table of contents
+\maketitle
+
+% 
+% Content 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Elektromagnetische Wellen IX - Leitende Medien}
+
+\begin{frame}
+  \frametitle{Ausgangspunkt}
+  \begin{itemize}[<+->]
+  \item Bisher hatten wir sowohl die Ladungsträgerdichte \(\laddichte{V}\) als auch die Stromdichte \(\elstromdichte[v]\) als identisch Null angenommen.
+  \item Dies entspricht der \alert{Ausbreitung in isolierende Dielektrika} (und ohne weitere Quellen).
+  \item Für die \alert{Anwendung wichtig} sind aber auch \alert{Wellenausbreitungen in leitfähigen (verlustbehafteten) Medien}
+  \item In diesem Fall sind das elektrische Feld \(\efeld[v]\) und die (Leitungs-) Stromdichte \(\elstromdichte[v]\) über die elektrische Leitfähigkeit \(\kappa\) miteinander verknüpft (\alert{lokales Ohmsches Gesetz}, vgl.: Elektrisches Strömungsfeld):
+    \begin{equation*}
+      \elstromdichte[v] = \kappa \efeld[v]
+    \end{equation*}
+  \item Nimmt man weiterhin neutrale -- \(\laddichte{V} = 0\) -- sowie homogene, isotrope und lineare Medien an, so lauten die Maxwell-Gleichungen:
+    \begin{align*}
+      \rotation \efeld[v] &= -\frac{\d \tetB[v]}{\d t} & \divergenz \efeld[v] &= 0 & \rotation \tetB[v] &= \mu\kappa \efeld[v] + \mu\varepsilon \frac{\d \efeld[v]}{\d t} & \divergenz\tetB[v] &= 0
+    \end{align*}
+    \item Diese Gleichungen können wieder wie üblich (\(\rotation\rotation\ldots = \gradient\divergenz\ldots - \laplace\ldots\)) entkoppelt werden.
+    \end{itemize}
+    \ 
+  \end{frame}
+
+\begin{frame}
+  \frametitle{Telegraphen-Gleichungen}
+  \begin{itemize}[<+->]
+  \item Die entkoppelten Maxwellgleichungen sind die \alert{Telegraphen-Gleichungen}, die für \(\kappa \to 0\) in die Wellengleichungen übergehen:
+    \begin{align*}
+      \left[\laplace - \varepsilon\mu \frac{\d^2}{\d t^2} -\mu\kappa \frac{\d}{\d t}\right]\efeld[v](\ortsvektor[v], t) = \left[\square -\mu\kappa \frac{\d}{\d t}\right]\efeld[v](\ortsvektor[v], t) &= \vec{0}\\
+      \left[\laplace - \varepsilon\mu \frac{\d^2}{\d t^2} -\mu\kappa \frac{\d}{\d t}\right]\tetB[v](\ortsvektor[v], t) = \left[\square -\mu\kappa \frac{\d}{\d t}\right]\tetB[v](\ortsvektor[v], t)&= \vec{0}
+    \end{align*}
+  \item Wie schon im Falle der Wellengleichung können wir uns für die Analyse auf eine Feldkomponente beschränken, die wir \(\Psi(\ortsvektor[v], t)\) nennen.
+  \item Wir betrachten den Fall \alert{harmonischer Zeitabhängigkeit}
+    \begin{align*}
+      \Psi(\ortsvektor[v], t) &= \real{\underline{\Psi}(\ortsvektor[v], t)} & \underline{\Psi}(\ortsvektor[v], t) &= \underline{\Psi}_0(\ortsvektor[v]) \euler^{\komplex\omega t} & \frac{\d}{\d t} \underline{\Psi} &= \komplex\omega \underline{\Psi} & \frac{\d^2}{\d t^2} \underline{\Psi} &= -\omega^2 \underline{\Psi} 
+    \end{align*}
+  \item Die Telegraphen-Gleichung lautet dann
+    \begin{equation*}
+      \boxed{\left[ \laplace + \omega^2\varepsilon\mu - \komplex\omega\mu\kappa \right] \underline{\Psi}(\ortsvektor[v], t) =0}
+      \end{equation*}
+    \end{itemize}
+  \end{frame}
+    
+\begin{frame}
+  \frametitle{Komplexe Permittivität und Geschwindigkeit}
+  \begin{itemize}[<+->]
+  \item Die Telegraphen-Gleichung bei harmonischer Zeitabhängigkeit kann leicht in die bekannte Form der Wellengleichung überführt werden:
+    \begin{align*}
+      \left[ \laplace + \omega^2\varepsilon\mu - \komplex\omega\mu\kappa \right] \underline{\Psi}(\ortsvektor[v], t) =\left[ \laplace + \omega^2\mu\left(\varepsilon - \komplex\frac{\kappa}{\omega}\right) \right] \underline{\Psi}(\ortsvektor[v], t) &=0\\
+       \left[ \laplace + \omega^2\mu_0\mu_r\varepsilon_0\left(\varepsilon_r - \komplex\frac{\kappa}{\varepsilon_0\omega}\right) \right] \underline{\Psi}(\ortsvektor[v], t) &=0\\
+       \left[ \laplace + \frac{\omega^2}{\lichtgeschw^2}\underline{\varepsilon}_r\mu_r\right] \underline{\Psi}(\ortsvektor[v], t) = \left[ \laplace + \frac{\omega^2}{\geschw[u]_c^2}\right] \underline{\Psi}(\ortsvektor[v], t)&=0
+    \end{align*}
+  \item Hierbei wurde die \alert{komplexe Permittivität} \(\underline{\varepsilon}_r\) eingeführt:
+    \begin{equation*}
+      \boxed{\underline{\varepsilon}_r = \varepsilon_r^{\prime} + \komplex \varepsilon_r^{\prime\prime} = \varepsilon_r - \komplex\frac{\kappa}{\varepsilon_0\omega} = |\underline{\varepsilon}_r| \euler^{\komplex\varphi}} \; ;\; |\underline{\varepsilon}_r|=\sqrt{\varepsilon_r^2+\frac{\kappa^2}{\varepsilon_0^2\omega^2}} \; ; \; \tan\varphi = -\frac{\kappa}{\varepsilon_0\varepsilon_r\omega}  
+    \end{equation*}
+  \item Es ergibt sich auch die \alert{komplexe Ausbreitungsgeschwindigkeit} \(\geschw[u]_c\)
+    \begin{equation*}
+    \boxed{\geschw[u]_c = \frac{1}{\sqrt{\varepsilon_0\underline{\varepsilon}_r\mu_0\mu_r}} = \frac{1}{\sqrt{\underline{\varepsilon}\mu}}}
+    \end{equation*}
+    \end{itemize}
+  \end{frame}
+
+\begin{frame}
+  \frametitle{Komplexer Wellenvektor und Brechungsindex}
+  \begin{itemize}[<+->]
+  \item Die Lösung der Telegraphen-Gleichung bei harmonischer Zeitabhängigkeit folgt direkt aus der Lösung der Wellengleichung:
+    \begin{equation*}
+      \boxed{\underline{\Psi}(\ortsvektor[v], t) = \underline{\Psi}_0 \euler^{\komplex(\omega t - \wellenzahl[uv]\cdot\ortsvektor[v])}} 
+    \end{equation*}
+  \item Hierbei ist \(\wellenzahl[uv]\) der \alert{komplexe Wellenvektor}, der sich aus der komplexen Ausbreitungsgeschwindigkeit ergibt:
+    \begin{equation*}
+      \wellenzahl[uv] = \frac{\omega}{\geschw[u]_c} \einheitsvek{k} = \omega \sqrt{\underline{\varepsilon}\mu}\, \einheitsvek{k}= \frac{\omega}{\lichtgeschw} \sqrt{\underline{\varepsilon}_r\mu_r}\, \einheitsvek{k} = \frac{\omega}{\lichtgeschw} \underline{n}\, \einheitsvek{k}
+    \end{equation*}
+  \item Hierbei wurde der \alert{komplexe Brechungsindex} \(\underline{n}\) eingeführt:
+    \begin{align*}
+      \underline{n} &= \sqrt{\underline{\varepsilon}_r\mu_r} = n^{\prime} - \komplex \gamma \text{ mit}\\
+       n^{\prime} &= n\cdot \sqrt{ \frac{1}{2}+\frac{1}{2}\sqrt{1+ \left( \frac{\kappa}{\varepsilon_0\varepsilon_r\omega} \right)^2} } \xrightarrow{\kappa\to 0} n \text{ \alert{verallg. Brechungsindex}}\\                 
+      \gamma &= n \cdot \sqrt{-\frac{1}{2}+\frac{1}{2}\sqrt{1+ \left( \frac{\kappa}{\varepsilon_0\varepsilon_r\omega} \right)^2} } \xrightarrow{\kappa\to 0} 0  \text{ \alert{Extinktionskoeffizient}}               
+      \end{align*}
+    \end{itemize}
+  \end{frame}
+
+    
+\begin{frame}
+  \frametitle{Lösung für die Felder}
+  \begin{itemize}[<+->]
+  \item Setzt man die gefundene Lösung z.B. fur das elektrische Feld ein ergibt sich:
+    \begin{align*}
+      \efeld[uv](\ortsvektor[v], t) &= \efeld[uv]_0 \euler^{\komplex (\omega t - \wellenzahl[uv]\cdot\ortsvektor[v])}\\
+                                    &=\efeld[uv]_0 \euler^{\komplex (\omega t - \frac{\omega}{\lichtgeschw}\underline{n}\einheitsvek{k}\cdot\ortsvektor[v])} = \efeld[uv]_0 \euler^{\komplex (\omega t - \frac{\omega}{\lichtgeschw}(n^{\prime}-\komplex\gamma)\einheitsvek{k}\cdot\ortsvektor[v])}\\
+                                    &= \efeld[uv]_0\euler^{-\frac{\omega}{\lichtgeschw}\gamma \einheitsvek{k}\cdot\ortsvektor[v]} \euler^{\komplex (\omega t - \frac{\omega}{\lichtgeschw}n^{\prime}\einheitsvek{k}\cdot\ortsvektor[v])} = \efeld[uv]_0\euler^{-\wellenzahl^{\prime\prime} \einheitsvek{k}\cdot\ortsvektor[v]} \euler^{\komplex (\omega t - \wellenzahl^{\prime}\einheitsvek{k}\cdot\ortsvektor[v])}
+    \end{align*}
+  \item Dies beschreibt eine \alert{gedämpfte Welle} in Richtung \(\einheitsvek{k} \) mit \alert{Eindringtiefe} \(\delta = \nicefrac{\lichtgeschw}{\omega\gamma}\).
+  \item Die \alert{Phasengeschwindigkeit} ließt man aus dem Wellenterm ab:
+    \begin{equation*}
+      \boxed{\geschw_p = \frac{\omega}{\wellenzahl^{\prime}} = \frac{\lichtgeschw}{n^{\prime}} \le \frac{\lichtgeschw}{n}} \text{ maximal für \(\kappa=0\)} 
+    \end{equation*}
+  \item Für die magnetische Flussdichte 
+    \begin{equation*}
+      \tetB[uv](\ortsvektor[v], t) = \tetB[uv]_0 \euler^{\komplex (\omega t - \wellenzahl[uv]\cdot\ortsvektor[v])} 
+    \end{equation*}
+    folgt analog zu den früheren Herleitungen:
+    \begin{equation*}
+      \wellenzahl[uv]\cdot\efeld[uv] = 0 \; ,\quad \wellenzahl[uv]\cdot\tetB[uv] = 0 \; ,\quad \frac{\wellenzahl[u]}{\omega} \einheitsvek{k}\times \efeld[uv] = \boxed{\tetB[uv] = \frac{1}{\lichtgeschw}(n^{\prime}-\komplex\gamma) \einheitsvek{k}\times \efeld[uv]} \alert{\text{ TEM, nicht in Phase}}
+      \end{equation*}
+\end{itemize}
+\end{frame}
+
+
+  
+\input{finalframe.inc}
+   
+\end{document}

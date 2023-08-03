@@ -1,0 +1,128 @@
+\input{head.inc}
+  
+% Präambelbefehle für die Präsentation
+\title[TET: Elektromagnetische Wellen I - Grundlagen]{Elektromagnetische Wellen I - Grundlagen}
+
+\begin{document}
+% 
+% Frontmatter 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%% inserts the title page and the table of contents
+\maketitle
+
+% 
+% Content 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Elektromagnetische Wellen I - Grundlagen}
+
+\begin{frame}
+  \frametitle{Ausgangspunkt}
+  \begin{itemize}[<+->]
+  \item Wir starten mit dem vollständigem Satz der Maxwell-Gleichungen:
+\begin{align*}
+\divergenz \verschiebung[v] &= \laddichte{V} & \rotation \efeld[v] &= -\frac{\d \tetB[v]}{\d t}\\
+\divergenz \tetB[v] &= 0 & \rotation \magfeld[v] &= \elstromdichte[v]+\frac{\d \verschiebung[v]}{\d t} 
+\end{align*}
+\item Das Medium sei \alert{linear, homogen, isotrop} \(\Rightarrow\) \(\tetB[v] = \mu \magfeld[v]\), \(\verschiebung[v]=\varepsilon\efeld[v]\)
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Entkopplung der Maxwell-Gleichungen}
+  \begin{itemize}[<+->]
+  \item Die Maxwell-Gleichungen können entkoppelt werden:
+\begin{align*}
+\underbrace{\rotation\rotation}_{\gradient\divergenz-\laplace}\efeld[v]&= -\frac{\d }{\d t}\rotation\tetB[v] = -\frac{\d}{\d t}\left(\mu \elstromdichte[v]+\mu \varepsilon\frac{\d \efeld[v]}{\d t}\right)\\
+\gradient\divergenz\efeld[v]-\laplace\efeld[v] &= -\mu \frac{\d \elstromdichte[v]}{\d t}-\mu\varepsilon\frac{\d^2 \efeld[v]}{\d t^2}\\
+\gradient \frac{\laddichte{V}}{\varepsilon}-\laplace\efeld[v]&= -\mu \frac{\d \elstromdichte[v]}{\d t}-\mu \varepsilon\frac{\d^2 \efeld[v]}{\d t^2}\\
+\Aboxed{\laplace \efeld[v]-\varepsilon\mu \frac{\d^2\efeld[v]}{\d t^2} &= \gradient \frac{\laddichte{V}}{\varepsilon}+\mu \frac{\d \elstromdichte[v]}{\d t}}
+\end{align*}
+  \item Analog für $\magfeld[v]$:
+\begin{align*}
+\rotation\rotation\magfeld[v]&= \rotation\elstromdichte[v] +\varepsilon\frac{\d}{\d t}\rotation\efeld[v] = \rotation\elstromdichte[v]-\varepsilon\mu\frac{\d^2}{\d t^2}\magfeld[v]\\
+\gradient\underbrace{\divergenz\magfeld[v]}_{=0} - \laplace\magfeld[v] &= \rotation\elstromdichte[v]-\varepsilon\mu\frac{\d^2}{\d t^2}\magfeld[v] \to \boxed{\laplace\magfeld[v]-\varepsilon\mu\frac{\d^2}{\d t^2}\magfeld[v]= -\rotation\elstromdichte[v]}
+\end{align*}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Skalar- und Vektorpotential}
+  \begin{itemize}[<+->]
+  \item Für die Potentiale ergibt sich analog der früheren Betrachtungen:
+\begin{align*}
+\divergenz\tetB[v] &= 0 &\Rightarrow& \boxed{\tetB[v]=\rotation\magvekpot[v]}\\
+\rotation\efeld[v] &= -\frac{\d \tetB[v]}{\d t} &\Rightarrow& \rotation \efeld[v] = -\rotation\frac{\d \magvekpot[v]}{\d t}\\
+&&\Leftrightarrow& \rotation\left(\efeld[v]+\frac{\d \magvekpot[v]}{\d t}\right) = \vec{0}\\
+&&\Rightarrow& \efeld[v]+\frac{\d \magvekpot[v]}{\d t} = -\gradient \elpotential\\
+&&\Rightarrow& \boxed{\efeld[v]=-\gradient\elpotential -\frac{\d \magvekpot[v]}{\d t}}
+\end{align*}
+\item Durch die Definition des \alert{Skalarpotentials} \(\elpotential\) und des \alert{Vektorpotentials} \(\magvekpot[v]\) werden die homogenen Maxwell Gleichungen automatisch erfüllt!
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Einsetzen in die inhomogenen Maxwell-Gleichungen}
+  \begin{itemize}[<+->]
+  \item Wir betrachten die inhomogene Maxwell-Gleichungen:
+\begin{align*}
+\rotation\magfeld[v] &= \elstromdichte[v]+\frac{\d \verschiebung[v]}{\d t} &\to&& \rotation\tetB[v] &= \mu \elstromdichte[v]+\varepsilon\mu \frac{\d \efeld[v]}{\d t}\\
+\divergenz \verschiebung[v] &= \laddichte{V} &\to&& \divergenz \efeld[v] &= \frac{\laddichte{V}}{\varepsilon}
+\end{align*}
+\item Einsetzen der Potentiale in das Coulomb-Gauss-Gesetz::
+\begin{align*}
+\divergenz \efeld[v] &= -\divergenz\gradient \elpotential -\frac{\d}{\d t}\divergenz\magvekpot[v] = \frac{\laddichte{V}}{\varepsilon}\\
+&\Rightarrow \boxed{\laplace\elpotential + \frac{\d}{\d t}\divergenz \magvekpot[v] = -\frac{\laddichte{V}}{\varepsilon}}
+\end{align*}
+\item und in das Durchflutungsgesetz:
+\begin{align*}
+&\rotation\tetB[v]= \rotation\rotation\magvekpot[v] = \gradient\divergenz\magvekpot[v]-\laplace\magvekpot[v]=\mu \elstromdichte[v]+\varepsilon\mu \frac{\d \efeld[v]}{\d t} = \mu \elstromdichte[v]+\varepsilon\mu\left[ -\gradient \frac{\d}{\d t}\elpotential -\frac{\d^2}{\d t^2}\magvekpot[v] \right]\\
+\Rightarrow\quad &\boxed{\laplace\magvekpot[v]-\varepsilon\mu\frac{\d^2 \magvekpot[v]}{\d t^2}-\gradient\left[ \divergenz\magvekpot[v] +\varepsilon\mu\frac{\d \elpotential}{\d t}\right] = -\mu \elstromdichte[v]}
+\end{align*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Eichung -- Eichtransformation}
+  \begin{itemize}[<+->]
+  \item \alert{Eichtransformation}: $\elpotential$ und $\magvekpot[v]$ können so transformiert werden, dass $\efeld[v]$ und $\tetB[v]$ unverändert bleiben
+\begin{align*}
+&\tetB[v] = \rotation\magvekpot[v] \Rightarrow \magvekpot[v] \rightarrow \boxed{\magvekpot[vs] = \magvekpot[v] + \gradient \Lambda}\pointspace \to \pointspace\tetB[vs] =\tetB[v]
+\intertext{$\rightarrow$ $\divergenz\magvekpot[v]$ frei wählbar:}
+&\divergenz\magvekpot[vs] = \divergenz\magvekpot[v] +\underbrace{\divergenz\gradient\Lambda}_{\substack{\text{beliebiges Skalarfeld,}\\ \text{da $\Lambda$ beliebiges Skalarfeld!}}}
+\end{align*}
+\item Für das elektrische Feld erhält man:
+\begin{align*}
+\efeld[vs] = -\gradient\elpotential[s]-\frac{\d \magvekpot[vs]}{\d t}&=-\gradient\elpotential[s]-\frac{\d \magvekpot[v]}{\d t}-\gradient \frac{\d \Lambda}{\d t}\\
+&=-\gradient\left(\elpotential[s] +\frac{\d \Lambda}{\d t}\right)-\frac{\d \magvekpot[v]}{\d t} \istgleich \efeld[v] = -\gradient\elpotential-\frac{\d \magvekpot[v]}{\d t}\\
+&\Rightarrow \boxed{\elpotential[s] = \elpotential-\frac{\d \Lambda}{\d t}}
+\end{align*}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Lorenz Eichung - Strahlungseichung (Coulomb-E.)}
+  \begin{itemize}[<+->]
+  \item Die \alert{Lorenz Eichung} \(\boxed{\divergenz\magvekpot[v] +\varepsilon\mu \frac{\d \elpotential}{\d t}=0}\) vereinfacht die Gleichungen wesentlich:
+\begin{align*}
+&\Rightarrow \laplace \elpotential + \frac{\d}{\d t} \divergenz\magvekpot[v] = -\frac{\laddichte{V}}{\varepsilon} \pointspace \to \pointspace \boxed{\laplace\elpotential-\varepsilon\mu \frac{\d^2}{\d t^2}\elpotential = -\frac{\laddichte{V}}{\varepsilon}}\\
+&\laplace \magvekpot[v] - \varepsilon\mu \frac{\d^2 \magvekpot[v]}{\d t^2}-\gradient \left[ \divergenz\magvekpot[v] +\varepsilon\mu \frac{\d \elpotential}{\d t}\right] = -\mu \elstromdichte[v] \pointspace \to \pointspace \boxed{\laplace\magvekpot[v]-\varepsilon\mu \frac{\d^2}{\d t^2}\magvekpot[v] = -\mu \elstromdichte[v]}
+\end{align*}
+\item Damit sind die pDGLen für die Potentiale \alert{entkoppelt}!
+\item \alert{Strahlungseichung} (Coulomb-Eichung) \(\boxed{\divergenz \magvekpot[v] = 0}\)
+\item Wenn die Lösung nur fern von Ladungen interessiert kann \( \elpotential = 0 \) im Lösungsgebiet angenommen werden. Somit:  
+\begin{equation*}
+\boxed{\laplace\magvekpot[v]-\varepsilon\mu\frac{\d^2\magvekpot[v]}{\d t^2}=-\mu \elstromdichte[v]}
+\end{equation*}
+\end{itemize}
+\end{frame}
+
+
+
+\input{finalframe.inc}
+   
+\end{document}

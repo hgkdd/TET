@@ -1,0 +1,36 @@
+\begin{tikzpicture}[line width = 1.2pt, line join=round,x=0.5cm,y=0.5cm,>=stealth]
+	% Mittellinie zeichnen
+	\draw (0,-6) -- (0,7);
+	% Schleife zeichnen
+	\draw (-1.5,-5) rectangle (1.5,5);
+	% Richtungen der Schleife
+	\draw [->] (-1.5,3) -- (-1.5,2);
+	\draw [->] (1.5,1) -- (1.5,2);
+	% Vektoren für ds Zeichnen
+	\draw [->,line width = 2pt] (-1.5,0) -- (-1.5,-2);
+	\draw (-1.5,-1) node[anchor=east] {$\upd \weg[v]_1$};
+	\draw [->,line width = 2pt] (1.5,-2) -- (1.5,0);
+	\draw (1.5,-1) node[anchor=west] {$\upd \weg[v]_2$};
+	% Breite der Schleife
+	\draw [|<->|] (1.5,5.5) -- (-1.5,5.5) node[anchor=south west] {$ h $};
+	% Höhe der Schleife
+	\draw [|<->|] (-3.5,-5) -- (-3.5,5);
+	\draw (-3.5,0) node[anchor=east] {$ l $};
+	% Normalenvektor
+	\draw [->] (0.3,-10) -- (2,-10) node[anchor=west] {$ \normalenvektor $};
+	% Tangentialvektor
+	\draw [->] (0,-9.7) -- (0,-8) node[anchor=south] {$ \tangentialvektor $};
+	% Tangentialvektor 2
+	\draw (0,-10) circle (0.3);
+	\filldraw (0,-10) circle (1.2pt);
+	\draw (0,-10.3) node[anchor=north] {$ \tangentialvektor_2 $};
+	% Flächenbezeichnung und Randbezeichnung
+	\draw (0,-4.3) node[anchor=west] {$ \flaeche $};
+	\draw (1.5,-4.3) node[anchor=west] {$ \rand(\flaeche) $};
+	% magnetisches Feld
+	\draw [->] (-2.5,-6) -- (-1,-5.6) node[anchor=north east] {$ \magfeld[v]_1 $};
+	\draw [->] (1,-5.9) -- (2.55,-5.7) node[anchor=north east] {$ \magfeld[v]_2 $};
+	% Definition der Seiten
+	\draw (-4,7.5) node[anchor=west] {\circled{1}};
+	\draw (4,7.5) node[anchor=east] {\circled{2}};
+\end{tikzpicture}

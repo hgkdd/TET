@@ -1,0 +1,174 @@
+\input{head.inc}
+  
+% Präambelbefehle für die Präsentation
+\title[TET: Elektromagnetische Wellen XI - Erzeugung]{Elektromagnetische Wellen XI - Erzeugung}
+
+\begin{document}
+% 
+% Frontmatter 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%% inserts the title page and the table of contents
+\maketitle
+
+% 
+% Content 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Elektromagnetische Wellen XI - Erzeugung}
+
+\begin{frame}
+  \frametitle{Ausgangspunkt}
+  \begin{itemize}[<+->]
+  \item Im Abschnitt \alert{Elektromagnetische Wellen I - Grundlagen} hatten wir bereits die Entkopplung der Maxwell-Gleichungen in ihrer allgemeinen Form betrachtet.
+  \item Für \alert{Skalarpotential} \(\elpotential\) und \alert{Vektorpotential} \(\magvekpot[v]\) mit
+    \begin{equation*}
+      \tetB[v]=\rotation\magvekpot[v] \quad\text{und}\quad \efeld[v]=-\gradient\elpotential -\frac{\d \magvekpot[v]}{\d t}
+    \end{equation*}
+    ergeben sich:
+    \begin{itemize}[<+->]
+    \item In \alert{Coulomb-Eichung} (Strahlungseichung) (\(\divergenz \magvekpot[v] =0\))
+      \begin{align*}
+        \laplace\elpotential &= -\frac{\laddichte{V}}{\varepsilon} \\
+        \laplace\magvekpot[v]-\varepsilon\mu\frac{\d^2 \magvekpot[v]}{\d t^2}-\gradient \varepsilon\mu\frac{\d \elpotential}{\d t} &= -\mu \elstromdichte[v]
+      \end{align*}
+    \item In \alert{Lorenz-Eichung} (\(\divergenz\magvekpot[v] +\varepsilon\mu \frac{\d \elpotential}{\d t}=0\))
+      \begin{align*}
+\laplace\elpotential-\varepsilon\mu \frac{\d^2}{\d t^2}\elpotential &= -\frac{\laddichte{V}}{\varepsilon}\\
+\laplace\magvekpot[v]-\varepsilon\mu \frac{\d^2}{\d t^2}\magvekpot[v] &= -\mu \elstromdichte[v]
+\end{align*}
+
+      \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Lösung für die Potentiale in Lorenzeichung}
+  \begin{itemize}[<+->]
+  \item Basierend auf den Ableitungen in \alert{Elektromagnetische Wellen VII - Allgemeine Lösung} (Kirchhoffsche-Lösung, Huygens-Fresnelsches-Prinzip) kann die \alert{Greensche-Funktion} (\(\delta\)-Anregung am Ort \(\ortsvektor[vs]\) zur Zeit \(t'\)) direkt angegeben werden (auf die formale Herleitung wird hier verzichtet):
+    \begin{equation*}
+      G(\ortsvektor[v]-\ortsvektor[vs], t - t')=G_{ret}(\ortsvektor[v]-\ortsvektor[vs], t - t') = \frac{1}{4\pi |\ortsvektor[v]-\ortsvektor[vs]|}\delta\left(\frac{|\ortsvektor[v]-\ortsvektor[vs]|}{\geschw_c}-(t-t')\right) = \frac{\delta(t'-t_{ret})}{4\pi |\ortsvektor[v]-\ortsvektor[vs]|}
+    \end{equation*}
+  \item Hierbei ist \(t_{ret} = t - \frac{|\ortsvektor[v]-\ortsvektor[vs]|}{\geschw_c}\) die \alert{retardierte Zeit} und \(G_{ret}\) die \alert{retardierte Greensche Funktion}.
+  \item Die Lösung der inhomogenen Wellengleichung in Lorenz-Eichung sind dann die \alert{retardierten Potentiale}
+    \begin{align*}
+      \Aboxed{\elpotential (\ortsvektor[v], t) &= \frac{1}{4\pi\varepsilon} \iiint_V \frac{\laddichte{V}\left(\ortsvektor[vs], t-\frac{|\ortsvektor[v]-\ortsvektor[vs]|}{\geschw_c}\right)}{|\ortsvektor[v]-\ortsvektor[vs]|} \upd^3\ortsvektor[s]}\\
+      \Aboxed{\magvekpot[v] (\ortsvektor[v], t) &= \frac{\mu}{4\pi} \iiint_V \frac{\elstromdichte[v]\left(\ortsvektor[vs], t-\frac{|\ortsvektor[v]-\ortsvektor[vs]|}{\geschw_c}\right)}{|\ortsvektor[v]-\ortsvektor[vs]|} \upd^3\ortsvektor[s]}
+      \end{align*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Bemerkungen zur retardierten Lösung}
+  \begin{itemize}[<+->]
+  \item Retardierte Potentiale: Lösung wegen Retardierung in der Regel schwierig
+    \begin{align*}
+      \elpotential (\ortsvektor[v], t) &= \frac{1}{4\pi\varepsilon} \iiint_V \frac{\laddichte{V}\left(\ortsvektor[vs], t-\frac{|\ortsvektor[v]-\ortsvektor[vs]|}{\geschw_c}\right)}{|\ortsvektor[v]-\ortsvektor[vs]|} \upd^3\ortsvektor[s] &\magvekpot[v] (\ortsvektor[v], t) &= \frac{\mu}{4\pi} \iiint_V \frac{\elstromdichte[v]\left(\ortsvektor[vs], t-\frac{|\ortsvektor[v]-\ortsvektor[vs]|}{\geschw_c}\right)}{|\ortsvektor[v]-\ortsvektor[vs]|} \upd^3\ortsvektor[s]
+      \end{align*}
+
+\begin{tikzpicture}[line width = 1.2pt, line join=round,>=stealth]
+	% Differenzvektor R
+	\draw [->, color=red!60] (1,1.8) -- (4.5,2.5);
+	\draw [color=red!60] (3.8,2.25) node[anchor=south east] {$\ortsvektor[v] = \ortsvektor[v] - \ortsvektor[vs] $};
+	% Aufpunkt
+	\draw [->,color=blue!70] (0,0) -- (4.5,2.5) node[anchor=west] {$\ortsvektor[v], t$};
+	\filldraw [color=blue!70] (4.5,2.5) circle (1pt);
+	% Ladungsdichte
+	\coordinate (a) at (2.1,1.8);
+	\coordinate (b) at (2,1.2);
+	\coordinate (c) at (1.8,0.4);
+	\coordinate (d) at (1.3,0.6);
+	\coordinate (e) at (0.7,0.5);
+	\coordinate (f) at (0.5,2);
+	\coordinate (g) at (1.2,2.5);
+	\shade[ball color=white!10!green!20,opacity=0.20] plot [smooth cycle, tension = 1] coordinates {(a) (b) (c) (d) (e) (f) (g)};
+	\draw [color=darkgreen] plot [smooth cycle, tension = 1] coordinates {(a) (b) (c) (d) (e) (f) (g)} node [sloped, above] {\ $ \laddichte{V}, \elstromdichte[v] $};
+	\draw [->,color=darkgreen] (0,0) -- (1,1.8);
+	\draw [color=darkgreen] (0.5,1.0) node[anchor=north east] {$ \ortsvektor[vs] $};
+      \end{tikzpicture}
+    \item Die Zeit \(\frac{|\ortsvektor[v]-\ortsvektor[vs]|}{\geschw_c}\) ist gerade die \alert{Laufzeit} vom Quellpunkt zum Beobachtungspunkt
+  \item Es gibt formal auch \alert{avancierte} Lösungen \(\to\) nicht kausal
+    \item Unterschied zur quasistationären Betrachtung: dort wurde Retardierung vernachlässigt.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Räumlich beschränktes Quellgebiet und harm. ZA}
+  \begin{itemize}[<+->]
+  \item Die Quellen \(\laddichte{V}, \elstromdichte[v]\) seien  von Null verschieden nur innerhalb einer \alert{Kugel mit Durchmesser \(d\)} \(\to\) Es genügt die Betrachtung des Vektorpotentials (\(\tetB[v]=\rotation\magvekpot[v];\; \frac{\partial \verschiebung[v]}{\d t}=\rotation\magfeld[v]\)).
+  \item Wir betrachten \alert{harmonische Zeitabhängigkeit}
+    \begin{align*}
+      \elstromdichte[v] (\ortsvektor[vs], t) &= \real{\elstromdichte[uv](\ortsvektor[vs])\euler^{\komplex \omega t}} \\
+      \elstromdichte[v] (\ortsvektor[vs], t-\frac{|\ortsvektor[v]-\ortsvektor[vs]|}{\geschw_c}) &= \real{\elstromdichte[uv](\ortsvektor[vs])\euler^{\komplex \omega t}\euler^{-\komplex \omega \frac{|\ortsvektor[v]-\ortsvektor[vs]|}{\geschw_c}}} = \real{\elstromdichte[uv](\ortsvektor[vs])\euler^{\komplex \omega t}\euler^{-\komplex \wellenzahl |\ortsvektor[v]-\ortsvektor[vs]|}}  
+    \end{align*}
+  \item Damit gilt für das komplexe Vektorpotential
+    \begin{equation*}
+      \boxed{%
+      \magvekpot[uv] (\ortsvektor[v]) = \frac{\mu}{4\pi} \iiint_V \frac{\euler^{-\komplex \wellenzahl |\ortsvektor[v]-\ortsvektor[vs]|}}{|\ortsvektor[v]-\ortsvektor[vs]|} \elstromdichte[uv](\ortsvektor[vs]) \upd^3 \ortsvektor[s]} 
+      \end{equation*}
+  \item Hierbei ist
+    \(\tilde{G}_{ret}(\ortsvektor[v]-\ortsvektor[vs], \wellenzahl) = \frac{1}{4\pi} \frac{\euler^{-\komplex \wellenzahl |\ortsvektor[v]-\ortsvektor[vs]|}}{|\ortsvektor[v]-\ortsvektor[vs]|}\)
+    die retardierte Greensche-Funktion im Bildraum mit \(\wellenzahl = \frac{\omega}{\geschw_c} = \omega\sqrt{\varepsilon\mu}\).
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Strahlungszonen}
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+\begin{tikzpicture}[line width = 1.2pt, line join=round,>=stealth]
+	% Differenzvektor R
+	\draw [->, color=red!60] (1.4,1.8) -- (4.5,2.5);
+	\draw [color=red!60] (3.8,2.4) node[anchor=south east, rotate=12] {$\ortsvektor[v] = \ortsvektor[v] - \ortsvektor[vs] $};
+	% Aufpunkt
+	\draw [->,color=blue!70] (1,1) -- (4.5,2.5) node[anchor=west] {$\ortsvektor[v], t$};
+	\filldraw [color=blue!70] (4.5,2.5) circle (1pt);
+	% Ladungsdichte
+	\coordinate (a) at (2.1,1.8);
+	\coordinate (b) at (2,1.2);
+	\coordinate (c) at (1.8,0.4);
+	\coordinate (d) at (1.3,0.6);
+	\coordinate (e) at (0.7,0.5);
+	\coordinate (f) at (0.5,2);
+	\coordinate (g) at (1.2,2.5);
+	\shade[ball color=white!10!green!20,opacity=0.20] plot [smooth cycle, tension = 1] coordinates {(a) (b) (c) (d) (e) (f) (g)};
+	\draw [color=darkgreen] plot [smooth cycle, tension = 1] coordinates {(a) (b) (c) (d) (e) (f) (g)} node [sloped, below] {\ $ \laddichte{V}, \elstromdichte[v] $};
+	\draw [->,color=darkgreen] (1,1) -- (1.4,1.8);
+	\draw [color=darkgreen] (1.2,1.8) node[anchor=north east] {$ \ortsvektor[vs] $};
+        \draw [dotted, thin] (1.4,1.8) -- +(-65:0.6) node[below,rotate=25,xshift=-5]{$\ortsvektor[vs]\cdot\einheitsvek{r}$};
+        \draw[dashed,thin] (1.25,1.4) circle (1.2cm);
+        \draw[thin] (0.05,1.7) -- (0.05,0); 
+        \draw[thin] (2.45,1.7) -- (2.45,0);
+        \draw[thin, <->] (0.05, 0.1) -- (2.45, 0.1) node[midway, below]{$d$};  
+      \end{tikzpicture}
+      \end{column}
+    \begin{column}{.6\textwidth}
+  \begin{itemize}[<+->]
+  \item Näherung für \(|\ortsvektor[v]| \gg |\ortsvektor[vs]|\) (mit \(\left.\frac{1}{1-x}\right|_{x \ll 1}\simeq 1+x\)):
+    \begin{align*}
+      |\ortsvektor[v] - \ortsvektor[vs]| &\simeq |\ortsvektor[v]| - \ortsvektor[vs]\cdot\einheitsvek{r} = \ortsvektor \left(1 - \frac{\einheitsvek{r}\cdot \ortsvektor[vs]}{\ortsvektor} \right)\\
+      \Rightarrow \frac{1}{|\ortsvektor[v] - \ortsvektor[vs]|} &\simeq \frac{1}{\ortsvektor} \left( 1 +\frac{\einheitsvek{r}\cdot \ortsvektor[vs]}{\ortsvektor} \right)
+      \end{align*}
+  \end{itemize}
+  \end{column}
+  \end{columns}
+  \begin{itemize}[<+->]
+  \item \alert{Nahzone}: \(d \ll \ortsvektor \ll \lambda\) (statische Zone)
+    \begin{equation*}
+      \euler^{-\komplex \wellenzahl |\ortsvektor[v]-\ortsvektor[vs]|} \simeq \euler^{-\komplex \frac{2\pi}{\lambda}\ortsvektor \left(1 - \frac{\einheitsvek{r}\cdot \ortsvektor[vs]}{\ortsvektor} \right) } \simeq \euler^{-\komplex 0} =1 \quad \to \text{ keine Retardierung}
+    \end{equation*}
+  \item \alert{Fernzone}: \(d \ll \ortsvektor\) und \(\lambda \ll \ortsvektor\) (Strahlungszone)
+    \begin{equation*}
+      \euler^{-\komplex \wellenzahl |\ortsvektor[v]-\ortsvektor[vs]|} \simeq \euler^{-\komplex \wellenzahl \ortsvektor} \quad\to \text{gleiche Retardierung für alle }\ortsvektor[vs] \to \text{ vor das Integral}
+    \end{equation*}
+  \item \alert{Übergangszone}: \(d \simeq \ortsvektor\) und/oder \(\ortsvektor\simeq\lambda\)
+
+    Dieser Fall ist schwieriger und muss jeweils konkret analysiert werden.
+  \end{itemize}
+\end{frame}
+
+
+\input{finalframe.inc}
+   
+\end{document}

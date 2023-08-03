@@ -1,0 +1,111 @@
+\input{head.inc}
+
+% Präambelbefehle für die Präsentation
+\title[TET: Verhalten an Grenzflächen]{Verhalten an Grenzflächen}
+
+\begin{document}
+% 
+% Frontmatter 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%% inserts the title page and the table of contents
+\maketitle
+
+% 
+% Content 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Verhalten an Grenzflächen}
+
+\begin{frame}
+  \frametitle{Normalkomponenten von $\vec{D}$ und $\vec{B}$}
+\begin{columns}
+  \begin{column}{0.4\textwidth}
+    Gaußsche Dose:\\[2em]
+
+    
+	\resizebox{\columnwidth}{!}{\input{bilder/gausssche-Scheibe}}
+
+    \end{column}
+    \begin{column}{0.6\textwidth}
+      \begin{itemize}
+        \item<1-> Coulomb-Gauß-Gesetz: $\divergenz \verschiebung[v] =
+          \laddichte{V}$
+          \item<2-> Volumenintegral: \only<2>{$\iiint\limits_{\volumen}
+              \divergenz \verschiebung[v] \intvolumen =
+              \iiint\limits_{\volumen} \laddichte{V} \intvolumen$}
+            \only<3->{$\oiint\limits_{\oberfl(\volumen)}
+              \verschiebung[v] \cdot \intflaeche[v] =
+              \iiint\limits_{\volumen} \laddichte{V} \intvolumen$}
+          \item<4-> Grenzübergang $h\to0$
+            \item<5-> \only<5>{$\left( \vec{n}_1\cdot \vec{D}_1 +
+                \vec{n}_2\cdot \vec{D}_2\right) A =
+              \iiint\limits_{\volumen} \laddichte{F} \cdot \delta(x)
+              \intvolumen = \laddichte{F} \cdot \flaeche$}
+            \only<6->{$\left( - \vec{n}\cdot \vec{D}_1 +
+                \vec{n}\cdot \vec{D}_2\right) A =
+              \iiint\limits_{\volumen} \laddichte{F} \cdot \delta(x)
+              \intvolumen = \laddichte{F} \cdot \flaeche$}
+          \item<7-> \alert{Normalkomponente von $\vec{D}$ ist ggf. unstetig:} 
+            $$	\boxed{\verschiebung{}_2\normal -
+              \verschiebung{}_1\normal = \laddichte{F}} $$
+          \item<8-> Analog aus $\divergenz \tetB[v] = 0$
+            \item<9-> \alert{Normalkomponente von $\vec{B}$ ist immer stetig:} 
+            $$		\boxed{\tetB{}_2\normal - \tetB{}_1\normal = 0} $$
+        \end{itemize}
+    \end{column}
+\end{columns}
+ \end{frame}
+
+ \begin{frame}
+  \frametitle{Tangentialkomponenten von $\vec{E}$ und $\vec{H}$}
+\begin{columns}
+  \begin{column}{0.4\textwidth}
+    Stokesche Fläche:\\[2em]
+
+    
+	\resizebox{.7\columnwidth}{!}{\input{bilder/Schleife1}}
+
+    \end{column}
+    \begin{column}{0.6\textwidth}
+      \begin{itemize}
+        \item<1-> Induktionsgesetz: $	\rotation \efeld[v] = -\dfrac{\partial \tetB[v]}{\partial t}$
+          \item<2-> Flächenintegral: \only<2>{$\iint\limits_{\flaeche} \rotation \efeld[v]\cdot \intflaeche[v] = -\iint\limits_{\flaeche} \dfrac{\partial \tetB[v]}{\partial t}\cdot \intflaeche[v]$}
+            \only<3->{$\oint\limits_{\rand(A)}  \efeld[v] \cdot\intweg[v] = -\iint_{\flaeche} \dfrac{\partial \tetB[v]}{\partial t} \cdot\intflaeche[v]$}
+          \item<4-> Grenzübergang $h\to0$, Flußänderung verschwindet
+            \item<5-> $-\efeld{}_1\tangential \cdot l + \efeld{}_2\tangential \cdot l = 0$
+          \item<6-> \alert{Tangentialkomponente von $\vec{E}$ ist immer stetig:} 
+            $$		\boxed{\efeld{}_2\tangential - \efeld{}_1\tangential = 0} $$
+          \item<7-> Der Tangentialvektor $\tangentialvektor$ ist nicht
+            eindeutig. Die Beziehung gilt für alle möglichen
+            Tangentialvektoren $	\tangentialvektor \bot \normalenvektor $
+        \end{itemize}
+    \end{column}
+\end{columns}
+ \end{frame}
+
+ \begin{frame}
+  \frametitle{Tangentialkomponenten von $\vec{E}$ und $\vec{H}$}
+\begin{columns}
+  \begin{column}{0.4\textwidth}
+ 	\resizebox{.7\columnwidth}{!}{\input{bilder/Schleife2}}
+
+    \end{column}
+    \begin{column}{0.6\textwidth}
+      \begin{itemize}[<+->]
+        \item Durchflutungsgesetz: $	\rotation \magfeld[v] = \elstromdichte[v] + \dfrac{\partial \verschiebung[v]}{\partial t}$
+          \item Flächenintegral, $h\to 0$, Änderung Verschiebungsstrom
+            = 0:
+            $$-\magfeld_1\tangential \cdot l +
+              \magfeld_2\tangential \cdot l = \iint\limits_{\flaeche} \elstromdichte[v]\cdot \intflaeche[v] = \iint\limits_{\flaeche} \elstromdichte[v]_\mathrm{\flaeche}  \delta(x) \cdot\intflaeche[v] = \elstromdichte{}_\mathrm{\flaeche}\tangential[2] \cdot l$$
+          \item \alert{Tangentialkomponente von $\vec{H}$ ist ggf. unstetig:} 
+            $$			\boxed{\magfeld_2\tangential - \magfeld_1\tangential = \elstromdichte{}_\mathrm{\flaeche}\tangential[2]} $$
+          \item Die Beziehung gilt für alle möglichen
+            Tangentialvektoren mit $\tangentialvektor_2 = \normalenvektor \times \tangentialvektor $
+        \end{itemize}
+    \end{column}
+\end{columns}
+ \end{frame}
+\input{finalframe.inc}
+\end{document}

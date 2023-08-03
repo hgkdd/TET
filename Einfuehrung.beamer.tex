@@ -1,0 +1,238 @@
+\input{head.inc}
+
+% Präambelbefehle für die Präsentation
+\title[TET: Einführung]{Einführung}
+
+\begin{document}
+% 
+% Frontmatter 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%% inserts the title page and the table of contents
+\maketitle
+
+% 
+% Content 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Einführung}
+
+\begin{frame}
+  \frametitle{Ausgangspunkt}
+
+  \begin{block}{Die Maxwellschen Gleichungen}
+
+
+    \begin{tabular}{l c c c l}
+      differentielle Form & $\to$ & Satz & $\to$ & integrale Form \pause\\
+      \hline
+      $\divergenz \verschiebung[v] = \laddichte{V}$ \pause& $\to$ & Gauss & $\to$ \pause& $\oiint\limits_{\oberfl(\volumen)}
+                                                                            \verschiebung[v] \cdot\intflaeche[v] =
+                                                                            \iiint\limits_{\volumen} \laddichte{V}
+                                                                            \intvolumen$\pause \\
+      $\divergenz \tetB[v] = 0$  \pause& $\to$ & Gauss & $\to$ \pause& $\oiint\limits_{\oberfl(\volumen)} \tetB[v]\cdot
+                                                               \intflaeche[v] = 0$\pause \\
+      $\rotation \efeld[v] + \dfrac{\partial
+      \tetB[v]}{\partial t} =\vec{0} $ \pause& $\to$ & Stokes & $\to$ \pause&
+                                                                 $
+                                                                             \oint\limits_{\oberfl(\flaeche)}
+                                                                             \efeld[v]\cdot
+                                                                             \intweg[v]
+                                                                             =
+                                                                             -
+                                                                             \iint\limits_{\flaeche}
+                                                                             \dfrac{\partial
+                                                                             \tetB[v]}{\partial
+                                                                             t}
+                                                                             \cdot\intflaeche[v]
+                                                                             =
+                                                                             -
+                                                                             \dfrac{\upd}{\upd
+                                                                             t} \left[
+                                                                             \iint\limits_{\flaeche}
+                                                                             \tetB[v]
+                                                                             \cdot\intflaeche[v]\right]
+                                                                             $
+                                                                             \pause \\
+      $\rotation \magfeld[v] - \dfrac{\partial
+      \verschiebung[v]}{\partial t} = \elstromdichte[v] $ \pause&
+                                                                       $\to$ & Stokes & $\to$ \pause& $\oint\limits_{\oberfl(\flaeche)} \magfeld[v]\cdot \intweg[v] = \iint\limits_{\flaeche} \elstromdichte[v] \cdot\upd \flaeche[v] + \dfrac{\upd}{\upd t} \left[ \iint\limits_{\flaeche} \verschiebung[v] \cdot\intflaeche[v] \right]$\pause
+    \end{tabular}
+
+    
+  \end{block}
+
+  \begin{block}{Feldgrößen - Einheiten}
+    \begin{itemize}[<+->]
+    \item Elektrische Feldstärke $\efeld[v]$  mit
+      \(\left[\efeld[v]\right] = \si{\volt\per\metre} \)
+    \item Magnetische Feldstärke \(\magfeld[v] \) mit \(\left[\magfeld[v]\right] = \si{\ampere\per\metre} \)
+    \item Elektrische Flussdichte \(\verschiebung[v]\)  mit
+      \(\left[\verschiebung[v]\right] =
+      \si{\coulomb\per\square\metre} =
+      \si{\ampere\second\per\square\metre}\)
+    \item Magnetische Flussdichte \(\tetB[v]\) mit \(\left[\tetB[v]\right] = \si{\tesla} = \si{\volt\second\per\square\metre} \)
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Alternative Bezeichnungen}
+  \begin{itemize}[<+->]
+    \item Elektrisches Feld $\efeld[v]$: - 
+    \item Magnetisches Feld $\magfeld[v]$: in der Physik heute
+      teilweise auch \alert{magnetische Anregung/Erregung} $\to$ Axiomatische
+      Einführung
+    \item Elektrische Flussdichte $\verschiebung[v]$:
+      \begin{itemize}[<+->]
+        \item in der Physik heute
+      teilweise auch \alert{elektrische Anregung/Erregung} $\to$ Axiomatische
+      Einführung
+      \item alternativ: \alert{dielektrischte Verschiebung,
+          Verschiebungsdichte, Verschiebungsflussdichte, D-Feld}
+        \end{itemize}
+      \item Magnetische Flussdichte $\tetB[v]$:
+        \begin{itemize}[<+->]
+          \item in der Physik heute
+      teilweise auch \alert{Magnetisches Feld} $\to$ Axiomatische Einführung
+      \item alternativ:
+        \alert{magnetische Indiktion, Induktion, Flussdichte, B-Feld}
+        \end{itemize}
+  \end{itemize}    
+      
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Andere Größen - Einheiten}
+    \begin{itemize}[<+->]
+      \item Volumenladungsdichte $\laddichte{V}$:
+        $\left[\laddichte{V}\right] = \si{\coulomb\per\cubic\metre} $
+        (später auch Flächenladungsdichte und Linienladungsdichte)
+        \item Stromdichte	\(\elstromdichte[v]\) mit
+          \(\left[\elstromdichte[v]\right] =
+          \si{\ampere\per\square\metre} \)
+          \begin{itemize}[<+->]
+		\item Allgemein Summe von drei Beiträgen:
+		\begin{equation*}
+			\elstromdichte[v] = \elstromdichte[v]_\mathrm{E} + \elstromdichte[v]_\mathrm{L} + \elstromdichte[v]_\mathrm{K}
+		\end{equation*}
+                \item Die eingeprägte Stromdichte
+                  \(\elstromdichte[v]_\mathrm{E}\) ist unabhängig vom
+                  betrachtetem E-Feld.
+                \item Die Leitungsstromdichte \(\elstromdichte[v]_\mathrm{L}\) mit
+		\begin{equation*}
+			\elstromdichte[v]_\mathrm{L} = \kappa \cdot \efeld[v]
+		\end{equation*}
+		wird in aller Regel hier betrachtet. $\kappa$ ist die
+                elektrische Leitfähigkeit; $\left[\kappa\right] =\si{\ampere\metre\per\volt\per\square\metre}=\si{(\ohm\metre)^{-1}}=\si{S\per\metre}$
+                \item Die Konvektionsstromdichte \(\elstromdichte[v]_K\) mit
+		\begin{equation*}
+			\elstromdichte[v]_\mathrm{K} = \laddichte{V} \cdot \vec{v} \pointspacek
+		\end{equation*}
+		welches z.B. in Plasma vorkommt, spielt hier meist
+                keine Rolle. 
+\end{itemize}
+              \end{itemize}
+    \end{frame}
+    \begin{frame}
+      \frametitle{Materialgleichungen}
+      \begin{itemize}[<+->]
+        \item Die elektrischen Feldgrößen $\efeld[v]$ und $\verschiebung[v]$
+          sind voneinander abhängig:
+          
+          $$
+         \verschiebung[v] = \varepsilon_0 \efeld[v] +\vec{P}
+                $$
+           mit \alert{Polarisation} $\vec{P}$; $\left[\vec{P}\right] = \left[\verschiebung[v]\right] =
+           \si{\coulomb\per\square\metre}$
+           \item Die magnetischen Feldgrößen $\magfeld[v]$ und
+             $\tetB[v]$ sind voneinander abhängig:
+
+             $$
+             \tetB[v] = \mu_0  \left( \magfeld[v] + \magnetis[v] \right)
+             $$
+             mit \alert{Magnetisierung} $\vec{M}$, $\left[\vec{M}\right] =
+             \left[\vec{H}\right] = \si{\ampere\per\metre}$
+             \item Ohne Materie (im \alert{Vakuum}) gibt es keine
+               Polarisation und keine Magnetisierung. Es gilt
+               $\verschiebung[v] = \varepsilon_0 \efeld[v]$ und
+               $\tetB[v] = \mu_0  \magfeld[v]$.
+               \item Die \alert{Dielektrizitätskonstante/Permittivität des Vakuums}
+                 $\varepsilon_0$ und die \alert{Permeabilität des
+                   Vakuums} $\mu_0$ sind universelle Konstanten und
+                 mit der \alert{Lichtgeschwindigkeit im Vakuum} $c$
+                 verknüpft:
+                 \begin{align*}
+                   c & = \SI{299792458}{\metre\per\second} \approx
+                       \SI{3e8}{\metre\per\second} \alert{\text{
+                       also: } \SI{30}{cm / ns}}\\
+                   \mu_0 & = 4\pi\cdot
+                   10^{-7}\,\si{\volt\second\per(\ampere\metre)}\\
+                   \varepsilon_0 & = \dfrac{1}{\mu_0  c^2} \approx
+                   \SI{8,85e-12}{\ampere\second\per(\volt\metre)}
+                   \text{ mit } \alert{c^2\varepsilon_0\mu_0 = 1} 
+                   \end{align*}
+               \end{itemize}
+       \end{frame}
+
+       \begin{frame}
+         \frametitle{Materialgleichungen - homogene, lineare, isotrope
+           Medien}
+         \begin{itemize}[<+->]
+           \item In aller Regel werden wir uns auf \alert{homogene,
+               lineare, und isotrope Medien} beschränken
+             \item Ein Medium ist \alert{homogen} bezüglich einer
+               bestimmten Eigenschaft, wenn diese Eigenschaft nicht
+               vom \alert{Ort} abhängt. 
+               \item Ein Medium ist \alert{linear} bezüglich einer
+                 bestimmten Eigenschaft und einer bestimmten Anregung,
+                 wenn die Eigenschaft nicht von der \alert{Amplitude} der
+                 Anregung abhängt (z.B. Federkonstante im Hookschen
+                 Bereich)
+                 \item Ein Medium ist \alert{isotrop} bezüglich einer
+                   bestimmten Eigenschaft und einer bestimmten
+                   Anregung, wenn die Eigenschaft unabhängig von der
+                   \alert{Richtung} der Anregung ist (z.B. ist die
+                   Polarisation in Kristallen häufig nicht isotrop
+                   bezüglich einer elektrischen Anregung).
+                   \item Es gelten dann die
+                     \alert{Materialgleichungen für homogene,
+                       lineare, und isotrope Medien}:
+                     $$ \verschiebung[v] =
+                     \underbrace{\varepsilon_0\varepsilon_r}_{=\varepsilon}
+                     \efeld[v] \text{ und } \tetB[v] =
+                     \underbrace{\mu_0  \mu_r}_{=\mu} \magfeld[v] $$
+                   \item Für Polarisation und Magnetisierung
+              $$\vec{P} = \varepsilon_0(\varepsilon_r - 1) \vec{E}
+              \text{ und }  \vec{M} = (\mu_r-1) \vec{H}$$
+           \end{itemize}
+         \end{frame}
+
+         \begin{frame}
+           \frametitle{Beiträge zur komplexen Permittivität}
+           \begin{columns}[t]
+             \begin{column}{.6\textwidth}
+               
+               \centering
+               \onslide<+->{\includegraphics[width=\columnwidth]{Dielectric_responses_DE.png}
+               {\tiny Quelle:  Prof. Kenneth A. Mauritz, derivative work: Cepheiden, Attribution, via Wikimedia Commons}}
+             \end{column}
+             \begin{column}{.4\textwidth}
+               \begin{itemize}[<+->]
+                 \item Grundsätzlich verschiedenes Verhalten bei
+                   vorhandenen oder nicht vorhandenen Rückstellkräften
+                   \item dipolar: Polare Moleküle (z.B. Wasser)
+                     orientieren sich im Feld, keine Rückstellkraft
+                     (nur thermische Bewegung) $\to$ Debye-Relaxation
+                     \item molekular, atomar: Rückstellkräfte
+                       vorhanden $\to$ harmonischer Oszillator
+                       \item Dielektrische Spektroskopie $\to$
+                         Aufklärung der Mechanismen
+                 \end{itemize}
+             \end{column}
+           \end{columns}
+         \end{frame}
+
+\input{finalframe.inc}
+\end{document}

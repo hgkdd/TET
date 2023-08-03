@@ -1,0 +1,192 @@
+\input{head.inc}
+
+% Präambelbefehle für die Präsentation
+\title[TET: Elektrostatik-IV: Formale Lösung]{Elektrostatik-IV: Formale Lösung}
+
+\begin{document}
+% 
+% Frontmatter 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%% inserts the title page and the table of contents
+\maketitle
+
+% 
+% Content 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Elektrostatik-IV: Formale Lösung}
+
+\begin{frame}
+
+  \frametitle{Greensche Funktionen - Fundamentallösung}
+
+  \begin{itemize}[<+->]
+  \item Sei $\mathcal{L}=\mathcal{L}(x)$ ein \alert{linearer Differentialoperator} der auf Funktionen (besser Distributionen) angewendet wird, die auf einen Teilraum $\Omega$ des $\mathbb{R}^n$ definiert sind.
+  \item  Eine \alert{Greensche Funktion} oder \alert{Fundamentallösung} $G=G(x,s)$ zum Operator $\mathcal{L}$ am Punkt $s\in \Omega$ ist \alert{jede Lösung} der Gleichung
+    $$
+    \mathcal{L}G(x,s) = \delta(x-s)
+    $$
+  \item Die Bedeutung der Greenschen Funktionen für die Lösung inhomogener partieller Differentialgleichungen wird folgendermaßen klar:
+  \item Multiplikation mit beliebiger Funktion $f(s)$ und Integration über $s$:
+    $$
+    \int \mathcal{L}G(x,s)f(s) \upd s = \int \delta(x-s) f(s) \upd s = f(x)
+    $$
+  \item Der Operator $\mathcal{L}$ ist linear und wirkt nur auf x:
+    $$
+    \mathcal{L}\left[ \int G(x,s)f(s) \upd s  \right] = f(x)
+    $$
+  \item Sucht man also eine Lösung der inhomogenen lineare Differentialgleichung $\mathcal{L} y(x) = f(x)$, und kennt eine Greensche Funktion (Fundamentallösung) $G(x,s)$ - also $\mathcal{L}G(x,s)=\delta(x-s)$, so gilt:
+    $$
+    \boxed{y(x) = \int G(x,s)f(s)\upd s \text{ ist Lösung von } \mathcal{L} y(x) = f(x)}
+    $$
+  \end{itemize}
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Eigenschaften von Greenschen Funktionen}
+  \begin{itemize}[<+->]
+  \item Wenn der \alert{Kern} von $\mathcal{L}$ nicht trivial (nur die Null-Funktion) ist, hat das Problem $\mathcal{L}G(x,s)=\delta(x-s)$ \alert{unendlich} viele Lösungen $G(x,s)$ (Addition von Elementen des Kerns)
+  \item Im Allgemeinen hat ein Operator $\mathcal{L}$ keine eindeutige Greensche Funktion
+  \item Diese Mehrdeutigkeit werden wir bei der Lösung von \alert{Randwertproblemen} ausnutzen!
+  \item Ohne Beweis: Greensche Funktionen sind \alert{adjungiert symmetrisch}: $G(x,s)=G^\star(s,x)$
+  \item Ohne Beweis, wichtiger: Ist $\mathcal{L}$ eine \alert{selbstadjungierter Operator}, also $\mathcal{L} = \mathcal{L}^\star$, dann sind seine Greenschen Funktionen \alert{symmetrisch}:
+    $$
+    \boxed{\mathcal{L} = \mathcal{L}^\star \Rightarrow G(x,s) = G(s,x)  }
+    $$
+  \end{itemize}  
+  \end{frame}
+
+  \begin{frame}
+  \frametitle{Randwertproblem der Elektrostatik}
+
+  \begin{itemize}[<+->]
+  \item Poisson-Gleichung: $\laplace_r \phi(\ortsvektor[v]) = -\frac{1}{\varepsilon_0} \laddichte{V}(\ortsvektor[v]) \Rightarrow \mathcal{L} = \laplace_r \text{ selbstadjungiert}$
+  \item Bestimmungsgleichung für Greensche Funktion: $\laplace_rG(\ortsvektor[v],\ortsvektor[vs]) = -\frac{1}{\varepsilon_0} \delta^3(\ortsvektor[v]-\ortsvektor[vs])$ (konstanter Faktor unbedeutend!)
+  \item Bekannte Identität: $\delta^3(\ortsvektor[v]-\ortsvektor[vs]) = -\frac{1}{4\pi}\laplace_r \frac{1}{|\ortsvektor[v]-\ortsvektor[vs]|}$
+  \item Damit ist \alert{eine} Greensche Funktion des Laplace-Operators bereits gefunden:
+    $$
+   \boxed{ \laplace_r G(\ortsvektor[v],\ortsvektor[vs]) = -\frac{1}{\varepsilon_0} \delta^3(\ortsvektor[v]-\ortsvektor[vs]) \text{ gilt für } G(\ortsvektor[v],\ortsvektor[vs]) = \frac{1}{4\pi\varepsilon_0}\frac{1}{|\ortsvektor[v]-\ortsvektor[vs]|} } 
+   $$
+ \item Zu \alert{dieser speziellen} Greenschen Funktion kann jedes Element $\Gamma(\ortsvektor[v],\ortsvektor[vs])$ des Kerns des Laplace-Operators ($\laplace_r \Gamma(\ortsvektor[v],\ortsvektor[vs]) = 0$) addiert werden, wobei $\Gamma$ eine symmetrische Funktion sein muss (Laplace ist selbstadjungiert):
+   $$
+   \boxed{G(\ortsvektor[v],\ortsvektor[vs]) = \frac{1}{4\pi\varepsilon_0}\frac{1}{|\ortsvektor[v]-\ortsvektor[vs]|} + \Gamma(\ortsvektor[v],\ortsvektor[vs]) \text{ mit } \laplace_r \Gamma(\ortsvektor[v],\ortsvektor[vs]) = 0,\quad \Gamma(\ortsvektor[v],\ortsvektor[vs]) =\Gamma(\ortsvektor[vs],\ortsvektor[v])} 
+   $$
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+  \frametitle{Skalarpotential berechnen}
+
+  \begin{itemize}[<+->]
+     \item Wir setzen (wieder) in die 2. Greenschen Identität ein: $f\to\phi(\ortsvektor[vs])$ und $g\to G(\ortsvektor[v],\ortsvektor[vs])$:
+       \begin{align*}
+         \int_V \left[  \phi(\ortsvektor[vs]) \laplace_{\ortsvektor[s]} G(\ortsvektor[v],\ortsvektor[vs])  - G(\ortsvektor[v],\ortsvektor[vs]) \laplace_{\ortsvektor[s]}  \phi(\ortsvektor[vs]) \right] \upd^3\ortsvektor[s] &=  -\frac{1}{\varepsilon_0} \int_V  \phi(\ortsvektor[vs]) \delta (\ortsvektor[v] - \ortsvektor[vs]) \upd^3r' \\
+         &+ \frac{1}{\varepsilon_0} \int_V G(\ortsvektor[v],\ortsvektor[vs])\rho(\ortsvektor[vs]) \upd^3r'\\
+         &= \oint_{O(V)} \left[ \phi\frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'}
+                 - G(\ortsvektor[v],\ortsvektor[vs])\frac{\partial\phi}{\partial n'} \right] \upd^2r'
+       \end{align*}
+     \item Somit:
+       $$
+      \boxed{ \phi(\ortsvektor[v]) = \int_V
+   \laddichte{V}(\ortsvektor[vs]) G(\ortsvektor[v],\ortsvektor[vs]) \upd^3\ortsvektor[s] + \varepsilon_0 \oint_{O(V)} \left[ G(\ortsvektor[v],\ortsvektor[vs]) \frac{\partial\phi}{\partial n'} - \phi\frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'}\right] \upd^2r'}
+ $$
+ \item Freie Wahl von $\Gamma$! $\to$ Anpassung an gegebene Randbedingungen!
+     \end{itemize}
+\end{frame}   
+
+\begin{frame}
+  \frametitle{Dirichlet-Randbedingungen; $\phi$ auf $O(V)$ vorgegeben}
+       $$
+      \boxed{ \phi(\ortsvektor[v]) = \int_V
+   \laddichte{V}(\ortsvektor[vs]) G(\ortsvektor[v],\ortsvektor[vs]) \upd^3\ortsvektor[s] + \varepsilon_0 \oint_{O(V)} \left[ G(\ortsvektor[v],\ortsvektor[vs]) \frac{\partial\phi}{\partial n'} - \phi\frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'}\right] \upd^2r'}
+ $$
+ \begin{itemize}
+ \item<2-> Wunsch: Wähle $\Gamma(\ortsvektor[v],\ortsvektor[vs])$ so, dass
+   $$
+   \oint_{O(V)} G(\ortsvektor[v],\ortsvektor[vs]) \frac{\partial\phi}{\partial n'} \upd^2r' = 0
+   $$
+ \item<3-> Naheliegender (und häufig verwendeter) Ansatz:
+   $$
+   G(\ortsvektor[v],\ortsvektor[vs]) = 0 \text{ für } \ortsvektor[vs] \in O(V) 
+   $$
+ \item<4-> Damit:
+   $$
+   \boxed{ \phi(\ortsvektor[v]) = \int_V \laddichte{V}(\ortsvektor[vs]) G(\ortsvektor[v],\ortsvektor[vs]) \upd^3\ortsvektor[s] - \varepsilon_0 \oint_{O(V)}  \phi\frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'} \upd^2r'}
+   $$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Neumann-Randbedingungen; $\frac{\partial \phi}{\partial n}=-\efeld[v]\cdot\vec{n}$ auf $O(V)$}
+       $$
+      \boxed{ \phi(\ortsvektor[v]) = \int_V
+   \laddichte{V}(\ortsvektor[vs]) G(\ortsvektor[v],\ortsvektor[vs]) \upd^3\ortsvektor[s] + \varepsilon_0 \oint_{O(V)} \left[ G(\ortsvektor[v],\ortsvektor[vs]) \frac{\partial\phi}{\partial n'} - \phi\frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'}\right] \upd^2r'}
+ $$
+ \begin{itemize}
+ \item<2-> Wunsch: Wähle $\Gamma(\ortsvektor[v],\ortsvektor[vs])$ so, dass
+   $$
+   \oint_{O(V)} \phi\frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'} \upd^2r' = 0
+   $$
+ \item<3-> Naheliegender (und NICHT funktionierender) Ansatz:
+   $$
+   \frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'} = 0 \text{ für } \ortsvektor[vs] \in O(V) 
+   $$
+ \item<4-> Einerseits:
+   $$
+   \int_V \laplace_{r'}G(\ortsvektor[v],\ortsvektor[vs]) \upd^3\ortsvektor[s] = -\frac{1}{\varepsilon_0} \int_V \delta^3(\ortsvektor[v]-\ortsvektor[vs]) \upd^3\ortsvektor[s] = -\frac{1}{\varepsilon_0}  
+   $$
+ \item<5-> Andererseits:
+  $$
+   \int_V \laplace_{r'}G(\ortsvektor[v],\ortsvektor[vs]) \upd^3\ortsvektor[s] = \oint_{O(V)} \gradient_{r'}G(\ortsvektor[v],\ortsvektor[vs]) \cdot\vec{n}' \upd^2\ortsvektor[s] = \oint_{O(V)} \frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'} \upd^2\ortsvektor[s]  
+   $$
+ \ 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Neumann-Randbedingungen; $\frac{\partial \phi}{\partial n}=-\efeld[v]\cdot\vec{n}$ auf $O(V)$}
+       $$
+      \boxed{ \phi(\ortsvektor[v]) = \int_V
+   \laddichte{V}(\ortsvektor[vs]) G(\ortsvektor[v],\ortsvektor[vs]) \upd^3\ortsvektor[s] + \varepsilon_0 \oint_{O(V)} \left[ G(\ortsvektor[v],\ortsvektor[vs]) \frac{\partial\phi}{\partial n'} - \phi\frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'}\right] \upd^2r'}
+ $$
+ \begin{itemize}
+ \item<2-> Nächstbester Ansatz: Wähle $\Gamma(\ortsvektor[v],\ortsvektor[vs])$ so, dass
+   $$
+   -\varepsilon_0 \oint_{O(V)} \phi\frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'} \upd^2r' = \phi_0 \text{ mit } \phi_0 = \text{const.}
+   $$
+ \item<3-> Häufig gewählt:
+   $$
+   \frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'} = -\frac{1}{\varepsilon_0 S} \text{ für } \ortsvektor[vs] \in O(V), \quad S = \text{ Oberfläche} 
+   $$
+ \item<4-> damit:
+   $$
+   \phi_0 = \frac{1}{S}\oint_{O(V)} \phi(\ortsvektor[vs]) \upd^2r'  
+   $$
+ \item<5-> Das ergibt dann:
+  $$
+      \boxed{ \phi(\ortsvektor[v]) -\phi_0 = \int_V
+   \laddichte{V}(\ortsvektor[vs]) G(\ortsvektor[v],\ortsvektor[vs]) \upd^3\ortsvektor[s] + \varepsilon_0 \oint_{O(V)} G(\ortsvektor[v],\ortsvektor[vs]) \frac{\partial\phi}{\partial n'} \upd^2r'}
+ $$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Konkrete Lösungsverfahren}
+  \begin{itemize}[<+->]
+\item \alert{Wenn} die Funktion $\Gamma$ (und damit $G$) gefunden werden kann, dann ist das Poisson-Problem gelöst.
+\item Konkrete Methoden zur Lösung werden im Folgenden betrachtet
+\item \alert{Spiegelungsmethode}, \alert{Bildladungsmethode}: Platziere zusätzliche Ladungen \alert{außerhalb} von $V$. Deren Feld ist das gesuchte $\Gamma$, wenn die Überlagerung die Randbedingungen erfüllt
+\item \alert{Entwicklung nach orthogonalen Funktionen:} Für geeignete Geometrien können die Randbedingungen durch eine geeignete funktionale Basis erfüllt werden. Lösungen sind dann Überlagerungen dieser Basis.
+  \item \alert{Separation der Variablen}: Aus der Problemgeometrie abgeleiteter Ansatz für die Lösung, der in geeigneten Fällen zu einer direkt berechenbaren Lösung führt.
+\end{itemize}
+\end{frame}
+
+
+\input{finalframe.inc}
+   
+\end{document}

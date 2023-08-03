@@ -1,0 +1,353 @@
+\input{head.inc}
+
+% Präambelbefehle für die Präsentation
+\title[TET: Magnetostatik I - Grundlagen]{Magnetostatik I - Grundlagen}
+
+\begin{document}
+% 
+% Frontmatter 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%% inserts the title page and the table of contents
+\maketitle
+
+% 
+% Content 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Magnetostatik I - Grundlagen}
+
+\begin{frame}
+
+  \frametitle{Ausgangspunkt Magnetostatik}
+
+  \begin{itemize}[<+->]
+  \item Die Magnetostatik betrachtet \alert{zeitunabhängige} magnetische Felder soweit diese durch \alert{Gleichströme} verursacht werden.
+  \item Konstante magnetische Felder durch permanentmagnetische Stoffen spielen in der Regel keine Rolle.
+    \item Wesentlicher Unterschied zur Elektrostatik ist, dass es \alert{keine magnetischen Monopole} gibt (jedenfalls keine, die nicht immer paarweise auftreten $\to$ \alert{Spineis}); führender Term ist also der Dipolterm.   
+    \item Grundgleichungen:
+	\begin{tabular}{cccc}
+		
+			allgemein	&	Elektrostatik	&	Stationäres Strömungsfeld	&	Magnetostatik\\
+		\hline
+			\(\rotation \magfeld[v] = \elstromdichte[v] + \dfrac{\partial \verschiebung[v]}{\partial t} \)
+				&	
+				&	 \(\left(\rotation \magfeld[v] = \elstromdichte[v] \right)\)
+				&	\(\boxed{\rotation \magfeld[v] = \elstromdichte[v]} \)\\
+				%\addlinespace
+			\(\rotation \efeld[v] = -\dfrac{\partial \tetB[v]}{\partial t} \)
+				&	\(\rotation \efeld[v] = \vec{0} \)
+				&	\(\rotation \efeld[v] = \vec{0} \)
+				&	\\
+				%\addlinespace
+			\(\divergenz \tetB[v] = 0 \)
+				&	
+				&	
+				&	\(\boxed{\divergenz \tetB[v] = 0} \)\\
+				%\addlinespace
+			\(\divergenz \verschiebung[v] = \laddichte{V} \)
+				&	\(\divergenz \verschiebung[v] = \laddichte{V} \)
+				&	
+				&	\\
+				%\addlinespace
+			\(\divergenz \elstromdichte[v] + \dfrac{\partial \laddichte{V}}{\partial t} = 0 \)
+				&	
+				&	\(\divergenz \elstromdichte[v] = 0 \)
+				&	\(\left(\divergenz \elstromdichte[v] = 0\right) \)\\
+	\end{tabular}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+
+  \frametitle{Grundgleichungen der Magnetostatik}
+
+  \begin{itemize}[<+->]
+  \item Maxwell-Gleichungen:
+    \begin{align*}
+	& \text{differentielle Form}	&&	&&	\text{integrale Form}\notag \\
+	& \rotation \magfeld[v] = \elstromdichte[v]
+		&& \rightarrow
+		&& \oint\limits_{\rand(\flaeche)} \magfeld[v](\ortsvektor[v])\cdot \intweg[v] = \iint\limits_{\flaeche} \elstromdichte[v] \cdot \intflaeche[v] \\
+	& \divergenz \tetB[v] = 0
+		&& \rightarrow
+		&& \oiint\limits_{O(V)} \tetB[v]\cdot \intflaeche[v] = 0
+\end{align*}
+\item Materialgleichung
+\begin{equation*}
+	\tetB[v](\ortsvektor[v]) = \mu_0 \text{M}_\mathrm{r}(\ortsvektor[v], \magfeld[v], T, \dots)  \magfeld[v](\ortsvektor[v]) \quad \to \quad \boxed{\tetB[v](\ortsvektor[v]) = \mu_0 \mu_\mathrm{r}  \magfeld[v](\ortsvektor[v]) = \mu  \magfeld[v](\ortsvektor[v])}
+\end{equation*}
+\item In der Elektrostatik folgte aus $\rotation \efeld[v] = \vec{0}$, dass das elektrische Feld ein Gradientenfeld ist: $\efeld[v] = -\gradient \elpotential$
+\item Das ist in der Magnetostatik wegen \(\rotation \magfeld[v] = \elstromdichte[v] \neq \vec{0} \) nicht der Fall.
+  \item Aber: \(\divergenz \tetB[v] = 0 \) $\to$ \(\tetB[v] \) ist \alert{quellenfrei}
+
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Das magnetische Vektorpotential}
+  \begin{itemize}[<+->]
+  \item Aus \(\divergenz \tetB[v] = 0 \) und $\divergenz\rotation \vec{A} = 0$ folgt, dass $\tetB[v]$ immer als \alert{Rotation eines Vektorfeldes} dargestellt werden kann. Siehe auch: \alert{Helmholtz-Theorem} bzw. \alert{Fundamentalsatz der Vektoranalysis}
+  \item Dieses Feld $\magvekpot[v]$ ist das \alert{magnetische Vektorpotential}:
+    $$
+    \boxed{\tetB[v] = \rotation \magvekpot[v]} \quad \left[ \magvekpot[v] \right] = \si{\volt\second\per\metre}
+    $$
+    \item Vorteil: $\divergenz \tetB[v] = 0$ automatisch erfüllt
+  \item lineares, isotropes Medium: \(\tetB[v] = \mu(\ortsvektor[v])\magfeld[v] \)
+    $$
+    \rotation \magfeld[v] = \rotation\left( \dfrac{1}{\mu(\ortsvektor[v])}  \tetB[v] \right) = \boxed{\rotation\left( \dfrac{1}{\mu(\ortsvektor[v])} \rotation \magvekpot[v] \right) = \elstromdichte[v](\ortsvektor[v])}
+    $$
+    lineares, isotropes und homogenes Medium: \(\mu(\ortsvektor[v]) = \mu \)
+    $$
+    \mu \rotation \magfeld[v] = \rotation \tetB[v] = \rotation \, \rotation \magvekpot[v] = \boxed{\gradient\divergenz \magvekpot[v] - \laplace \magvekpot[v]= \mu \elstromdichte[v](\ortsvektor[v])}
+    $$
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Eichtransformation}
+  \begin{itemize}[<+->]
+\item Wegen $\rotation\gradient\psi =\vec{0}$:
+      $$
+    \tetB[v]' = \rotation \underbrace{\left(\magvekpot[v] + \gradient\psi\right)}_{\magvekpot[v]'} = \rotation \magvekpot[v] = \tetB[v]  
+    $$
+  \item Das Vektorpotential ist bestimmt nur bis auf einen Summanden $\gradient\psi$.
+  \item Anwendung auf $\rotation \, \rotation \magvekpot[v] = \mu \elstromdichte[v]$:
+    $$
+    \rotation \, \rotation \magvekpot[v]' = \rotation \, \rotation \magvekpot[v] = \mu \elstromdichte[v](\ortsvektor[v])  
+    $$
+  \item Übergang $\magvekpot[v]' = \magvekpot[v] + \gradient\psi$: \alert{Eichtransformation} $\to$ $\tetB[v]'=\tetB[v]$ ist \alert{eichinvariant}
+  \item Für die Divergenz gilt:
+    $$
+    \divergenz \magvekpot[v]' = \divergenz\left(\magvekpot[v] + \gradient\psi \right) = \divergenz\magvekpot[v] + \underbrace{\divergenz \gradient\psi}_{\ne 0}
+    $$
+    \item In $\boxed{\gradient\textcolor{red}{\divergenz \magvekpot[v]} - \laplace \magvekpot[v]= \mu \elstromdichte[v](\ortsvektor[v])}$ kann $\divergenz \magvekpot[v]$ \alert{beliebig} gewählt werden. 
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Coulomb-Eichung}
+  \begin{itemize}[<+->]
+  \item Für statische Probleme ist die \alert{Coulomb-Eichung} gut geeignet:
+    $$
+    \boxed{\divergenz\magvekpot[v] = 0} \quad \Longrightarrow \quad \boxed{\laplace \magvekpot[v]= -\mu \elstromdichte[v](\ortsvektor[v])}
+    $$
+  \item \alert{Achtung:} Der Laplace-Operator $\laplace$ für Vektorfelder muss im allgemeinen Fall (krummlinige Koordinaten) aus der Beziehung $\laplace \cdot = \gradient \, \divergenz \cdot - \rotation \, \rotation \cdot$ ausgerechnet werden.
+  \item Hierbei \enquote{vermischen} sich die Komponenten wegen der Ortsabhängigkeit der Einheitsvektoren.
+  \item \alert{Nur für kartesische Koordinaten} zerfällt die vektorielle Poissongleichung \enquote{einfach} in drei skalare Poissongleichungen:
+    \begin{align*}
+	& \laplace \magvekpot_\mathrm{x} = -\mu  \elstromdichte_\mathrm{x}\\
+	& \laplace \magvekpot_\mathrm{y} = -\mu  \elstromdichte_\mathrm{y}\\
+	& \laplace \magvekpot_\mathrm{z} = -\mu  \elstromdichte_\mathrm{z} \text{ mit} \\
+	& \magvekpot[v] = \magvekpot_\mathrm{x}  \einheitsvek{x} + \magvekpot_\mathrm{y}  \einheitsvek{y} + \magvekpot_\mathrm{z}  \einheitsvek{z}\\
+	& \elstromdichte[v] = \elstromdichte_\mathrm{x}  \einheitsvek{x} + \elstromdichte_\mathrm{y}  \einheitsvek{y} + \elstromdichte_\mathrm{z}  \einheitsvek{z} \\
+  &\laplace = \dfrac{\partial^2}{\partial x^2} + \dfrac{\partial^2}{\partial y^2} + \dfrac{\partial^2}{\partial z^2} \text{ (skalarer Laplace-Operator)}
+\end{align*}
+
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Laplace-Operator in Zylinderkoordinaten}
+  \begin{itemize}[<+->]
+  \item Z.B. in Zylinderkoordinaten (\(\rho,\,\varphi,\,z \)) ergibt sich 
+\begin{align*}
+	\laplace \magvekpot_{\uprho} - \dfrac{2}{\rho^2} \dfrac{\partial \magvekpot_{\upvarphi}}{\partial \varphi} - \dfrac{\magvekpot_{\uprho}}{\rho^2} &= -\mu \elstromdichte_{\uprho} \\
+	\laplace \magvekpot_{\upvarphi} + \dfrac{2}{\rho^2}  \dfrac{\partial \magvekpot_{\uprho}}{\partial \varphi} - \dfrac{\magvekpot_{\upvarphi}}{\rho^2} &= -\mu \elstromdichte_{\upvarphi} \\
+	\laplace \magvekpot_\mathrm{z} &= -\mu  \elstromdichte_\mathrm{z}
+\end{align*}
+mit
+\begin{equation*}
+	\laplace = \dfrac{1}{\rho} \dfrac{\partial}{\partial \rho} \rho \dfrac{\partial}{\partial \rho} + \dfrac{1}{\rho^2} \dfrac{\partial^2}{\partial \varphi^2} + \dfrac{\partial^2}{\partial z^2} \text{ (skalarer Laplace-Operator)}
+\end{equation*}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Lösung für das Vektorpotential}
+  \begin{itemize}[<+->]
+  \item Für den Fall \alert{kartesischer Koordinaten} ergeben sich drei Poisson-Gleichungen (offensichtlich nicht für Zylinderkoordinaten) $\to$ \alert{Lösungsmethoden anwendbar!}
+    \item Analog zum Coulomb-Integral ergibt sich
+\begin{align*}
+	& \magvekpot_\mathrm{x}(\ortsvektor[v]) = \dfrac{\mu}{4 \uppi} \iiint\limits_{\volumen} \dfrac{\elstromdichte_\mathrm{x}(\ortsvektor[vs]) }{\left| \ortsvektor[v] - \ortsvektor[vs] \right|} \intvolumen' \\
+	& \magvekpot_\mathrm{y}(\ortsvektor[v]) = \dfrac{\mu}{4 \uppi} \iiint\limits_{\volumen} \dfrac{\elstromdichte_\mathrm{y}(\ortsvektor[vs]) }{\left| \ortsvektor[v] - \ortsvektor[vs] \right|} \intvolumen' \\
+	& \magvekpot_\mathrm{z}(\ortsvektor[v]) = \dfrac{\mu}{4 \uppi} \iiint\limits_{\volumen} \dfrac{\elstromdichte_\mathrm{z}(\ortsvektor[vs]) }{\left| \ortsvektor[v] - \ortsvektor[vs] \right|} \intvolumen'
+\end{align*}
+\item Dies lässt sich wieder \alert{koordinatenfrei} schreiben:
+\begin{equation*}
+	\boxed{\magvekpot[v](\ortsvektor[v]) = \dfrac{\mu}{4 \uppi} \iiint\limits_{\volumen} \dfrac{\elstromdichte[v](\ortsvektor[vs])}{\left| \ortsvektor[v] - \ortsvektor[vs] \right|} \intvolumen'} 
+\end{equation*}
+\item Für einen \alert{Stromfaden} folgt der Spezialfall
+\begin{equation*}
+	\magvekpot[v](\ortsvektor[v]) = \dfrac{\mu}{4 \uppi} \oint \dfrac{\elstrom}{\left| \ortsvektor[v] - \ortsvektor[vs] \right|} \intweg[vs] \text{ entlang des Stromfadens} 
+      \end{equation*}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Gesetz von Biot-Savart}
+  \begin{itemize}[<+->]
+  \item Mit $\tetB[v]=\rotation \magvekpot[v]$ und $\magvekpot[v](\ortsvektor[v]) = \dfrac{\mu}{4 \uppi} \iiint\limits_{\volumen} \dfrac{\elstromdichte[v](\ortsvektor[vs])}{\left| \ortsvektor[v] - \ortsvektor[vs] \right|} \intvolumen'$ folgt
+    $
+    	\tetB[v](\ortsvektor[v]) = \dfrac{\mu}{4 \uppi} \iiint\limits_{\volumen} \rotation_\mathrm{r} \dfrac{\elstromdichte[v](\ortsvektor[vs])}{\left| \ortsvektor[v] - \ortsvektor[vs] \right|} \intvolumen'
+    $
+\item Man berechnet
+\begin{align*}
+	\rotation_\mathrm{r} \dfrac{\elstromdichte[v](\ortsvektor[vs])}{\left| \ortsvektor[v] - \ortsvektor[vs] \right|} &= \dfrac{1}{\left| \ortsvektor[v] - \ortsvektor[vs] \right|}  \cancelto{0}{\rotation_\mathrm{r} \elstromdichte[v](\ortsvektor[vs])} - \elstromdichte[v](\ortsvektor[vs]) \times \gradient_\mathrm{r} \dfrac{1}{\left| \ortsvektor[v] - \ortsvektor[vs] \right|} \\
+		&= -\elstromdichte[v](\ortsvektor[vs]) \times \gradient_\mathrm{r} \dfrac{1}{\left| \ortsvektor[v] - \ortsvektor[vs] \right|} = -\elstromdichte[v](\ortsvektor[vs]) \times \left( -\dfrac{\left( \ortsvektor[v] - \ortsvektor[vs] \right)}{\left| \ortsvektor[v] - \ortsvektor[vs] \right|^3} \right) = \elstromdichte[v](\ortsvektor[vs]) \times \dfrac{\ortsvektor[v] - \ortsvektor[vs]}{\left| \ortsvektor[v] - \ortsvektor[vs] \right|^3}
+\end{align*}
+\item Damit folgt das das allgemeine \alert{Biot-Savart-Gesetz}
+\begin{equation*}
+	\boxed{\tetB[v](\ortsvektor[v]) = \dfrac{\mu}{4  \uppi} \iiint\limits_{\volumen} \dfrac{\elstromdichte[v](\ortsvektor[vs]) \times \left( \ortsvektor[v] - \ortsvektor[vs] \right)}{\left| \ortsvektor[v] - \ortsvektor[vs] \right|^3} \intvolumen'}
+\end{equation*}
+\item Für Stromfäden folgt
+\begin{equation*}
+	\boxed{\tetB[v](\ortsvektor[v]) = -\dfrac{\mu}{4  \uppi}  \elstrom  \oint\limits_{\rand} \dfrac{\left( \ortsvektor[v] - \ortsvektor[vs] \right) \times \upd \weg[vs]}{\left| \ortsvektor[v] - \ortsvektor[vs] \right|^3}} \text{ und }
+	\boxed{\magvekpot[v](\ortsvektor[v]) = \dfrac{\mu}{4  \uppi}  \elstrom  \oint\limits_{\rand} \dfrac{\upd \weg[vs]}{\left| \ortsvektor[v] - \ortsvektor[vs] \right|}}
+\end{equation*}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Stetigkeitsbedingung an Grenzflächen}
+  \begin{itemize}[<+->]
+  \item Die Stetigkeitsbedingungen wurden im Teil \enquote{Verhalten am Grenzflächen} bereits allgemein hergeleitet.
+  \item Es gilt (Normalenvektor von 1 nach 2):
+    \begin{align*}
+	\tetB[v]_2\cdot \vec{n} - \tetB[v]_1\cdot\vec{n} &= 0 \\
+	\magfeld[v]_2\cdot \vec{t} - \magfeld[v]_1\cdot \vec{t} & = \elstromdichte[v]_\mathrm{F}\cdot \vec{t}_2\\
+	\tangentialvektor_2 & = \normalenvektor \times \tangentialvektor
+\end{align*}
+\item Hiermit folgt auch das \alert{Brechungsgesetz für $\vec{J}_{\text{F}} = \vec{0}$}
+
+  \resizebox{.35\linewidth}{!}{\input{bilder/Brechung_magflussdichte}} \raisebox{1cm}{\boxed{\dfrac{\tan \alpha_1}{\tan \alpha_2} = \dfrac{\mu_1}{\mu_2}}}
+  
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Energie im magnetostatischen Feld}
+  \begin{itemize}[<+->]
+    \item Analog zur Elektrostatik erhält man für die \alert{magnetische Energiedichte}
+\begin{equation*}
+	\boxed{\energiedichte_\mathrm{m} = \dfrac{1}{2} \cdot \magfeld[v] \cdot \tetB[v]}
+\end{equation*}
+\item Für die gesamte \alert{magnetische Energie}
+\begin{equation*}
+	\boxed{\energie_\mathrm{m} = \dfrac{1}{2} \cdot \iiint\limits_{\volumen} \magfeld[v] \cdot \tetB[v] \intvolumen} 
+\end{equation*}
+\item Ausdrücken mit Hilfe der elektrischen Stromdichte \(\elstromdichte[v] \) (lineare, homogene und isotrope Medien): 
+\begin{equation*}
+	\energie_\mathrm{m} = \dfrac{1}{2 \mu} \cdot \iiint\limits_{\volumen} \tetB[v]^2 \intvolumen
+\end{equation*}
+\item Weiter:
+\begin{align*}
+	\divergenz \left( \magvekpot[v] \times \tetB[v] \right) &= \tetB[v] \cdot \underbrace{\rotation \magvekpot[v]}_{\tetB[v]} - \magvekpot[v] \cdot \underbrace{\rotation \tetB[v]}_{\mu \elstromdichte[v]} \\
+		&= \tetB[v]^2 - \mu  \magvekpot[v] \cdot \elstromdichte[v]
+\end{align*}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Energie im magnetostatischen Feld (fortgesetzt)}
+  \begin{itemize}[<+->]
+\item Daraus:
+\begin{align*}
+	\energie_\mathrm{m} &= \dfrac{1}{2}  \iiint\limits_{\volumen} \magvekpot[v] \cdot \elstromdichte[v] \intvolumen + \dfrac{1}{2 \mu} \cdot \iiint\limits_{\volumen} \divergenz \left( \magvekpot[v] \times \tetB[v] \right) \intvolumen\\
+	&= \dfrac{1}{2}\iiint\limits_{\volumen} \magvekpot[v] \cdot \elstromdichte[v] \intvolumen + \dfrac{1}{2 \mu} \oiint\limits_{\oberfl(\volumen)} \magvekpot[v] \times \tetB[v] \cdot \intflaeche[v] 
+\end{align*}
+\item \alert{Endlich ausgedehnte Stromverteilung}: Aus Biot-Savart folgt \(\left| \tetB[v] \right| \sim \ortsvektor^{-2} \) für $r\to\infty$.  Weiter: \(\left| \magvekpot[v] \right| \sim \ortsvektor^{-1} \) $\to$ \(\magvekpot[v] \times \tetB[v] \sim \ortsvektor^{-3} \). Das Oberflächenintegral fällt daher weg. Damit:
+\begin{align*}
+	& \energie_\mathrm{m} = \dfrac{1}{2} \cdot \iiint\limits_{\volumen} \magvekpot[v] \cdot \elstromdichte[v] \intvolumen\\
+	& \energiedichte_\mathrm{m} = \dfrac{1}{2} \cdot \magvekpot[v] \cdot \elstromdichte[v]
+\end{align*}
+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Induktivität}
+\begin{columns}
+  \begin{column}{.3\linewidth}
+\resizebox{\columnwidth}{!}{\input{bilder/Induktion_Schleifen}}
+  \end{column}
+\begin{column}{.7\linewidth}
+\begin{itemize}[<+->]
+\item In Schleife 1 fließt der Strom \(\elstrom_1 \): Nach Biot-Savart gilt
+  \begin{equation*}
+	\tetB[v]_1 = -\dfrac{\mu_0}{4 \uppi} I_1 \oint\limits_{\rand_1} \dfrac{\left( \ortsvektor[v] - \ortsvektor[vs]_1 \right) \times \upd \weg[v]_1}{\left| \ortsvektor[v] - \ortsvektor[vs]_1 \right|^3} 
+\end{equation*}
+\item Der magnetische Fluss $\phi_{m,2}$ durch Schleife 2:
+\begin{equation*}
+  	\phi_{m,2} = \iint\limits_{\flaeche_2} \tetB[v]_1 \cdot \intflaeche[v]_2, \quad \left| \tetB[v]_1 \right| = \tetB_1 \sim \elstrom_1 
+\end{equation*}
+\item Es gilt also
+$\phi_{m,2} = \gginduk_{21} \elstrom_1 , \gginduk_{21}$: Gegeninduktivität, mit $[\gginduk] = \si{\volt\second\per\ampere} = \si{\henry}$
+\end{itemize}
+\end{column}
+\end{columns}\pause
+Berechnung des Flusses (\(\ortsvektor[vs]_2 \) liegt auf \(\rand_2 \)): 
+\begin{equation*}
+  \phi_{m,2} = \iint\limits_{\flaeche_2} \tetB[v]_1 \cdot \intflaeche[v]_2 = \iint\limits_{\flaeche_2} \rotation \magvekpot[v]_1 \cdot \intflaeche[v]_2 = \oint\limits_{\rand_2} \magvekpot[v]_1 \cdot \intweg[v]_2 = \dfrac{\mu_0}{4 \uppi}  \elstrom_1 \oint\limits_{\rand_2} \oint\limits_{\rand_1} \dfrac{\upd \weg[v]_1}{\left| \ortsvektor[vs]_2 - \ortsvektor[vs]_1 \right|} \cdot \intweg[v]_2 
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Induktivität (fortgesetzt)}
+\begin{itemize}[<+->]
+\item $\to$ Gegeninduktivität:
+$\boxed{\gginduk_{21} = \dfrac{\mu_0}{4 \uppi}  \oint\limits_{\rand_2} \oint\limits_{\rand_1} \dfrac{\upd \weg[v]_1 \cdot \upd\weg[v]_2}{\left| \ortsvektor[vs]_2 - \ortsvektor[vs]_1 \right|} } \quad\text{Neumann Formel}$
+\item Neumann-Formel ist nicht besonders nützlich zur Berechnung von \(\gginduk_{21} \). Aber:
+\begin{enumerate}
+	\item \(\gginduk_{21} = \gginduk_{12} = \gginduk \) und
+	\item \(\gginduk_{21} \) ist eine rein geometrische Größe
+\end{enumerate}
+\item Wenn \(\rand_1 = \rand_2 \), dann ist die Neumann-Formel so nicht anwendbar. Deshalb zurück zur Definition der Gegeninduktivität:
+\begin{equation*}
+	\phi_{m,1} = \gginduk_{11} \cdot \elstrom_1 \to \boxed{\phi_{m} = \sinduk \cdot \elstrom } \text{ Selbstinduktivität } \sinduk 
+\end{equation*}
+\item  Es gilt somit für eine Leiterschleife
+\begin{equation*}
+	\phi_m = \iint\limits_{\flaeche} \tetB[v] \cdot \intflaeche[v] = \oint\limits_{\rand} \magvekpot[v] \cdot \intweg[v] \istgleich \sinduk \elstrom \to 	\boxed{\sinduk = \dfrac{1}{\elstrom}\oint\limits_{\rand} \magvekpot[v] \cdot \intweg[v]}
+      \end{equation*}
+\item Verbindung mit der magnetischen Energie 
+\begin{equation*}
+	\energie_\mathrm{m} = \dfrac{1}{2}  \iiint\limits_{\volumen} \magvekpot[v] \cdot \elstromdichte[v] \intvolumen
+= \dfrac{1}{2} \elstrom \underbrace{\oint\limits_{\rand} \magvekpot[v] \cdot \intweg[v]}_{=\sinduk \elstrom} = \dfrac{1}{2} \sinduk \elstrom^2 
+\end{equation*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Magnetisches Moment}
+  \begin{itemize}[<+->]
+    \item Wir untersuchen das Vektorpotential
+\begin{equation*}
+	\magvekpot[v](\ortsvektor[v]) = \dfrac{\mu}{4 \uppi} \iiint\limits_{\volumen} \dfrac{\elstromdichte[v](\ortsvektor[vs])}{\left| \ortsvektor[v] - \ortsvektor[vs] \right|} \intvolumen' 
+      \end{equation*}
+      für den Fall \enquote{großer Abstand von lokal beschränkter Stromdichte} $\to$ \alert{Multipolentwicklung} mit $\frac{1}{\left| \ortsvektor[v] - \ortsvektor[vs] \right|} = \frac{1}{r} + \frac{\ortsvektor[vs] \cdot \ortsvektor[v]}{r^3} + \dots $
+    \item $\magvekpot[v](\ortsvektor[v]) = \frac{\mu}{4 \uppi} \frac{1}{r}\iiint\limits_{\volumen} \elstromdichte[v](\ortsvektor[vs]) \intvolumen'  + \frac{\mu}{4 \uppi} \frac{1}{r^3}\iiint\limits_{\volumen} \ortsvektor[v]\cdot \ortsvektor[vs] \elstromdichte[v](\ortsvektor[vs]) \intvolumen' + \dots$
+    \item Ohne Beweis: Der Monopolterm verschwindet. Damit:
+      $$
+      \magvekpot[v](\ortsvektor[v]) = \frac{\mu}{4 \uppi} \frac{1}{r^3}\iiint\limits_{\volumen}\ortsvektor[v]\cdot \ortsvektor[vs]  \elstromdichte[v](\ortsvektor[vs]) \intvolumen' + \dots = \frac{\mu}{4 \uppi} \underbrace{\frac{1}{2}\iiint\limits_{\volumen} \ortsvektor[vs] \times \elstromdichte[v](\ortsvektor[vs]) \intvolumen'}_{\vec{m}(\ortsvektor[v])}  \times \frac{\ortsvektor[v]}{r^3}  + \dots
+      $$
+    \item Mit dem \alert{magnetischem Moment} $\vec{m}$ ist das Vektorpotential somit
+      $$
+      \boxed{\magvekpot[v](\ortsvektor[v]) = \frac{\mu}{4 \uppi} \frac{\vec{m}(\ortsvektor[v])  \times \ortsvektor[v]}{r^3}  + \dots} \to \boxed{\tetB[v](\ortsvektor[v]) = \frac{\mu}{4 \uppi} \left[ \frac{3(\ortsvektor[v]\cdot \vec{m}(\ortsvektor[v])) \ortsvektor[v] }{r^5} -\frac{\vec{m}(\ortsvektor[v])}{r^3}\right] + \dots}
+      $$
+    \end{itemize}
+\end{frame}
+
+
+
+
+\input{finalframe.inc}
+   
+\end{document}

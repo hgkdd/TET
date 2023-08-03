@@ -1,0 +1,251 @@
+\input{head.inc}
+
+% Präambelbefehle für die Präsentation
+\title[TET: Elektrostatik-V: Spiegelungsmethode]{Elektrostatik-V: Spiegelungsmethode}
+
+\begin{document}
+% 
+% Frontmatter 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%% inserts the title page and the table of contents
+\maketitle
+
+% 
+% Content 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Elektrostatik-V: Spiegelungsmethode}
+
+\begin{frame}
+
+  \frametitle{Idee der Spiegelungsmethode}
+  Die \alert{formale Lösung} des Randwertproblems
+  \alert{Poisson-Gleichung} mit Randbedingungen \alert{Dirichlet
+    und/oder Neumann} im Endlichen mittels \alert{Greenscher Funktionen} hat folgendes aufgezeigt:
+  \begin{itemize}[<+->]
+    \item Das \alert{Superpositionsprinzip} ist fundamental: Aus einer
+      Lösung (Greensche Funktion) der Poisson-Gleichung für eine \alert{Punktladung} ($\delta$-Inhomogenität) folgt formal sofort
+      die Lösung für beliebige Inhomogenität $\laddichte{V}(\ortsvektor[vs])$: $\phi (\ortsvektor[v]) = \int
+      G (\ortsvektor[v],\ortsvektor[vs]) \laddichte{V}(\ortsvektor[vs]) \upd^3r'$
+      \item Dieser Teil der Lösung ist vollständig durch \alert{die Ladungen
+        im Lösungsvolumen} bestimmt
+        \item Damit die Gesamtlösung die vorgegeben Randbedingungen
+          erfüllt, muss die \alert{Greensche Funktion des Freiraums} $G (\ortsvektor[v],\ortsvektor[vs]) = \frac{1}{4\pi\varepsilon_0} \frac{1}{|\ortsvektor[v]-\ortsvektor[vs]|}$ verändert
+          werden.
+          \item Der zusätzliche Summand ist Lösung der zugehörigen
+            \alert{Laplace Gleichung} (homogen, \alert{keine Ladungen
+              in V})
+              \item \alert{Idee:} Konstruiere für jede Punktladung im
+                Lösungsvolumen Ladungen \alert{außerhalb} des
+                Lösungsvolumens so, dass in der Überlagerung die
+                Randbedingungen erfüllt sind.
+                \item Die Ladungen außerhalb haben nur mittelbaren
+                  Einfluss auf die Gesamtlösung, indem sie
+                  den Einfluss der \alert{influenzieren Oberflächenladungen} nachbilden.
+    \end{itemize}
+
+  
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Punktladung vor leitender Ebene - Anordnung}
+\only<1-2|handout:1>{\resizebox{.8\linewidth}{!}{\input{bilder/Ladung_Spiegel}}}
+    \only<2|handout:1>{\vspace{-1.8cm}
+      \begin{empheq}[box=\fbox]{align}
+          \verschiebung{}_2\normal - \verschiebung{}_1\normal &= \laddichte{F}\nonumber\\
+    \efeld{}_2\tangential - \efeld{}_1\tangential & = 0\nonumber
+  \end{empheq}}
+\only<3|handout:2>{\resizebox{\linewidth}{!}{\input{bilder/gespiegelte_Ladung}}}
+\only<4-|handout:3>{\centering{\includegraphics[height=.8\textheight]{programs/dipol.png}}}
+\end{frame}
+
+  \begin{frame}
+    \frametitle{Berechnung Potential, Feld}
+
+    \begin{itemize}[<+->]
+\item  Randbedingungen: \(\efeld\tangential(z=0) = 0\) bzw. \(\elpotential(z=0) = 0\). 
+
+\item Superposition der skalare Potentiale
+  \begin{equation*}
+	\elpotential(\ortsvektor[v]) = \elpotential_1 + \elpotential_2
+		= \durchvierpie \cdot \left[ \dfrac{\ladung}{\sqrt{\rho^2 + (z - a)^2}} + \dfrac{-\ladung}{\sqrt{\rho^2 + (z + a)^2}} \right]
+\end{equation*}
+\item Da keine Abhängigkeit von \(\varphi\) vorliegt, ergibt sich für das elektrische Feld
+\begin{equation*}
+	\begin{split}
+		\efeld[v](\ortsvektor[v]) = \durchvierpie[\ladung] \cdot
+                &\left[ \left( \dfrac{\rho}{\left( \rho^2 + (z - a)^2 \right)^{\nicefrac{3}{2}}} - \dfrac{\rho}{\left( \rho^2 + (z + a)^2 \right)^{\nicefrac{3}{2}}} \right) \cdot \einheitsvek{\uprho} \right. \\
+		&	 \left. + \left( \dfrac{z - a}{\left( \rho^2 + (z - a)^2 \right)^{\nicefrac{3}{2}}} - \dfrac{z + a}{\left( \rho^2 + (z + a)^2 \right)^{\nicefrac{3}{2}}} \right) \cdot \einheitsvek{z} \right]
+	\end{split}
+\end{equation*}
+\item Für die Ebene \(z = 0\) gilt demnach
+\begin{align*}
+	\efeld[v](z=0) &= \durchvierpie[\ladung] \cdot \left[ 0 \cdot \einheitsvek{\uprho} - 2 \cdot \dfrac{a}{\left( \rho^2 + a^2 \right)^{\nicefrac{3}{2}}} \cdot \einheitsvek{z} \right] \\
+		&= -\durchzweipie[\ladung] \cdot \dfrac{a}{\left( \rho^2 + a^2 \right)^{\nicefrac{3}{2}}} \cdot \einheitsvek{z} \\
+		&= \efeld_z \cdot \einheitsvek{z} = -\efeld\normal \cdot \einheitsvek{z} \pointspacek \to \text{ Nur eine Normalkomponente}
+\end{align*}
+\end{itemize}
+\end{frame}
+
+  \begin{frame}
+    \frametitle{Berechnung Ladung}
+
+    \begin{itemize}[<+->]
+ \item Stetigkeitsbedingung:  $- \varepsilon_0\efeld\normal = \varepsilon_0\efeld_z = \laddichte{F}$ $\to$
+\begin{equation*}
+	\laddichte{F}(\rho) = -\dfrac{\ladung a}{2 \uppi  \left( \rho^2 + a^2 \right)^{\nicefrac{3}{2}}}
+\end{equation*}
+\item Gesamtladung der Fläche:
+\begin{equation*}
+	\ladung_\mathrm{ges. Fläche} = \int\limits_{\varphi'=0}^{2 \uppi} \int\limits_{\rho'=0}^{\infty} \laddichte{F}(\rho') \rho' \intnach{\rho'} \intnach{\varphi'} = -\ladung 
+      \end{equation*}
+      \item Gesamtladung der Anordnung $=0$ $\to$ Kein Monopolterm in Multipolentwicklung (reiner Dipol!)
+\item Zu beachten ist, dass die Gleichungen nur für das Lösungsgebiet gültig sind!
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Greensche Funktion des Halbraums} $z \ge 0$
+\begin{itemize}[<+->]
+\item Für die beschriebene Geometrie haben wir das Skalarpotential für
+  eine Punktladung gefunden
+    \begin{equation*}
+	\elpotential(\ortsvektor[v]) = \elpotential_1 + \elpotential_2
+		= \durchvierpie \cdot \left[
+                  \dfrac{\ladung}{\sqrt{\rho^2 + (z - a)^2}} +
+                  \dfrac{-\ladung}{\sqrt{\rho^2 + (z + a)^2}} \right]
+\end{equation*}
+\item Die Punktladung entspricht der $\delta$-Inhomogenität
+\item Daher kennen wir nun auch die \alert{Greensche-Funktion des
+    Halbraums}
+    \begin{equation*}
+	G(\ortsvektor[v], \ortsvektor[vs]) = \durchvierpie \cdot \left[
+                  \dfrac{1}{|\ortsvektor[v] - \ortsvektor[vs]|} -
+                  \dfrac{1}{|\ortsvektor[v] -\ortsvektor[vss]|}
+                \right], \quad \ortsvektor[vs] = \rho \einheitsvek{\rho} + z \einheitsvek{z} \to \ortsvektor[vss] = \rho \einheitsvek{\rho} - z \einheitsvek{z}
+              \end{equation*}
+            \item Damit können auch \alert{andere Randwertprobleme gleicher Geometrie} gelöst werden:
+                     $$
+\boxed{      \phi(\ortsvektor[v]) = \int_V
+  \laddichte{V}(\ortsvektor[vs]) G(\ortsvektor[v],\ortsvektor[vs]) \upd^3\ortsvektor[s] + \varepsilon_0 \oint_{O(V)} \left[ G(\ortsvektor[v],\ortsvektor[vs]) \frac{\partial\phi}{\partial n'} - \phi \frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'}\right] \upd^2r'}
+ $$
+ $$
+ \frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'} = \durchvierpie \cdot \left[
+                  \dfrac{\ortsvektor[v] - \ortsvektor[vs]}{|\ortsvektor[v] - \ortsvektor[vs]|^3} +
+                  \dfrac{\ortsvektor[v] + \ortsvektor[vs]}{|\ortsvektor[v] + \ortsvektor[vs]|^3}
+                \right]\cdot\vec{n}
+ $$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Nachrechnen für $\phi(z=0) = \phi_0$}
+\begin{itemize}[<+->]
+\item Wir gegen wieder in die explizite Form in Zylinderkoordinaten
+    \begin{equation*}
+	G(\ortsvektor[v], \ortsvektor[vs]) = \durchvierpie \cdot \left[
+                  \dfrac{1}{\sqrt{\rho^2 + (z - a)^2}} +
+                  \dfrac{-1}{\sqrt{\rho^2 + (z + a)^2}} \right]
+              \end{equation*}
+ \item Allgemein:
+                     $$
+\boxed{      \phi(\ortsvektor[v]) = \int_V
+  \laddichte{V}(\ortsvektor[vs]) G(\ortsvektor[v],\ortsvektor[vs]) \upd^3\ortsvektor[s] + \varepsilon_0 \oint_{O(V)} \left[ G(\ortsvektor[v],\ortsvektor[vs]) \frac{\partial\phi}{\partial n'} - \phi \frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'}\right] \upd^2r'}
+ $$
+\item Für die Normalenableitung am Ort der Oberfläche:
+  \begin{align*}
+    \left. \frac{\partial G}{\partial n}\right|_{O(V)} & =\left. \gradient G \cdot \vec{n}\right|_{O(V)} = - \left. \frac{\partial G}{\partial z}\right|_{z=0}\\
+                                                       &= - \durchvierpie \left[  -\frac{1}{2} ( \rho^2 + (z-a)^2 )^{-\nicefrac{3}{2}}(2z-2a) +\frac{1}{2} ( \rho^2 + (z+a)^2 )^{-\nicefrac{3}{2}}(2z+2a) \right]_{z=0}\\
+    &= - \durchvierpie \left[  \frac{a}{(\rho^2 + a^2 )^{\nicefrac{3}{2}}}  + \frac{a}{(\rho^2 + a^2 )^{\nicefrac{3}{2}}} \right] = - \frac{1}{2\pi\varepsilon_0} \frac{a}{(\rho^2 + a^2 )^{\nicefrac{3}{2}}}
+  \end{align*}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Nachrechnen für $\phi(z=0) = \phi_0$ (fortgesetzt)}
+\begin{itemize}[<+->]
+ \item Für Dirichlet Randbedingungen $\phi(z=0) = \phi_0$:
+$$
+\phi(\ortsvektor[v]) = \textcolor{green}{\phi_V} + \textcolor{red}{\phi_{O(V)}} = \textcolor{green}{\int_V
+  \laddichte{V}(\ortsvektor[vs]) G(\ortsvektor[v],\ortsvektor[vs]) \upd^3\ortsvektor[s]} \textcolor{red}{- \varepsilon_0 \oint_{O(V)} \phi \frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'} \upd^2r'}
+$$
+\item Einsetzen der Normalenableitung und des Potential auf der Oberfläche:
+  \begin{align*}
+\phi_{O(V)} &= -\varepsilon_0\phi_0 \int_{O(V)} \frac{-1}{2\pi\varepsilon_0} \frac{a}{(\rho^2 + a^2 )^{\nicefrac{3}{2}}} \rho\upd\rho\upd\varphi \\
+&=  \phi_0 \int_0^\infty  \frac{a\rho}{(\rho^2 + a^2 )^{\nicefrac{3}{2}}} \upd\rho, \quad \zeta = \rho^2+a^2, \quad \upd \zeta = 2\rho\upd \rho \\ 
+            & = \frac{1}{2} \phi_0 a \int_{a^2}^\infty \frac{1}{\zeta^{\nicefrac{3}{2}}} \upd\zeta =  \frac{1}{2} \phi_0 a  \left[ \frac{-2}{\sqrt{\zeta}}  \right]_{a^2}^{\infty} =  \frac{1}{2} \phi_0 a  \left[ -0 + \frac{2}{a}  \right] \\
+    &=  \phi_0  \frac{a}{a} =  \phi_0 
+    \end{align*}
+
+    \item Wie erwartet gilt also $\boxed{\phi(\ortsvektor[v]) = \textcolor{green}{\phi_V} + \textcolor{red}{\phi_0}}$
+  \end{itemize}
+  
+\end{frame}
+  
+
+\begin{frame}
+  \frametitle{Spiegelung an der Kugel}
+
+  \begin{columns}
+ \begin{column}{.5\linewidth}
+  \resizebox{\columnwidth}{!}{\input{bilder/Kugelspiegelung}}
+  \end{column}
+\begin{column}{.5\linewidth}
+  \begin{itemize}[<+->]
+  \item Potential
+    $$
+    \phi(\ortsvektor[v]) = \durchvierpie \left[ \frac{Q}{|r\vu{r}-s_1\vu{r}'|}  - \frac{\alpha Q}{|r\vu{r}-s_2\vu{r}'|}   \right]
+    $$
+  \item Einsetzen von $\phi(\ortsvektor[v] = R\vu{r})= 0$:
+    $$
+     \frac{1}{|R\vu{r}-s_1\vu{r}'|}  = \frac{\alpha }{|R\vu{r}-s_2\vu{r}'|}
+     $$
+   \item Die Bedingung wird erfüllt mit
+     $$
+     \boxed{s_2 = \frac{R^2}{s_1}, \quad \alpha = \frac{R}{s_1}}
+     $$
+    \end{itemize}
+  \end{column}
+\end{columns}
+  \end{frame}
+
+
+  \begin{frame}
+    \frametitle{Greensfunktion der Kugel}
+    \begin{itemize}[<+->]
+    \item Mit den gefundenen Bedingungen ergibt sich das Potential $\phi$ bzw. die \alert{Greensche Funktion der Kugel} $G(\ortsvektor[v],\ortsvektor[vs]) = \phi/Q$ zu:
+      \begin{align*}
+        G(\ortsvektor[v],\ortsvektor[vs]) & = \durchvierpie \left[ \frac{1}{|\ortsvektor[v] - \ortsvektor[vs]|}  -  \frac{1}{|\frac{r'}{R}\ortsvektor[v] - \frac{R}{r'}\ortsvektor[vs]|} \right] \\
+        & = \durchvierpie \left[  ( r^2+{r'}^2-2rr'\vu{r}\cdot \vu{r'})^{-\nicefrac{1}{2}}   - \left( \frac{r^2{r'}^2}{R^2}+R^2-2rr'\vu{r}\cdot \vu{r'}  \right)^{-\nicefrac{1}{2}} \right]
+      \end{align*}
+    \item Symmetrisch, Randbedingung des Potentials erfüllt, Poissongleichung im Lösungsvolumen erfüllt, Eindeutigkeit der Lösung $\to$ fertig!
+      \item Wieder kann hiermit eine ganze Klasse von Problem gelöst werden:
+                     $$
+\boxed{      \phi(\ortsvektor[v]) = \int_V
+  \laddichte{V}(\ortsvektor[vs]) G(\ortsvektor[v],\ortsvektor[vs]) \upd^3\ortsvektor[s] + \varepsilon_0 \oint_{O(V)} \left[ G(\ortsvektor[v],\ortsvektor[vs]) \frac{\partial\phi}{\partial n'} - \phi \frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'}\right] \upd^2r'}
+ $$
+ $$
+ \left. \frac{ \partial G(\ortsvektor[v],\ortsvektor[vs]) }{ \partial n' } \right|_{O(V)} =  - \left. \frac{ \partial G(\ortsvektor[v],\ortsvektor[vs]) }{ \partial r' }\right|_{r'=R}  = - \durchvierpie \frac{1}{R} \frac{ r^2-R^2 }{ (r^2+R^2-2rR \vu{r}\cdot \vu{r'})^{\nicefrac{3}{2}} }
+ $$
+      \end{itemize}
+  \end{frame}
+
+\begin{frame}
+  \frametitle{Mehrere Spiegelebenen}
+
+\begin{itemize}[<+->]
+\item Der Fall mehrerer (ideal leitender) Ränder führt zu einer Reihe von Spiegelungen.
+\item Hierbei müssen auch die \alert{Spiegelungen der Spiegelung} berücksichtigt werden.
+\item Nur bei günstigen Geometrien konvergiert die Reihe.
+\end{itemize}
+\vspace{1em}
+
+\resizebox{\linewidth}{!}{\input{bilder/unendliche_Spiegelung}}
+
+\end{frame}
+  
+\input{finalframe.inc}
+   
+\end{document}

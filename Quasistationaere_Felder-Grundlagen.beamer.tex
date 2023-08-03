@@ -1,0 +1,151 @@
+\input{head.inc}
+
+% Präambelbefehle für die Präsentation
+\title[TET: Quasistationäre Felder I - Grundlagen]{Quasistationäre Felder I - Grundlagen}
+
+\begin{document}
+% 
+% Frontmatter 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%% inserts the title page and the table of contents
+\maketitle
+
+% 
+% Content 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Quasistationäre Felder I - Grundlagen}
+
+\begin{frame}
+
+  \frametitle{Maxwell-Gleichungen}
+
+  \begin{itemize}[<+->]
+  \item Voller Satz der Maxwell-Gleichungen; Zeitableitungen bisher vernachlässigt
+\begin{align*}
+	\divergenz \tetB[v] &= 0 & \rotation \efeld[v] &= - \textcolor{green}{\dfrac{\partial \tetB[v]}{\partial t}} \\
+	\divergenz \verschiebung[v] &= \laddichte{V} & \rotation \magfeld[v] &= \elstromdichte[v] + \textcolor{red}{\dfrac{\partial \verschiebung[v]}{\partial t}}
+\end{align*}
+\item Wir betrachten nun den Fall, dass \alert{einer} der Terme $\textcolor{green}{\frac{\partial \tetB[v]}{\partial t}}$ (Induktion) oder $\textcolor{red}{\frac{\partial \verschiebung[v]}{\partial t}}$ (Verschiebungsstromdichte) vernachlässigt werden kann.
+\item Wir werden sehen: dies liefert noch \alert{keine elektromagnetischen Wellen} als Lösung!
+  \item \alert{Magneto-Quasistatik}: $\textcolor{red}{\frac{\partial \verschiebung[v]}{\partial t}} = \vec{0}$ oder $\left|\textcolor{red}{\frac{\partial \verschiebung[v]}{\partial t}}\right|\ll |\elstromdichte[v]|$ (Verschiebungsstrom vernachlässigen)
+\item \alert{Elektro-Quasistatik}: $\textcolor{green}{\frac{\partial \tetB[v]}{\partial t}}=\vec{0}$ (Induktion vernachlässigen) 
+  \end{itemize}
+\end{frame}
+
+\begin{frame} \frametitle{Harmonische Zeitabhängigkeit - Komplexe
+Feldgrößen}
+  \begin{itemize}[<+->]
+  \item Quasistatische Probleme treten meist im Zusammenhang mit \alert{technischen Quellen} auf.
+  \item Es ist daher naheliegend, alle Größen im \alert{Frequenzbereich} darzustellen und beliebige Zeitabhängigkeiten im Sinne von \alert{Fourier-Reihen} darzustellen.
+    \item \alert{Komplexe Feldgrößen} (i-te Komponente):
+\begin{align*}
+		\efeld_i(\ortsvektor[v],\,t) &= \hat{\efeld}_i(\ortsvektor[v])  \cos(\omega  t + \varphi_{E,i}) = \real{\hat{\efeld}_i(\ortsvektor[v]) \euler^{\komplex  (\omega  t +  \varphi_{E,i})} } = \real{\efeld[u]_i(\ortsvektor[v]) \euler^{\komplex  \omega  t } }\\
+		\magfeld_i(\ortsvektor[v],\,t) &= \hat{\magfeld}_i(\ortsvektor[v])  \cos(\omega  t + \varphi_{H,i}) = \real{\hat{\magfeld}_i(\ortsvektor[v]) \euler^{\komplex  (\omega  t +  \varphi_{H,i})} } = \real{\magfeld[u]_i(\ortsvektor[v]) \euler^{\komplex  \omega  t } }
+\end{align*}
+\item Dabei werden die \alert{Phasoren} (ruhenden Zeiger) eingeführt:
+\begin{align*}
+		\efeld[u]_i(\ortsvektor[v]) &= \hat{\efeld}_i(\ortsvektor[v]) \cdot \euler^{\komplex  \varphi_{E,i}} \\
+		\magfeld[u]_i(\ortsvektor[v]) &= \hat{\magfeld}_i(\ortsvektor[v]) \cdot \euler^{\komplex  \varphi_{H,i}}
+\end{align*}
+\item Offensichtlicher Vorteil: $\frac{\partial}{\partial t} \to \text{ Faktor }\komplex\omega$ $\to$ DGL einfacher!
+  \item Wir werden ohne gesonderte Bemerkungen auch zwischen Frequenzbereich und Zeitbereich wechseln!
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Elektro-Quasistatik (EQS)}
+  \begin{itemize}[<+->]
+  \item Annahme: $\frac{\partial \tetB[v]}{\partial t} = \vec{0}$ und $\frac{\partial \verschiebung[v]}{\partial t} \neq \vec{0}$
+    \begin{align*}
+ 	\rotation \efeld[v] & = \vec{0}  & \rotation \efeld[uv] & = \vec{0} \\
+ 	\rotation \magfeld[v] & = \elstromdichte[v] + \frac{\partial \verschiebung[v]}{\partial t} & \rotation \magfeld[uv] & = \elstromdichte[uv] + \komplex\omega \verschiebung[uv]\\
+ 	\divergenz \verschiebung[v] &= \laddichte{V} & \divergenz \verschiebung[uv] &= \underline{\laddichte{V}}\\
+      \divergenz \tetB[v] &= 0 & \divergenz \tetB[uv] &= 0\\
+      \frac{\partial \laddichte{V}}{\partial t} + \divergenz \elstromdichte[v] &=0 & \komplex\omega \underline{\laddichte{V}} + \divergenz \elstromdichte[uv] &=0
+    \end{align*}
+  \item Beiträge zur Stromdichte:
+    \begin{itemize}[<+->]
+      \item  $\elstromdichte[v] = \elstromdichte[v]_\mathrm{L} + \elstromdichte[v]_\mathrm{E} + \elstromdichte[v]_\mathrm{K} = \kappa \cdot \efeld[v] + \elstromdichte[v]_\mathrm{E} + \elstromdichte[v]_\mathrm{K} $
+ 	\item Leitungsstromdichte \(\elstromdichte[v]_\mathrm{L} \) mit $\elstromdichte[v]_\mathrm{L} = \kappa \cdot \efeld[v]$
+ 	\item Eingeprägte Stromdichte \(\elstromdichte[v]_\mathrm{E} \) unabhängig von den Feldgrößen; Ursache EMK, Urspannung
+ 	\item Konvektionsstromdichte \(\elstromdichte[v]_\mathrm{K} \) mit \(\elstromdichte[v]_\mathrm{K} = \const \cdot \gradient \laddichte{V}\)
+ \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Elektro-Quasistatik (EQS), Komplexes Potential}
+  \begin{itemize}[<+->]
+  \item Wegen $\rotation \efeld[uv]  = \vec{0}$:
+    $\boxed{\efeld[uv] = -\gradient \elpotential[u]} \text{ komplexes Skalarpotential} $
+  \item $\rotation \magfeld[uv]  = \elstromdichte[uv] + \komplex\omega \verschiebung[uv]$:
+    \begin{align*}
+      \divergenz \rotation \magfeld[uv] = 0 &=   \divergenz \left( \elstromdichte[uv] + \komplex\omega \verschiebung[uv] \right) = \divergenz \left( (\kappa \efeld[uv] + \elstromdichte[uv]_\mathrm{E} + \elstromdichte[uv]_\mathrm{K})  + \komplex\omega \varepsilon \efeld[uv] \right)\\
+                                            &= \divergenz \left( (\kappa+\komplex\omega \varepsilon) \efeld[uv] + \elstromdichte[uv]_\mathrm{E} + \elstromdichte[uv]_\mathrm{K} \right)\\
+                                            &= -(\kappa+\komplex\omega \varepsilon) \laplace \elpotential[u] + \divergenz (\elstromdichte[uv]_\mathrm{E} + \elstromdichte[uv]_\mathrm{K} ) \\
+      \Aboxed{\laplace \elpotential[u] &= \frac{1}{\kappa+\komplex\omega \varepsilon}  \divergenz (\elstromdichte[uv]_\mathrm{E} + \elstromdichte[uv]_\mathrm{K} ) } \text{ Poisson-Gleichung (komplex)}
+    \end{align*}
+  \item Im Frequenzbereich ist die \alert{erscheint} die Poisson-Gleichung statisch
+  \item Einige Anwendungsbereiche (nicht verwindende Verschiebungsströme; keine Induktion):
+      \begin{itemize}[<+->]
+      \item Hoch- und Höchstspannungstechnik bei (sehr) niedrigen Frequenzen
+      \item Feldprobleme in Halbleiterbauelementen (z.B. FET)
+        \item Biophysik; Nervenleitung
+        \end{itemize}
+        \item Tiefe Frequenzen: Felder erscheinen statisch + Magnetfeld verschwindet $\to$ \alert{EQS}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Magneto-Quasistatik (MQS)}
+  \begin{itemize}[<+->]
+  \item Annahme: $\frac{\partial \tetB[v]}{\partial t} \ne \vec{0}$ und $\frac{\partial \verschiebung[v]}{\partial t} = \vec{0}$
+    \begin{align*}
+ 	\rotation \efeld[v] & = -\frac{\partial \tetB[v]}{\partial t}  & \rotation \efeld[uv] & = -\komplex\omega\tetB[uv] \\
+ 	\rotation \magfeld[v] & = \elstromdichte[v] & \rotation \magfeld[uv] & = \elstromdichte[uv] \\
+ 	\divergenz \verschiebung[v] &= \laddichte{V} & \divergenz \verschiebung[uv] &= \underline{\laddichte{V}}\\
+      \divergenz \tetB[v] &= 0 & \divergenz \tetB[uv] &= 0\\
+      \divergenz \elstromdichte[v] &=0 & \divergenz \elstromdichte[uv] &=0
+    \end{align*}
+  \item Beiträge zur Stromdichte: $\elstromdichte[v] = \elstromdichte[v]_\mathrm{L} + \elstromdichte[v]_\mathrm{E} + \elstromdichte[v]_\mathrm{K} = \kappa \cdot \efeld[v] + \elstromdichte[v]_\mathrm{E} + \elstromdichte[v]_\mathrm{K} $
+  \item $\rotation \magfeld[v]  = \elstromdichte[v]$ und $\divergenz \tetB[v] = 0$ $\to$ Magnetfelder eindeutig bestimmt
+    \item Zusammen mit $\divergenz \elstromdichte[v] =0$ $\to$ Formeln der Magnetostatik strukturgleich in MQS 
+  \item Einige Anwendungsbereiche (verwindende Verschiebungsströme; Induktion):
+      \begin{itemize}[<+->]
+      \item Skin-Effekt (Übertragungsleitungen, insbesondere bei höheren Frequenzen)
+      \item Induktion (klassische elektrotechnische Antriebe und Generatoren)
+        \end{itemize}
+        \item Tiefe Frequenzen: Felder erscheinen statisch + E-Feld verschwindet $\to$ \alert{MQS}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Verwendungsbereich EQS, MQS - was ist langsam?}
+  \begin{itemize}[<+->]
+  \item Betrachte Gebiet mit \alert{Linearausdehnung} $L$
+  \item Typische \alert{Zeitkonstante}: $\tau = 1/\omega$
+  \item räumliche Ableitungen ($\divergenz, \rotation, \gradient$): $\propto 1/L$
+  \item zeitliche Ableitung: $\sim 1 /\tau = \omega$
+  \item $\rotation \magfeld[v]  = \elstromdichte[v] \to \frac{H}{L} = J \to B  = \mu H = \mu L J \to \alert{\dot{B}  =  \omega \mu L J}$
+  \item $\rotation \efeld[v]  = -\frac{\partial \tetB[v]}{\partial t} \to \frac{E}{L} = - \dot{B} = - \omega \mu L J \to D = - \omega \mu\varepsilon L^2 J \to \alert{\dot{D} = - \omega^2 \mu\varepsilon L^2 J}$
+  \item Forderung: $|\dot{\vec{D}}| \ll |\vec{J}|$: $\omega^2 \mu\varepsilon L^2 J \ll J \to \omega^2 \ll \frac{1}{\varepsilon \mu} \frac{1}{L^2}$
+    $$
+    \boxed{\omega \ll \frac{1}{\sqrt{\varepsilon \mu}} \frac{1}{L}} = \frac{v_c}{L} \le \frac{c}{L} \quad c: \text{ Vakuum-Lichtgeschwindigkeit; } c\approx 3\cdot 10^8 \text{m/s}
+    $$
+  \item $L=1$ m: $f=\frac{\omega}{2\pi} \ll 50$ MHz
+  \item $2$ m $\to$ $25$ MHz; $10$ m $\to$ $5$ MHz, \dots
+    \item Umgekehrt betrachtet: $50$ Hz $\to$ $1000$ km
+  \end{itemize}
+\end{frame}
+
+
+
+\input{finalframe.inc}
+   
+\end{document}

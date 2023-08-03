@@ -1,0 +1,39 @@
+\begin{tikzpicture}[line width = 1.2pt, line join=round,x=1cm,y=1cm,>=stealth, circuit ee IEC]
+	% Fläche
+	\draw (0,4) -- (0,-2);
+	\draw [decoration=zigzag,decorate] (-0.1,4) -- (-0.1,-2);
+        \draw [color=red] (-0.5,3) node[anchor=north] {\circled{2}};
+        \draw [color=red] (0.5,3) node[anchor=north] {\circled{1}};
+	\draw [->,color=red] (0,3) -- (-1,3) node[anchor=north west] {$\vec{n}$};
+	% Erde
+	\coordinate (e) at (0,-1.5);
+	\draw (e) -- ++(0.7,0) to [ground={pos=1}] (0.7,-2.2);
+	\draw (e) circle (1.5pt);
+	% Leitfähigkeit, Ladungsdichte
+	\draw (-0.1,4) node[anchor=north east] {$\kappa \rightarrow \infty$};
+	\draw (0,4) node[anchor=north west] {$\laddichte{F}(x,\,y)=\laddichte{F}(\rho)$};
+	% z-Achse
+	\draw [->] (0,0) -- (7,0) node[anchor=north west] {$z$};
+	% Definitionen für die Punkte
+	\coordinate (a) at (4,0);
+	\coordinate (b) at (5,3);
+	\coordinate (c) at (4,-0.5);
+	% Abstand a
+	\draw [|<->|] (0,-0.5) -- ++(a);
+	\node [label=below:$a$] (X) at ($ (0,-0.5)!.5!(c) $) {};
+	% Abstandsvektor
+	\draw [->,color=violet] (a) -- (b);
+	\draw [color=violet] (4.5,1.5) node[anchor=west]{$\abstandsvektor[v]$};
+        \draw [color=violet] (6,1.5) node[anchor=west]{$|\abstandsvektor[v]|=\sqrt{\rho^2+(z-a)^2}$};
+	% Ortsvektor
+	\draw [->,color=blue] (0,0) -- (b);
+	\draw [color=blue] (2.5,1.5) node [anchor=south] {$\ortsvektor[v] $};
+	% rho
+	\draw [|<->|] (5,0) -- (5,3);
+	\draw (5,2.5) node[anchor=west] {$\rho$};
+        \draw (6,2.5) node[anchor=west] {$\ortsvektor[v] = \rho \vu{\rho} + z \vu{z}$}; 
+        \draw (6,2) node[anchor=west] {$\ortsvektor[vs] =  a \vu{z}= - a \vec{n}$}; 
+	% Ladung
+	\draw [color=darkgreen] (a) node[anchor=north] {$\ladung$};
+	\filldraw [color=darkgreen] (a) circle (1.5pt);
+\end{tikzpicture}

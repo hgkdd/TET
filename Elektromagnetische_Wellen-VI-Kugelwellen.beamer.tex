@@ -1,0 +1,221 @@
+\input{head.inc}
+  
+% Präambelbefehle für die Präsentation
+\title[TET: Elektromagnetische Wellen VI - Kugelwellen]{Elektromagnetische Wellen VI - Kugelwellen}
+
+\begin{document}
+% 
+% Frontmatter 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%% inserts the title page and the table of contents
+\maketitle
+
+% 
+% Content 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Elektromagnetische Wellen VI - Kugelwellen}
+
+\begin{frame}
+  \frametitle{Ausgangspunkt}
+  \begin{itemize}[<+->]
+  \item Die bisher betrachteten \alert{ebenen Wellen} sind eine sehr wichtige Klasse der Lösungen der \alert{homogenen Wellengleichung}
+    \begin{equation*}
+      \square\Psi(\ortsvektor[v],t) = \left(\laplace - \varepsilon\mu\frac{\d^2}{\d t^2}\right)\Psi(\ortsvektor[v],t) = \left(\laplace - \frac{1}{\geschw_c^2}\frac{\d^2}{\d t^2}\right)\Psi(\ortsvektor[v],t) = 0
+    \end{equation*}
+  \item Eine andere ebenso wichtige Klasse von Lösungen sind die \alert{Kugelwellen}.
+  \item Diese werden genutzt (angesetzt), wenn eine \alert{kugelsymmetrische Lösung} dem Problem besser angepasst erscheint.
+  \item Der \alert{Ansatz} ist dann:
+    \begin{equation*}
+      \boxed{\Psi(\ortsvektor[v],t) \stackrel{!}{=} \Psi(\ortsvektor,t)} \text{ mit } \ortsvektor = |\ortsvektor[v]|
+    \end{equation*}
+  \item Für den \alert{Laplace-Operator} in \alert{Kugelkoordinaten} \((r,\varphi,\vartheta)\) gilt dann:
+    \begin{align*}
+      \laplace \Psi &= \frac{1}{r} \frac{\d^2}{\d r^2}(r\Psi) + \frac{1}{r^2\sin\vartheta} \frac{\d}{\d\vartheta} \left(\sin\vartheta\frac{\d}{\d \vartheta}\right)\Psi + \frac{1}{r^2\sin^2\vartheta}\frac{\d^2}{\d \varphi^2}\Psi &\text{allgemein}\\
+      \Aboxed{\laplace \Psi&= \frac{1}{r}\frac{\d^2}{\d r^2}(r\Psi)} & \Psi(\ortsvektor[v],t) = \Psi(\ortsvektor,t)
+      \end{align*}
+  \end{itemize}
+  \end{frame}
+
+\begin{frame}
+  \frametitle{Einsetzen in die Wellengleichung}
+  \begin{itemize}[<+->]
+  \item Laplace Operator den für kugelsymmetrischen Fall
+    \begin{equation*}
+      \boxed{\laplace \Psi= \frac{1}{r}\frac{\d^2}{\d r^2}(r\Psi)} \text{ für } \Psi(\ortsvektor[v],t) = \Psi(\ortsvektor,t)
+    \end{equation*}
+  \item Einsetzen in die Wellengleichung ergibt:
+    \begin{align*}
+      \laplace \Psi(\ortsvektor,t) - \frac{1}{\geschw_c^2}\frac{\d^2}{\d t^2}\Psi(\ortsvektor,t) &= 0\\
+      \frac{1}{r}\frac{\d^2}{\d r^2}(r\Psi(\ortsvektor,t)) - \frac{1}{\geschw_c^2}\frac{\d^2}{\d t^2}\Psi(\ortsvektor,t) &= 0\\
+      \ergo \Aboxed{\left(\frac{\d^2}{\d r^2} - \frac{1}{\geschw_c^2}\frac{\d^2}{\d t^2}\right)(r\Psi(\ortsvektor,t)) &= 0} 
+    \end{align*}
+    \item Die Funktion \alert{\(r\Psi(\ortsvektor,t)\)} ist somit Lösung der homogenen eindimensionalen Wellengleichung! \(\to\) Bekannt aus Block \alert{Ebene Wellen}.
+  \end{itemize}
+  \end{frame}
+
+\begin{frame}
+  \frametitle{Kugelwellen}
+  \begin{itemize}[<+->]
+  \item Offenbar kann \(r\Psi(\ortsvektor,t)\) dann als Überlagerung der Funktionen \(\Psi_+\) und \(\Psi_-\) geschrieben werden:
+    \begin{align*}
+      r\Psi(\ortsvektor, t) &= \Psi_+(\omega t + \wellenzahl r) + \Psi_-(\omega t - \wellenzahl r) \text{ mit } \omega=\wellenzahl \geschw_p \; (\omega \ge 0)\\
+      \ergo \Aboxed{\Psi(\ortsvektor, t) &= \frac{1}{r} \left(\Psi_+(\omega t + \wellenzahl r) + \Psi_-(\omega t - \wellenzahl r)\right)} \\
+      & \Psi_+(\omega t + \wellenzahl r)  \text{ einlaufende Welle}\\
+      & \Psi_-(\omega t - \wellenzahl r)  \text{ auslaufende Welle}
+    \end{align*}
+  \item Wir haben damit eine \alert{neue Klasse} von Lösungen gefunden. Die Eigenschaften sind:
+    \begin{enumerate}[<+->]
+    \item Phase: \(\varphi_\pm = \omega t \pm kr \to \) nur abhängig von \(\ortsvektor =|\ortsvektor[v]| \Rightarrow \) \alert{Die Phasenflächen sind Kugelflächen}
+    \item Amplitude: \(\propto \dfrac{1}{\ortsvektor}\)
+    \item Für \alert{harmonische Zeitabhängigkeit}: \(\underline{\Psi}_\pm = \dfrac{1}{r}\underline{A}_\pm\euler^{\komplex(\omega t \pm kr)}\) \ergo Kugelwellen im engeren Sinne
+    \item Phasengeschwindigkeit: \(\geschw_p = \mp \dfrac{\omega}{k} \mp \dfrac{c}{n} =\geschw_c\)
+      \item Abstand von Flächen gleicher Phase (Wellenlänge): \(\wellenzahl \lambda = 2\pi\)
+      \end{enumerate}
+    \end{itemize}
+    \ 
+  \end{frame}
+
+\begin{frame}
+  \frametitle{Kugelwellen -- Visualisierung}
+  \centering\includegraphics[width=\textwidth]{kugelwelle}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centerline{Ebene durch Ursprung}
+      \begin{itemize}
+      \item Divergenz bei \(r=0\) ausgeblendet
+      \item Phasenflächen = Kugelschalen
+        \item hier: nur auslaufende Lösung
+        \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centerline{Amplitude entlang Radialrichtung}
+      \begin{itemize}
+      \item Einhüllende \(\propto \nicefrac{1}{r}\)
+        \item hier: \(\geschw_p = c \to \SI{1}{\nano\second} \simeq \SI{33}{\centi\meter}\)
+      \item Bisher nur eine Größe; z.B. nur E-Feld 
+        \end{itemize}
+      \end{column}
+    \end{columns}
+  \end{frame}
+    
+\begin{frame}
+  \frametitle{Betrachtung der Felder}
+  \begin{itemize}[<+->]
+  \item Formal haben Lösungen der homogenen Wellengleichung für elektrisches Feld und magnetische Flussdichte die \alert{gleiche Form}.
+  \item Aber natürlich sind die Größen weiterhin über die Maxwell-Gleichungen miteinander \alert{verkoppelt}
+  \item Es sind \(\efeld[uv]\) und \(\tetB[uv]\) gegeben durch
+    \begin{equation*}
+      \efeld[uv](\ortsvektor, t) = \efeld[uv]_0 \frac{1}{r} \euler^{\komplex(\omega t - kr)} \text{ und } \tetB[uv](\ortsvektor, t) = \tetB[uv]_0 \frac{1}{r} \euler^{\komplex(\omega t - kr)}
+    \end{equation*}
+  \item Dann folgt wegen \(\divergenz \efeld[uv] = 0\) und \(\divergenz\tetB[uv]=0\) z.B. für das elektrische Feld:
+     \begin{align*}
+      \divergenz \efeld[uv]  & = \frac{1}{r^2} \frac{\d}{\d r} \left( r^2 \efeld[uv]_0 \frac{1}{r} \euler^{\komplex(\omega t -kr)} \right) \cdot \einheitsvek{r} \\
+                             &= \left( \efeld[uv]_0 \cdot \ortsvektor[v] \right) \frac{1}{r} \euler^{\komplex(\omega t -kr)} \left(1- kr \right) \stackrel{!}{=} 0 \text{ für alle } k \text{ und } r  \\
+       \Rightarrow \quad & \boxed{\efeld[v] \perp \ortsvektor[v]} \text{ und analog } \boxed{\tetB[v] \perp \ortsvektor[v]} \Rightarrow \text{ \alert{beide trasversal!}}
+       \end{align*}
+     \end{itemize}
+  \end{frame}
+
+\begin{frame}
+  \frametitle{Betrachtung der Felder (\dots)}
+  \begin{itemize}[<+->]
+  \item Wir nutzen das Induktionsgesetz
+    \begin{equation*}
+      \rotation \efeld[v] = -\dfrac{\d}{\d t}\tetB[v] \text{ bzw. } -\komplex \wellenzahl \left(\einheitsvek{r} \times \efeld[uv] \right) = -\komplex \omega \tetB[uv]
+    \end{equation*}
+  \item Hiermit folgt unmittelbar, dass es sich (lokal) wieder um eine \alert{TEM-Welle} handelt:
+    \begin{equation*}
+      \tetB[v] = - \frac{\wellenzahl}{\omega} \left(\efeld[uv] \times \einheitsvek{r} \right) = - \frac{1}{\geschw_p} \left(\efeld[uv] \times \einheitsvek{r} \right) = - \frac{1}{\geschw_p} \left(\efeld[uv] \times \einheitsvek{k} \right)  \quad \raisebox{-.5cm}{\kartkoordinatensystem[2]{\tetB[v]}{\wellenzahl[v]}{\efeld[v]}}
+    \end{equation*}
+  \item Für viele Anwendungen wichtig ist der \alert{Wellenwiderstand}:
+    \begin{equation*}
+      \boxed{\underline{Z} = \frac{\efeld[u]_0}{\magfeld[u]_0} = \frac{\mu \efeld[u]_0}{\tetB[u]_0} = \mu\geschw_p  = \mu \geschw_c= \sqrt{\frac{\mu}{\varepsilon}}} \quad \text{ hier: reel; allgemein: komplex}
+    \end{equation*}
+    \item \alert{Wellenwiderstand des Vakuums:} \(\boxed{Z_0 = \sqrt{\dfrac{\mu_0}{\varepsilon_0}} =\mu_0c\simeq \SI{120\pi}{\ohm} \simeq \SI{377}{\ohm}}\)
+    \end{itemize}
+    \ 
+  \end{frame}
+
+
+\begin{frame}
+  \frametitle{TE und TM-Wellen}
+  \begin{itemize}[<+->]
+  \item Ebene Wellen, Kugelwellen: TEM-Wellen \(\to\) Aber das ist nicht immer so!
+  \item Betrachten nun: Überlagerung zweier ebener Wellen gleicher Frequenz, Amplitude und Phasenlage, die sich in \alert{unterschiedlicher Richtung} ausbreiten.
+  \begin{columns}
+    \begin{column}{.35\textwidth}
+  \begin{tikzpicture}[line width = 1.2pt, line join=round,>=stealth,scale=.7]
+\draw [->] (-1,0,0) -- (5,0,0) node[anchor=north] {$z$};
+\draw [->] (0,2,0) -- (0,-2,0) node[anchor=east] {$y$};
+\draw (0,0) circle (1.5 mm); 
+\draw (0,0) circle (.5 mm) node[anchor=north east]{$x$}; 
+
+\draw[thin,dashed] (0,0) -- (50:4); 
+\draw[thin,dashed] (0,0) -- (-50:4); 
+
+\draw[thin,dashed] (4.5,0) -- +(140:4); 
+\draw[thin,dashed] (4.5,0) -- +(-140:4); 
+\draw[thin,dashed] (4.5,0) -- +(-40:.5); 
+\draw[thin,dashed] (4.5,0) -- +(40:.5); 
+
+\centerarc[thin,dotted](0,0)(0:50:1);
+\node at (25:0.7) {$\alpha$};
+\centerarc[thin,dotted](0,0)(0:-50:1);
+\node at (-25:0.7) {$\alpha$};
+
+\draw[red] (1.859,2.216) circle (1.5 mm); 
+\draw[red] (1.859,2.216) circle (.5 mm) node[anchor=east]{$\vec{E}_1$};
+\draw[green!70, ->] (1.859,2.216) -- +(-40:1) node[anchor=south west]{$\vec{B}_1$};
+\draw[blue, ->] (1.859,2.216) -- +(50:.5) node[anchor=south west]{$\vec{k}_1$};
+
+\draw[red] (1.859,-2.216) circle (1.5 mm); 
+\draw[red] (1.859,-2.216) circle (.5 mm) node[anchor=west]{$\vec{E}_2$}; 
+\draw[green!70, ->] (1.859,-2.216) -- +(-140:1) node[anchor=south east]{$\vec{B}_2$};
+\draw[blue, ->] (1.859,-2.216) -- +(-50:.5) node[anchor=north]{$\vec{k}_2$};
+
+\end{tikzpicture}
+\end{column}
+\begin{column}{.65\textwidth}
+  \begin{itemize}[<+->]
+  \item \(\efeld[uv]_1 = \efeld[uv]_0 \euler^{\komplex (\omega t - \wellenzahl[v]_1\cdot\ortsvektor[v])} = \efeld[u]_{0} \einheitsvek{x} \euler^{\komplex (\omega t - \wellenzahl[v]_1\cdot\ortsvektor[v])}\) und
+    \( \tetB[uv]_1 = \dfrac{\wellenzahl[v]}{\omega}\times\efeld[uv]_1=\dfrac{1}{\geschw_p} \left( \einheitsvek{k_1} \times \efeld[uv]_0 \euler^{-\komplex \wellenzahl[v]_1\cdot\ortsvektor[v]}\right) \euler^{\komplex \omega t }\)
+  \item \(\efeld[uv]_2 = \efeld[uv]_0 \euler^{\komplex (\omega t - \wellenzahl[v]_2\cdot\ortsvektor[v])} = \efeld[u]_{0}\einheitsvek{x}\euler^{\komplex (\omega t - \wellenzahl[v]_2\cdot\ortsvektor[v])}\) und
+    \( \tetB[uv]_2 = \dfrac{\wellenzahl[v]}{\omega}\times\efeld[uv]_2=\dfrac{1}{\geschw_p} \left( \einheitsvek{k_2} \times \efeld[uv]_0 \euler^{-\komplex \wellenzahl[v]_2\cdot\ortsvektor[v]}\right) \euler^{\komplex \omega t }\)
+  \item \( \wellenzahl[v]_1 = -\wellenzahl_y\einheitsvek{y} + \wellenzahl_z\einheitsvek{z}  \) und \( \wellenzahl[v]_2 = \wellenzahl_y\einheitsvek{y} + \wellenzahl_z\einheitsvek{z}  \)
+  \item \alert{Überlagerung} der beiden Wellen:
+    \begin{align*}
+      \efeld[uv] &= 2\efeld[u]_{0}\cos(\wellenzahl_yy) \einheitsvek{x} \euler^{\komplex(\omega t - \wellenzahl_z z)} \\
+      \tetB[uv] &= \frac{2\efeld[u]_{0}}{\wellenzahl \geschw_c} \left( \wellenzahl_z \cos(\wellenzahl_y y) \einheitsvek{y} - \komplex \wellenzahl_y\sin(\wellenzahl_y y) \einheitsvek{z}\right) \euler^{\komplex(\omega t - \wellenzahl_z z)}
+    \end{align*}
+  \item \alert{TE-Welle}, Propagation in z-Richtung (H-Wellen) \\
+    analog: \alert{TM-Wellen} (E-Welle)
+    \end{itemize}
+\end{column}
+\end{columns}
+\end{itemize}
+\ 
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{TE und TM-Wellen -- Phasengeschwindigkeit}
+  \begin{itemize}[<+->]
+  \item Phasengeschwindigkeit: \( \geschw_p = \dfrac{\omega}{\wellenzahl_z}\); \(\wellenzahl_z\) weil Ausbreitung in z-Richtung
+  \item Für die einzelnen Wellen gilt \(\geschw_c = \dfrac{\omega}{\wellenzahl} = \dfrac{\omega}{\sqrt{\wellenzahl_y^2+\wellenzahl_z^2}} \Rightarrow \wellenzahl_z = \sqrt{\dfrac{\omega^2}{\geschw_c^2}-\wellenzahl_y^2 }\)
+  \item Hiermit folgt für die Phasengeschwindigkeit:
+    \begin{align*}
+      \geschw_p & = \frac{\omega}{\wellenzahl_z} = \frac{\omega}{\sqrt{\frac{\omega^2}{\geschw_c^2}-\wellenzahl_y^2 }} \\
+                & = \frac{\omega}{\frac{\omega}{\geschw_c}\sqrt{1-\frac{\wellenzahl_y^2 \geschw_c^2}{\omega^2} }} = \frac{\geschw_c}{\sqrt{1-\frac{\wellenzahl_y^2 \geschw_c^2}{\omega^2} }} \ge \geschw_c 
+      \end{align*}
+    \item Die Phasengeschwindigkeit ist hier also mindestens so groß wie die Ausbreitungsgeschwindigkeit im Medium
+    \item Im Vakuum kann die Phasengeschwindigkeit somit \alert{größer als die Lichtgeschwindigkeit} sein!
+      \item Mehr zu TE- und TM-Wellen \(\to\) \alert{Hohlleiter} 
+    \end{itemize}
+\end{frame}
+  
+\input{finalframe.inc}
+   
+\end{document}

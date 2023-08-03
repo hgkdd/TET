@@ -1,0 +1,52 @@
+\usetikzlibrary{calc} 
+\begin{tikzpicture}[line width = 1.2pt, line join=round,x=1cm,y=1cm,>=stealth, circuit ee IEC]
+	% Leiteroberfläche
+	\coordinate (a) at (0,-9);
+	\draw (0,4.5) -- ++(a);
+	\draw [decoration=zigzag,decorate] (-0.1,4.5) -- ++(a);
+	% Raumbezeichnung
+	\draw (1.5,4.5) node[anchor=north west] {Lösungsvolumen};
+	\draw (-1.5,4.5) node[anchor=north east] {Zusatzvolumen};
+	% Koordinaten für Ladung und Spiegelladung
+	\coordinate (l) at (6,0);
+	\coordinate (sl) at (-6,0);
+	% E-Feld um Ladung
+	\foreach \l in {0,30,60,90,120,150,180,210,240,270,300,330} \draw [color=red!30!white,->] (l) -- ++(\l:1);
+	\draw [color=red] ({6+cos(45)},{sin(45)}) node[anchor=south west] {$\efeld[v]$};
+	\coordinate (eu) at (0,{-6*tan(30)});
+	\coordinate (eo) at (0,{6*tan(30)});
+	\draw [color=red!60!white,dashed] (0,0) -- (7.5,0);
+	\draw [color=red!60!white,dashed] (eu) -- (7.5,{1.5*tan(30)});
+	\draw [color=red!60!white,dashed] (eo) -- (7.5,{-1.5*tan(30)});
+	\coordinate (e) at (1.5,0);
+	\coordinate (es) at (1.5,0.15);
+	\coordinate (er) at (3,-0.15);
+	\draw [color=red,->] (e) -- (0,0);
+	\draw [color=red,->] (1,{(6-1)*tan(30)}) -- (eo);
+	\draw [color=red,->] (1,{-(6-1)*tan(30)}) -- (eu);
+	% E-Feld für Spiegelladung
+	% E-Feld um Ladung
+	\foreach \l in {0,30,60,90,120,150,180,210,240,270,300,330} \draw [color=blue!30!white,<-] ($(sl) + (\l:0.1)$) -- ++(\l:1);
+	\draw [color=blue] ({-6-cos(45)},{sin(45)}) node[anchor=south east] {$\efeld[v]\,'$};
+	\draw [color=blue!60!white,dashed] (-7.5,0) -- (0,0);
+	\draw [color=blue!60!white,dashed] (eu) -- (-7.5,{1.5*tan(30)});
+	\draw [color=blue!60!white,dashed] (eo) -- (-7.5,{-1.5*tan(30)});
+	\draw [color=blue,->] (es) -- (0,0.15);
+	\draw [color=blue,->] (1,{(6+1)*tan(30)}) -- (eo);
+	\draw [color=blue,->] (1,{-(6+1)*tan(30)}) -- (eu);
+	% Resultierendes E-Feld
+	\draw [color=darkbrown,->] (2,{6*tan(30)}) -- (eo);
+	\draw [color=darkbrown,->] (2,{-6*tan(30)}) -- (eu);
+	\draw [color=darkbrown,->] (er) -- (0,-0.15);
+	\draw [color=darkbrown] (2,{-6*tan(30)}) node[anchor=west] {resultierendes elektrisches Feld};
+	% Ladung
+	\filldraw [color=darkgreen] (l) circle (1.8pt);
+	\draw [color=darkgreen] (l) node[anchor=north] {$\ladung$};
+	% virtuelle Ladung
+	\filldraw [color=magenta] (sl) circle (1.8pt);
+	\draw [color=magenta] (sl) node[anchor=north] {$-\ladung$};
+	% Erde eintragen
+	\coordinate (erde) at (0,-4.2);
+	\draw (erde) -- ++(0.4,0) to [ground={pos=1}] (0.4,-4.7);
+	\filldraw (erde) circle (1.5pt);
+\end{tikzpicture}

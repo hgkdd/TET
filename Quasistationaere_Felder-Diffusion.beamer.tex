@@ -1,0 +1,116 @@
+\input{head.inc}
+
+% Präambelbefehle für die Präsentation
+\title[TET: Quasistationäre Felder II - Felddiffusion]{Quasistationäre Felder II - Felddiffusion}
+
+\begin{document}
+% 
+% Frontmatter 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%% inserts the title page and the table of contents
+\maketitle
+
+% 
+% Content 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Quasistationäre Felder II - Felddiffusion}
+
+\begin{frame}
+  \frametitle{MQS - Diffusionssgleichung für $\efeld[v]$}
+  \begin{itemize}[<+->]
+   \item Magneto-Quasistatik (MQS): Maxwell-Gleichungen
+    \begin{align*}
+	\rotation \efeld[v] &= -\frac{\partial\tetB[v]}{\partial t} & \rotation \magfeld[v] &= \elstromdichte[v]\\
+	\divergenz \verschiebung[v] &= \laddichte{V} & \divergenz \tetB[v] &= 0 
+\end{align*}
+\item Materialgleichungen (lineares, homogenes, isotropes Medium)
+\begin{align*}
+	\verschiebung[v] &= \varepsilon \efeld[v] & \tetB[v] &= \mu \magfeld[v] & \elstromdichte[v] = \elstromdichte[v]_\mathrm{L} &= \kappa \efeld[v] 
+\end{align*}
+\item Annahme:  keine makroskopische Ladungsträgerdichte \(\laddichte{V} = 0 \) $\to$ $\divergenz \efeld[v] = 0$
+\item Und damit: (Hinweis: $\laplace \vec{a} = \divergenz \gradient \vec{a} = \gradient \divergenz \vec{a}  - \rotation \rotation \vec{a}$)
+  \begin{align*}
+    \gradient \divergenz \efeld[v] = \vec{0} &= \laplace \efeld[v] + \rotation \rotation \efeld[v]\\
+    \laplace \efeld[v] & = - \rotation \rotation \efeld[v] = \rotation \frac{\partial\tetB[v]}{\partial t} = \frac{\partial}{\partial t} \left( \rotation \tetB[v] \right)\\
+                                       &= \mu \frac{\partial}{\partial t} \left( \rotation \magfeld[v] \right) = \mu \frac{\partial}{\partial t} \elstromdichte[v] = \mu\kappa \frac{\partial}{\partial t} \efeld[v]\\
+    \Aboxed{\laplace \efeld[v](\ortsvektor[v], t) -\mu\kappa \frac{\partial}{\partial t} \efeld[v](\ortsvektor[v], t) &= \vec{0}} \text{ \alert{Diffusionsgleichung} für }\efeld[v] 
+\end{align*}  
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{MQS - Diffusionssgleichung für $\magvekpot[v]$}
+  \begin{itemize}[<+->]
+  \item Aus dem Amp{\'e}reschen Durchflutungsgesetz folgt zunächst
+    $$
+    \rotation \magfeld[v] = \elstromdichte[v] \to \rotation \tetB[v] = \mu \elstromdichte[v] \to \rotation\rotation \magvekpot[v] = \mu \elstromdichte[v]
+    $$
+  \item Mit $\elstromdichte[v] = \kappa \efeld[v]$ gilt somit
+    $$
+    \rotation\rotation \magvekpot[v] = \mu\kappa \efeld[v] \to \boxed{ \gradient\divergenz \magvekpot[v] -\laplace \magvekpot[v] = \mu\kappa \efeld[v]}
+    $$
+  \item Mit Hilfe des Induktionsgesetzes
+    $$
+    \rotation \efeld[v] = -\frac{\partial\tetB[v]}{\partial t}  \to \rotation \efeld[v] = -\rotation \frac{\partial \magvekpot[v]}{\partial t} \to \rotation \left( \efeld[v] + \frac{\partial \magvekpot[v]}{\partial t}\right) = \vec{0} \to \boxed{\efeld[v] + \frac{\partial\magvekpot[v]}{\partial t} = - grad \phi}  
+    $$
+  \item Spezialfall $\laddichte{V} = 0$: $\divergenz \efeld[v]=0$ $\to$ $\phi=\text{const.} = 0 $ (o.B.d.A) $\to$ $\boxed{\efeld[v] =- \frac{\partial \magvekpot[v]}{\partial t}}$
+  \item Hiermit folgt eine \alert{Diffusionsgleichung} \boxed{\laplace \magvekpot[v] - \mu\kappa \frac{\partial }{\partial t}\magvekpot[v] =\gradient\left( \mu\kappa \phi +\divergenz \magvekpot[v] \right)  }
+    \item \alert{Eichung}: $\divergenz \magvekpot[v] = -\mu\kappa \phi$ bzw. $\divergenz \magvekpot[v] = 0$ für $\laddichte{V} = 0$ (Coulomb-Eichung)   
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{MQS - weitere Diffusionssgleichungen}
+  \begin{itemize}[<+->]
+    \item Auf analoge Weise findet man weitere Diffusionsgleichungen:
+    \item Magnetische Induktion
+      $$
+      \boxed{\laplace \tetB[v] - \mu\kappa \frac{\partial }{\partial t}\tetB[v] = \vec{0} }
+      $$
+    \item Stromdichte
+      $$
+      \boxed{\laplace \elstromdichte[v] - \mu\kappa \frac{\partial }{\partial t}\elstromdichte[v] = \vec{0} }
+      $$
+    \item Offensichtlich erhält mal identische pDGL für $\efeld[v]$, $\tetB[v]$, $\elstromdichte[v]$ und $\magvekpot[v]$ $\to$ \alert{Diffusionsgleichungen}
+    \item Unterschied: Randbedingungen sind anders!
+      \item Wichtige Eigenschaft: \alert{irreversible Prozesse}, d.h. der Übergang  $t \to -t$ liefert eine andere pDGL 
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Exkurs: 3 Typen pDGL 2. Ordnung}
+  \begin{itemize}[<+->]
+  \item \alert{1. Elliptische partielle Differentialgleichung 2. Ordnung} $\laplace \alpha(\ortsvektor[v]) = \beta(\ortsvektor[v])$
+    \begin{itemize}[<+->]
+      \item Nur 2. Ableitungen (+,+,+)
+    \item z.B. Poisson-Gleichung $\laplace\phi(\ortsvektor[v])=-\frac{\laddichte{V}(\ortsvektor[v])}{\varepsilon}$
+  \item zeitunabhängige (stationäre) Probleme
+  \item Lösung beschreibt häufig den Zustand \alert{minimaler Energie} $\to$ Variationsproblem, Finite Elemente Method (FEM) 
+    \item \alert{Randwert}probleme; Dirichlet bzw. Neumann Randwerte
+  \end{itemize}
+
+\item \alert{2. Parabolische partielle Differentialgleichung 2. Ordnung} $\laplace \alpha(\ortsvektor[v], t) - c\frac{\partial}{\partial t}\alpha(\ortsvektor[v], t) = \beta(\ortsvektor[v], t)$
+  \begin{itemize}[<+->]
+    \item Bezüglich einer Variablen (Zeit) nur einfache Ableitung; 2. Ableitung: Vorzeichen (+,+,+,0)
+    \item z.B. Diffusions-Gleichung $\laplace \efeld_x(\ortsvektor[v], t) -\mu\kappa \frac{\partial}{\partial t} \efeld_x(\ortsvektor[v], t) = 0$
+  \item kein stationäres Probleme
+    \item \alert{Anfangs-Randwert}probleme; Dirichlet bzw. Neumann Randwerte und zusätzlich Anfangswert z.B. $\alpha(\ortsvektor[v], t=0)$ vorgeben.
+  \end{itemize}
+
+\item \alert{3. Hyperbolische partielle Differentialgleichung 2. Ordnung} $\laplace \alpha(\ortsvektor[v], t) - c^2\frac{\partial^2}{\partial t^2}\alpha(\ortsvektor[v], t) = \beta(\ortsvektor[v], t)$
+  \begin{itemize}[<+->]
+    \item 2. Ableitung: Vorzeichen (+,+,+,-)
+    \item z.B. Wellen-Gleichung $\to$ \alert{kommt noch}
+    \item \alert{Anfangs-Randwert}probleme $\to$ \alert{zusätzlich:} zeitliche Ableitung bei $t=0$
+  \end{itemize}
+  
+\end{itemize}
+\end{frame}
+
+\input{finalframe.inc}
+   
+\end{document}

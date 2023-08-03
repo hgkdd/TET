@@ -1,0 +1,377 @@
+\input{head.inc}
+% Präambelbefehle für die Präsentation
+\title[TET: Einteilung elektromagnetischer Felder]{Einteilung elektromagnetischer Felder}
+
+\begin{document}
+% 
+% Frontmatter 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%% inserts the title page and the table of contents
+\maketitle
+
+% 
+% Content 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Einteilung elektromagnetischer Felder}
+
+\begin{frame}
+  \frametitle{A keine Einschränkungen - Maxwell-Gleichungen}
+
+\begin{align*}
+	& \rotation \efeld[v] = -\dfrac{\partial}{\partial t} \tetB[v]
+		&&	\oint\limits_{\rand(\flaeche)} \efeld[v]
+                   \cdot \intweg[v] = -\dfrac{\upd}{\upd t}
+                   \iint\limits_{\flaeche} \tetB[v] \cdot \intflaeche[v]\\
+	& \rotation \magfeld[v] = \elstromdichte[v] +\dfrac{\partial}{\partial t} \verschiebung[v]
+		&&	\oint\limits_{\rand(\flaeche)} \magfeld[v]
+                   \cdot \intweg[v] = \iint\limits_{\flaeche}
+                   \elstromdichte[v] \cdot \intflaeche[v] + \dfrac{\upd}{\upd t}
+                   \iint\limits_{\flaeche} \verschiebung[v] \cdot \intflaeche[v]\\
+	& \divergenz \tetB[v] = 0
+		&&	\oiint\limits_{\oberfl(\volumen)} \tetB[v]\cdot \intflaeche[v] = 0\\
+	& \divergenz \verschiebung[v] = \laddichte{V}
+		&&	\oiint\limits_{\oberfl(\volumen)}
+                   \verschiebung[v]\cdot \intflaeche[v] =
+                   \iiint\limits_{\volumen} \laddichte{V} \intvolumen
+  \\
+  \\
+  \hline
+  \\
+  & \dfrac{\partial \laddichte{V}}{\partial t} + \divergenz
+    \elstromdichte[v] = 0 && \dfrac{\upd}{\upd t}
+                             \iiint\limits_{\volumen} \laddichte{V}
+                             \intvolumen +
+                             \oiint\limits_{\oberfl(\volumen)}
+                             \elstromdichte[v] \cdot   \intflaeche[v] = 0
+\end{align*}
+
+ \end{frame}
+
+\begin{frame}
+  \frametitle{B Statischer Grenzfall: $\dfrac{\partial ...}{\partial t} = 0$}
+
+\begin{align*}
+	& \rotation \efeld[v] = \only<-1|handout:0>{-\dfrac{\partial}{\partial t} \tetB[v]}\only<2->{\alert{\vec{0}}}
+		&&	\oint\limits_{\rand(\flaeche)} \efeld[v]
+                   \cdot \intweg[v] = \only<-2|handout:0>{-\dfrac{\upd}{\upd t}
+                   \iint\limits_{\flaeche} \tetB[v] \cdot
+                   \intflaeche[v]}
+                   \only<3->{\alert{0}}\\
+	& \rotation \magfeld[v] = \elstromdichte[v]
+   +\only<-3|handout:0>{\dfrac{\partial}{\partial t} \verschiebung[v]}
+   \only<4->{\alert{\vec{0}}}
+		&&	\oint\limits_{\rand(\flaeche)} \magfeld[v]
+                   \cdot \intweg[v] = \iint\limits_{\flaeche}
+                   \elstromdichte[v] \cdot \intflaeche[v] + \only<-4|handout:0>{\dfrac{\upd}{\upd t}
+                   \iint\limits_{\flaeche} \verschiebung[v] \cdot \intflaeche[v]}\only<5->{\alert{0}}\\
+	& \divergenz \tetB[v] = 0
+		&&	\oiint\limits_{\oberfl(\volumen)} \tetB[v]\cdot \intflaeche[v] = 0\\
+	& \divergenz \verschiebung[v] = \laddichte{V}
+		&&	\oiint\limits_{\oberfl(\volumen)}
+                   \verschiebung[v]\cdot \intflaeche[v] =
+                   \iiint\limits_{\volumen} \laddichte{V} \intvolumen
+  \\
+  \\
+  \hline
+  \\
+  & \only<-5|handout:0>{\dfrac{\partial \laddichte{V}}{\partial t}}\only<6->{\alert{0}} + \divergenz
+    \elstromdichte[v] = 0 && \only<-6|handout:0>{\dfrac{\upd}{\upd t}
+                             \iiint\limits_{\volumen} \laddichte{V}
+                             \intvolumen}\only<7->{\alert{0}} +
+                             \oiint\limits_{\oberfl(\volumen)}
+                             \elstromdichte[v] \cdot   \intflaeche[v] = 0
+\end{align*}
+\end{frame}
+\begin{frame}
+  \frametitle{B.1 Elektrostatik: $\elstromdichte[v] = \vec{0}$ }
+
+\uncover<2->{Grundgleichungen der Elektrostatik}
+\only<1|handout:0>{
+\begin{align*}
+	& \rotation \efeld[v] = \vec{0}
+		&&\oint\limits_{\rand(\flaeche)} \efeld[v]
+                   \cdot \intweg[v] = 0\\
+	& \rotation \magfeld[v] = \elstromdichte[v]
+		&&	\oint\limits_{\rand(\flaeche)} \magfeld[v]
+                   \cdot \intweg[v] = \iint\limits_{\flaeche}
+                   \elstromdichte[v] \cdot \intflaeche[v] \\
+	& \divergenz \tetB[v] = 0
+		&&	\oiint\limits_{\oberfl(\volumen)} \tetB[v]\cdot \intflaeche[v] = 0\\
+	& \divergenz \verschiebung[v] = \laddichte{V}
+		&&\oiint\limits_{\oberfl(\volumen)}
+                   \verschiebung[v]\cdot \intflaeche[v] =
+                   \iiint\limits_{\volumen} \laddichte{V} \intvolumen\\
+  \\
+ \hline
+ \\
+  & \divergenz
+    \elstromdichte[v] = 0 && 
+                             \oiint\limits_{\oberfl(\volumen)}
+                             \elstromdichte[v] \cdot   \intflaeche[v] = 0
+\end{align*}
+}
+\only<2->{
+\begin{align*}
+	& \rotation \efeld[v] = \vec{0}
+		&&\oint\limits_{\rand(\flaeche)} \efeld[v]
+                   \cdot \intweg[v] = 0\\
+	& \divergenz \verschiebung[v] = \laddichte{V}
+		&&\oiint\limits_{\oberfl(\volumen)}
+                   \verschiebung[v]\cdot \intflaeche[v] =
+                   \iiint\limits_{\volumen} \laddichte{V} \intvolumen
+\end{align*}
+ }
+\uncover<3->{für \alert{homogene, lineare, isotrope} Medien:
+  $\verschiebung[v]=\varepsilon_0\varepsilon_r \efeld[v]=\varepsilon \efeld[v]$
+\begin{align*}
+	& \rotation \efeld[v] = \vec{0}
+		&&\oint\limits_{\rand(\flaeche)} \efeld[v]
+                   \cdot \intweg[v] = 0\\
+	& \divergenz \efeld[v] = \frac{1}{\varepsilon}\laddichte{V}
+		&&\oiint\limits_{\oberfl(\volumen)}
+                   \efeld[v]\cdot \intflaeche[v] = \frac{1}{\varepsilon}
+                   \iiint\limits_{\volumen} \laddichte{V} \intvolumen
+\end{align*}
+}
+\uncover<4->{$\rotation \efeld[v] = \vec{0} \Rightarrow \efeld[v] = -\gradient
+  \phi \to -\divergenz\efeld[v] = \divergenz\gradient
+  \phi = \alert{\Delta\phi = -
+    \frac{1}{\varepsilon}\laddichte{V}}$ (\alert{Poisson-Gleichung})}
+\end{frame}
+
+\begin{frame}
+  \frametitle{B.2 Magnetostatik: $\laddichte{V} = 0$}
+
+\uncover<2->{Grundgleichungen der Magnetostatik}
+\only<1|handout:0>{
+\begin{align*}
+	& \rotation \efeld[v] = \vec{0}
+		&&\oint\limits_{\rand(\flaeche)} \efeld[v]
+                   \cdot \intweg[v] = 0\\
+	& \rotation \magfeld[v] = \elstromdichte[v]
+		&&	\oint\limits_{\rand(\flaeche)} \magfeld[v]
+                   \cdot \intweg[v] = \iint\limits_{\flaeche}
+                   \elstromdichte[v] \cdot \intflaeche[v] \\
+	& \divergenz \tetB[v] = 0
+		&&	\oiint\limits_{\oberfl(\volumen)} \tetB[v]\cdot \intflaeche[v] = 0\\
+	& \divergenz \verschiebung[v] = \laddichte{V}
+		&&\oiint\limits_{\oberfl(\volumen)}
+                   \verschiebung[v]\cdot \intflaeche[v] =
+                   \iiint\limits_{\volumen} \laddichte{V} \intvolumen\\
+  \\
+ \hline
+ \\
+  & \divergenz
+    \elstromdichte[v] = 0 && 
+                             \oiint\limits_{\oberfl(\volumen)}
+                             \elstromdichte[v] \cdot   \intflaeche[v] = 0
+\end{align*}
+}
+\only<2->{
+\begin{align*}
+	& \rotation \magfeld[v] = \elstromdichte[v]
+		&&	\oint\limits_{\rand(\flaeche)} \magfeld[v]
+                   \cdot \intweg[v] = \iint\limits_{\flaeche}
+                   \elstromdichte[v] \cdot \intflaeche[v] \\
+	& \divergenz \tetB[v] = 0
+		&&	\oiint\limits_{\oberfl(\volumen)} \tetB[v]\cdot \intflaeche[v] = 0\\
+ & \divergenz
+    \elstromdichte[v] = 0 && 
+                             \oiint\limits_{\oberfl(\volumen)}
+                             \elstromdichte[v] \cdot   \intflaeche[v] = 0
+\end{align*}
+ }
+\uncover<3->{für \alert{homogene, lineare, isotrope} Medien:
+  $\tetB[v]=\mu_0\mu_r \magfeld[v]=\mu \magfeld[v]$
+\begin{align*}
+	& \rotation \tetB[v] = \mu\elstromdichte[v]
+		&&	\oint\limits_{\rand(\flaeche)} \tetB[v]
+                   \cdot \intweg[v] = \mu\iint\limits_{\flaeche}
+                   \elstromdichte[v] \cdot \intflaeche[v] \\
+	& \divergenz \tetB[v] = 0
+		&&	\oiint\limits_{\oberfl(\volumen)} \tetB[v]\cdot \intflaeche[v] = 0
+\end{align*}
+}
+\uncover<4->{$\divergenz \tetB[v] = 0 \Rightarrow \tetB[v] =
+  \rotation \magvekpot[v] \to \rotation\tetB[v] =
+  \alert{ \rotation\rotation \magvekpot[v] =
+    \mu\elstromdichte[v]}$ (führt später zur \alert{Eichung})}
+\end{frame}
+
+\begin{frame}
+  \frametitle{B.3 Stationäres Strömungsfeld: $\divergenz \elstromdichte[v] = 0, \elstromdichte[v]=\elstromdichte[v]_L=\kappa\efeld[v]$}
+
+\uncover<2->{Grundgleichungen des Stationären Strömungsfeldes in Gebieten \alert{ohne Elektromotorische Kraft} (siehe \enquote{Stationäres Elektrisches Strömungsfeld})}
+\only<1|handout:0>{
+\begin{align*}
+	& \rotation \efeld[v] = \vec{0}
+		&&\oint\limits_{\rand(\flaeche)} \efeld[v]
+                   \cdot \intweg[v] = 0\\
+	& \rotation \magfeld[v] = \elstromdichte[v]
+		&&	\oint\limits_{\rand(\flaeche)} \magfeld[v]
+                   \cdot \intweg[v] = \iint\limits_{\flaeche}
+                   \elstromdichte[v] \cdot \intflaeche[v] \\
+	& \divergenz \tetB[v] = 0
+		&&	\oiint\limits_{\oberfl(\volumen)} \tetB[v]\cdot \intflaeche[v] = 0\\
+	& \divergenz \verschiebung[v] = \laddichte{V}
+		&&\oiint\limits_{\oberfl(\volumen)}
+                   \verschiebung[v]\cdot \intflaeche[v] =
+                   \iiint\limits_{\volumen} \laddichte{V} \intvolumen\\
+  \\
+ \hline
+ \\
+  & \divergenz
+    \elstromdichte[v] = 0 && 
+                             \oiint\limits_{\oberfl(\volumen)}
+                             \elstromdichte[v] \cdot   \intflaeche[v] = 0
+\end{align*}
+}
+\only<2->{
+\begin{align*}
+	& \rotation \efeld[v] = \vec{0}
+		&&\oint\limits_{\rand(\flaeche)} \efeld[v]
+                   \cdot \intweg[v] = 0\\
+	& \rotation \magfeld[v] = \elstromdichte[v]
+		&&	\oint\limits_{\rand(\flaeche)} \magfeld[v]
+                   \cdot \intweg[v] = \iint\limits_{\flaeche}
+                   \elstromdichte[v] \cdot \intflaeche[v] \\
+ & \divergenz
+    \elstromdichte[v] = \kappa\divergenz \efeld[v]= 0 && 
+                             \oiint\limits_{\oberfl(\volumen)}
+                             \elstromdichte[v] \cdot   \intflaeche[v]
+                                                         = \oiint\limits_{\oberfl(\volumen)}
+                             \kappa\efeld[v] \cdot   \intflaeche[v]
+                                                         = 0 
+\end{align*}
+ }
+ \uncover<3->{
+   \begin{itemize}
+   \item Das E-Feld ist divergenz- und rotationsfrei
+   \item Positive und negative Ladungen sind kompensiert: $\laddichte{V} = 0$
+     \end{itemize}
+ }
+\end{frame}
+
+\begin{frame}
+  \frametitle{C Quasistationäres Feld}
+
+  \begin{itemize}[<+->]
+    \item Es sind zeitliche Änderungen vorhanden; diese sind aber
+      \enquote{langsam}.
+      \item Momentanaufnahmen der Felder entsprechen den statischen
+        Feldern
+        \item Wirkungen werden \enquote{verzögerungsfrei} übermittelt
+          $\to$ Keine \alert{Retardierung}
+        \item Keine Abstrahlung
+        \item Orts- und Zeitabhängigkeit sind entkoppelt
+          \item Berechnungen mit den Lösungsmethoden der Statik (aber zeitabhängig)
+          \item zwei Fälle:
+            \begin{itemize}[<+->]
+            \item Quasi-Elektrostatik (Induktion vernachlässigen)
+              $$
+              \dfrac{\partial}{\partial t} \verschiebung[v] \neq \vec{0}
+              \text{ und } \dfrac{\partial}{\partial t} \tetB[v] \to \vec{0}
+              \Rightarrow \rotation\efeld[v] \to \vec{0}
+              $$
+              \item Quasi-Magnetostatik (Verschiebungsstrom vernachlässigen)
+              $$
+              \dfrac{\partial}{\partial t} \verschiebung[v] \to \vec{0}
+              \text{ und } \dfrac{\partial}{\partial t} \tetB[v] \neq \vec{0}
+              \Rightarrow \rotation\magfeld[v] \to \elstromdichte[v]
+              $$
+              \end{itemize}
+
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{C.1 Quasi-Elektrostatik}
+\begin{align*}
+	& \alert{\rotation \efeld[v] = \vec{0}}
+		&&	\alert{\oint\limits_{\rand(\flaeche)} \efeld[v]
+                   \cdot \intweg[v] = 0}\\
+	& \rotation \magfeld[v] = \elstromdichte[v] +\dfrac{\partial}{\partial t} \verschiebung[v]
+		&&	\oint\limits_{\rand(\flaeche)} \magfeld[v]
+                   \cdot \intweg[v] = \iint\limits_{\flaeche}
+                   \elstromdichte[v] \cdot \intflaeche[v] + \dfrac{\upd}{\upd t}
+                   \iint\limits_{\flaeche} \verschiebung[v] \cdot \intflaeche[v]\\
+	& \divergenz \tetB[v] = 0
+		&&	\oiint\limits_{\oberfl(\volumen)} \tetB[v]\cdot \intflaeche[v] = 0\\
+	& \divergenz \verschiebung[v] = \laddichte{V}
+		&&	\oiint\limits_{\oberfl(\volumen)}
+                   \verschiebung[v]\cdot \intflaeche[v] =
+                   \iiint\limits_{\volumen} \laddichte{V} \intvolumen
+  \\
+  \\
+  \hline
+  \\
+  & \dfrac{\partial \laddichte{V}}{\partial t} + \divergenz
+    \elstromdichte[v] = 0 && \dfrac{\upd}{\upd t}
+                             \iiint\limits_{\volumen} \laddichte{V}
+                             \intvolumen +
+                             \oiint\limits_{\oberfl(\volumen)}
+                             \elstromdichte[v] \cdot   \intflaeche[v] = 0
+\end{align*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{C.2 Quasi-Magnetostatik}
+\begin{align*}
+	& \rotation \efeld[v] = -\dfrac{\partial}{\partial t} \tetB[v]
+		&&	\oint\limits_{\rand(\flaeche)} \efeld[v]
+                   \cdot \intweg[v] = -\dfrac{\upd}{\upd t}
+                   \iint\limits_{\flaeche} \tetB[v] \cdot \intflaeche[v]\\
+	& \alert{\rotation \magfeld[v] = \elstromdichte[v]}
+		&&	\alert{\oint\limits_{\rand(\flaeche)} \magfeld[v]
+                   \cdot \intweg[v] = \iint\limits_{\flaeche}
+                   \elstromdichte[v] \cdot \intflaeche[v] }\\
+	& \divergenz \tetB[v] = 0
+		&&	\oiint\limits_{\oberfl(\volumen)} \tetB[v]\cdot \intflaeche[v] = 0\\
+	& \divergenz \verschiebung[v] = \laddichte{V}
+		&&	\oiint\limits_{\oberfl(\volumen)}
+                   \verschiebung[v]\cdot \intflaeche[v] =
+                   \iiint\limits_{\volumen} \laddichte{V} \intvolumen
+  \\
+  \\
+  \hline
+  \\
+  & \dfrac{\partial \laddichte{V}}{\partial t} + \divergenz
+    \elstromdichte[v] = 0 && \dfrac{\upd}{\upd t}
+                             \iiint\limits_{\volumen} \laddichte{V}
+                             \intvolumen +
+                             \oiint\limits_{\oberfl(\volumen)}
+                             \elstromdichte[v] \cdot   \intflaeche[v] = 0
+\end{align*}
+\end{frame}
+
+\begin{frame}
+  \begin{itemize}[<+->]
+    \item Der allgemeine Satz der Maxwell-Gleichungen ist zwar immer
+      korrekt, aber \alert{häufig unnötig kompliziert}
+      \item Das Auffinden der Lösungen wird stark vereinfacht, wenn
+        \alert{geeignete Annahmen} gemacht werden.
+        \item Die vorgestellt Einteilung der Vereinfachungen kann auch
+          noch weiter granularisiert werden.
+      \item In den folgenden Einheiten werden die Lösungsverfahren für
+        die verschiedenen Fälle eingeführt und die zugehörigen
+        Lösungen diskutiert.
+      \item \alert{Lernziele:}
+        \begin{itemize}[<+->]
+        \item Sie \alert{kennen} die Maxwell-Gleichungen
+          \item Sie können die Beziehungen zwischen den Gleichungen
+            \alert{erklären}
+          \item Sie können vereinfachte Grundgleichungen \alert{entwickeln}
+            \item Sie können Problemstellungen \alert{analysieren} und
+              Lösungen finden
+              \item Sie können Modelle für neue
+                Problemstellungen \alert{entwickeln}
+                \item Sie können für neue
+                  Problemstellungen geeignete Lösungsmethoden \alert{auswählen}
+          \end{itemize}
+      \end{itemize}
+  \end{frame}
+ \input{finalframe.inc}
+\end{document}

@@ -1,0 +1,38 @@
+\begin{tikzpicture}[scale=0.8, line width = 1.2pt, line join=round,x=1cm,y=1cm,>=stealth, circuit ee IEC]
+	% Koordinaten für die Spiegelfläche
+	\coordinate (a) at (0,2);
+	\coordinate (b) at (0,-4);
+	\coordinate (c) at (4,2);
+	% Ladungsdichten 1. Spiegelung
+        \onslide<4->{
+	\draw (3.5,0) node[anchor=east] {$\laddichte{V}$};
+	\draw (3.5,0.75) -- (2,0) -- (3.5,-0.75) -- cycle;}
+      \onslide<5->{
+	\draw (-3.5,0) node[anchor=west] {$-\laddichte{V}$};
+	\draw (-3.5,0.75) -- (-2,0) -- (-3.5,-0.75) -- cycle;}
+      \onslide<6->{
+	\draw (4.5,0) node[anchor=west] {$-\laddichte{V}$};
+	\draw (4.5,0.75) -- (6,0) -- (4.5,-0.75) -- cycle;}
+      % Ladungsdichten 2. Spiegelung
+      \onslide<7->{
+	\draw [color=red] (-4,2) -- ++(b);
+	\draw [color=red] ({3.5-8},0) node[anchor=east] {$\laddichte{V}$};
+	\draw [color=red] ({3.5-8},0.75) -- ({2-8},0) -- ({3.5-8},-0.75) -- cycle;}
+      \onslide<8->{
+	\draw [color=red] ({3.5+8},0) node[anchor=east] {$\laddichte{V}$};
+	\draw [color=red] (8,2) -- ++(b);
+	\draw [color=red] ({3.5+8},0.75) -- ({2+8},0) -- ({3.5+8},-0.75) -- cycle;}
+      % Spiegelflächen
+      \onslide<4->{
+	\draw (a) -- ++(b);
+	\draw[decoration=zigzag,decorate] (-0.15,2) -- ++(b);
+	\draw (c) -- ++(b);
+	\draw[decoration=zigzag,decorate] (4.15,2) -- ++(b);
+	% Erdung
+	\coordinate (erde) at (0,-1.5);
+	\draw (erde) -- ++(0.4,0) to [ground={pos=1}] (0.4,-1.9);
+	\filldraw (erde) circle (1.5pt);
+	\coordinate (erdez) at (4,-1.5);
+	\draw (erdez) -- ++(-0.4,0) to [ground={pos=1}] (3.6,-1.9);
+	\filldraw (erdez) circle (1.5pt);}
+\end{tikzpicture}

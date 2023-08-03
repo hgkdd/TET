@@ -1,0 +1,36 @@
+\begin{tikzpicture}[line width = 1.2pt, line join=round,x=1cm,y=1cm,>=stealth, circuit ee IEC]
+	% Achse
+	\draw [->] (-2,0) -- (5,0);
+	% Kugel
+	\draw (0,0) circle (1.5);
+	\filldraw (0,0) circle (1.5pt) node[anchor=north] {$M$};
+	% Radius
+	\draw [<->] (0,0) -- ({1.5*cos(150)},{1.5*sin(150)});
+	\draw ({1.5*cos(150)/2},{1.5*sin(150)/2}) node[anchor=south] {$R$};
+	% Erde einzeichnen
+	\coordinate (erde) at ({1.5*cos(225)},{1.5*sin(225)});
+	\draw (erde) -- ++({0.3*cos(225)},{0.3*sin(225)}) -- ++({0.2*cos(225)},0) to [ground={pos=1}] ({2*cos(225)},{2.2*sin(225)});
+	\draw (erde) circle (1.5pt);
+	% Koordinaten für die Ladung
+	\coordinate (l) at (4,0);
+	% Koordinaten für die Spiegelladung
+	\coordinate (sl) at (1,0);
+	% Koordinaten für Punkt P
+	\coordinate (p) at (3,2);
+	% Vektoren
+	\draw [->,color=red] (l) -- (p);
+	\draw [color=red] (3.5,1) node[anchor=west] {$R_1$};
+	\draw [->,color=red] (sl) -- (p);
+	\draw [color=red] (2.2,1) node[anchor=south east] {$R_2$};
+	% Strecken
+	\draw [|<->|] (0,-1.8) -- (1,-1.8);
+	\draw (0.5,-1.8) node[anchor=north] {$s_2$};
+	\draw [|<->|] (0,-2.5) -- (4,-2.5);
+	\draw (2,-2.5) node[anchor=north] {$s_1$};
+	% Ladung
+	\filldraw (l) circle (1.5pt) node[anchor=north] {$\ladung$};
+	% Spiegelladung
+	\filldraw (sl) circle (1.5pt) node[anchor=north] {$-\alpha \ladung$};
+	% Punkt P
+	\filldraw (p) circle (1.5pt) node[anchor=south] {$\punkt$};
+\end{tikzpicture}

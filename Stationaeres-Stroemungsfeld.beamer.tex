@@ -1,0 +1,320 @@
+\input{head.inc}
+
+% Präambelbefehle für die Präsentation
+\title[TET: Stationäres Elektrisches Strömungsfeld]{Stationäres Elektrisches Strömungsfeld}
+
+\begin{document}
+% 
+% Frontmatter 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%% inserts the title page and the table of contents
+\maketitle
+
+% 
+% Content 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Stationäres Elektrisches Strömungsfeld}
+
+\begin{frame}
+
+  \frametitle{Ausgangspunkt Elektrostatik}
+
+  \begin{itemize}[<+->]
+    \item Maxwell-Gleichungen:
+\begin{align*}
+	& \rotation\efeld[v] = \underbrace{-\dfrac{\partial \tetB[v]}{\partial t}}_{=\vec{0}} = \vec{0} \\
+	& \divergenz \verschiebung[v] = \laddichte{V} 
+\end{align*}
+\item Elektrostatik $\to$ \alert{ruhenden} Ladungen $\to$ \alert{elektrostatisches Feld}
+\item Jetzt: \alert{Bewegung von Ladungen zugelassen}
+  \item Allerdings Beschränkung auf \alert{stationäre Bewegung}:
+\begin{equation*}
+	\dfrac{\partial}{\partial t} \laddichte{V} = 0 
+      \end{equation*}
+ \item Es existiert somit eine Stromdichte \alert{\(\elstromdichte[v] \neq \vec{0} \)}.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Stromdichte}
+
+
+\begin{itemize}[<+->]
+    \item Grundsätzlich sind zwei Arten der Bewegung von Ladungsträgern zu betrachten:
+  \begin{itemize}[<+->]
+    \item Thermische Bewegung \({\geschw[v]}_\mathrm{th}\): Trägt makroskopisch nicht zur Stromdichte \(\elstromdichte[v]\) bei, da \(\mittelwert{\geschw[v]_\mathrm{th}} = \vec{0} \).
+    \item Driftbewegung \({\geschw[v]}_\mathrm{D}\): Trägt zur Stromdichte \(\elstromdichte[v] \) bei, da für den Mittelwert der Driftgeschwindigkeit \(\mittelwert{\geschw[v]_\mathrm{D}} \ne \vec{0} \) gilt.
+\end{itemize}
+\item Die Driftbewegung muss von einer Kraft getrieben werden.
+\item aus dem elektrischen Feld: \(\kraft[v]_\mathrm{\efeld} = \partladung \cdot \efeld[v] \)
+\item aus dem magnetischen Feld: \(\kraft[v]_\mathrm{\magfeld} = \partladung \cdot \left(\geschw[v] \times \tetB[v]\right) \) $\to$ in der Regel sehr klein 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Strom}
+
+ \begin{columns}
+   \begin{column}{.3\linewidth}
+\resizebox{\columnwidth}{!}{\input{bilder/Leiter_2}}
+
+\resizebox{\columnwidth}{!}{\input{bilder/Stromdichte_durch_Flaeche}}
+   \end{column}
+   \begin{column}{.7\linewidth}
+\begin{itemize}[<+->]
+    \item Für einen Leiter gilt
+\begin{equation*}
+	\elstromdichte[v] = \laddichte{V} \cdot \geschw[v] \pointspacek
+\end{equation*}
+mit
+\begin{align*}
+	& \left[\laddichte{V} \right] = \si{\ampere\second\per\cubic\metre} \pointspacek
+		&& \left[\geschw \right] = \si{\metre\per\second}\pointspacek
+		&& \left[\elstromdichte[v] \right] = \si{\ampere\per\square\metre}
+\end{align*}
+\item Der Gesamtstrom durch die Fläche \(\spezflaeche[v] \) berechnet sich nach
+\begin{align*}
+	\elstrom &= \iint\limits_{\spezflaeche} \elstromdichte[v] \cdot \intnach{\spezflaeche[v]} 
+		= \iint\limits_{\spezflaeche} \elstromdichte[v] \cdot \normalenvektor \intnach{\spezflaeche}
+			= \iint\limits_{\spezflaeche} \elstromdichte\normal \intnach{\spezflaeche}
+\end{align*}
+mit
+\begin{equation*}
+	\elstromdichte\normal = \elstromdichte[v] \cdot \normalenvektor \pointspacep
+\end{equation*}
+
+\end{itemize}
+     \end{column}
+\end{columns}  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Ladungserhaltung - Kontinuitätsgleichung}
+	\centering
+	\resizebox{.25\linewidth}{!}{\input{bilder/Volumen_Strom}}
+\begin{itemize}[<+->]
+    \item Axiomatische Grundlagen: \alert{Ladungserhaltung}
+\item Nettostrom durch eine geschlossene Oberfläche $\ne$ Null $\to$ Ladungsdichte des Volumens zeitabhängig
+\begin{equation*}
+	\dfrac{\partial \laddichte{V}}{\partial t} \neq 0 \pointspacep
+\end{equation*}
+\item Es muss gelten (wg. Ladungserhaltung)
+$$
+	\oiint\limits_{\oberfl(\volumen)} \elstromdichte[v] \cdot \intnach{\spezflaeche[v]} = -\iiint\limits_{\volumen} \dfrac{\partial \laddichte{V}}{\partial t} \intvolumen 
+\to \iiint\limits_{\volumen} \divergenz \elstromdichte[v] \intvolumen  = -\iiint\limits_{\volumen} \dfrac{\partial \laddichte{V}}{\partial t} \intvolumen
+$$
+\item Das liefert die \alert{Kontinuitätsgleichung}
+\begin{equation*}
+	\boxed{\divergenz \elstromdichte[v] = -\dfrac{\partial \laddichte{V}}{\partial t}}
+      \end{equation*}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Kontinuitätsgleichung}
+\begin{itemize}[<+->]      
+\item Alternative Herleitung über die Maxwell-Gleichungen $\to$ Axiomatische Grundlagen
+$$\rotation\vec{H}=\vec{J} +\frac{\partial \vec{D}}{\partial t}	\stackrel{\divergenz \rotation = 0}{\Longrightarrow} 0 = \divergenz \elstromdichte[v] + \divergenz \dfrac{\partial \verschiebung[v]}{\partial t}
+$$
+\item Mit $\divergenz \vec{D} = \laddichte{V}$:
+  $$
+  0 = \divergenz \elstromdichte[v] + \dfrac{\partial \laddichte{V}}{\partial t}
+$$
+\item In einem stationären Strömungsfeld gilt definitionsgemäß
+\begin{equation*}
+	\dfrac{\partial \laddichte{V}}{\partial t} = 0 \to \boxed{\divergenz \elstromdichte[v] = 0} 
+\end{equation*}
+\item Die integrale Form entspricht dem \alert{Kirchhoffschen Knotensatz}:
+\begin{equation*}
+	\oiint\limits_{\oberfl(\volumen)} \elstromdichte[v] \cdot \intnach{\spezflaeche[v]} = 0
+\end{equation*}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Ohmsches Gesetz}
+\begin{itemize}[<+->]      
+\item Lorentzkraft: $\vec{F} = \partladung \cdot \left( \efeld[v] + \cancel{\geschw[v] \times \tetB[v]} \right)$
+\item Aus der Bewegungsgleichung
+\begin{equation*}
+	\masse \cdot \dfrac{\partial \geschw[v]}{\partial t} = \partladung \efeld[v] \to \geschw[v](t) = \geschw[v]_0 + \dfrac{\partladung}{\masse} \cdot \efeld[v] \cdot t
+\end{equation*}
+\item Für \(\efeld[v] = \const \) folgt \(\geschw[v] \sim t\) und \(\elstromdichte[v] \sim t \)
+\item Der experimentelle Befund ist
+\begin{equation*}
+	\spannung = \elwiderstand \cdot \elstrom \text{ mit } \spannung \sim \efeld \text{ und } \elstrom \sim \elstromdichte
+\end{equation*}
+\item Das ergibt
+$
+	\boxed{\elstromdichte[v] = \kappa \cdot \efeld[v]}  \to \text{ \alert{Leitfähigkeit} }\kappa \text{ mit } \left[\kappa \right] = \si{\metre\per(\ohm\metre\squared)} = \si{\siemens\metre\per\metre\squared} 
+$
+\item 1. Frage: Warum ist das elektrische Feld im Leiter nicht
+  Null?
+  \begin{itemize}
+  \item Für stationäre Ladungen, $\elstromdichte[v] = \vec{0}$, gilt tatsächlich \(\efeld[v] = \vec{0} \)
+  \item Für perfekte Leiter (\(\kappa \,\rightarrow\, \infty \)) gilt \(\efeld[v] = \vec{0} \) auch für  $\elstromdichte[v] \ne \vec{0}$
+   \item Für einen guten Leiter (\(\kappa < \infty \)) ist ein kleines elektrisches Feld notwendig um \(\elstromdichte[v] = \const \) zu halten. ($I=1$~A; $A=1$~mm$^2$; $\kappa=60\cdot 10^6$~A/(Vm) $\to$ $E=1.7 \cdot 10^{-14}$~V/m)
+    \end{itemize} 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Modell der Leitfähigkeit}
+\begin{itemize}[<+->]      
+\item 2. Frage: Warum ist bei $\efeld[v] = \text{const.}$ auch $\elstromdichte[v] = \text{const.}$, d.h. $\vec{v} = \text{const.}$?
+  \begin{itemize}[<+->]
+  \item Etwas hemmt die Bewegung
+  \item ineleastische Stöße mit den Atomrümpfen
+    \end{itemize} 
+\item Gitterkonstante \(l_\mathrm{F} \approx \SI{1}{\nano\metre} \) $\to$ Stoßzeit $
+	\tau = \dfrac{l_\mathrm{F}}{\mittelwert{\geschw}}$
+
+	\centerline{\input{bilder/Stosszeit}}
+
+\item Mittelwert der Geschwindigkeit: $\mittelwert{\geschw} = \dfrac{1}{2} \cdot \dfrac{\partladung}{\masse} \cdot \efeld \cdot \tau \to
+\mittelwert{\geschw} =  \sqrt{\dfrac{1}{2} \cdot \dfrac{\partladung}{\masse} \cdot \efeld \cdot l_\mathrm{F}}$
+\item \alert{Widerspruch} zu \(\mittelwert{\geschw} \sim \efeld \) $\to$ \alert{Drude Modell}
+  \end{itemize}
+
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Drude Modell}
+\begin{itemize}[<+->]      
+\item Tatsächlich: Nicht freie Weglänge ist maßgeblich sondern die \alert{thermische Bewegung}: \(|\geschw[v]_\mathrm{th}| \gg |\geschw[v]_\mathrm{D}| \) $\to$ $\tau  = \dfrac{l_\mathrm{F}}{\geschw_\mathrm{th}}$ 
+$$
+	|\geschw[v]_\mathrm{D}| = \mittelwert{|\geschw[v]_\mathrm{D}|} = \dfrac{1}{2} \cdot \dfrac{\partladung}{\masse} \cdot \efeld \cdot \dfrac{l_\mathrm{F}}{|\geschw[v]_\mathrm{th}|}
+$$
+\item Damit und mit der Anzahldichte der Ladungen \(n\):
+  \begin{align*}
+	\elstromdichte[v] &= \laddichte{V} \cdot \geschw[v]_\mathrm{D} = n \cdot \partladung \cdot \geschw[v]_\mathrm{D}\\
+		&= \dfrac{1}{2} \cdot \dfrac{n \cdot \partladung^2 \cdot l_\mathrm{F}}{\masse \cdot |\geschw[v]_\mathrm{th}|} \cdot \efeld[v] = \kappa \cdot \efeld[v]\quad\Aboxed{\kappa= \dfrac{1}{2} \cdot \dfrac{n \cdot \partladung^2 \cdot l_\mathrm{F}}{\masse \cdot |\geschw[v]_\mathrm{th}|}}  
+\end{align*}
+\item kinetische Energie/thermische Energie:
+$\frac{1}{2} \cdot \masse \cdot \geschw_\mathrm{th}^2 = \frac{3}{2} \cdot k_\mathrm{B} \cdot T$
+\item Elektronen bei Raumtemperatur:
+$\geschw_\mathrm{th} = \SI{1e5}{\metre\per\second} = \SI{100}{\kilo\metre\per\second}$
+\item mit Gitterkonstante \(l_\mathrm{F} = \SI{1}{\nano\metre} \) $\to$ Stoßzeit:
+$\tau = \SI{1e-14}{\second}$
+  \end{itemize}
+\end{frame}
+ 
+\begin{frame}
+  \frametitle{Widerstand und Leistung}
+\begin{itemize}[<+->]      
+\item Annahme: Stromdichte konstant über den Leiterquerschnitt (dünne Leiter)
+\item Leiterquerschnittsfläche $F$, Leiterlänge $l$:
+  \begin{align*}
+    I&=J\cdot F =\kappa E F = \frac{\kappa F}{l} El = \frac{\kappa F}{l} U\\
+    I&= \frac{1}{R} U \to \Aboxed{R = \frac{1}{\kappa} \frac{l}{F}}\;\text{ ohmscher Widerstand}
+  \end{align*}
+\item Leistung: Verschiebung eines Quaders, Ladung $\Delta Q$, Querschnitt $\Delta F$, Länge und Versatz $\Delta\vec{s}$:
+  $$
+  P = \frac{\Delta W}{\Delta t} = \frac{\Delta Q \vec{E}\cdot \Delta\vec{s}}{\Delta t}
+  = \rho_V\Delta F\Delta s \vec{E}\cdot\vec{v}_D = \vec{J}\cdot \vec{E} \Delta F\Delta s = \frac{1}{\kappa}|\vec{J}|^2\Delta F\Delta s$$
+\item Verlustleistungsdichte:
+\begin{equation*}
+	\boxed{\leistungsdichte{V} = \lim\limits_{\Delta \volumen \rightarrow 0} \dfrac{\leistung}{\Delta \volumen} = \dfrac{1}{\kappa} \cdot \elstromdichte[v]^2 = \efeld[v] \cdot \elstromdichte[v]}
+\end{equation*}
+\item \alert{Joulesches Gesetz} für dünne Leiter:
+  \begin{equation*}
+	\boxed{\leistung = \elwiderstand \cdot \elstrom^2 = \spannung \cdot \elstrom}
+\end{equation*}
+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Elektromotorische Kraft (EMK) - Urspannung}
+\begin{itemize}[<+->]      
+\item Im stationären Fall hat das Induktionsgesetz die einfache Form $\rotation \efeld[v] = \vec{0}$
+\item Mit \(\efeld[v] = \kappa^{-1} \cdot \elstromdichte[v] \) folgt für jeden beliebigen geschlossenen Weg
+\begin{equation*}
+	\rotation\left( \dfrac{1}{\kappa} \cdot \elstromdichte[v] \right) = \vec{0} \to \oint\limits_{\rand} \dfrac{1}{\kappa} \elstromdichte[v]\cdot \intweg[v] = 0 \to \elstromdichte[v] = \vec{0} \text{ ??} 
+\end{equation*}
+\item Eine stationäre Stromdichte \(\elstromdichte[v] \ne \vec{0} \) erfordert eine (nichtelektrische) \alert{Energiequelle}.
+\item 2 Kräfte
+\begin{enumerate}
+	\item Die \alert{elektrostatische Kraft} \(q\efeld[v] \) sorgt für \(\elstromdichte[v] = \const \) in sehr kurzer Zeit.
+
+	\item Kräfte von \alert{Quellen} (z.B. Batterie, Photozelle, Piezozelle, Piezokristall, Induktion, äußeres Feld, usw.), welche sowohl verteilt, als auch konzentriert sein können. $\to$ \alert{eingeprägten elektrische Feldstärke} \(\efeld[v]_\mathrm{E} \) 
+	\begin{equation*}
+		\oint\limits_{\rand} \efeld[v]_\mathrm{E}\cdot \intweg[v] = \spannung \neq 0 \text{ \alert{EMK, Urspannung}}
+	\end{equation*}
+\end{enumerate}
+\item Für die Stromdichte folgt
+	\begin{equation*}
+		\elstromdichte[v] = \kappa \cdot \left(\efeld[v] + \efeld[v]_\mathrm{E} \right) = \underbrace{\kappa \cdot \efeld[v]}_{\text{außerhalb der Quelle}}\to		\oint\limits_{\rand} \elstromdichte[v] \cdot \intweg[v] = \kappa \cdot \underbrace{\oint\limits_{\rand} \efeld[v] \cdot \intweg[v]}_{=0} + \kappa \cdot \oint\limits_{\rand} \efeld[v]_\mathrm{E} \cdot \intweg[v] = \kappa \cdot \spannung \neq 0
+	\end{equation*}
+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Relaxationszeit}
+
+\begin{itemize}[<+->]      
+\item Einerseits Maxwell: $\divergenz \efeld[v] = \dfrac{\laddichte{V}}{\varepsilon_0}$ $\to$
+$\divergenz \elstromdichte[v] = \dfrac{\kappa \cdot \laddichte{V}}{\varepsilon_0} \neq 0$
+\item Andererseits Stationarität: $\divergenz \elstromdichte[v] = -\dfrac{\partial \laddichte{V}}{\partial t} \istgleich 0$ (Widerspruch?)
+\item Differentialgleichung für die Volumenladungsdichte \(\laddichte{V} \)
+\begin{equation*}
+	\dot{\laddichte{V}} + \dfrac{\kappa}{\varepsilon_0} \cdot \laddichte{V} = 0
+\end{equation*}
+\item Lösung: 
+$\laddichte{V}(t) = \laddichte[0]{V} \cdot \euler^{-\nicefrac{\kappa}{\varepsilon_0} \cdot t}$
+
+\item Für Kupfer: \(\varepsilon_0 = \SI{8,85e-12}{\ampere\second\per(\volt\metre)} \) und \(\kappa_\mathrm{Cu} = \SI{58e6}{\siemens\per\metre} \) $\to$ Zeitkonstante zur Erreichung des Gleichgewichtes:
+\begin{equation*}
+	\tau_\mathrm{Cu} = \dfrac{\varepsilon_0}{\kappa_\mathrm{Cu}} \cong \SI{1,5e-19}{\second}
+\end{equation*}
+\end{itemize}
+ \end{frame}
+
+\begin{frame}
+  \frametitle{Vergleich mit Elektrostatik}
+  	\begin{tabular}{ccc}
+			Elektrostatik	&	&	stat. el. Strömungsfeld\\
+		\hline
+			\(\verschiebung[v] = \varepsilon \cdot \efeld[v] \)	&	\quad	&	\(\elstromdichte[v] = \kappa \cdot \efeld[v] \)\\
+			%\addlinespace
+			\(\verschiebung[v] = -\varepsilon \cdot \gradient \elpotential \)	&	&	\(\elstromdichte[v] = -\kappa \cdot \gradient \elpotential \) \\
+			%\addlinespace
+			im Ladungsfreien Raum	&	&	im stationären Fall\\
+			\(\divergenz \verschiebung[v] = 0 \)	&	&	\(\divergenz \elstromdichte[v] = 0 \left( = -\dfrac{\partial \laddichte{V}}{\partial t} \right) \) \\
+			%\addlinespace
+                                        & homogenen Raum &\\
+                                        & (\(\varepsilon = \const \), \(\kappa = \const \))& \\
+                                      & \(\laplace \elpotential = 0 \) & \\
+			%\addlinespace
+			%\multicolumn{3}{c}{Brechung nach \figref{fig:Brechung}}\\
+			\(\verschiebung_2\normal - \verschiebung_1\normal = 0 \)	&	&	\(\elstromdichte_2\normal - \elstromdichte_1\normal = 0 \)\\
+			%\addlinespace
+			&\(\efeld_2\tangential - \efeld_1\tangential = 0 \)&\\
+			\(\dfrac{\verschiebung_2\tangential}{\varepsilon_2} = \dfrac{\verschiebung_1\tangential}{\varepsilon_1} \)	&	&	\(\dfrac{\elstromdichte_2\tangential}{\kappa_2} = \dfrac{\elstromdichte_1\tangential}{\kappa_1} \)\\
+			%\addlinespace
+			\(\dfrac{\tan \alpha_1}{\tan \alpha_2} = \dfrac{\varepsilon_1}{\varepsilon_2} \)	&	&	\(\dfrac{\tan \alpha_1}{\tan \alpha_2} = \dfrac{\kappa_1}{\kappa_2} \)\\
+	\end{tabular}
+
+        \bigskip
+        
+        \centerline{$\to$ \alert{Lösungsmethoden können übernommen werden!}}
+      \end{frame}
+      
+      
+
+
+
+
+\input{finalframe.inc}
+   
+\end{document}

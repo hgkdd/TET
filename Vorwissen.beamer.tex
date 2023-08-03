@@ -1,0 +1,603 @@
+\input{head.inc}
+\usepackage{tikz-3dplot}
+\usepackage[outline]{contour} % glow around text
+\colorlet{veccol}{green!50!black}
+\colorlet{projcol}{blue!70!black}
+\colorlet{myblue}{blue!80!black}
+\colorlet{myred}{red!90!black}
+\colorlet{mydarkblue}{blue!50!black}
+\tikzset{>=latex} % for LaTeX arrow head
+\tikzstyle{proj}=[projcol!80,line width=0.08] %very thin
+\tikzstyle{area}=[draw=veccol,fill=veccol!80,fill opacity=0.6]
+\tikzstyle{vector}=[-stealth,myblue,thick,line cap=round]
+\tikzstyle{unit vector}=[->,veccol,thick,line cap=round]
+\tikzstyle{dark unit vector}=[unit vector,veccol!70!black]
+\usetikzlibrary{angles,quotes} % for pic (angle labels)
+\contourlength{1.3pt}
+
+% Präambelbefehle für die Präsentation
+\title[TET: Vorwissen]{Vorwissen}
+
+\begin{document}
+% 
+% Frontmatter 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%% inserts the title page and the table of contents
+\maketitle
+
+% 
+% Content 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Vorwissen}
+
+\begin{frame}
+  \frametitle{Ausgangspunkt}
+
+  \begin{block}{Maxwell-Gleichungen}
+    Ausgangspunkt aller Betrachtungen sind die
+    \alert{Maxwell-Gleichungen}:
+    \begin{align*}
+      \rotation \vec{E} + \frac{\partial
+      \vec{B}}{\partial t} &= \vec{0} &
+                                  \rotation\vec{H}-\frac{\partial\vec{D}}{\partial
+                                  t}&=\vec{J} \\
+      \divergenz\vec{B}&=0 & \divergenz\vec{D}&=\rho_\text{V}
+    \end{align*} \pause
+    Offenbar ist Wissen in folgenden Bereichen notwendig:
+    \begin{itemize}[<+->]
+    \item Felder (skalar und vektorwertig; reell und
+      komplexwertig)
+    \item Differentialoperatoren auf diesen
+      Feldern
+    \item partielle Differentialgleichungen
+    \item beim Übergang von lokalen zu
+      integralen Aussagen: Integralrechnung
+      (Linien-, Flächen-, Volumenintegrale; in
+      verschiedenen Koordinatensystemen
+      (insb. kartesische, zylindrische und
+      sphärische Koordinaten, Umrechnung
+      dazwischen, Metrik, Integralsätze (Gauß
+      und Stokes), Kronecker $\delta_{ij}$,
+      Delta-Funktion $\delta$
+    \end{itemize}
+
+    
+  \end{block}
+\end{frame}
+
+\section{Differentialoperatoren}
+\begin{frame}
+  \frametitle{Differentialoperatoren (I)}
+
+  \begin{block}{Divergenz}
+    Divergenz eines Vektorfeldes,
+    \enquote{Quellendichte} $\to$ Skalarfeld\pause
+
+    \begin{align*}
+      \divergenz \vec{F} := \nabla \cdot \vec{F} =
+      \sum_{i=1}^3 \frac{\partial}{\partial x_i} F_i
+      = \partial_i F_i & \qquad \text{in kartesischen
+                         Koordinaten}\\ \pause
+      \divergenz \vec{F} := \lim_{V \to 0}\left(
+      \frac{1}{V} \oint_{O(V)} \vec{F}\cdot \vec{n}
+      dS\right) & \qquad\text{koordinatenfrei}
+    \end{align*}
+    
+  \end{block}
+\end{frame}
+\begin{frame}
+  \frametitle{Differentialoperatoren (II)}
+
+  \begin{block}{Rotation}
+    Rotation eines Vektorfeldes,
+    \enquote{Wirbelstärke} $\to$ Vektorfeld\pause
+
+    \begin{align*}
+      \rotation \vec{F} := \nabla \times \vec{F} =
+      \sum_{i=1}^3\vu{i}\sum_{j=1}^3\sum_{k=1}^3
+      \epsilon_{ijk}\frac{\partial}{\partial x_j}
+      F_k = \epsilon_{ijk} \vu{i} \partial_j F_k & \qquad \text{in kartesischen
+                                                      Koordinaten}\\ \pause
+      \rotation \vec{F} := \lim_{V \to 0}\left(
+      \frac{1}{V} \oint_{O(V)} \vec{n}\times \vec{F}
+      dS\right)
+                                                    & \qquad\text{koordinatenfrei}
+    \end{align*}
+  \end{block}\pause
+
+  \begin{block}{Videos von Grant Sanderson
+      (3blue1brown)}
+    \begin{itemize}
+    \item Kanal \url{https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw}
+    \item  Video zu Divergenz und Rotation:
+      \url{https://youtu.be/rB83DpBJQsE}
+    \item Animation Package: manim \url{https://pypi.org/project/manimlib}
+    \end{itemize}
+  \end{block}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Differentialoperatoren (III)}
+
+  \begin{block}{Gradient}
+    Gradient eines Skalarfeldes,
+    \enquote{Richtungsfeld des stärksten Anstiegs} $\to$ Vektorfeld\pause
+
+    \begin{align*}
+      \gradient f := \nabla f = \sum_{i=1}^3 \frac{\partial}{\partial x_i}f \vu{i} = \vu{i} \partial_i f & \qquad \text{in kartesischen
+                                                                                                              Koordinaten}\\ \pause
+      \gradient f := \lim_{V \to 0}\left( \frac{1}{V} \oint_{O(V)} f \vec{n}  dS\right)
+                                                                                                            & \qquad\text{koordinatenfrei}
+    \end{align*}
+  \end{block}\pause
+
+  \begin{block}{Videos und Übungen auf Khan Academy}
+    \begin{itemize}
+    \item Khan Academy
+      \url{https://www.khanacademy.org}
+    \item  Video zum Gradienten:
+      \url{https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivative},
+      dann zu Gradient...
+    \end{itemize}
+  \end{block}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Koordinatensysteme}
+  \begin{itemize}[<+->]
+  \item Natürlich insbesondere \alert{kartesisch, zylindrisch, sphärisch} (2D und 3D)
+  \item Umrechnung von Komponenten
+  \item Jacobi Matrix
+  \item Umrechnung von Differentialen und Integralen
+    \begin{itemize}
+    \item Partielle Ableitung, div, rot, grad
+    \item Volumenelemente, Flächenelements, Linienelemente
+    \end{itemize}
+  \item Metrik (metrischer Tensor)
+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Koordinatensysteme}
+  \begin{columns}[t]
+    \begin{column}{.33\linewidth}
+      Kartesisches Koordinaten
+% 3D AXIS with kartesian coordinates with dark unit vectors
+\tdplotsetmaincoords{60}{110}
+\begin{tikzpicture}[scale=2.2,tdplot_main_coords]
+  
+  % VARIABLES
+  \def\l{0.30} % length scale dark unit vector
+  \def\rtheta{0.7*\l} % length theta arc
+  \def\rvec{1.2}
+  \def\phivec{46}
+  \def\thetavec{48}
+  
+  % AXES
+  \coordinate (O) at (0,0,0);
+  \tdplotsetcoord{P}{\rvec}{\phivec}{\thetavec};
+  %\draw[dashed,myblue] (O)  -- (Pxy);
+  \draw[thick,->] (0,0,0) -- (1,0,0) node[below left=-3]{$x$};
+  \draw[thick,->] (0,0,0) -- (0,1,0) node[right=-1]{$y$};
+  \draw[thick,->] (0,0,0) -- (0,0,1) node[above=-1]{$z$};
+  %\draw (Pxy)++(0,0,0.12) --++ (\thetavec+180:0.12) --++ (0,0,-0.12);
+  
+  % VECTORS & DASHED
+    \node[circle,inner sep=0.9,fill=myblue]
+    (P) at ({\rvec*sin(\thetavec)*cos(\phivec)},{\rvec*sin(\thetavec)*sin(\phivec)},{\rvec*cos(\thetavec)}) {};
+  \draw[dashed,mydarkblue] (P)  -- (Pz);
+    %node[pos=0.55,above right=-6] {\contour{white}{$\rho$}};
+    \draw[dashed,mydarkblue] (Py) -- (Pxy) -- (Px);
+  
+  % MEASURES
+  \draw[dashed,mydarkblue] (0,0,0) -- (Pxy);
+  \draw[<->,veccol] (\thetavec:{\rvec*sin(\phivec)}) -- (P)
+    node[myblue,pos=0.55,scale=0.9]{\contour{white}{$z$}};
+  \draw[<->,veccol] (Py) -- (Pxy)
+    node[myblue,pos=0.55,scale=0.9]{\contour{white}{$x$}};
+  \draw[<->,veccol] (Px) -- (Pxy)
+    node[myblue,pos=0.55,scale=0.9]{\contour{white}{$y$}};
+  \draw[->] (\rtheta,0,0) arc(0:\thetavec:\rtheta)
+    node[pos=0.35,below=-2,scale=0.9] {$\varphi$};
+  
+   % UNITT VECTORS
+   \draw[dark unit vector] (0,0,0) -- (\l,0,0)
+    node[left=3,below=-8,scale=0.8]{$\vu{x}$};
+  \draw[dark unit vector] (0,0,0) -- (0,\l,0)
+    node[above=3.5,right=-4.5,scale=0.8]{$\vu{y}$};
+  \draw[dark unit vector] (0,0,0) -- (0,0,\l)
+    node[left,scale=0.8]{$\vu{z}$};
+  
+  % VECTORS
+  \draw[vector] (O)  -- (P)
+    node[pos=0.5,above left=-3] {$r$}
+    node[right=1,above right=-3] {$\vec{r} = (x,y,z)$};
+
+    % Wertebereiche
+    \node at (-.3,.5,1) {$x,y,z \in \IR$};
+\end{tikzpicture}
+$\vu{x}, \vu{y}, \vu{z}:$ konstante\\
+\phantom{$\vu{x}, \vu{y}, \vu{z}: $} Vektoren
+
+    \end{column}
+    \begin{column}{.33\linewidth}
+      Zylinder Koordinaten
+
+% 3D AXIS with cylindrical coordinates with dark unit vectors
+\tdplotsetmaincoords{60}{110}
+\begin{tikzpicture}[scale=2.2,tdplot_main_coords]
+  
+  % VARIABLES
+  \def\l{0.30} % length scale dark unit vector
+  \def\rtheta{0.7*\l} % length theta arc
+  \def\rvec{1.2}
+  \def\phivec{46}
+  \def\thetavec{48}
+  
+  % AXES
+  \coordinate (O) at (0,0,0);
+  \tdplotsetcoord{P}{\rvec}{\phivec}{\thetavec};
+  \draw[dashed,myblue] (O)  -- (Pxy);
+  \draw[thick,->] (0,0,0) -- (1,0,0) node[below left=-3]{$x$};
+  \draw[thick,->] (0,0,0) -- (0,1,0) node[right=-1]{$y$};
+  \draw[thick,->] (0,0,0) -- (0,0,1) node[above=-1]{$z$};
+  %\draw (Pxy)++(0,0,0.12) --++ (\thetavec+180:0.12) --++ (0,0,-0.12);
+  
+  % VECTORS & DASHED
+    \node[circle,inner sep=0.9,fill=myblue]
+    (P) at ({\rvec*sin(\thetavec)*cos(\phivec)},{\rvec*sin(\thetavec)*sin(\phivec)},{\rvec*cos(\thetavec)}) {};
+  \draw[dashed,mydarkblue] (P)  -- (Pz);
+    %node[pos=0.55,above right=-6] {\contour{white}{$\rho$}};
+    \draw[dashed,mydarkblue] (Py) -- (Pxy) -- (Px);
+  
+  % MEASURES
+  \draw[->,veccol] (0,0,0) -- (\thetavec:{\rvec*sin(\phivec)})
+    node[myblue,pos=0.65,scale=0.9]{\contour{white}{$\rho$}};
+  \draw[<->,veccol] (\thetavec:{\rvec*sin(\phivec)}) -- (P)
+    node[myblue,pos=0.55,scale=0.9]{\contour{white}{$z$}};
+  \draw[->] (\rtheta,0,0) arc(0:\thetavec:\rtheta)
+    node[pos=0.35,below=-2,scale=0.9] {$\varphi$};
+  
+  % UNITT VECTORS
+  \draw[dark unit vector] (0,0,0) -- (\thetavec:1.2*\l)
+    node[left=3,below=-3,scale=0.8]{$\vu{\rho}$};
+  \draw[dark unit vector] (0,0,0) -- (\thetavec+90:\l)
+    node[above=2.5,right=-2.5,scale=0.8]{$\vu{\varphi}$};
+  \draw[dark unit vector] (0,0,0) -- (0,0,\l)
+    node[left,scale=0.8]{$\vu{z}$};
+  
+  % VECTORS
+  \draw[vector] (O)  -- (P) node[pos=0.5,above left=-3] {$r$} node[right=1,above right=-3] {$\vec{r} = (\rho,\varphi,z)$};
+
+  % Wertebereiche
+    \node[align=left] at (-.3,.5,.85) {$\rho \in \IR_0^+$\\$\varphi \in [0, 2\pi]$\\$z \in \IR$};
+
+\end{tikzpicture}
+$\vu{\rho}=\vu{\rho}(\varphi)$ , $\vu{\varphi}=\vu{\varphi}(\varphi)$\\
+$\vu{z}:$ konstant
+
+
+      \end{column}
+    \begin{column}{.33\linewidth}
+      Kugel Koordinaten
+% 3D AXIS with cylindrical coordinates with dark unit vectors
+\tdplotsetmaincoords{60}{110}
+\begin{tikzpicture}[scale=2.2,tdplot_main_coords]
+  
+  % VARIABLES
+  \def\l{0.30} % length scale dark unit vector
+  \def\rtheta{0.7*\l} % length theta arc
+  \def\rvec{1.2}
+  \def\phivec{46}
+  \def\thetavec{48}
+  
+  % AXES
+  \coordinate (O) at (0,0,0);
+  \tdplotsetcoord{P}{\rvec}{\phivec}{\thetavec};
+  \draw[dashed,myblue] (O)  -- (Pxy);
+  \draw[thick,->] (0,0,0) -- (1,0,0) node[below left=-3]{$x$};
+  \draw[thick,->] (0,0,0) -- (0,1,0) node[right=-1]{$y$};
+  \draw[thick,->] (0,0,0) -- (0,0,1) node[above=-1]{$z$};
+  %\draw (Pxy)++(0,0,0.12) --++ (\thetavec+180:0.12) --++ (0,0,-0.12);
+  
+  % VECTORS & DASHED
+    \node[circle,inner sep=0.9,fill=myblue]
+    (P) at ({\rvec*sin(\thetavec)*cos(\phivec)},{\rvec*sin(\thetavec)*sin(\phivec)},{\rvec*cos(\thetavec)}) {};
+  \draw[dashed,mydarkblue] (P)  -- (Pz);
+    %node[pos=0.55,above right=-6] {\contour{white}{$\rho$}};
+    \draw[dashed,mydarkblue] (Py) -- (Pxy) -- (Px);
+  \draw[dashed,mydarkblue] (Pxy) -- (P);
+  
+  % MEASURES
+  %\draw[->,veccol] (0,0,0) -- (\thetavec:{\rvec*sin(\phivec)})
+   % node[myblue,pos=0.65,scale=0.9]{\contour{white}{$\rho$}};
+  %\draw[<->,veccol] (\thetavec:{\rvec*sin(\phivec)}) -- (P)
+  %  node[myblue,pos=0.55,scale=0.9]{\contour{white}{$z$}};
+  \draw[->] (\rtheta,0,0) arc(0:\thetavec:\rtheta)
+    node[pos=0.35,below=-2,scale=0.9] {$\varphi$};
+  
+  UNITT VECTORS
+  \draw[dark unit vector] (0,0,0) -- ({\rvec*sin(\thetavec)*cos(\phivec)*2*\l}, {\rvec*sin(\thetavec)*sin(\phivec)*2*\l}, {\rvec*cos(\thetavec)*2*\l})
+    node[left=3,below=-9,scale=0.8]{$\vu{r}$};
+  \draw[dark unit vector] (0,0,0) -- (\thetavec+90:\l)
+    node[above=2.5,right=-2.5,scale=0.8]{$\vu{\varphi}$};
+  %\draw[dark unit vector] (0,0,0) -- (0,0,\l)
+  % node[left,scale=0.8]{$\vu{z}$};
+    \tdplotsetcoord{Ptheta}{\l}{90+\thetavec}{\phivec}
+  \draw[dark unit vector] (0,0,0) -- (Ptheta)
+    node[above=2.5,right=-2.5,scale=0.8]{$\vu{\vartheta}$};
+
+
+  %   # ARC
+  \tdplotsetthetaplanecoords{\phivec}
+  \tdplotdrawarc[->,tdplot_rotated_coords]{(0,0,0)}{0.36*\rvec}{0}{\thetavec}{right=2,above=-1}{$\vartheta$}
+
+  % % VECTORS
+  \draw[vector] (O)  -- (P) node[pos=0.8,above left=-3] {$r$} node[right=1,above right=-3] {$\vec{r} = (r,\vartheta,\varphi)$};
+  % Wertebereiche
+    \node[align=left] at (-.3,.5,.85) {$r \in \IR_0^+$\\$\vartheta \in [0, \pi]$\\$\varphi \in [0, 2\pi]$};
+
+\end{tikzpicture}
+$\vu{r}=\vu{r}(\vartheta, \varphi)$ , $\vu{\vartheta}=\vu{\vartheta}(\vartheta,\varphi), \vu{\varphi}=\vu{\varphi}(\varphi)$
+
+\end{column}
+\end{columns}
+\pause
+
+\rule[1ex]{\linewidth}{1pt}
+
+\begin{columns}[t]
+  \begin{column}{.45\linewidth}
+    \alert{Kartesisch -- Zylinder}
+    \begin{equation*}
+    \begin{bmatrix}
+      \vu{\rho}\\
+      \vu{\varphi}\\
+      \vu{z}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      \cos\varphi & \sin\varphi & 0\\
+      -\sin\varphi & \cos\varphi & 0\\
+      0 & 0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+      \vu{x}\\
+      \vu{y}\\
+      \vu{z}
+    \end{bmatrix}    
+    \end{equation*}
+    \end{column}
+    \begin{column}{.52\linewidth}
+      \alert{Kartesisch -- Kugel}
+    \begin{equation*}
+    \begin{bmatrix}
+      \vu{r}\\
+      \vu{\vartheta}\\
+      \vu{\varphi}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      \sin\vartheta\cos\varphi & \sin\vartheta\sin\varphi & \cos\vartheta\\
+      \cos\vartheta\cos\varphi & \cos\vartheta\sin\varphi & - \sin\vartheta\\
+      -\sin\varphi & \cos\varphi & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+      \vu{x}\\
+      \vu{y}\\
+      \vu{z}
+    \end{bmatrix}    
+    \end{equation*}
+
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Integralsätze}
+  \begin{block}{Satz von Gauss}
+Das Oberflächenintegral eines Vektorfeldes $\vec{F}$ über eine geschlossene Fläche O(V) ist
+gleich dem Volumenintegral der Divergenz von
+$\vec{F}$, erstreckt über das von der
+Fläche O(V) eingeschlossene Volumen V:
+\begin{align*}
+\oint_V \divergenz\vec{F} \; dV = \oint_{O(V)} \vec{F} \cdot \vec{n} \; dS
+\end{align*}\pause
+Das geht natürlich auch in 2D: Volumen $\to$ Fläche; Oberflächenintegral
+$\to$ geschlossenes Wegintegral
+\end{block}\pause
+
+    \begin{block}{Satz von Stokes}
+      Das Kurven- oder Linienintegral eines Vektorfeldes $\vec{F}$ längs einer einfach
+geschlossenen Kurve C(A) ist gleich dem Oberflächenintegral der Rotation von
+$\vec{F}$ über eine beliebige Fläche A, die durch die Kurve C berandet wird:
+\begin{equation*}
+  \oint_{C(A)} \vec{F}\cdot d\vec{s} = \int_A\rotation\vec{F} \cdot
+\;  d\vec{S} = \int_A\rotation\vec{F} \cdot
+ \vec{n}\; dS 
+ \end{equation*}
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{$\delta$-Funktion (I)}
+  \begin{block}{Motivation}
+    Die Berechnung von Differentialen in der Nähe von Singularitäten
+    des Feldes ist häufig problematisch. Beispiel Coulomb Feld einer
+    Punktladung Q im Ursprung:
+    $$
+    \vec{E} = \frac{1}{4\pi\varepsilon_0} \frac{Q}{r^2} \vu{r}
+    $$
+    Die Divergenz (Quellstärke) sollte nur am Ursprung ungleich Null
+    sein und am Ursprung einen definierten Wert haben.
+    \begin{align*}
+      \divergenz \left( \frac{1}{r^2}\vu{r}\right) & = \frac{1}{r^2}
+                                                  \partial_r \left(
+                                                  r^2 \frac{1}{r^2}
+                                                  \right)\\\pause
+                                                  &= \frac{1}{r^2}
+                                                  \partial_r \left(
+                                                  1
+                                                  \right)\pause \mbox{???}
+      \end{align*}
+    \end{block}
+  
+  \end{frame}
+\begin{frame}
+  \frametitle{$\delta$-Funktion (II)}
+  \begin{block}{Definition über ihre Eigenschaften}
+    Es soll gelten
+    $$
+    \delta(x)=0 \text{ für } x\neq 0 \text{ und }
+    \int_{-\infty}^{+\infty} \delta(x) dx = 1
+    $$\pause
+
+  Solche Funktionen existieren nur im Grenzwert von $n\to\infty$ von
+  Funktionen $f_n(x)$ mit $\int_{-\infty}^{+\infty} f_n(x) dx = 1$ und
+  $f_n(x) \stackrel{n\to\infty}{\to}0$ für $x\neq 0$ und $f_n(0) \stackrel{n\to\infty}{\to}\infty$ 
+\end{block}\pause
+
+\begin{block}{Beispiele}
+  \begin{align*}
+    f_n(x)  = &
+             \begin{cases}
+               n & \text{ für } |x|\le\frac{1}{2n}\\
+               0 & \text{ sonst } 
+ \end{cases}\\\pause
+   f_n(x)&= n e^{-\pi n^2x^2}\\\pause
+   f_n(x) &= \frac{n}{\pi}\left( \frac{\sin nx}{nx} \right)^2
+   \end{align*}
+ \end{block}
+
+
+  \end{frame}
+\begin{frame}
+  \frametitle{$\delta$-Funktion (III)}
+  \begin{block}{Wichtige Beziehungen}
+\pause Da die $\delta$-Funktion für alle $x\neq 0$ verschwindet und aufgrund
+der Normierung folgt unmittelbar:
+$$
+\int_{-\infty}^{+\infty} f(x) \delta(x) dx = f(0) \int_{-\infty}^{+\infty}
+ \delta(x) dx =  f(0)
+ $$\pause
+ Dies kann einfach für eine Verschiebung $x\to x-a$ verallgemeinert
+ werden:
+ $$
+\int_{-\infty}^{+\infty} f(x) \delta(x-a) dx = f(a) \int_{-\infty}^{+\infty}
+ \delta(x-a) dx =  f(a)
+ $$\pause
+ Wichtig ist auch die Skalierungseigenschaft (z.B. auch für
+ dimensionsbehaftete Größen; k = Einheit von x):
+ $$
+\delta(kx)  = \frac{1}{|k|}\delta(x)
+$$\pause
+Verallgemeinerung auf 3D:
+$$
+\ortsvektor[v] = x\vu{x} +y\vu{y}+z\vu{z} \to
+\delta^3(\ortsvektor[v])=\delta(x) \delta(y) \delta(z) \to
+\int_{\mathbb{R}^3} \delta^3(\ortsvektor[v]) dV = 1 
+$$
+ 
+ 
+
+\end{block}
+\end{frame}
+\begin{frame}
+  \frametitle{$\delta$-Funktion (IV)}
+Mit dem Gaußschen Integralsatz und der $\delta$-Funktion lässt sich
+$\divergenz\left(\frac{1}{r^2}\vu{r}\right)$ leicht bestimmen:
+\begin{align*}
+  \int_{K(R)} \divergenz\left(\frac{1}{r^2}\vu{r}\right) dV = &
+                                                             \oint_{O(K)}
+                                                             \frac{1}{r^2}\vu{r}
+                                                             d\vec{A}\pause
+                                                             \qquad r=R,\pause
+                                                            \qquad d\vec{A} =
+                                                             R^2
+                                                             \sin\vartheta
+                                                             d\vartheta
+                                                             d\varphi
+                                                              \vu{r}
+  \\\pause
+  = & 2\pi \int_0^\pi \frac{1}{R^2} R^2 \sin\vartheta d\vartheta \\
+  \pause
+  = & 4\pi \\\pause
+  \divergenz\left(\frac{1}{r^2}\vu{r}\right)  =& 4\pi\delta^3(\ortsvektor[v])
+\end{align*}\pause
+
+Einfach berechnen lässt sich:
+$$
+\gradient \frac{1}{r} = \vu{r} \partial_r \frac{1}{r} + \vec{0} + \vec{0} =-\frac{1}{r^2} \vu{r}
+$$\pause
+Hiermit folgt die wichtige Beziehung für den \alert{Laplace-Operator}
+$\Delta = \divergenz\gradient$:
+$$
+\Delta \frac{1}{r} = \divergenz\gradient \frac{1}{r} = -4\pi\delta^3(\ortsvektor[v]) 
+$$
+\end{frame}
+\begin{frame}
+  \frametitle{Zerlegung von Vektorfeldern (I)}
+  \begin{block}{Helmholtz-Theorem}
+    Ein Vektorfeld $\vec{F}(\ortsvektor[v])$, welches für $r\to\infty$
+    stärker als $1/r$ gegen Null abfällt (das ist für praktisch
+    relevante Probleme regelmäßig erfüllt), lässt sich als Summe eines
+    rotationsfreien Anteils $\vec{a}(\ortsvektor[v])$ und eines
+    divergenzfreien Anteils $\vec{b}(\ortsvektor[v])$ darstellen:
+    $$
+    \vec{F}(\ortsvektor[v]) = \vec{a}(\ortsvektor[v]) + \vec{b}(\ortsvektor[v]) \text{ mit
+    } \rotation  \vec{a} = \vec{0} \land \divergenz  \vec{b} = 0 
+    $$\pause
+    \begin{align*}
+    \text{Gradientenfelder sind rotationsfrei: } & \rotation\gradient \phi =\vec{0}\\ \pause
+      \text{Rotationsfelder sind divergenzfrei: } & \divergenz\rotation \vec{A}
+                                                    = 0
+    \end{align*}\pause
+    Hiermit folgt die Darstellung mit einen \alert{Skalarpotential}
+    $\phi$ und einem \alert{Vektorpotential} $\vec{A}$:
+    $$
+    \vec{F}(\ortsvektor[v]) = - \gradient \phi (\ortsvektor[v]) + \rotation
+    \vec{A}(\ortsvektor[v]) \text{ (\enquote{-} ist Konvention)}
+    $$
+  \end{block}
+  \end{frame}
+\begin{frame}
+  \frametitle{Zerlegung von Vektorfeldern (II)}
+  \begin{block}{Skalar- und Vektorpotential}
+    \alert{Skalar-} $\phi (\ortsvektor[v])$ und \alert{Vektorpotential}
+    $\vec{A}(\ortsvektor[v])$ lassen sich direkt aus dem Feld
+    $\vec{F}(\ortsvektor[v])$ berechnen. Es gilt:
+
+    \begin{align*}
+  \phi (\ortsvektor[v]) = & \frac{1}{4\pi} \int_V \frac{\divergenz'
+                     \vec{F}(\ortsvektor[vs])}{\left|\ortsvektor[v]-\ortsvektor[vs]\right|}
+                     d^3r'  \uncover<2->{- \frac{1}{4\pi} \oint_{O(V)}
+                     \vec{n}' \cdot \frac{\vec{F}(\ortsvektor[vs])}{\left|\ortsvektor[v]-\ortsvektor[vs]\right|}
+                     d^2r'}\\
+  \vec{A} (\ortsvektor[v]) = & \frac{1}{4\pi} \int_V \frac{\rotation'
+                     \vec{F}(\ortsvektor[vs])}{\left|\ortsvektor[v]-\ortsvektor[vs]\right|}
+                     d^3r'  \uncover<2->{- \frac{1}{4\pi} \oint_{O(V)}
+                     \vec{n}' \times \frac{\vec{F}(\ortsvektor[vs])}{\left|\ortsvektor[v]-\ortsvektor[vs]\right|}
+                     d^2r'}
+    \end{align*}\pause
+  \end{block}\pause
+
+  \begin{block}{Longidudinale und transversale Komponente}
+    Häufig bezeichnet man die rotationsfreie Komponente $ - \gradient
+    \phi (\ortsvektor[v])$ als \alert{longitudinale Komponente} und die
+    divergrenzfreie Komponente $\rotation
+    \vec{A}(\ortsvektor[v])$ als \alert{transversale Komponente} des
+    Vektorfeldes $\vec{F}(\ortsvektor[v])$.
+    \end{block}
+  \end{frame}
+
+\input{finalframe.inc}
+\end{document}
