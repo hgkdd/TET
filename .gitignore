@@ -21,6 +21,8 @@ latexmkrc
 *.out
 *.run.xml
 *.upa
+*.bcf
+*.fls
 
 # BibTeX
 *.bbl
