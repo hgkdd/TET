@@ -23,17 +23,17 @@
   \begin{itemize}[<+->]
   \item Wir suchen Lösungen der homogenen Wellengleichung
     \begin{equation*}
-      \square \Psi(\ortsvektor[v], t) = \left(\laplace - \varepsilon\mu\frac{\d^2}{\d t^2}  \right) \Psi(\ortsvektor[v], t)
+      \square \Psi(\Ortsr[v], t) = \left(\laplace - \varepsilon\mu\frac{\d^2}{\d t^2}  \right) \Psi(\Ortsr[v], t)
     \end{equation*}
   \item Lösungen, die sich nur in einer Richtung (aber hin- und rücklaufend) ausbreiten, haben die allgemeine Form
     \begin{equation*}
-      \Psi (\ortsvektor[v], t) = \sum_\omega \left( \Psi_+ (\omega t + \wellenzahl[v]\cdot\ortsvektor[v]) + \Psi_- (\omega t - \wellenzahl[v]\cdot\ortsvektor[v]) \right) \pointspace ; \pointspace \geschw_p =\frac{\omega}{k} \stackrel{\text{hier}}{=} \geschw_c = \frac{1}{\sqrt{\varepsilon\mu}}  
+      \Psi (\Ortsr[v], t) = \sum_\omega \left( \Psi_+ (\omega t + \Wellenzahl[v]\cdot\Ortsr[v]) + \Psi_- (\omega t - \Wellenzahl[v]\cdot\Ortsr[v]) \right) \pointspace ; \pointspace \Geschwindigkeit_p =\frac{\omega}{k} \stackrel{\text{hier}}{=} \Geschwindigkeit_c = \frac{1}{\sqrt{\varepsilon\mu}}  
     \end{equation*}
-  \item Eine alternative Schreibweise betrachtet die Überlagerung für verschiedene Wellenvektoren \(\wellenzahl[v] = \wellenzahl\; \einheitsvek{k} = \omega\sqrt{\varepsilon\mu}\;\einheitsvek{k}\)
+  \item Eine alternative Schreibweise betrachtet die Überlagerung für verschiedene Wellenvektoren \(\Wellenzahl[v] = \Wellenzahl\; \einheitsvek{k} = \omega\sqrt{\varepsilon\mu}\;\einheitsvek{k}\)
     \begin{equation*}
-      \boxed{\Psi (\ortsvektor[v], t) = \int\limits_{0}^\infty \left[ A_+(k) \Psi_+ (\omega t + \wellenzahl[v]\cdot\ortsvektor[v]) + A_-(k) \Psi_- (\omega t - \wellenzahl[v]\cdot\ortsvektor[v]) \right] \upd \wellenzahl} \text{ \alert{polychromatische Welle}} 
+      \boxed{\Psi (\Ortsr[v], t) = \int\limits_{0}^\infty \left[ A_+(k) \Psi_+ (\omega t + \Wellenzahl[v]\cdot\Ortsr[v]) + A_-(k) \Psi_- (\omega t - \Wellenzahl[v]\cdot\Ortsr[v]) \right] \upd \Wellenzahl} \text{ \alert{polychromatische Welle}} 
     \end{equation*}
-    \item oBdA: \(\wellenzahl[v] = \wellenzahl \einheitsvek{z}   \to \wellenzahl[v]\cdot\ortsvektor[v] = \wellenzahl z \to\) Ausbreitung entlang \(z\)-Richtung
+    \item oBdA: \(\Wellenzahl[v] = \Wellenzahl \einheitsvek{z}   \to \Wellenzahl[v]\cdot\Ortsr[v] = \Wellenzahl z \to\) Ausbreitung entlang \(z\)-Richtung
 \end{itemize}
   \end{frame}
 
@@ -47,7 +47,7 @@
     \end{align*}
   \item Somit haben \alert{Teilwellen unterschiedliche Phasengeschwindigkeiten}:
     \begin{equation*}
-      \geschw_p (\omega) = \geschw_c(\omega) = \frac{1}{\sqrt{\varepsilon\mu}} = \frac{1}{\sqrt{\varepsilon_0\mu_0}} \frac{1}{\sqrt{\varepsilon_r(\omega)\mu_r(\omega)}}=\frac{c}{n(\omega)} 
+      \Geschwindigkeit_p (\omega) = \Geschwindigkeit_c(\omega) = \frac{1}{\sqrt{\varepsilon\mu}} = \frac{1}{\sqrt{\varepsilon_0\mu_0}} \frac{1}{\sqrt{\varepsilon_r(\omega)\mu_r(\omega)}}=\frac{c}{n(\omega)} 
     \end{equation*}
   \item Dies tritt insbesondere bei \alert{Wellenpaketen} in Erscheinung
   \end{itemize}
@@ -61,20 +61,20 @@
       \begin{itemize}[<+->]
     \item Unter einem Wellenpaket mit \alert{harmonischer Zeitabhängigkeit}, das in \alert{\(+z\)-Richtung} propagiert, versteht man eine Überlagerung der Form
     \begin{equation*}
-      \Psi (\ortsvektor[v], t) = \int\limits_{-\infty}^\infty \underline{A(k)} \euler^{\komplex (\omega t - \wellenzahl z)} \upd \wellenzahl\; , \text{ mit } \underline{A}(-k) = \underline{A}^\star(k)
+      \Psi (\Ortsr[v], t) = \int\limits_{-\infty}^\infty \underline{A(k)} \euler^{\komplex (\omega t - \Wellenzahl z)} \upd \Wellenzahl\; , \text{ mit } \underline{A}(-k) = \underline{A}^\star(k)
     \end{equation*}
     \item Häufiger Spezialfall: $\underline{A}(k) = A(k)$ reelwertig mit $A(-k) = A(k)$
-  \item Hierbei soll \(A(k)\) zunächst \alert{konzentriert} sein um \(\wellenzahl = \wellenzahl_0\): 
+  \item Hierbei soll \(A(k)\) zunächst \alert{konzentriert} sein um \(\Wellenzahl = \Wellenzahl_0\): 
 
     \begin{tikzpicture}[scale=0.5, samples=200, domain=0:5]
 	% Achsen zeichnen
-	\draw[->,thick] (0,0) -- (5,0) node[right] {$\wellenzahl$};
-	\draw[->,thick] (0,0) -- (0,2.5) node[above] {$\mathrm{A}(\wellenzahl)$};
+	\draw[->,thick] (0,0) -- (5,0) node[right] {$\Wellenzahl$};
+	\draw[->,thick] (0,0) -- (0,2.5) node[above] {$\mathrm{A}(\Wellenzahl)$};
 	%Plot
 	\draw plot (\x,{exp(-(\x-2.5)^2)*2});
-	\draw [style=dashed] (2.5,0) node[below] {$\wellenzahl_0$} --(2.5,2.4);
-	\draw[<->] (1.6,.8)--(3.4,.8) node[right] {$\Delta \wellenzahl_0$};
-	\node[draw,align=left] at (7,2.4) {$\mathrm{A}(\wellenzahl) \ll \mathrm{A}(\wellenzahl_0)$ für\\ $|\wellenzahl-\wellenzahl_0| \gg \Delta \wellenzahl_0$};
+	\draw [style=dashed] (2.5,0) node[below] {$\Wellenzahl_0$} --(2.5,2.4);
+	\draw[<->] (1.6,.8)--(3.4,.8) node[right] {$\Delta \Wellenzahl_0$};
+	\node[draw,align=left] at (7,2.4) {$\mathrm{A}(\Wellenzahl) \ll \mathrm{A}(\Wellenzahl_0)$ für\\ $|\Wellenzahl-\Wellenzahl_0| \gg \Delta \Wellenzahl_0$};
 \end{tikzpicture}
     \end{itemize}
     %\end{block}
@@ -83,37 +83,37 @@
 
 
  \begin{frame}
-  \frametitle{Taylor-Entwicklung von \(\omega(\wellenzahl)\)}
+  \frametitle{Taylor-Entwicklung von \(\omega(\Wellenzahl)\)}
       \begin{itemize}[<+->]
-      \item Da die Wichtungsfunktion \(A(\wellenzahl)\) um \(\wellenzahl = \wellenzahl_0\) konzentriert ist, bietet sich eine \alert{Taylorentwicklung} von \(\omega(\wellenzahl)\) um \(\wellenzahl_0\) an:
+      \item Da die Wichtungsfunktion \(A(\Wellenzahl)\) um \(\Wellenzahl = \Wellenzahl_0\) konzentriert ist, bietet sich eine \alert{Taylorentwicklung} von \(\omega(\Wellenzahl)\) um \(\Wellenzahl_0\) an:
 \begin{align*}
-\omega(\wellenzahl) &= \omega(\wellenzahl_0) + \left.\frac{\upd \omega}{\upd \wellenzahl}\right|_{\wellenzahl_0} (\wellenzahl - \wellenzahl_0) + \ldots\\
-&\cong \underbrace{\omega(\wellenzahl_0)}_{=\omega_0} + \geschw_{\mathrm{g}}(\wellenzahl-\wellenzahl_0) &\rightarrow\boxed{\geschw_{\mathrm{g}} = \left.\frac{\upd \omega}{\upd \wellenzahl}\right|_{\wellenzahl_0}}\text{ \alert{Gruppengeschwindigkeit}\hspace*{2cm}}
+\omega(\Wellenzahl) &= \omega(\Wellenzahl_0) + \left.\frac{\upd \omega}{\upd \Wellenzahl}\right|_{\Wellenzahl_0} (\Wellenzahl - \Wellenzahl_0) + \ldots\\
+&\cong \underbrace{\omega(\Wellenzahl_0)}_{=\omega_0} + \Geschwindigkeit_{\mathrm{g}}(\Wellenzahl-\Wellenzahl_0) &\rightarrow\boxed{\Geschwindigkeit_{\mathrm{g}} = \left.\frac{\upd \omega}{\upd \Wellenzahl}\right|_{\Wellenzahl_0}}\text{ \alert{Gruppengeschwindigkeit}\hspace*{2cm}}
 \end{align*}
-\item Verlauf von \(\omega(\wellenzahl)\) (\alert{Dispersionsrelation}) mit und ohne Dispersion
+\item Verlauf von \(\omega(\Wellenzahl)\) (\alert{Dispersionsrelation}) mit und ohne Dispersion
 
   \begin{tikzpicture}[scale=0.5,domain=0:2.5]
 	% Achsen zeichnen
-	\draw[->,thick] (0,0) -- (5,0) node[right] {$\wellenzahl$};
-	\draw[->,thick] (0,0) -- (0,3) node[above] {$\omega(\wellenzahl)$};
+	\draw[->,thick] (0,0) -- (5,0) node[right] {$\Wellenzahl$};
+	\draw[->,thick] (0,0) -- (0,3) node[above] {$\omega(\Wellenzahl)$};
 	%Plot
 	\draw plot (\x,{0.2*exp(\x)-0.2});
 		% Beschriftung
 	\draw (-.1,1.25) -- (.1,1.25) node[left=4pt] {$\omega_0$};
-	\draw (2,-.1) -- (2,.1) node[below=4pt] {$\wellenzahl_0$};
-	\draw[style=dashed] (.2,1.25)--(2,1.25) node[right=8pt] {$\geschw_{\mathrm{g}}$} -- (2, .2);
+	\draw (2,-.1) -- (2,.1) node[below=4pt] {$\Wellenzahl_0$};
+	\draw[style=dashed] (.2,1.25)--(2,1.25) node[right=8pt] {$\Geschwindigkeit_{\mathrm{g}}$} -- (2, .2);
 	\draw (1.25,0.25)--(2.75,2.25);
 \end{tikzpicture}
 \begin{tikzpicture}[scale=0.5]
 	% Achsen zeichnen
-	\draw[->,thick] (0,0) -- (5,0) node[right] {$\wellenzahl$};
-	\draw[->,thick] (0,0) -- (0,3) node[above] {$\omega(\wellenzahl)$};
+	\draw[->,thick] (0,0) -- (5,0) node[right] {$\Wellenzahl$};
+	\draw[->,thick] (0,0) -- (0,3) node[above] {$\omega(\Wellenzahl)$};
 	% Plott
 	\draw (0,0) -- (4,2.5);
 	% Beschriftung
 	\draw (-.1,1.25) -- (.1,1.25) node[left=4pt] {$\omega_0$};
-	\draw (2,-.1) -- (2,.1) node[below=4pt] {$\wellenzahl_0$};
-	\draw[style=dashed] (.2,1.25)--(2,1.25)node[right=8pt] {$\geschw_{\mathrm{g}}=\geschw_{\mathrm{p}}=\geschw_{\lichtgeschw} = \frac{1}{\sqrt{\varepsilon\mu}}$} -- (2, .2);
+	\draw (2,-.1) -- (2,.1) node[below=4pt] {$\Wellenzahl_0$};
+	\draw[style=dashed] (.2,1.25)--(2,1.25)node[right=8pt] {$\Geschwindigkeit_{\mathrm{g}}=\Geschwindigkeit_{\mathrm{p}}=\Geschwindigkeit_{\lichtgeschw} = \frac{1}{\sqrt{\varepsilon\mu}}$} -- (2, .2);
 \end{tikzpicture}
 \end{itemize}
   \end{frame}
@@ -149,12 +149,12 @@
       \begin{itemize}[<+->]
       \item Taylor-Entwicklung in e-Funktion einsetzen:
         \begin{equation*}
-          \euler^{\komplex (\omega t - \wellenzahl z)} \cong \euler^{\komplex(\omega_0 t - \wellenzahl_0 z)} \euler^{\komplex (\overbrace{\wellenzahl - \wellenzahl_0}^{=q})(\geschw_{\mathrm{g}} t - z)}
+          \euler^{\komplex (\omega t - \Wellenzahl z)} \cong \euler^{\komplex(\omega_0 t - \Wellenzahl_0 z)} \euler^{\komplex (\overbrace{\Wellenzahl - \Wellenzahl_0}^{=q})(\Geschwindigkeit_{\mathrm{g}} t - z)}
         \end{equation*}
         \item Damit folgt für das Wellenpaket:
         \begin{align*}
-\Psi (\ortsvektor[v], t) &\cong \underbrace{\int\limits_{-\infty}^{\infty} \underbrace{A(\wellenzahl_0 + q)}_{A(\wellenzahl)}\euler^{\komplex q (\geschw_{\mathrm{g}} t - z)}\upd q}_{\mathrm{H}(\geschw_{\mathrm{g}} t -z)} \cdot\; \euler^{\komplex ( \omega_0 t - \wellenzahl_0 z)}\\
-& \cong \underbrace{\mathrm{H}(\geschw_{\mathrm{g}} t -z)}_{\substack{\text{Einhüllende}\\ \text{propagiert mit }\geschw_{\mathrm{g}}\\ \text{in Richtung $z$}}}\cdot\; \underbrace{\euler^{\komplex (\omega_0 t - \wellenzahl_0 z)}}_{\substack{\text{ebene Welle,}\\ \omega = \omega_0\\ \wellenzahl = \wellenzahl_0}}
+\Psi (\Ortsr[v], t) &\cong \underbrace{\int\limits_{-\infty}^{\infty} \underbrace{A(\Wellenzahl_0 + q)}_{A(\Wellenzahl)}\euler^{\komplex q (\Geschwindigkeit_{\mathrm{g}} t - z)}\upd q}_{\mathrm{H}(\Geschwindigkeit_{\mathrm{g}} t -z)} \cdot\; \euler^{\komplex ( \omega_0 t - \Wellenzahl_0 z)}\\
+& \cong \underbrace{\mathrm{H}(\Geschwindigkeit_{\mathrm{g}} t -z)}_{\substack{\text{Einhüllende}\\ \text{propagiert mit }\Geschwindigkeit_{\mathrm{g}}\\ \text{in Richtung $z$}}}\cdot\; \underbrace{\euler^{\komplex (\omega_0 t - \Wellenzahl_0 z)}}_{\substack{\text{ebene Welle,}\\ \omega = \omega_0\\ \Wellenzahl = \Wellenzahl_0}}
 \end{align*}
 
  \end{itemize}
@@ -181,8 +181,8 @@
    % \end{axis}
    
    %Beschriftung
-   \draw[->, color=blue] (3.1,1.5)--(3.5,1.5) node[right] {$\geschw_{\mathrm{g}}=\left.\frac{\upd \omega}{\upd \wellenzahl}\right|_{\wellenzahl=\wellenzahl_0}$};
-   \draw[->, color=red] (2.75,-1.5)--(3.5,-1.5) node[right] {$\geschw_{\mathrm{p0}}=\frac{\omega_0}{\wellenzahl_0}$};
+   \draw[->, color=blue] (3.1,1.5)--(3.5,1.5) node[right] {$\Geschwindigkeit_{\mathrm{g}}=\left.\frac{\upd \omega}{\upd \Wellenzahl}\right|_{\Wellenzahl=\Wellenzahl_0}$};
+   \draw[->, color=red] (2.75,-1.5)--(3.5,-1.5) node[right] {$\Geschwindigkeit_{\mathrm{p0}}=\frac{\omega_0}{\Wellenzahl_0}$};
     \node[draw] at (2.5,2.3) {$t=t_1$};   
     \node[draw] at (6.5,2.3) {$t=t_2>t_1$};   
 	% Achse zeichnen
@@ -193,9 +193,9 @@
  \begin{frame}
   \frametitle{Dispersion eines Wellenpakets}
       \begin{itemize}[<+->]
-      \item Wir hatten die Dispersionsrelation \(\omega(\wellenzahl)\) um \(\omega_0\) nach Taylor bis zur ersten Ordung entwickelt (\alert{linearisiert}) und so das Wellenpaket mit Einhüllender und Träger erhalten.
+      \item Wir hatten die Dispersionsrelation \(\omega(\Wellenzahl)\) um \(\omega_0\) nach Taylor bis zur ersten Ordung entwickelt (\alert{linearisiert}) und so das Wellenpaket mit Einhüllender und Träger erhalten.
         \item Aus der Herleitung klar: nur sinnvoll, wenn \(A(k)\) um \(k_0\) \alert{konzentriert} ist.
-        \item Bei breitbandiger Überlagerung: Das Wellenpaket enthält viele Frequenzanteile, die in der Regel alle mit \alert{unterschiedlicher Phasengeschwindigkeit} \(\geschw_p(\omega)\) propagieren.
+        \item Bei breitbandiger Überlagerung: Das Wellenpaket enthält viele Frequenzanteile, die in der Regel alle mit \alert{unterschiedlicher Phasengeschwindigkeit} \(\Geschwindigkeit_p(\omega)\) propagieren.
         \item Hierdurch verändert sich die Form der Einhüllenden. Auch dies wird häufig \alert{Dispersion} genannt.
           \item Dieses \alert{Zerfließen} eines Wellenpakets (Signals) ist eine wichtige Begrenzung beim technischen Einsatz (z.B. Signalübertragung über lange Distanzen in Glasfaser-Kabeln)
  \end{itemize}

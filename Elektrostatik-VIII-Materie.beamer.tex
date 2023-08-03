@@ -45,11 +45,11 @@
   \item Größere Ladungsansammlungen (Atome, Ionen, Moleküle, ...) können als Ladungsanhäufungen (\enquote{Teilchen}) betrachtet werden, zwischen denen fast nichts ist.
   \item Befinden sich im $k$-ten \enquote{Teilchen} die Ladungen  $q_i^k$ (gebunden oder frei) an den Orten $r_i = r_i(t)$, so ist die \alert{Ladungsdichte im Bereich des $k$-ten Teilchens} in guter Näherung
     $$
-    \rho^k(\ortsvektor[v], t) = \sum_i q_i^k \delta^3(\ortsvektor[v] - \ortsvektor[v]_i(t) ) \quad \stackrel{\text{Mittelung}}{\longrightarrow} \quad \boxed{\rho^k(\ortsvektor[v]) = \sum_i q_i^k \delta^3(\ortsvektor[v] - \ortsvektor[v]_i )} 
+    \rho^k(\Ortsr[v], t) = \sum_i q_i^k \delta^3(\Ortsr[v] - \Ortsr[v]_i(t) ) \quad \stackrel{\text{Mittelung}}{\longrightarrow} \quad \boxed{\rho^k(\Ortsr[v]) = \sum_i q_i^k \delta^3(\Ortsr[v] - \Ortsr[v]_i )} 
     $$
   \item Ist $\vec{R}^k=\vec{R}^k(t)$ der \alert{Ladungsschwerpunkt} des $k$-ten Teilchens, so ergibt sich das \alert{Dipolmoment} zu:
     $$
-    \vec{p}^k(t) = \int_{V^k} \rho^k(\ortsvektor[v], t) (\ortsvektor[v] - \vec{R}^k(t) ) \upd^3r \quad \stackrel{\text{Mittelung}}{\longrightarrow} \quad \boxed{\vec{p}^k = \int_{V^k} \rho^k(\ortsvektor[v]) (\ortsvektor[v] - \vec{R}^k ) \upd^3r}
+    \vec{p}^k(t) = \int_{V^k} \rho^k(\Ortsr[v], t) (\Ortsr[v] - \vec{R}^k(t) ) \upd^3r \quad \stackrel{\text{Mittelung}}{\longrightarrow} \quad \boxed{\vec{p}^k = \int_{V^k} \rho^k(\Ortsr[v]) (\Ortsr[v] - \vec{R}^k ) \upd^3r}
     $$
   \end{itemize}
   
@@ -59,16 +59,16 @@
 
   \frametitle{Effektive Ladungsdichte, Dipolmoment und Potential}
   \begin{itemize}[<+->]
-  \item Abstände innerhalb der \enquote{Teilchen} sind in aller Regel sehr klein im Vergleich zum Abstand zwischen Ladungsschwerpunkt und Beobachtungspunkt: $|\ortsvektor[v]^k -  \vec{R}^k| \ll  |\ortsvektor[v] - \vec{R}^k | \text{ für } \ortsvektor[v]^k \in V^k $
+  \item Abstände innerhalb der \enquote{Teilchen} sind in aller Regel sehr klein im Vergleich zum Abstand zwischen Ladungsschwerpunkt und Beobachtungspunkt: $|\Ortsr[v]^k -  \vec{R}^k| \ll  |\Ortsr[v] - \vec{R}^k | \text{ für } \Ortsr[v]^k \in V^k $
   \item \alert{Skalarpotential des $k$-ten Teilchens}: Multipolentwicklung nach Dipolterm abbrechen:
     $$
-    \phi^k(\ortsvektor[v]) \approx \frac{1}{4\pi\varepsilon_0} \left[ \frac{q^k}{|\ortsvektor[v] - \vec{R}^k |} + \frac{\vec{p}^k \cdot (\ortsvektor[v] - \vec{R}^k )}{|\ortsvektor[v] - \vec{R}^k |^3} \right] 
+    \phi^k(\Ortsr[v]) \approx \frac{1}{4\pi\varepsilon_0} \left[ \frac{q^k}{|\Ortsr[v] - \vec{R}^k |} + \frac{\vec{p}^k \cdot (\Ortsr[v] - \vec{R}^k )}{|\Ortsr[v] - \vec{R}^k |^3} \right] 
     $$
   \item Für $N$ \enquote{Teilchen} ergeben sich dann \alert{effektive} Ladungsdichte, Dipoldichte und Potential in  der Form
     \begin{align*}
-      \rho_{\text{eff}}(\ortsvektor[v]) & = \sum_{k=1}^N q^k\delta (\ortsvektor[v] - \vec{R}^k ) \quad\text{mit Gesamtladung } q^k\\
-      \vec{p}_{\text{eff}}(\ortsvektor[v]) &= \sum_{k=1}^N \vec{p}^k\delta (\ortsvektor[v] - \vec{R}^k ) \quad\text{mit Gesamtdipolmoment } \vec{p}^k\\
-      \phi _{\text{eff}}(\ortsvektor[v]) &= \frac{1}{4\pi\varepsilon_0} \int_V \left[ \frac{\rho_{\text{eff}}(\ortsvektor[vs])}{|\ortsvektor[v] - \ortsvektor[vs] |} + \frac{\vec{p}_{\text{eff}}(\ortsvektor[vs])  \cdot (\ortsvektor[v] - \ortsvektor[vs] )}{|\ortsvektor[v] - \ortsvektor[vs] |^3} \right] \upd^3 r'  
+      \rho_{\text{eff}}(\Ortsr[v]) & = \sum_{k=1}^N q^k\delta (\Ortsr[v] - \vec{R}^k ) \quad\text{mit Gesamtladung } q^k\\
+      \vec{p}_{\text{eff}}(\Ortsr[v]) &= \sum_{k=1}^N \vec{p}^k\delta (\Ortsr[v] - \vec{R}^k ) \quad\text{mit Gesamtdipolmoment } \vec{p}^k\\
+      \phi _{\text{eff}}(\Ortsr[v]) &= \frac{1}{4\pi\varepsilon_0} \int_V \left[ \frac{\rho_{\text{eff}}(\Ortsr[vs])}{|\Ortsr[v] - \Ortsr[vs] |} + \frac{\vec{p}_{\text{eff}}(\Ortsr[vs])  \cdot (\Ortsr[v] - \Ortsr[vs] )}{|\Ortsr[v] - \Ortsr[vs] |^3} \right] \upd^3 r'  
       \end{align*}
  \end{itemize}
   
@@ -79,12 +79,12 @@
   \frametitle{Makroskopische Ladungsdichte, Polarisation und Potential}
   \begin{itemize}[<+->]
   \item Aus den effektiven Größen ergeben sich die \alert{makroskopischen} Größen durch Mittelung.
-  \item \alert{Makroskopische Ladungsdichte} $\laddichte{V}(\ortsvektor[v]) = \overline{\rho_{\text{eff}}(\ortsvektor[v])} $ $\to$ alle Ladungen berücksichtigt, aber die meisten kompensieren sich in ihrer Wirkung
-  \item \alert{Makroskopische Polarisation} $\vec{P}(\ortsvektor[v]) = \overline{\vec{p}_{\text{eff}}(\ortsvektor[v])} $ $\to$ \alert{Modelle} werden benötigt, um die makroskopische Polarisation als Antwort auf interne und externe Felder vorherzusagen 
+  \item \alert{Makroskopische Ladungsdichte} $\laddichte{V}(\Ortsr[v]) = \overline{\rho_{\text{eff}}(\Ortsr[v])} $ $\to$ alle Ladungen berücksichtigt, aber die meisten kompensieren sich in ihrer Wirkung
+  \item \alert{Makroskopische Polarisation} $\vec{P}(\Ortsr[v]) = \overline{\vec{p}_{\text{eff}}(\Ortsr[v])} $ $\to$ \alert{Modelle} werden benötigt, um die makroskopische Polarisation als Antwort auf interne und externe Felder vorherzusagen 
   \item Das \alert{makroskopische Skalarpotential} ist dann
     \begin{align*}
-      \phi (\ortsvektor[v]) = \overline{\phi _{\text{eff}}(\ortsvektor[v])} &= \frac{1}{4\pi\varepsilon_0} \int_V \left[ \frac{\laddichte{V}(\ortsvektor[vs])}{|\ortsvektor[v] - \ortsvektor[vs] |} + \frac{\vec{P}(\ortsvektor[vs])  \cdot (\ortsvektor[v] - \ortsvektor[vs] )}{|\ortsvektor[v] - \ortsvektor[vs] |^3} \right] \upd^3 r' \\
-      &= \frac{1}{4\pi\varepsilon_0} \int_V \left[ \frac{\laddichte{V}(\ortsvektor[vs])}{|\ortsvektor[v] - \ortsvektor[vs] |} + \vec{P}(\ortsvektor[vs])  \cdot \nabla' \frac{1}{|\ortsvektor[v] - \ortsvektor[vs] |} \right] \upd^3 r'
+      \phi (\Ortsr[v]) = \overline{\phi _{\text{eff}}(\Ortsr[v])} &= \frac{1}{4\pi\varepsilon_0} \int_V \left[ \frac{\laddichte{V}(\Ortsr[vs])}{|\Ortsr[v] - \Ortsr[vs] |} + \frac{\vec{P}(\Ortsr[vs])  \cdot (\Ortsr[v] - \Ortsr[vs] )}{|\Ortsr[v] - \Ortsr[vs] |^3} \right] \upd^3 r' \\
+      &= \frac{1}{4\pi\varepsilon_0} \int_V \left[ \frac{\laddichte{V}(\Ortsr[vs])}{|\Ortsr[v] - \Ortsr[vs] |} + \vec{P}(\Ortsr[vs])  \cdot \nabla' \frac{1}{|\Ortsr[v] - \Ortsr[vs] |} \right] \upd^3 r'
       \end{align*}
 \end{itemize}
   
@@ -95,16 +95,16 @@
 \begin{itemize}[<+->]
   \item Makroskopische Skalarpotential:
     $$
-      \phi (\ortsvektor[v]) = \frac{1}{4\pi\varepsilon_0} \int_V \left[ \frac{\laddichte{V}(\ortsvektor[vs])}{|\ortsvektor[v] - \ortsvektor[vs] |} + \vec{P}(\ortsvektor[vs])  \cdot \nabla' \frac{1}{|\ortsvektor[v] - \ortsvektor[vs] |} \right] \upd^3 r'
+      \phi (\Ortsr[v]) = \frac{1}{4\pi\varepsilon_0} \int_V \left[ \frac{\laddichte{V}(\Ortsr[vs])}{|\Ortsr[v] - \Ortsr[vs] |} + \vec{P}(\Ortsr[vs])  \cdot \nabla' \frac{1}{|\Ortsr[v] - \Ortsr[vs] |} \right] \upd^3 r'
      $$
-   \item  Wir berechnen $\divergenz \efeld[v](\ortsvektor[v]) = \divergenz(-\gradient\phi(\ortsvektor[v])) = -\laplace_r \phi(\ortsvektor[v])$:
+   \item  Wir berechnen $\divergenz \EFeld[v](\Ortsr[v]) = \divergenz(-\gradient\phi(\Ortsr[v])) = -\laplace_r \phi(\Ortsr[v])$:
      \begin{align*}
-       \divergenz \efeld[v](\ortsvektor[v]) & = - \frac{1}{4\pi\varepsilon_0} \int_V [ \laddichte{V}(\ortsvektor[vs]) \underbrace{\laplace_r\frac{1}{|\ortsvektor[v] - \ortsvektor[vs] |}}_{-4\pi\delta^3(\ortsvektor[v] - \ortsvektor[vs])} + \vec{P}(\ortsvektor[vs])  \cdot \nabla'\underbrace{ \laplace_r\frac{1}{|\ortsvektor[v] - \ortsvektor[vs] |}}_{-4\pi\delta^3(\ortsvektor[v] - \ortsvektor[vs])} ] \upd^3 r'\\
-                               &= \frac{1}{\varepsilon_0} [ \laddichte{V}(\ortsvektor[v]) + \int_V \vec{P}(\ortsvektor[vs])  \cdot \underbrace{\nabla'\delta^3(\ortsvektor[v] - \ortsvektor[vs])}_{-\nabla\delta^3(\ortsvektor[v] - \ortsvektor[vs])}  \upd^3 r' ] = \frac{1}{\varepsilon_0} [ \laddichte{V}(\ortsvektor[v]) - \underbrace{\nabla\cdot \vec{P}(\ortsvektor[v])}_{\divergenz\vec{P}(\ortsvektor[v])} ] 
+       \divergenz \EFeld[v](\Ortsr[v]) & = - \frac{1}{4\pi\varepsilon_0} \int_V [ \laddichte{V}(\Ortsr[vs]) \underbrace{\laplace_r\frac{1}{|\Ortsr[v] - \Ortsr[vs] |}}_{-4\pi\delta^3(\Ortsr[v] - \Ortsr[vs])} + \vec{P}(\Ortsr[vs])  \cdot \nabla'\underbrace{ \laplace_r\frac{1}{|\Ortsr[v] - \Ortsr[vs] |}}_{-4\pi\delta^3(\Ortsr[v] - \Ortsr[vs])} ] \upd^3 r'\\
+                               &= \frac{1}{\varepsilon_0} [ \laddichte{V}(\Ortsr[v]) + \int_V \vec{P}(\Ortsr[vs])  \cdot \underbrace{\nabla'\delta^3(\Ortsr[v] - \Ortsr[vs])}_{-\nabla\delta^3(\Ortsr[v] - \Ortsr[vs])}  \upd^3 r' ] = \frac{1}{\varepsilon_0} [ \laddichte{V}(\Ortsr[v]) - \underbrace{\nabla\cdot \vec{P}(\Ortsr[v])}_{\divergenz\vec{P}(\Ortsr[v])} ] 
        \end{align*}
- \item Hieraus folgt das makroskopische Äquivalent des Colomb-Gauss-Gesetzes in Materie mit der \alert{Dielektrischen Verschiebung} $\vec{D}(\ortsvektor[v])$:
+ \item Hieraus folgt das makroskopische Äquivalent des Colomb-Gauss-Gesetzes in Materie mit der \alert{Dielektrischen Verschiebung} $\vec{D}(\Ortsr[v])$:
 $$                                
-                                 \divergenz(\varepsilon_0 \efeld[v](\ortsvektor[v]) + \vec{P}(\ortsvektor[v]) ) = \boxed{\divergenz \vec{D}(\ortsvektor[v]) = \laddichte{V}(\ortsvektor[v])} \text{ mit } \boxed{\vec{D}(\ortsvektor[v]) = \varepsilon_0 \efeld[v](\ortsvektor[v]) + \vec{P}(\ortsvektor[v])} 
+                                 \divergenz(\varepsilon_0 \EFeld[v](\Ortsr[v]) + \vec{P}(\Ortsr[v]) ) = \boxed{\divergenz \vec{D}(\Ortsr[v]) = \laddichte{V}(\Ortsr[v])} \text{ mit } \boxed{\vec{D}(\Ortsr[v]) = \varepsilon_0 \EFeld[v](\Ortsr[v]) + \vec{P}(\Ortsr[v])} 
                                  $$
                                \end{itemize}
 \end{frame}
@@ -114,20 +114,20 @@ $$
 \begin{itemize}[<+->]
   \item Grundgleichungen der Elektrostatik
 \begin{align*}
-	& \rotation \efeld[v] = \vec{0}
-		&&\oint\limits_{\rand(\flaeche)} \efeld[v]
+	& \rotation \EFeld[v] = \vec{0}
+		&&\oint\limits_{\rand(\Flaeche)} \EFeld[v]
                    \cdot \intweg[v] = 0\\
-	& \divergenz \verschiebung[v] = \laddichte{V}
+	& \divergenz \DFeld[v] = \laddichte{V}
 		&&\oiint\limits_{\oberfl(\volumen)}
-                   \verschiebung[v]\cdot \intflaeche[v] =
+                   \DFeld[v]\cdot \intflaeche[v] =
                    \iiint\limits_{\volumen} \laddichte{V} \intvolumen
 \end{align*}
 \item Stetigkeitsbedingungen ($\vec{n}$ Normalenvektor von Volumen 1 $\to$ zeigt von 1 nach 2):
 \begin{align*}
-  \vec{n} \cdot (\verschiebung[v]_2 -
-              \verschiebung[v]_1) & = \verschiebung{}_2\normal -
-                                    \verschiebung{}_1\normal = \laddichte{F}\\
-  \vec{t} \cdot (\efeld[v]_2 - \efeld[v]_1) &= \efeld{}_2\tangential - \efeld{}_1\tangential = 0 \quad \forall \vec{t} \text{ mit } \vec{t} \perp \vec{n}
+  \vec{n} \cdot (\DFeld[v]_2 -
+              \DFeld[v]_1) & = \DFeld{}_2\normal -
+                                    \DFeld{}_1\normal = \laddichte{F}\\
+  \vec{t} \cdot (\EFeld[v]_2 - \EFeld[v]_1) &= \EFeld{}_2\tangential - \EFeld{}_1\tangential = 0 \quad \forall \vec{t} \text{ mit } \vec{t} \perp \vec{n}
   \end{align*}
  \end{itemize}
 \end{frame}
@@ -209,8 +209,8 @@ $$
       W_e = & -\frac{\varepsilon_0}{2}\left(\int \divergenz(\phi\gradient\phi)
       \upd^3 r - \int (\gradient\phi)^2 \upd^3 r\right)  =
                      \frac{\varepsilon_0}{2} \int (\gradient\phi)^2 \upd^3 r\\
-        = & \frac{\varepsilon_0}{2} \int |\efeld[v]|^2 \upd^3 r
-            \quad\alert{Energiedichte:} \boxed{w_e = \frac{\varepsilon_0}{2} |\efeld[v]|^2}
+        = & \frac{\varepsilon_0}{2} \int |\EFeld[v]|^2 \upd^3 r
+            \quad\alert{Energiedichte:} \boxed{w_e = \frac{\varepsilon_0}{2} |\EFeld[v]|^2}
       \end{align*}
  \item Eine ganz analoge Herleitung ergibt das \alert{verallgemeinerte Resultat}:
      $$

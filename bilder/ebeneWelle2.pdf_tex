@@ -55,8 +55,8 @@
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{ebeneWelle2.pdf}}%
     \put(0.87110712,0.05065575){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vec{k}$\end{tabular}}}}%
-    \put(0.29096635,0.47276912){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ortsvektor[v]_0$\end{tabular}}}}%
-    \put(0.67595917,0.47064797){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ortsvektor[v]_1$\end{tabular}}}}%
+    \put(0.29096635,0.47276912){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Ortsr[v]_0$\end{tabular}}}}%
+    \put(0.67595917,0.47064797){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Ortsr[v]_1$\end{tabular}}}}%
     \put(0.19127119,0.08989745){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$r_{0\parallel}$\end{tabular}}}}%
     \put(0.57520347,0.09307918){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$r_{1\parallel}$\end{tabular}}}}%
   \end{picture}%

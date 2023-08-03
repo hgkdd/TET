@@ -30,7 +30,7 @@
   \item Und wir wissen schon, dass die elektromagnetische Feldtheorie eine relativistische Theorie ist \(\to\) Quasistationäre Felder VIII - Induktion.
   \item In der elektromagnetischen Feldtheorie kann prinzipiell die \alert{Lorenzkraft} herangezogen werden:
     \begin{equation*}
-      \kraft[v] = q (\efeld[v] + \vec{v} \times \tetB[v])
+      \kraft[v] = q (\EFeld[v] + \vec{v} \times \BFeld[v])
     \end{equation*}
   \item Für viele konkrete Berechnungen (z.B. elektrische Antriebe) ist eine \alert{Formulierung nur mit Feldern} häufig zweckmäßiger
   \item Wir starten hierfür mit der lokalen \alert{Kraftdichte} \(\kraftdichte[v]\) in Abhängigkeit von der \alert{Impulsdichte} \(\impulsdichte\)
@@ -46,16 +46,16 @@
   \begin{itemize}[<+->]
   \item Wir betrachten die Kraftdichte
     \begin{equation*}
-      \kraftdichte[v] = \frac{\upd}{\upd t}\impulsdichte =\laddichte{V} (\efeld[v] + \vec{v} \times \tetB[v]) = \textcolor{green}{\laddichte{V}} \efeld[v] + \textcolor{red}{\elstromdichte[v]} \times \tetB[v]
+      \kraftdichte[v] = \frac{\upd}{\upd t}\impulsdichte =\laddichte{V} (\EFeld[v] + \vec{v} \times \BFeld[v]) = \textcolor{green}{\laddichte{V}} \EFeld[v] + \textcolor{red}{\StromDichte[v]} \times \BFeld[v]
     \end{equation*}
   \item Durch Einsetzen der Maxwell-Gleichungen folgt:
     \begin{align*}
-      \kraftdichte[v] &=  \efeld[v]\, \textcolor{green}{\divergenz\verschiebung[v]} + \textcolor{red}{(\rotation\magfeld[v]-\frac{\partial \verschiebung[v]}{\partial t})} \times \tetB[v]\\
-                      &= \efeld[v]\, \divergenz\verschiebung[v] + (\rotation\magfeld[v]) \times \tetB[v] - \frac{\partial \verschiebung[v]}{\partial t}  \times \tetB[v]\\
-                      &= \efeld[v]\, \divergenz\verschiebung[v] + (\rotation\magfeld[v]) \times \tetB[v] - \left[ \frac{\upd }{\upd t}(\verschiebung[v] \times \tetB[v]) \textcolor{orange}{-} \verschiebung[v] \times \textcolor{orange}{\frac{\partial \tetB[v]}{\partial t}} \right]\\
-                      &= \efeld[v]\, \divergenz\verschiebung[v] + (\rotation\magfeld[v]) \times \tetB[v] - \left[ \frac{\upd }{\upd t}(\verschiebung[v] \times \tetB[v]) \textcolor{orange}{+} \verschiebung[v] \times \textcolor{orange}{\rotation \efeld[v]} \right]\\
-      \Aboxed{\kraftdichte[v] &= \left[ \efeld[v]\, \divergenz\verschiebung[v] - \verschiebung[v] \times \rotation \efeld[v]\right] + \left[-\tetB[v]\times \rotation\magfeld[v])\right] - \frac{\upd }{\upd t}(\verschiebung[v] \times \tetB[v]) } \text{ alle Materialien}\\\pause
-       &= \left[ \efeld[v]\, \divergenz\verschiebung[v] - \verschiebung[v] \times \rotation \efeld[v]\right] + \left[\magfeld[v]\,\textcolor{cyan}{\divergenz\tetB[v]}-\tetB[v]\times \rotation\magfeld[v]\right] - \frac{\upd }{\upd t}(\verschiebung[v] \times \tetB[v]) 
+      \kraftdichte[v] &=  \EFeld[v]\, \textcolor{green}{\divergenz\DFeld[v]} + \textcolor{red}{(\rotation\HFeld[v]-\frac{\partial \DFeld[v]}{\partial t})} \times \BFeld[v]\\
+                      &= \EFeld[v]\, \divergenz\DFeld[v] + (\rotation\HFeld[v]) \times \BFeld[v] - \frac{\partial \DFeld[v]}{\partial t}  \times \BFeld[v]\\
+                      &= \EFeld[v]\, \divergenz\DFeld[v] + (\rotation\HFeld[v]) \times \BFeld[v] - \left[ \frac{\upd }{\upd t}(\DFeld[v] \times \BFeld[v]) \textcolor{orange}{-} \DFeld[v] \times \textcolor{orange}{\frac{\partial \BFeld[v]}{\partial t}} \right]\\
+                      &= \EFeld[v]\, \divergenz\DFeld[v] + (\rotation\HFeld[v]) \times \BFeld[v] - \left[ \frac{\upd }{\upd t}(\DFeld[v] \times \BFeld[v]) \textcolor{orange}{+} \DFeld[v] \times \textcolor{orange}{\rotation \EFeld[v]} \right]\\
+      \Aboxed{\kraftdichte[v] &= \left[ \EFeld[v]\, \divergenz\DFeld[v] - \DFeld[v] \times \rotation \EFeld[v]\right] + \left[-\BFeld[v]\times \rotation\HFeld[v])\right] - \frac{\upd }{\upd t}(\DFeld[v] \times \BFeld[v]) } \text{ alle Materialien}\\\pause
+       &= \left[ \EFeld[v]\, \divergenz\DFeld[v] - \DFeld[v] \times \rotation \EFeld[v]\right] + \left[\HFeld[v]\,\textcolor{cyan}{\divergenz\BFeld[v]}-\BFeld[v]\times \rotation\HFeld[v]\right] - \frac{\upd }{\upd t}(\DFeld[v] \times \BFeld[v]) 
       \end{align*}
   \end{itemize}
 \end{frame}
@@ -65,20 +65,20 @@
   \begin{itemize}[<+->]
   \item Wir hatten die Kraftdichte
     \begin{align*}
-      \kraftdichte[v] &= \left[ \efeld[v]\, \divergenz\verschiebung[v] - \verschiebung[v] \times \rotation \efeld[v]\right] + \left[\magfeld[v]\,\divergenz\tetB[v]-\tetB[v]\times \rotation\magfeld[v]\right] - \frac{\upd }{\upd t}(\verschiebung[v] \times \tetB[v])  \text{ alle Materialien}\\\pause
-      \Aboxed{\kraftdichte[v] &= \varepsilon\left[ \efeld[v]\, \divergenz\efeld[v] - \efeld[v] \times \rotation \efeld[v]\right] + \frac{1}{\mu}\left[\tetB[v]\,\divergenz\tetB[v]-\tetB[v]\times \rotation\tetB[v]\right] - \varepsilon\frac{\upd }{\upd t}(\efeld[v] \times \tetB[v])}  \text{ h, l, i Materialien}
+      \kraftdichte[v] &= \left[ \EFeld[v]\, \divergenz\DFeld[v] - \DFeld[v] \times \rotation \EFeld[v]\right] + \left[\HFeld[v]\,\divergenz\BFeld[v]-\BFeld[v]\times \rotation\HFeld[v]\right] - \frac{\upd }{\upd t}(\DFeld[v] \times \BFeld[v])  \text{ alle Materialien}\\\pause
+      \Aboxed{\kraftdichte[v] &= \varepsilon\left[ \EFeld[v]\, \divergenz\EFeld[v] - \EFeld[v] \times \rotation \EFeld[v]\right] + \frac{1}{\mu}\left[\BFeld[v]\,\divergenz\BFeld[v]-\BFeld[v]\times \rotation\BFeld[v]\right] - \varepsilon\frac{\upd }{\upd t}(\EFeld[v] \times \BFeld[v])}  \text{ h, l, i Materialien}
     \end{align*}
   \item Terme \(\vec{a}\times\rotation\vec{a} \to\) kleiner mathematischer Einschub:
     \begin{align*}
       \gradient(\vec{a}\cdot\vec{b}) &= \vec{a}\times\rotation\vec{b} + \vec{b}\times\rotation\vec{a} + (\vec{a}\cdot\gradient)\vec{b} + (\vec{b}\cdot\gradient)\vec{a}\\
       \gradient(\underbrace{\vec{a}\cdot\vec{a}}_{|\vec{a}|^2}) &= 2 (\vec{a}\times\rotation\vec{a}) + 2 (\vec{a}\cdot\gradient)\vec{a}\\
-      \Rightarrow - \efeld[v] \times \rotation \efeld[v] &= (\efeld[v]\cdot\gradient)\efeld[v] - \frac{1}{2}\gradient|\efeld[v]|^2\quad \text{ für }\tetB[v]\text{ analog}
+      \Rightarrow - \EFeld[v] \times \rotation \EFeld[v] &= (\EFeld[v]\cdot\gradient)\EFeld[v] - \frac{1}{2}\gradient|\EFeld[v]|^2\quad \text{ für }\BFeld[v]\text{ analog}
     \end{align*}
   \item Damit ist die \alert{Kraftdichte in homogenen, lineare, isotropen Medien}:
     \begin{equation*}
         \boxed{%
       \begin{split}
-        \kraftdichte[v] =  \varepsilon\left[ \efeld[v]\, \divergenz\efeld[v] +(\efeld[v]\cdot\gradient)\efeld[v]\right] + \frac{1}{\mu}\left[\tetB[v]\,\divergenz\tetB[v] + (\tetB[v]\cdot\gradient)\tetB[v]\right] \\-\gradient\left[ \only<4>{\frac{1}{2}\varepsilon|\efeld[v]|^2 +\frac{1}{2\mu} |\tetB[v]|^2}\only<5-|handout:0>{w_\text{em}}   \right] - \only<4,5>{\varepsilon\frac{\upd }{\upd t}(\efeld[v] \times \tetB[v])}\only<6-|handout:0>{\varepsilon\mu\frac{\upd }{\upd t}\poyvec[v]}
+        \kraftdichte[v] =  \varepsilon\left[ \EFeld[v]\, \divergenz\EFeld[v] +(\EFeld[v]\cdot\gradient)\EFeld[v]\right] + \frac{1}{\mu}\left[\BFeld[v]\,\divergenz\BFeld[v] + (\BFeld[v]\cdot\gradient)\BFeld[v]\right] \\-\gradient\left[ \only<4>{\frac{1}{2}\varepsilon|\EFeld[v]|^2 +\frac{1}{2\mu} |\BFeld[v]|^2}\only<5-|handout:0>{w_\text{em}}   \right] - \only<4,5>{\varepsilon\frac{\upd }{\upd t}(\EFeld[v] \times \BFeld[v])}\only<6-|handout:0>{\varepsilon\mu\frac{\upd }{\upd t}\PoyntingVektor[v]}
         \end{split}}
       \end{equation*}
   \end{itemize}
@@ -89,18 +89,18 @@
   \begin{itemize}[<+->]
   \item Um die Kraftdichte einfacher schreiben zu können, führen wir den \alert{Maxwellschen Spannungstensor} \(\mathbf{T}\) ein. Der Maxwellsche Spannungstensor ist ein dreidimensionaler Tensor 2. Stufe (\enquote{\(3 \times 3\)-Matrix}):
     \begin{equation*}
-      \mathbf{T} = \left(T_{ij}\right) \text{ mit } \boxed{T_{ij} = \varepsilon\left[ \efeld_i\efeld_j-\frac{1}{2}\delta_{ij} |\efeld[v]|^2\right] + \frac{1}{\mu} \left[\tetB_i\tetB_j-\frac{1}{2}\delta_{ij} |\tetB[v]|^2\right] } \quad [T_{ij}] = \si{\newton\per\metre\squared} 
+      \mathbf{T} = \left(T_{ij}\right) \text{ mit } \boxed{T_{ij} = \varepsilon\left[ \EFeld_i\EFeld_j-\frac{1}{2}\delta_{ij} |\EFeld[v]|^2\right] + \frac{1}{\mu} \left[\BFeld_i\BFeld_j-\frac{1}{2}\delta_{ij} |\BFeld[v]|^2\right] } \quad [T_{ij}] = \si{\newton\per\metre\squared} 
     \end{equation*}
   \item Explizit:
     \begin{equation*}
       \begin{split}
       \mathbf{T} =
       \begin{pmatrix}
-        \varepsilon\efeld_x\efeld_x + \frac{1}{\mu}\tetB_x\tetB_x & \varepsilon\efeld_x\efeld_y + \frac{1}{\mu}\tetB_x\tetB_y &\varepsilon\efeld_x\efeld_z + \frac{1}{\mu}\tetB_x\tetB_z \\
-        \varepsilon\efeld_y\efeld_x + \frac{1}{\mu}\tetB_y\tetB_x & \varepsilon\efeld_y\efeld_y + \frac{1}{\mu}\tetB_y\tetB_y &\varepsilon\efeld_y\efeld_z + \frac{1}{\mu}\tetB_y\tetB_z \\
-        \varepsilon\efeld_z\efeld_x + \frac{1}{\mu}\tetB_z\tetB_x & \varepsilon\efeld_z\efeld_y + \frac{1}{\mu}\tetB_z\tetB_y &\varepsilon\efeld_z\efeld_z + \frac{1}{\mu}\tetB_z\tetB_z 
+        \varepsilon\EFeld_x\EFeld_x + \frac{1}{\mu}\BFeld_x\BFeld_x & \varepsilon\EFeld_x\EFeld_y + \frac{1}{\mu}\BFeld_x\BFeld_y &\varepsilon\EFeld_x\EFeld_z + \frac{1}{\mu}\BFeld_x\BFeld_z \\
+        \varepsilon\EFeld_y\EFeld_x + \frac{1}{\mu}\BFeld_y\BFeld_x & \varepsilon\EFeld_y\EFeld_y + \frac{1}{\mu}\BFeld_y\BFeld_y &\varepsilon\EFeld_y\EFeld_z + \frac{1}{\mu}\BFeld_y\BFeld_z \\
+        \varepsilon\EFeld_z\EFeld_x + \frac{1}{\mu}\BFeld_z\BFeld_x & \varepsilon\EFeld_z\EFeld_y + \frac{1}{\mu}\BFeld_z\BFeld_y &\varepsilon\EFeld_z\EFeld_z + \frac{1}{\mu}\BFeld_z\BFeld_z 
       \end{pmatrix}
-      \\ -\underbrace{\frac{1}{2}\left(\varepsilon |\efeld[v]|^2 + \frac{1}{\mu}|\tetB[v]|^2\right)}_{w_\text{em}}
+      \\ -\underbrace{\frac{1}{2}\left(\varepsilon |\EFeld[v]|^2 + \frac{1}{\mu}|\BFeld[v]|^2\right)}_{w_\text{em}}
       \begin{pmatrix}
         1 & 0 &0\\
         0 & 1 & 0\\
@@ -117,21 +117,21 @@
   \item Wir bilden die \(j\)-te Komponente der Divergenz von \(\mathbf{T}\):
     \begin{align*}
       (\divergenz\mathbf{T})_j &= \sum_{i=1}^3 \frac{\partial}{\partial x_i} T_{ij} = \partial_i T_{ij} \\
-                              &= \sum_{i=1}^3 \left\{ \varepsilon\left( \frac{\partial \efeld_i}{\partial x_i} \efeld_j + \efeld_i\frac{\partial \efeld_j}{\partial x_i} \right) +
-\frac{1}{\mu}\left( \frac{\partial \tetB_i}{\partial x_i} \tetB_j + \tetB_i\frac{\partial \tetB_j}{\partial x_i} \right)
-                                \right\} - \left(\frac{\varepsilon}{2}\frac{\partial |\efeld[v]|^2}{\partial x_j} + \frac{1}{2\mu}\frac{\partial |\tetB[v]|^2}{\partial x_j}\right)\\
-                              &=\varepsilon\left[\efeld_j \divergenz\efeld[v] + (\efeld[v]\cdot\gradient )\efeld_j - \frac{1}{2}\gradient_j |\efeld[v]|^2 \right] +\\
-                               &\qquad \frac{1}{\mu}\left[\tetB_j \divergenz\tetB[v] + (\tetB[v]\cdot\gradient )\tetB_j - \frac{1}{2}\gradient_j |\tetB[v]|^2 \right]
+                              &= \sum_{i=1}^3 \left\{ \varepsilon\left( \frac{\partial \EFeld_i}{\partial x_i} \EFeld_j + \EFeld_i\frac{\partial \EFeld_j}{\partial x_i} \right) +
+\frac{1}{\mu}\left( \frac{\partial \BFeld_i}{\partial x_i} \BFeld_j + \BFeld_i\frac{\partial \BFeld_j}{\partial x_i} \right)
+                                \right\} - \left(\frac{\varepsilon}{2}\frac{\partial |\EFeld[v]|^2}{\partial x_j} + \frac{1}{2\mu}\frac{\partial |\BFeld[v]|^2}{\partial x_j}\right)\\
+                              &=\varepsilon\left[\EFeld_j \divergenz\EFeld[v] + (\EFeld[v]\cdot\gradient )\EFeld_j - \frac{1}{2}\gradient_j |\EFeld[v]|^2 \right] +\\
+                               &\qquad \frac{1}{\mu}\left[\BFeld_j \divergenz\BFeld[v] + (\BFeld[v]\cdot\gradient )\BFeld_j - \frac{1}{2}\gradient_j |\BFeld[v]|^2 \right]
     \end{align*}
   \item Dies ist gerade die \(j\)-te Komponente der ersten drei Terme der Kraftdichte. Somit:
     \begin{equation*}
-      \boxed{\kraftdichte[v] = \divergenz \mathbf{T} - \varepsilon\frac{\upd}{\upd t}\left( \efeld[v] \times \tetB[v]\right) 
-                   = \divergenz \mathbf{T} - \varepsilon\mu\frac{\upd}{\upd t}\left( \efeld[v] \times \magfeld[v]\right) 
-      = \divergenz \mathbf{T} - \varepsilon\mu\frac{\upd \poyvec[v]}{\upd t}}
+      \boxed{\kraftdichte[v] = \divergenz \mathbf{T} - \varepsilon\frac{\upd}{\upd t}\left( \EFeld[v] \times \BFeld[v]\right) 
+                   = \divergenz \mathbf{T} - \varepsilon\mu\frac{\upd}{\upd t}\left( \EFeld[v] \times \HFeld[v]\right) 
+      = \divergenz \mathbf{T} - \varepsilon\mu\frac{\upd \PoyntingVektor[v]}{\upd t}}
   \end{equation*}
 \item Die Gesamtkraft ist somit:
   \begin{equation*}
-  \boxed{\kraft[v] = \oiint_{O(V)} \mathbf{T} \cdot \upd\vec{A} - \varepsilon\mu\frac{\upd}{\upd t} \iiint_V \poyvec[v] \upd V}
+  \boxed{\kraft[v] = \oiint_{O(V)} \mathbf{T} \cdot \upd\vec{A} - \varepsilon\mu\frac{\upd}{\upd t} \iiint_V \PoyntingVektor[v] \upd V}
 \end{equation*}
 \end{itemize}
 \end{frame}
@@ -139,7 +139,7 @@
 \begin{frame}
   \frametitle{Interpretation}
   \begin{equation*}
-  \boxed{\kraft[v] = \oiint_{O(V)} \mathbf{T} \cdot \upd\vec{A} - \varepsilon\mu\frac{\upd}{\upd t} \iiint_V \poyvec[v] \upd V}
+  \boxed{\kraft[v] = \oiint_{O(V)} \mathbf{T} \cdot \upd\vec{A} - \varepsilon\mu\frac{\upd}{\upd t} \iiint_V \PoyntingVektor[v] \upd V}
 \end{equation*}
 \begin{columns}
   \begin{column}<+->[t]{.5\linewidth}
@@ -158,8 +158,8 @@
     \item Mechanik: \(\kraft[v] = \frac{\upd }{\upd t}\vec{p}^\text{mech} \), \(\kraftdichte[v] = \frac{\upd }{\upd t}\vec{p}^\text{mech}_V \)
     \item \alert{Elektromagnetischer Impuls bzw. Impulsdichte}
       \begin{align*}
-        \Aboxed{\vec{p}^\text{em} &= \iiint_V \varepsilon\mu\poyvec[v] \upd V}\\
-        \Aboxed{\vec{p}^\text{em}_V &= \varepsilon\mu\poyvec[v]} 
+        \Aboxed{\vec{p}^\text{em} &= \iiint_V \varepsilon\mu\PoyntingVektor[v] \upd V}\\
+        \Aboxed{\vec{p}^\text{em}_V &= \varepsilon\mu\PoyntingVektor[v]} 
       \end{align*}
       \item Wieder Poynting-Vektors! \(\to\) SRT
     \end{itemize}
@@ -172,8 +172,8 @@
     \begin{itemize}[<+->]
     \item Die Formel für die Kraftdichte kann nun umgeformt werden:
       \begin{align*}
-        \kraftdichte[v] = \frac{\upd }{\upd t}\vec{p}^\text{mech}_V &= \divergenz\mathbf{T} - \frac{\upd }{\upd t}\left( \varepsilon\mu\poyvec[v]\right) = \divergenz\mathbf{T} - \frac{\upd }{\upd t}\vec{p}^\text{em}_V\\
-        \frac{\upd }{\upd t}\left(\vec{p}^\text{mech}_V +  \varepsilon\mu\poyvec[v]\right)&=\divergenz\mathbf{T} \\
+        \kraftdichte[v] = \frac{\upd }{\upd t}\vec{p}^\text{mech}_V &= \divergenz\mathbf{T} - \frac{\upd }{\upd t}\left( \varepsilon\mu\PoyntingVektor[v]\right) = \divergenz\mathbf{T} - \frac{\upd }{\upd t}\vec{p}^\text{em}_V\\
+        \frac{\upd }{\upd t}\left(\vec{p}^\text{mech}_V +  \varepsilon\mu\PoyntingVektor[v]\right)&=\divergenz\mathbf{T} \\
         \Aboxed{\frac{\upd }{\upd t}\left(\vec{p}^\text{mech}_V + \vec{p}^\text{em}_V\right)&=\divergenz\mathbf{T}} \text{ lokale Impulsbilanz} 
       \end{align*}
     \item Volumenintegration liefert die integrale \alert{Impulsbilanz}:

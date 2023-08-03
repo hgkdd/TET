@@ -24,19 +24,19 @@
   \begin{itemize}[<+->]
   \item Wir betrachten ebene Wellen
     \begin{align*}
-      \efeld[uv](\ortsvektor[v], t) & =\efeld[uv]_0\euler^{\komplex(\omega t - \wellenzahl[v]\cdot\ortsvektor[v])} \quad ;\quad \tetB[uv](\ortsvektor[v], t)  =\tetB[uv]_0\euler^{\komplex(\omega t - \wellenzahl[v]\cdot\ortsvektor[v])}  \\
-      \text{mit } \tetB[uv]_0 &= \frac{1}{\omega} \left(\wellenzahl[v] \times \efeld[uv]_0\right) \ergo |\tetB[uv]_0|^2 = \frac{1}{\geschw_c^2} |\efeld[uv]_0|^2 \quad \geschw_c = \frac{1}{\sqrt{\varepsilon\mu}} = \frac{\omega}{\wellenzahl} =\geschw_p
+      \EFeld[uv](\Ortsr[v], t) & =\EFeld[uv]_0\euler^{\komplex(\omega t - \Wellenzahl[v]\cdot\Ortsr[v])} \quad ;\quad \BFeld[uv](\Ortsr[v], t)  =\BFeld[uv]_0\euler^{\komplex(\omega t - \Wellenzahl[v]\cdot\Ortsr[v])}  \\
+      \text{mit } \BFeld[uv]_0 &= \frac{1}{\omega} \left(\Wellenzahl[v] \times \EFeld[uv]_0\right) \ergo |\BFeld[uv]_0|^2 = \frac{1}{\Geschwindigkeit_c^2} |\EFeld[uv]_0|^2 \quad \Geschwindigkeit_c = \frac{1}{\sqrt{\varepsilon\mu}} = \frac{\omega}{\Wellenzahl} =\Geschwindigkeit_p
     \end{align*}
   \item Beliebig veränderliche Felder - Energieerhaltung: \alert{Komplexen Ponytingschen Satz} bei harmonischer Zeitabhängigkeit.
   \item Energiedichte (Mittelwerte über eine Periodendauer):
     \begin{equation*}
-      \langle \energiedichte_{em}(\ortsvektor[v], t)\rangle = \langle \energiedichte_{e}(\ortsvektor[v], t)\rangle + \langle \energiedichte_{m}(\ortsvektor[v], t)\rangle = \frac{1}{4}\real{\magfeld[uv]_0 \cdot \tetB[uv]_0^\star + \efeld[uv]_0 \cdot \verschiebung[uv]_0^\star}
+      \langle \energiedichte_{em}(\Ortsr[v], t)\rangle = \langle \energiedichte_{e}(\Ortsr[v], t)\rangle + \langle \energiedichte_{m}(\Ortsr[v], t)\rangle = \frac{1}{4}\real{\HFeld[uv]_0 \cdot \BFeld[uv]_0^\star + \EFeld[uv]_0 \cdot \DFeld[uv]_0^\star}
     \end{equation*}
-    \item Elektrischer Anteil von \(\langle \energiedichte_{em}\rangle\): \( \langle \energiedichte_{e}\rangle  = \frac{1}{4}\real{\efeld[uv]_0 \cdot \verschiebung[uv]_0^\star} = \frac{1}{4} \varepsilon |\efeld[uv]_0|^2\) 
-    \item Magnetischer Anteil von \(\langle \energiedichte_{em}\rangle\): \( \langle \energiedichte_{m}\rangle  = \frac{1}{4}\real{\magfeld[uv]_0 \cdot \tetB[uv]_0^\star} = \frac{1}{4} \frac{1}{\mu} |\tetB[uv]_0|^2 = \frac{1}{4} \varepsilon |\efeld[uv]_0|^2 \)
+    \item Elektrischer Anteil von \(\langle \energiedichte_{em}\rangle\): \( \langle \energiedichte_{e}\rangle  = \frac{1}{4}\real{\EFeld[uv]_0 \cdot \DFeld[uv]_0^\star} = \frac{1}{4} \varepsilon |\EFeld[uv]_0|^2\) 
+    \item Magnetischer Anteil von \(\langle \energiedichte_{em}\rangle\): \( \langle \energiedichte_{m}\rangle  = \frac{1}{4}\real{\HFeld[uv]_0 \cdot \BFeld[uv]_0^\star} = \frac{1}{4} \frac{1}{\mu} |\BFeld[uv]_0|^2 = \frac{1}{4} \varepsilon |\EFeld[uv]_0|^2 \)
     \item Elektrischer und magnetischer Anteil der Welle enthalten gleiche Engieanteile. Die gesamte Energiedichte ist
       \begin{equation*}
-        \boxed{\langle \energiedichte_{em}(\ortsvektor[v], t)\rangle = \frac{1}{2} \varepsilon |\efeld[uv]_0|^2 = \frac{1}{2} \frac{1}{\mu} |\tetB[uv]_0|^2}
+        \boxed{\langle \energiedichte_{em}(\Ortsr[v], t)\rangle = \frac{1}{2} \varepsilon |\EFeld[uv]_0|^2 = \frac{1}{2} \frac{1}{\mu} |\BFeld[uv]_0|^2}
       \end{equation*}
     \end{itemize}
   \end{frame}
@@ -47,9 +47,9 @@
   \begin{itemize}[<+->]      
       \item Energieflussdichte, Poynting-Vektor (Mittelwerte über eine Periodendauer): 
     \begin{align*}
-      \langle \poyvec[v](\ortsvektor[v], t)\rangle &= \frac{1}{2}\real{\efeld[uv]_0 \times \magfeld[uv]_0^\star} = \frac{1}{2} \frac{1}{\mu} \frac{1}{\omega} \real{\efeld[uv]_0 \times (\wellenzahl[v] \times \efeld[uv]_0^\star)}\\
-                                                   &= \frac{1}{2\omega\mu} \real{ \wellenzahl[v] |\efeld[uv]_0|^2 - \efeld[uv]_0^\star \underbrace{(\efeld[uv]_0 \cdot \wellenzahl[v])}_{=0} } \; , \; \geschw_p=\geschw_c = \frac{\omega}{\wellenzahl} = \frac{1}{\sqrt{\varepsilon\mu}} \ergo \frac{1}{\omega} = \frac{\sqrt{\varepsilon\mu}}{\wellenzahl}\\
-      &= \frac{1}{2} \sqrt{\frac{\varepsilon}{\mu}} |\efeld[uv]_0|^2 \frac{\wellenzahl[v]}{\wellenzahl} = \frac{1}{2} \sqrt{\frac{\varepsilon}{\mu}} |\efeld[uv]_0|^2 \einheitsvek{k} = \underbrace{\geschw_p}_{=\geschw_c=\geschw_g} \langle \energiedichte_{em}\rangle\; \einheitsvek{k} = \frac{1}{2} \frac{1}{Z} |\efeld[uv]_0|^2 \einheitsvek{k} 
+      \langle \PoyntingVektor[v](\Ortsr[v], t)\rangle &= \frac{1}{2}\real{\EFeld[uv]_0 \times \HFeld[uv]_0^\star} = \frac{1}{2} \frac{1}{\mu} \frac{1}{\omega} \real{\EFeld[uv]_0 \times (\Wellenzahl[v] \times \EFeld[uv]_0^\star)}\\
+                                                   &= \frac{1}{2\omega\mu} \real{ \Wellenzahl[v] |\EFeld[uv]_0|^2 - \EFeld[uv]_0^\star \underbrace{(\EFeld[uv]_0 \cdot \Wellenzahl[v])}_{=0} } \; , \; \Geschwindigkeit_p=\Geschwindigkeit_c = \frac{\omega}{\Wellenzahl} = \frac{1}{\sqrt{\varepsilon\mu}} \ergo \frac{1}{\omega} = \frac{\sqrt{\varepsilon\mu}}{\Wellenzahl}\\
+      &= \frac{1}{2} \sqrt{\frac{\varepsilon}{\mu}} |\EFeld[uv]_0|^2 \frac{\Wellenzahl[v]}{\Wellenzahl} = \frac{1}{2} \sqrt{\frac{\varepsilon}{\mu}} |\EFeld[uv]_0|^2 \einheitsvek{k} = \underbrace{\Geschwindigkeit_p}_{=\Geschwindigkeit_c=\Geschwindigkeit_g} \langle \energiedichte_{em}\rangle\; \einheitsvek{k} = \frac{1}{2} \frac{1}{Z} |\EFeld[uv]_0|^2 \einheitsvek{k} 
     \end{align*}
       \item Energiefluss in Ausbreitungsrichtung der Welle. 
     
@@ -61,9 +61,9 @@
   \begin{itemize}[<+->]      
   \item Beliebig veränderliche Felder - Impulserhaltung: Die elektromagnetische Impulsdichte ist gegeben durch:
     \begin{equation*}
-      \impulsdichte^{em} = \varepsilon\mu\poyvec[v] = \frac{1}{\geschw_c^2} \geschw_p \langle \energiedichte_{em}\rangle\; \einheitsvek{k} = \frac{1}{\geschw_c} \langle \energiedichte_{em}\rangle\; \einheitsvek{k}
+      \impulsdichte^{em} = \varepsilon\mu\PoyntingVektor[v] = \frac{1}{\Geschwindigkeit_c^2} \Geschwindigkeit_p \langle \energiedichte_{em}\rangle\; \einheitsvek{k} = \frac{1}{\Geschwindigkeit_c} \langle \energiedichte_{em}\rangle\; \einheitsvek{k}
       \end{equation*}
-  \item Im Rahmen der \alert{Speziellen Relativitätstheorie} (SRT) wird folgende \alert{allgemeine Energie-Impulsgleichung} für das Vakuum (\(\geschw_c = \lichtgeschw \)) gefunden
+  \item Im Rahmen der \alert{Speziellen Relativitätstheorie} (SRT) wird folgende \alert{allgemeine Energie-Impulsgleichung} für das Vakuum (\(\Geschwindigkeit_c = \lichtgeschw \)) gefunden
     \begin{equation*}
       \boxed{\energie^2 - \lichtgeschw^2p^2 = m^2\lichtgeschw^4}\quad; \quad \text{ruhende Masse: } \energie = m\lichtgeschw^2   
     \end{equation*}

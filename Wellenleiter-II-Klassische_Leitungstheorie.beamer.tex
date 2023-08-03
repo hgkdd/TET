@@ -118,16 +118,16 @@
   \item Das Ersatzschaltbild kann dann einfach \alert{verallgemeinert} werden.
   \item Maxwellgleichungen (lin. hom. iso. Dielektrikum, harmonische ZA, keine Quellen):
     \begin{align*}
-      \divergenz \efeld[uv] &= 0 & \rotation\efeld[uv] + \komplex\omega\mu \magfeld[uv] &=\vec{0} \\
-      \divergenz \magfeld[uv] &= 0 & \rotation\magfeld[uv] - \komplex\omega\varepsilon \efeld[uv] &=\vec{0} 
+      \divergenz \EFeld[uv] &= 0 & \rotation\EFeld[uv] + \komplex\omega\mu \HFeld[uv] &=\vec{0} \\
+      \divergenz \HFeld[uv] &= 0 & \rotation\HFeld[uv] - \komplex\omega\varepsilon \EFeld[uv] &=\vec{0} 
     \end{align*}
   \item Wir betrachten nur den \alert{TEM-Mode}. Die \alert{Ausbreitungsrichtung} sei \(\pm\einheitsvek{z}\). Es gilt:
     \begin{align*}
-      \text{TEM-Mode: } && \efeld[uv]\cdot \einheitsvek{z} &=0 & \magfeld[uv]\cdot \einheitsvek{z} &=0 \\
-                        && \left( \rotation \efeld[uv]\right)\times\einheitsvek{z} &= \frac{\d \efeld[uv]}{\d z} & \left( \rotation \magfeld[uv]\right)\times\einheitsvek{z} &= \frac{\d \magfeld[uv]}{\d z}
+      \text{TEM-Mode: } && \EFeld[uv]\cdot \einheitsvek{z} &=0 & \HFeld[uv]\cdot \einheitsvek{z} &=0 \\
+                        && \left( \rotation \EFeld[uv]\right)\times\einheitsvek{z} &= \frac{\d \EFeld[uv]}{\d z} & \left( \rotation \HFeld[uv]\right)\times\einheitsvek{z} &= \frac{\d \HFeld[uv]}{\d z}
     \end{align*}
     \begin{equation*}
-            \text{Transversalebene: }  \rotation_t\efeld[uv] = \left( \frac{\d \efeld[u]_y}{\d x}-\frac{\d \efeld[u]_x}{\d y}\right)\einheitsvek{z} \Rightarrow\left(\rotation_t\efeld[uv]\right)\cdot\einheitsvek{x,y} =0
+            \text{Transversalebene: }  \rotation_t\EFeld[uv] = \left( \frac{\d \EFeld[u]_y}{\d x}-\frac{\d \EFeld[u]_x}{\d y}\right)\einheitsvek{z} \Rightarrow\left(\rotation_t\EFeld[uv]\right)\cdot\einheitsvek{x,y} =0
     \end{equation*}                                                                                                    
     \end{itemize}
 \end{frame}
@@ -137,18 +137,18 @@
   \begin{itemize}[<+->]
   \item Transversalkomponente des Induktionsgesetztes (in der Transversalebene):
     \begin{align*}
-      \rotation \efeld[uv] + \komplex\omega\mu\magfeld[uv] &=\vec{0} \Rightarrow& \left(\rotation \efeld[uv]\right)\times\einheitsvek{z} + \komplex\omega\mu\magfeld[uv] \times\einheitsvek{z} &=\vec{0} \\
-      && \Aboxed{\frac{\d \efeld[uv]}{\d z} + \komplex\omega\mu\magfeld[uv] \times\einheitsvek{z} &=\vec{0}} 
+      \rotation \EFeld[uv] + \komplex\omega\mu\HFeld[uv] &=\vec{0} \Rightarrow& \left(\rotation \EFeld[uv]\right)\times\einheitsvek{z} + \komplex\omega\mu\HFeld[uv] \times\einheitsvek{z} &=\vec{0} \\
+      && \Aboxed{\frac{\d \EFeld[uv]}{\d z} + \komplex\omega\mu\HFeld[uv] \times\einheitsvek{z} &=\vec{0}} 
       \end{align*}
     \item Das elektrische Feld ist ein \alert{Gradientenfeld} in allen Transversalebenen. Ansatz:
       \begin{equation*}
-        \boxed{\efeld[uv] = -\gradient\elpotential(x,y) \; g(z)} \text{ mit } \boxed{\laplace\elpotential(x,y) = 0} \text{ statische 2D Laplace Gleichung}
+        \boxed{\EFeld[uv] = -\gradient\SkalarPot(x,y) \; g(z)} \text{ mit } \boxed{\laplace\SkalarPot(x,y) = 0} \text{ statische 2D Laplace Gleichung}
         \end{equation*}
       \item Magnetfeld direkt ausrechnen:
         \begin{align*}
-          \frac{\d \efeld[uv]}{\d z} + \komplex\omega\mu\magfeld[uv] \times\einheitsvek{z} &=\vec{0} &\Rightarrow \einheitsvek{z}\times\frac{\d \efeld[uv]}{\d z} &+ \komplex\omega\mu\, \einheitsvek{z}\times\left(\magfeld[uv] \times\einheitsvek{z}\right) =\vec{0}\\
-                                                                                           && \magfeld[uv] &= -\frac{1}{\komplex\omega\mu} \left(\einheitsvek{z}\times\frac{\d \efeld[uv]}{\d z}\right) \\
-          &&\Aboxed{\magfeld[uv]&= \frac{1}{\komplex\omega\mu} \left(\einheitsvek{z}\times\gradient\elpotential\right)\frac{\d g}{\d z}}
+          \frac{\d \EFeld[uv]}{\d z} + \komplex\omega\mu\HFeld[uv] \times\einheitsvek{z} &=\vec{0} &\Rightarrow \einheitsvek{z}\times\frac{\d \EFeld[uv]}{\d z} &+ \komplex\omega\mu\, \einheitsvek{z}\times\left(\HFeld[uv] \times\einheitsvek{z}\right) =\vec{0}\\
+                                                                                           && \HFeld[uv] &= -\frac{1}{\komplex\omega\mu} \left(\einheitsvek{z}\times\frac{\d \EFeld[uv]}{\d z}\right) \\
+          &&\Aboxed{\HFeld[uv]&= \frac{1}{\komplex\omega\mu} \left(\einheitsvek{z}\times\gradient\SkalarPot\right)\frac{\d g}{\d z}}
 \end{align*}
 \end{itemize}
 \end{frame}
@@ -175,11 +175,11 @@
   \item Perfekte Leiter: \(\kappa \to \infty\)
   \item Rotationsfreiheit des elektrischen Felds in der Transversalebene \(\to\) \alert{Spannung}:
     \begin{equation*}
-      \spannung[u] = \int_C \efeld[uv] \cdot \upd \vec{s} \; \text{ mit \(z =\) const. auf \(C\)}
+      \Spannung[u] = \int_C \EFeld[uv] \cdot \upd \vec{s} \; \text{ mit \(z =\) const. auf \(C\)}
     \end{equation*}
   \item Aus dem Durchflutungsgesetz \(\to\) \alert{Strom:}
     \begin{equation*}
-      \elstrom[u] = \oint_{O(A)} \magfeld[uv] \cdot \upd\vec{s}
+      \Strom[u] = \oint_{O(A)} \HFeld[uv] \cdot \upd\vec{s}
       \end{equation*}
   \end{itemize}
       \end{column}
@@ -187,7 +187,7 @@
   \begin{itemize}[<+->]
   \item Damit können die Ausdrücke für die Felder umgeformt werden:
           \begin{equation*}
-        \frac{\d \efeld[uv]}{\d z} + \komplex\omega\mu\magfeld[uv] \times\einheitsvek{z} =\vec{0} \quad\text{und}\quad \magfeld[uv]= \frac{1}{\komplex\omega\mu} \left(\einheitsvek{z}\times\gradient\elpotential\right)\frac{\d g}{\d z} 
+        \frac{\d \EFeld[uv]}{\d z} + \komplex\omega\mu\HFeld[uv] \times\einheitsvek{z} =\vec{0} \quad\text{und}\quad \HFeld[uv]= \frac{1}{\komplex\omega\mu} \left(\einheitsvek{z}\times\gradient\SkalarPot\right)\frac{\d g}{\d z} 
     \end{equation*}
     
   \end{itemize}
@@ -198,17 +198,17 @@
   \begin{itemize}[<+->]
   \item Ausdrücke für die Felder:
           \begin{equation*}
-        \frac{\d \efeld[uv]}{\d z} + \komplex\omega\mu\magfeld[uv] \times\einheitsvek{z} =\vec{0} \quad\text{und}\quad \magfeld[uv]= \frac{1}{\komplex\omega\mu} \left(\einheitsvek{z}\times\gradient\elpotential\right)\frac{\d g}{\d z} 
+        \frac{\d \EFeld[uv]}{\d z} + \komplex\omega\mu\HFeld[uv] \times\einheitsvek{z} =\vec{0} \quad\text{und}\quad \HFeld[uv]= \frac{1}{\komplex\omega\mu} \left(\einheitsvek{z}\times\gradient\SkalarPot\right)\frac{\d g}{\d z} 
       \end{equation*}
-      \item Wir bilden das Wegintegral der ersten Gleichung entlang \(C\) und setzen dann \(\magfeld[uv]\) ein: 
+      \item Wir bilden das Wegintegral der ersten Gleichung entlang \(C\) und setzen dann \(\HFeld[uv]\) ein: 
           \begin{align*}
-            \int_C \frac{\d \efeld[uv]}{\d z} \cdot \upd \vec{s} + \komplex\omega\mu \int_C\left(\magfeld[uv] \times\einheitsvek{z}\right) \cdot \upd \vec{s} &= 0  \\
-            \Aboxed{\frac{\d \spannung[u]}{\d z} + \frac{\d g}{\d z} \int_C\gradient\elpotential \cdot \upd \vec{s} = 0} 
+            \int_C \frac{\d \EFeld[uv]}{\d z} \cdot \upd \vec{s} + \komplex\omega\mu \int_C\left(\HFeld[uv] \times\einheitsvek{z}\right) \cdot \upd \vec{s} &= 0  \\
+            \Aboxed{\frac{\d \Spannung[u]}{\d z} + \frac{\d g}{\d z} \int_C\gradient\SkalarPot \cdot \upd \vec{s} = 0} 
           \end{align*}
         \item Weiter gilt für den Strom:
           \begin{align*}
-            \elstrom[u] = \oint_{O(A)} \magfeld[uv] \cdot \upd\vec{s} &= \oint_{O(A)} \frac{1}{\komplex\omega\mu} \left(\einheitsvek{z}\times\gradient\elpotential\right)\frac{\d g}{\d z} \cdot \upd\vec{s}\\
-                                                                        \Rightarrow \Aboxed{\frac{\d g}{\d z} &= \komplex\omega\mu \frac{\elstrom[u]}{\oint_{O(A)} \left(\einheitsvek{z}\times\gradient\elpotential\right) \cdot \upd\vec{s}}}
+            \Strom[u] = \oint_{O(A)} \HFeld[uv] \cdot \upd\vec{s} &= \oint_{O(A)} \frac{1}{\komplex\omega\mu} \left(\einheitsvek{z}\times\gradient\SkalarPot\right)\frac{\d g}{\d z} \cdot \upd\vec{s}\\
+                                                                        \Rightarrow \Aboxed{\frac{\d g}{\d z} &= \komplex\omega\mu \frac{\Strom[u]}{\oint_{O(A)} \left(\einheitsvek{z}\times\gradient\SkalarPot\right) \cdot \upd\vec{s}}}
             \end{align*}
   \end{itemize}
 \end{frame}
@@ -218,15 +218,15 @@
   \begin{itemize}[<+->]
   \item Wir betrachten die Formeln
     \begin{equation*}
-      \frac{\d \spannung[u]}{\d z} + \frac{\d g}{\d z} \int_C\gradient\elpotential \cdot \upd \vec{s} = 0 \text{ und } \frac{\d g}{\d z} = \komplex\omega\mu \frac{\elstrom[u]}{\oint_{O(A)} \left(\einheitsvek{z}\times\gradient\elpotential\right) \cdot \upd\vec{s}}
+      \frac{\d \Spannung[u]}{\d z} + \frac{\d g}{\d z} \int_C\gradient\SkalarPot \cdot \upd \vec{s} = 0 \text{ und } \frac{\d g}{\d z} = \komplex\omega\mu \frac{\Strom[u]}{\oint_{O(A)} \left(\einheitsvek{z}\times\gradient\SkalarPot\right) \cdot \upd\vec{s}}
     \end{equation*}
   \item Einsetzen der rechten in die linke Gleichung eliminiert offensichtlich die unbekannte Funktion \(g(z)\) und wie erhalten die \alert{erste Leitungsgleichung} (Telegraphengleichung):
     \begin{equation*}
-      \frac{\d \spannung[u](z)}{\d z} + \komplex\omega \underbrace{\frac{\mu\int_C\gradient\elpotential \cdot \upd \vec{s}}{\oint_{O(A)} \left(\einheitsvek{z}\times\gradient\elpotential\right) \cdot \upd\vec{s}}}_{L^\prime} \elstrom[u](z)=\boxed{\frac{\d \spannung[u](z)}{\d z} + \komplex\omega L^\prime \elstrom[u](z)= 0} \quad [L^\prime] = \si{\henry\per\metre}
+      \frac{\d \Spannung[u](z)}{\d z} + \komplex\omega \underbrace{\frac{\mu\int_C\gradient\SkalarPot \cdot \upd \vec{s}}{\oint_{O(A)} \left(\einheitsvek{z}\times\gradient\SkalarPot\right) \cdot \upd\vec{s}}}_{L^\prime} \Strom[u](z)=\boxed{\frac{\d \Spannung[u](z)}{\d z} + \komplex\omega L^\prime \Strom[u](z)= 0} \quad [L^\prime] = \si{\henry\per\metre}
     \end{equation*}
-\item Der \alert{Induktivitätsbelag} der Leitung \(L^\prime\) ist vollständig bestimmt durch die Lösung des statischen 2D Laplace-Randwertproblems für \(\elpotential\) im Lösungsvolumen \(V\)
+\item Der \alert{Induktivitätsbelag} der Leitung \(L^\prime\) ist vollständig bestimmt durch die Lösung des statischen 2D Laplace-Randwertproblems für \(\SkalarPot\) im Lösungsvolumen \(V\)
   \begin{equation*}
-    \laplace\elpotential(x,y) = 0 \text{ mit }  \elpotential = 0 \text{ auf einem Leiter und } \elpotential = \spannung(z) \text{ auf dem anderen Leiter}
+    \laplace\SkalarPot(x,y) = 0 \text{ mit }  \SkalarPot = 0 \text{ auf einem Leiter und } \SkalarPot = \Spannung(z) \text{ auf dem anderen Leiter}
     \end{equation*}
   \end{itemize}
 \end{frame}
@@ -237,20 +237,20 @@
   \begin{itemize}[<+->]
   \item Analog folgt die \alert{zweite Leitungsgleichung} aus den Formeln:
           \begin{equation*}
-        \frac{\d \magfeld[uv]}{\d z} - \komplex\omega\varepsilon\efeld[uv] \times\einheitsvek{z} =\vec{0} \text{ und } \efeld[uv] = -\gradient\elpotential \; g(z)
+        \frac{\d \HFeld[uv]}{\d z} - \komplex\omega\varepsilon\EFeld[uv] \times\einheitsvek{z} =\vec{0} \text{ und } \EFeld[uv] = -\gradient\SkalarPot \; g(z)
       \end{equation*}
-      \item Umlaufintegral der ersten Gleichung entlang \(O(A)\) und Einsetzen von \(\efeld[uv]\) ergibt: 
+      \item Umlaufintegral der ersten Gleichung entlang \(O(A)\) und Einsetzen von \(\EFeld[uv]\) ergibt: 
           \begin{align*}
-            \oint_{O(A)} \frac{\d \magfeld[uv]}{\d z} \cdot \upd \vec{s} - \komplex\omega\varepsilon \oint_{O(A)}\left(\efeld[uv] \times\einheitsvek{z}\right) \cdot \upd \vec{s} &= 0  \\
-            \frac{\d \elstrom[u]}{\d z} -\komplex\omega\varepsilon\; g(z) \oint_{O(A)}\left(\einheitsvek{z}\times \gradient\elpotential\right) \cdot \upd \vec{s} &= 0 
+            \oint_{O(A)} \frac{\d \HFeld[uv]}{\d z} \cdot \upd \vec{s} - \komplex\omega\varepsilon \oint_{O(A)}\left(\EFeld[uv] \times\einheitsvek{z}\right) \cdot \upd \vec{s} &= 0  \\
+            \frac{\d \Strom[u]}{\d z} -\komplex\omega\varepsilon\; g(z) \oint_{O(A)}\left(\einheitsvek{z}\times \gradient\SkalarPot\right) \cdot \upd \vec{s} &= 0 
           \end{align*}
-        \item Die Funktion \(g(z)\) folgt sofort aus \(\spannung[u]\):
+        \item Die Funktion \(g(z)\) folgt sofort aus \(\Spannung[u]\):
           \begin{equation*}
-\spannung[u] = \int_C \efeld[uv]\cdot\upd\vec{s} = -g(z) \int_C \gradient\elpotential\cdot\upd\vec{s} \to g(z) = -\frac{\spannung[u]}{\int_C \gradient\elpotential\cdot\upd\vec{s}}
+\Spannung[u] = \int_C \EFeld[uv]\cdot\upd\vec{s} = -g(z) \int_C \gradient\SkalarPot\cdot\upd\vec{s} \to g(z) = -\frac{\Spannung[u]}{\int_C \gradient\SkalarPot\cdot\upd\vec{s}}
 \end{equation*}
 \item Damit lautet die \alert{zweite Leitungsgleichung}:
   \begin{equation*}
-    \frac{\d \elstrom[u]}{\d z} +\komplex\omega \underbrace{\frac{\varepsilon\oint_{O(A)}\left(\einheitsvek{z}\times \gradient\elpotential\right) \cdot \upd \vec{s}}{\int_C \gradient\elpotential\cdot\upd\vec{s}}}_{C^\prime} \spannung[u] = 0 \quad [C^\prime]=\si{\farad\per\metre}
+    \frac{\d \Strom[u]}{\d z} +\komplex\omega \underbrace{\frac{\varepsilon\oint_{O(A)}\left(\einheitsvek{z}\times \gradient\SkalarPot\right) \cdot \upd \vec{s}}{\int_C \gradient\SkalarPot\cdot\upd\vec{s}}}_{C^\prime} \Spannung[u] = 0 \quad [C^\prime]=\si{\farad\per\metre}
     \end{equation*}
   \end{itemize}
 \end{frame}
@@ -260,20 +260,20 @@
   \begin{itemize}[<+->]
   \item Zusammenfassend haben wir für verlustlose Leitungen die folgenden \alert{Leitungsgleichungen} gefunden:
     \begin{align*}
-      \frac{\d \spannung[u](z)}{\d z} + \komplex\omega L^\prime \elstrom[u](z) &= 0 & L^\prime &=\frac{\mu\int_C\gradient\elpotential \cdot \upd \vec{s}}{\oint_{O(A)} \left(\einheitsvek{z}\times\gradient\elpotential\right) \cdot \upd\vec{s}}\\
-      \frac{\d \elstrom[u](z)}{\d z} +\komplex\omega C^\prime \spannung[u](z) & = 0 & C^\prime &= \frac{\varepsilon\oint_{O(A)}\left(\einheitsvek{z}\times \gradient\elpotential\right) \cdot \upd \vec{s}}{\int_C \gradient\elpotential\cdot\upd\vec{s}}
+      \frac{\d \Spannung[u](z)}{\d z} + \komplex\omega L^\prime \Strom[u](z) &= 0 & L^\prime &=\frac{\mu\int_C\gradient\SkalarPot \cdot \upd \vec{s}}{\oint_{O(A)} \left(\einheitsvek{z}\times\gradient\SkalarPot\right) \cdot \upd\vec{s}}\\
+      \frac{\d \Strom[u](z)}{\d z} +\komplex\omega C^\prime \Spannung[u](z) & = 0 & C^\prime &= \frac{\varepsilon\oint_{O(A)}\left(\einheitsvek{z}\times \gradient\SkalarPot\right) \cdot \upd \vec{s}}{\int_C \gradient\SkalarPot\cdot\upd\vec{s}}
     \end{align*}
   \item Offensichtlich gilt
     \begin{equation*}
-      L^\prime C^\prime = \varepsilon\mu = \frac{1}{\geschw_p^2} \Rightarrow \boxed{\geschw_p = \frac{1}{\sqrt{L^\prime C^\prime}}}
+      L^\prime C^\prime = \varepsilon\mu = \frac{1}{\Geschwindigkeit_p^2} \Rightarrow \boxed{\Geschwindigkeit_p = \frac{1}{\sqrt{L^\prime C^\prime}}}
     \end{equation*}
   \item Entkoppelte Gleichungen:
     \begin{equation*}
-      \frac{\d^2 \spannung[u](z)}{\d z^2} + \omega^2 L^\prime C^\prime \spannung[u](z) = 0 \text{ und } \frac{\d^2 \elstrom[u](z)}{\d z^2} + \omega^2 L^\prime C^\prime \elstrom[u](z) = 0
+      \frac{\d^2 \Spannung[u](z)}{\d z^2} + \omega^2 L^\prime C^\prime \Spannung[u](z) = 0 \text{ und } \frac{\d^2 \Strom[u](z)}{\d z^2} + \omega^2 L^\prime C^\prime \Strom[u](z) = 0
     \end{equation*}
   \item Die Lösungen sind (natürlich) vor- und zurücklaufende Wellen (als ruhende Zeiger):
     \begin{equation*}
-      \spannung[u](z) = \spannung[u]_0 \euler^{\pm\komplex kz} \text{ und } \elstrom[u](z) = \elstrom[u]_0 \euler^{\pm\komplex kz}
+      \Spannung[u](z) = \Spannung[u]_0 \euler^{\pm\komplex kz} \text{ und } \Strom[u](z) = \Strom[u]_0 \euler^{\pm\komplex kz}
       \end{equation*}
   \end{itemize}
 \end{frame}
@@ -298,9 +298,9 @@
   \begin{itemize}[<+->]
   \item Maschensatz:
     \begin{align*}
-      \spannung[u](z) = \komplex\omega L \elstrom[u](z) + \spannung[u](z+\Delta z)\\
-      \spannung[u](z+\Delta z) -\spannung[u](z) + \komplex\omega L \elstrom[u](z) =0  \\
-      \frac{\Delta \spannung[u]}{\Delta z} + \komplex\omega \frac{L}{\Delta z} \elstrom[u](z) =0
+      \Spannung[u](z) = \komplex\omega L \Strom[u](z) + \Spannung[u](z+\Delta z)\\
+      \Spannung[u](z+\Delta z) -\Spannung[u](z) + \komplex\omega L \Strom[u](z) =0  \\
+      \frac{\Delta \Spannung[u]}{\Delta z} + \komplex\omega \frac{L}{\Delta z} \Strom[u](z) =0
       \end{align*}
   \end{itemize}
 \end{column}
@@ -308,7 +308,7 @@
   \begin{itemize}[<+->]
   \item Knotensatz:
     \begin{equation*}
-      \elstrom[u](z+\Delta z) = \elstrom[u](z) - \komplex\omega C \spannung[u](z+\Delta z) \Rightarrow \frac{\Delta \elstrom[u]}{\Delta z} + \komplex\omega \frac{C}{\Delta z} \spannung[u](z+\Delta z) = 0   
+      \Strom[u](z+\Delta z) = \Strom[u](z) - \komplex\omega C \Spannung[u](z+\Delta z) \Rightarrow \frac{\Delta \Strom[u]}{\Delta z} + \komplex\omega \frac{C}{\Delta z} \Spannung[u](z+\Delta z) = 0   
     \end{equation*}
   \item Im Grenzfall \(\Delta z \to 0\) und mit \(C^\prime=\lim_{\Delta z \to 0} \frac{C}{\Delta z}\) und \(L^\prime=\lim_{\Delta z \to 0} \frac{L}{\Delta z}\) ist der obige Vierpol das \alert{Ersatzschaltbild eines differentiellen Stückes einer verlustlosen Leitung.}
     \item Verallgemeinerung für \alert{verlustbehaftete} Leitungen:
@@ -351,8 +351,8 @@
   \begin{itemize}[<+->]
     \item Aus dem Ersatzschaltbild ergeben sich die \alert{Leitungsgleichungen für verlustbehaftete Leitungen}. 
     \begin{align*}
-      \frac{\d \spannung[u](z)}{\d z} + \left(R^\prime + \komplex\omega L^\prime\right) \elstrom[u](z) &= 0 & L^\prime &=\frac{\mu\int_C\gradient\elpotential \cdot \upd \vec{s}}{\oint_{O(A)} \left(\einheitsvek{z}\times\gradient\elpotential\right) \cdot \upd\vec{s}}\\
-      \frac{\d \elstrom[u](z)}{\d z} +\left(G^\prime + \komplex\omega C^\prime\right) \spannung[u](z) & = 0 & C^\prime &= \frac{\varepsilon\oint_{O(A)}\left(\einheitsvek{z}\times \gradient\elpotential\right) \cdot \upd \vec{s}}{\int_C \gradient\elpotential\cdot\upd\vec{s}}
+      \frac{\d \Spannung[u](z)}{\d z} + \left(R^\prime + \komplex\omega L^\prime\right) \Strom[u](z) &= 0 & L^\prime &=\frac{\mu\int_C\gradient\SkalarPot \cdot \upd \vec{s}}{\oint_{O(A)} \left(\einheitsvek{z}\times\gradient\SkalarPot\right) \cdot \upd\vec{s}}\\
+      \frac{\d \Strom[u](z)}{\d z} +\left(G^\prime + \komplex\omega C^\prime\right) \Spannung[u](z) & = 0 & C^\prime &= \frac{\varepsilon\oint_{O(A)}\left(\einheitsvek{z}\times \gradient\SkalarPot\right) \cdot \upd \vec{s}}{\int_C \gradient\SkalarPot\cdot\upd\vec{s}}
     \end{align*}
   \item Der \alert{Widerstandsbelag} \(R^\prime\) entspricht den ohmschen Leitungsverlusten pro Längeneinheit.
   \item Der \alert{Leitwertbelag} \(G^\prime\)  entspricht den dielektrischen Verlusten pro Längeneinheit.
@@ -366,15 +366,15 @@
       \begin{itemize}[<+->]
       \item Wir können die entkoppelten Leitungsgleichungen jetzt auch allgemein hinschreiben:
     \begin{equation*}
-      \frac{\d^2 \spannung[u](z)}{\d z^2} -  Z^\prime Y^\prime \spannung[u](z) = 0 \text{ und } \frac{\d^2 \elstrom[u](z)}{\d z^2} -  Z^\prime Y^\prime \elstrom[u](z) = 0
+      \frac{\d^2 \Spannung[u](z)}{\d z^2} -  Z^\prime Y^\prime \Spannung[u](z) = 0 \text{ und } \frac{\d^2 \Strom[u](z)}{\d z^2} -  Z^\prime Y^\prime \Strom[u](z) = 0
     \end{equation*}
   \item Ansatz:
     \begin{equation*}
-      \spannung[u](z) = u \euler^{\pm\gamma z} \Rightarrow \gamma = \sqrt{Z^\prime Y^\prime} = \sqrt{\left(R^\prime + \komplex\omega L^\prime\right) \left(G^\prime + \komplex\omega C^\prime\right)} \text{ Ausbreitungskonstante}
+      \Spannung[u](z) = u \euler^{\pm\gamma z} \Rightarrow \gamma = \sqrt{Z^\prime Y^\prime} = \sqrt{\left(R^\prime + \komplex\omega L^\prime\right) \left(G^\prime + \komplex\omega C^\prime\right)} \text{ Ausbreitungskonstante}
     \end{equation*}
-  \item Mit der Spannung \(\spannung[u](z) = u_1 \euler^{-\gamma z} + u_2 \euler^{\gamma z}\) ergibt sich der Strom zu
+  \item Mit der Spannung \(\Spannung[u](z) = u_1 \euler^{-\gamma z} + u_2 \euler^{\gamma z}\) ergibt sich der Strom zu
     \begin{equation*}
-      \elstrom[u](z) = - \frac{1}{Z^\prime} \frac{\d \spannung[u](z)}{\d z} = \frac{\gamma}{Z^\prime} \left( u_1 \euler^{-\gamma z} - u_2 \euler^{\gamma z}\right) = \frac{1}{Z_L} \left( u_1 \euler^{-\gamma z} - u_2 \euler^{\gamma z}\right)  
+      \Strom[u](z) = - \frac{1}{Z^\prime} \frac{\d \Spannung[u](z)}{\d z} = \frac{\gamma}{Z^\prime} \left( u_1 \euler^{-\gamma z} - u_2 \euler^{\gamma z}\right) = \frac{1}{Z_L} \left( u_1 \euler^{-\gamma z} - u_2 \euler^{\gamma z}\right)  
     \end{equation*}
   \item Hierbei ist \(Z_L\) der \alert{Leitungswellenwiderstand}:
     \begin{equation*}
@@ -392,31 +392,31 @@
         \begin{equation*}
           \left.
     \begin{array}{rl}
-      \frac{\d \spannung[u](z)}{\d z} + \left(R^\prime + \komplex\omega L^\prime\right) \elstrom[u](z) &= 0 \\
-      \frac{\d \elstrom[u](z)}{\d z} +\left(G^\prime + \komplex\omega C^\prime\right) \spannung[u](z)  &= 0 
+      \frac{\d \Spannung[u](z)}{\d z} + \left(R^\prime + \komplex\omega L^\prime\right) \Strom[u](z) &= 0 \\
+      \frac{\d \Strom[u](z)}{\d z} +\left(G^\prime + \komplex\omega C^\prime\right) \Spannung[u](z)  &= 0 
     \end{array}\right\} \Rightarrow
-  \frac{\d}{\d z}\begin{pmatrix}\spannung[u](z)\\\elstrom[u](z) \end{pmatrix}
+  \frac{\d}{\d z}\begin{pmatrix}\Spannung[u](z)\\\Strom[u](z) \end{pmatrix}
   +
   \begin{pmatrix}
     0 & Z^\prime \\
     Y^\prime & 0
   \end{pmatrix}
-  \begin{pmatrix}\spannung[u](z)\\\elstrom[u](z) \end{pmatrix} = 0
+  \begin{pmatrix}\Spannung[u](z)\\\Strom[u](z) \end{pmatrix} = 0
 \end{equation*}
 \item Die Matrixgleichung ist sofort für \alert{Mehrfachleitungen} verallgemeinbar. Hierzu bilden wir
   \begin{itemize}[<+->]
-    \item den Vektor der Spannungen relativ zum Bezugsleiter \(\vec{\spannung[u]}(z) = \left(\spannung[u]_1(z),\ldots , \spannung[u]_n(z) \right)^T\). 
-    \item den Vektor der Ströme im Leiter  \(\vec{\elstrom[u]}(z) = \left(\elstrom[u]_1(z),\ldots , \elstrom[u]_n(z) \right)^T\).
+    \item den Vektor der Spannungen relativ zum Bezugsleiter \(\vec{\Spannung[u]}(z) = \left(\Spannung[u]_1(z),\ldots , \Spannung[u]_n(z) \right)^T\). 
+    \item den Vektor der Ströme im Leiter  \(\vec{\Strom[u]}(z) = \left(\Strom[u]_1(z),\ldots , \Strom[u]_n(z) \right)^T\).
     \item die Matrix mit den Impedanzbelägen in der Hauptdiagonalen \(\left(Z^\prime\right)\) 
     \item die Matrix mit den Admittanzbelägen in der Hauptdiagonalen \(\left(Y^\prime\right)\) 
 \begin{equation*}
-  \frac{\d}{\d z}\begin{pmatrix}\vec{\spannung[u]}(z)\\\vec{\elstrom[u]}(z) \end{pmatrix}
+  \frac{\d}{\d z}\begin{pmatrix}\vec{\Spannung[u]}(z)\\\vec{\Strom[u]}(z) \end{pmatrix}
   +
   \begin{pmatrix}
     0 & \left(Z^\prime\right) \\
     \left(Y^\prime\right)^\prime & 0
   \end{pmatrix}
-  \begin{pmatrix}\vec{\spannung[u]}(z)\\\vec{\elstrom[u]}(z) \end{pmatrix} = 0
+  \begin{pmatrix}\vec{\Spannung[u]}(z)\\\vec{\Strom[u]}(z) \end{pmatrix} = 0
 \end{equation*}
 
     \end{itemize}

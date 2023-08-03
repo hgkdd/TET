@@ -38,7 +38,7 @@
 
       
       \begin{tikzpicture}[line width = 1.2pt, line join=round,>=stealth]
-        \filldraw [color=blue!70] (2.5,2.5) circle (1pt) node[above] {$Q_i, \ortsvektor[vs]_i$};
+        \filldraw [color=blue!70] (2.5,2.5) circle (1pt) node[above] {$Q_i, \Ortsr[vs]_i$};
         \filldraw [color=blue!70] (2.9,2.1) circle (1pt); 
         \filldraw [color=blue!70] (2.7,1.9) circle (1pt); 
         % Ladungsdichte
@@ -52,7 +52,7 @@
         \shade[ball color=white!10!green!20,opacity=0.20] plot [smooth cycle, tension = 1] coordinates {(a) (b) (c) (d) (e) (f) (g)};
         \draw [color=darkgreen] plot [smooth cycle, tension = 1] coordinates {(a) (b) (c) (d) (e) (f) (g)} node [sloped, above] {$O(V_2)$};
         \draw (1.3,-0.2) node[align=center] {$\laddichte{F} \neq 0 $ auf $O(V_2)$\\
-        $\elpotential = 0$ auf $O(V_2)$};
+        $\SkalarPot = 0$ auf $O(V_2)$};
         \draw(1,1.1) node {$V_2$};
         \draw(1.2,0.8) node{$\kappa_2 \to \infty$};
         \draw(0,2.2) node[align=center] {$V_1$\\$\varepsilon=\varepsilon_1$}; 
@@ -63,10 +63,10 @@
 
       
       \begin{tikzpicture}[line width = 1.2pt, line join=round,>=stealth]
-        \filldraw [color=blue!70] (2.5,2.5) circle (1pt) node[above] {$Q_i, \ortsvektor[vs]_i$};
+        \filldraw [color=blue!70] (2.5,2.5) circle (1pt) node[above] {$Q_i, \Ortsr[vs]_i$};
         \filldraw [color=blue!70] (2.9,2.1) circle (1pt); 
         \filldraw [color=blue!70] (2.7,1.9) circle (1pt); 
-        \filldraw [color=red!70] (1.3,1.9) circle (1pt) node[above] {$Q^\star_i, \ortsvektor[v]^\star_i$};
+        \filldraw [color=red!70] (1.3,1.9) circle (1pt) node[above] {$Q^\star_i, \Ortsr[v]^\star_i$};
         \filldraw [color=red!70] (1.2,1.7) circle (1pt); 
         \filldraw [color=red!70] (1.7,1.6) circle (1pt); 
         % Ladungsdichte
@@ -80,7 +80,7 @@
         \shade[ball color=white!10!green!20,opacity=0.20] plot [smooth cycle, tension = 1] coordinates {(a) (b) (c) (d) (e) (f) (g)};
         \draw [color=darkgreen] plot [smooth cycle, tension = 1] coordinates {(a) (b) (c) (d) (e) (f) (g)} node [sloped, above] {$O(V_2)$};
         \draw (1.3,-0.2) node[align=center] {$\laddichte{F} = 0 $ auf $O(V_2)$\\
-        $\elpotential \stackrel{!}{=} 0$ auf $O(V_2)$};
+        $\SkalarPot \stackrel{!}{=} 0$ auf $O(V_2)$};
         \draw(1,1.1) node {$V_2$};
         \draw(1.2,0.8) node{$\varepsilon=\varepsilon_1$};
         \draw(0,2.2) node[align=center] {$V_1$\\$\varepsilon=\varepsilon_1$}; 
@@ -91,14 +91,14 @@
 \pause
 \begin{block}{Finden der Ersatzladungen und deren Positionen}
   \begin{enumerate}[<+->]
-  \item Abbildung der Quellpunkte: $T: \mathbb{R}^3 \to \mathbb{R}^3:\; \ortsvektor[vs] \to \ortsvektor[v]^\star = T( \ortsvektor[vs])$ (stetig diff.-bar)\\
+  \item Abbildung der Quellpunkte: $T: \mathbb{R}^3 \to \mathbb{R}^3:\; \Ortsr[vs] \to \Ortsr[v]^\star = T( \Ortsr[vs])$ (stetig diff.-bar)\\
     Bildladungen sollen in $V_2$ liegen: $T( V_1) \subset V_2$\\
-    $O(V_2)$ soll auf sich selbst abgebildet werden: $T(\ortsvektor[v] )= \ortsvektor[v]$ für $\ortsvektor[v] \in O(V_2)$ 
-  \item Faktor für Bildladungen: $\lambda: V_1 \cup O(V_2) \to \mathbb{R}: \ortsvektor[vs] \to \lambda(\ortsvektor[vs])$ (stetig diff.-bar)\\
-    Ladung auf $O(V_2)$ nicht skalieren: $\lambda(\ortsvektor[vs]) = 1$ für $\ortsvektor[vs] \in O(V_2)$
+    $O(V_2)$ soll auf sich selbst abgebildet werden: $T(\Ortsr[v] )= \Ortsr[v]$ für $\Ortsr[v] \in O(V_2)$ 
+  \item Faktor für Bildladungen: $\lambda: V_1 \cup O(V_2) \to \mathbb{R}: \Ortsr[vs] \to \lambda(\Ortsr[vs])$ (stetig diff.-bar)\\
+    Ladung auf $O(V_2)$ nicht skalieren: $\lambda(\Ortsr[vs]) = 1$ für $\Ortsr[vs] \in O(V_2)$
   \end{enumerate}
   \pause
-  Insgesamt: $(Q_i, \ortsvektor[vs]_i) \to (Q_i^\star, \ortsvektor[v]_i^\star) $ mit $Q_i^\star = -\lambda(\ortsvektor[vs]_i)\, Q_i$ und $\ortsvektor[v]_i^\star = T(\ortsvektor[vs]_i)$ (\enquote{-}: Konvention)
+  Insgesamt: $(Q_i, \Ortsr[vs]_i) \to (Q_i^\star, \Ortsr[v]_i^\star) $ mit $Q_i^\star = -\lambda(\Ortsr[vs]_i)\, Q_i$ und $\Ortsr[v]_i^\star = T(\Ortsr[vs]_i)$ (\enquote{-}: Konvention)
 \end{block}
   
   \end{frame}
@@ -106,19 +106,19 @@
   \begin{frame}
     \frametitle{Ersatzproblem}
     \begin{itemize}[<+->]
-    \item Für das \alert{Ersatzproblem} kann das elektrische Skalarpotential $\elpotential(\ortsvektor[v])$ hervorgerufen von den \alert{Originalladungen} $(Q_i, \ortsvektor[vs]_i)$ und den \alert{Ersatzladungen} $(Q_i^\star, \ortsvektor[v]_i^\star)$ direkt mit der \alert{Greenschen Funktion}
+    \item Für das \alert{Ersatzproblem} kann das elektrische Skalarpotential $\SkalarPot(\Ortsr[v])$ hervorgerufen von den \alert{Originalladungen} $(Q_i, \Ortsr[vs]_i)$ und den \alert{Ersatzladungen} $(Q_i^\star, \Ortsr[v]_i^\star)$ direkt mit der \alert{Greenschen Funktion}
       \begin{equation*}
-        G(\ortsvektor[v],\ortsvektor[vs]) = \frac{1}{4\pi\varepsilon_1} \frac{1}{\left|\ortsvektor[v] - \ortsvektor[vs] \right|}
+        G(\Ortsr[v],\Ortsr[vs]) = \frac{1}{4\pi\varepsilon_1} \frac{1}{\left|\Ortsr[v] - \Ortsr[vs] \right|}
       \end{equation*}
       des homogenen Freiraums $V_2\cup V_1$ berechnet werden.
     \item Es gilt somit:
       \begin{eqnarray*}
-        \elpotential(\ortsvektor[v]) & = &\sum_i \left[ Q_i G(\ortsvektor[v],\ortsvektor[vs]_i) + Q_i^\star G(\ortsvektor[v],\ortsvektor[v]_i^\star)\right]\\
-                                     & = &  \sum_i \left[ Q_i G(\ortsvektor[v],\ortsvektor[vs]_i) -\lambda(\ortsvektor[vs]_i) Q_i G(\ortsvektor[v],T(\ortsvektor[vs]_i))\right]\\
-                                     & = & \sum_i Q_i \left[G(\ortsvektor[v],\ortsvektor[vs]_i) -\lambda(\ortsvektor[vs]_i) G(\ortsvektor[v],T(\ortsvektor[vs]_i))\right]
+        \SkalarPot(\Ortsr[v]) & = &\sum_i \left[ Q_i G(\Ortsr[v],\Ortsr[vs]_i) + Q_i^\star G(\Ortsr[v],\Ortsr[v]_i^\star)\right]\\
+                                     & = &  \sum_i \left[ Q_i G(\Ortsr[v],\Ortsr[vs]_i) -\lambda(\Ortsr[vs]_i) Q_i G(\Ortsr[v],T(\Ortsr[vs]_i))\right]\\
+                                     & = & \sum_i Q_i \left[G(\Ortsr[v],\Ortsr[vs]_i) -\lambda(\Ortsr[vs]_i) G(\Ortsr[v],T(\Ortsr[vs]_i))\right]
       \end{eqnarray*}
-      \item Für $\ortsvektor[v] \in O(V_2)$ muss gelten: $\elpotential(\ortsvektor[v]) = 0$
-      \item Für $\ortsvektor[v] \in O(V_2)$ gilt auch: $\lambda(\ortsvektor[v]) = 1$ und $T(\ortsvektor[v]) = \ortsvektor[v]$ 
+      \item Für $\Ortsr[v] \in O(V_2)$ muss gelten: $\SkalarPot(\Ortsr[v]) = 0$
+      \item Für $\Ortsr[v] \in O(V_2)$ gilt auch: $\lambda(\Ortsr[v]) = 1$ und $T(\Ortsr[v]) = \Ortsr[v]$ 
  \end{itemize}   
     
     \end{frame}
@@ -128,19 +128,19 @@
     \begin{itemize}[<+->]
 \item Wir betrachten das Skalarpotential für das Ersatzproblem:
       \begin{equation*}
-        \elpotential(\ortsvektor[v]) =  \sum_i Q_i \left[G(\ortsvektor[v],\ortsvektor[vs]_i) -\lambda(\ortsvektor[vs]_i) G(\ortsvektor[v],T(\ortsvektor[vs]_i))\right]
+        \SkalarPot(\Ortsr[v]) =  \sum_i Q_i \left[G(\Ortsr[v],\Ortsr[vs]_i) -\lambda(\Ortsr[vs]_i) G(\Ortsr[v],T(\Ortsr[vs]_i))\right]
       \end{equation*}
       \item Auf der Oberfläche von $V_2$ muss das Potential verschwinden:
       \begin{equation*}
-        \elpotential(\ortsvektor[v]) =  \sum_i Q_i \left[G(\ortsvektor[v],\ortsvektor[vs]_i) -\lambda(\ortsvektor[vs]_i) G(\ortsvektor[v],T(\ortsvektor[vs]_i))\right] \stackrel{!}{=} 0 \text{ für } \ortsvektor[v] \in O(V_2)
+        \SkalarPot(\Ortsr[v]) =  \sum_i Q_i \left[G(\Ortsr[v],\Ortsr[vs]_i) -\lambda(\Ortsr[vs]_i) G(\Ortsr[v],T(\Ortsr[vs]_i))\right] \stackrel{!}{=} 0 \text{ für } \Ortsr[v] \in O(V_2)
       \end{equation*}
     \item \alert{Hinreichend} dafür ist, dass gilt
       \begin{equation*}
-        \boxed{\lambda(\ortsvektor[vs]_i) G(\ortsvektor[v],T(\ortsvektor[vs]_i)) \stackrel{!}{=}  \lambda(\ortsvektor[v]) G(T(\ortsvektor[v]), \ortsvektor[vs]_i)} 
+        \boxed{\lambda(\Ortsr[vs]_i) G(\Ortsr[v],T(\Ortsr[vs]_i)) \stackrel{!}{=}  \lambda(\Ortsr[v]) G(T(\Ortsr[v]), \Ortsr[vs]_i)} 
       \end{equation*}
     \item Denn dann gilt auf $O(V_2)$
       \begin{equation*}
-        \lambda(\ortsvektor[vs]_i) G(\ortsvektor[v],T(\ortsvektor[vs]_i)) =  \underbrace{\lambda(\ortsvektor[v])}_{=1} G(\underbrace{T(\ortsvektor[v])}_{=\ortsvektor[v]},\ortsvektor[vs]_i) =  G(\ortsvektor[v],\ortsvektor[vs]_i) \text{ für } \ortsvektor[v] \in O(V_2)
+        \lambda(\Ortsr[vs]_i) G(\Ortsr[v],T(\Ortsr[vs]_i)) =  \underbrace{\lambda(\Ortsr[v])}_{=1} G(\underbrace{T(\Ortsr[v])}_{=\Ortsr[v]},\Ortsr[vs]_i) =  G(\Ortsr[v],\Ortsr[vs]_i) \text{ für } \Ortsr[v] \in O(V_2)
       \end{equation*}
   \item Man bezeichnet dies als \alert{Umwältzen vom Quellpunkt zum Aufpunkt}    
  \end{itemize}   
@@ -153,17 +153,17 @@
   \begin{itemize}[<+->]
   \item Mit der Eigenschaft
       \begin{equation*}
-        \boxed{\lambda(\ortsvektor[vs]_i) G(\ortsvektor[v],T(\ortsvektor[vs]_i)) \stackrel{!}{=}  \lambda(\ortsvektor[v]) G(T(\ortsvektor[v]), \ortsvektor[vs]_i)} 
+        \boxed{\lambda(\Ortsr[vs]_i) G(\Ortsr[v],T(\Ortsr[vs]_i)) \stackrel{!}{=}  \lambda(\Ortsr[v]) G(T(\Ortsr[v]), \Ortsr[vs]_i)} 
       \end{equation*}
 ist das Skalarpotential    
       \begin{equation*}
-        \elpotential(\ortsvektor[v]) =  \sum_i Q_i \left[G(\ortsvektor[v],\ortsvektor[vs]_i) -\lambda(\ortsvektor[vs]_i) G(\ortsvektor[v],T(\ortsvektor[vs]_i))\right] =\sum_i Q_i \left[G(\ortsvektor[v],\ortsvektor[vs]_i) -\lambda(\ortsvektor[v]) G(T(\ortsvektor[v]),\ortsvektor[vs]_i)\right]
+        \SkalarPot(\Ortsr[v]) =  \sum_i Q_i \left[G(\Ortsr[v],\Ortsr[vs]_i) -\lambda(\Ortsr[vs]_i) G(\Ortsr[v],T(\Ortsr[vs]_i))\right] =\sum_i Q_i \left[G(\Ortsr[v],\Ortsr[vs]_i) -\lambda(\Ortsr[v]) G(T(\Ortsr[v]),\Ortsr[vs]_i)\right]
       \end{equation*}
       Lösung des \alert{ursprünglichen Problems}.
-    \item Denn für $\ortsvektor[v] \in V_1 \cup O(V_2)$ gehen hier nur die Originalladungen an den Originalorten ein und die Randbedingung ist automatisch erfüllt.
+    \item Denn für $\Ortsr[v] \in V_1 \cup O(V_2)$ gehen hier nur die Originalladungen an den Originalorten ein und die Randbedingung ist automatisch erfüllt.
     \item Die \alert{problemangepasste Greensche Funktion} ist damit
       \begin{equation*}
-        \boxed{G^\star(\ortsvektor[v],\ortsvektor[vs]_i) = G(\ortsvektor[v],\ortsvektor[vs]_i) -\lambda(\ortsvektor[v]) G(T(\ortsvektor[v]),\ortsvektor[vs]_i)}
+        \boxed{G^\star(\Ortsr[v],\Ortsr[vs]_i) = G(\Ortsr[v],\Ortsr[vs]_i) -\lambda(\Ortsr[v]) G(T(\Ortsr[v]),\Ortsr[vs]_i)}
       \end{equation*}
     \item Das Problem reduziert sich somit auf das Finden der Abbildungen $T$ und $\lambda$ \\
       $\to$ einfache Beispiele

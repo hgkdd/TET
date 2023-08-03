@@ -69,8 +69,8 @@
 \draw[thick,->] (0,0,0) -- (0,0,.5) node[anchor=south]{$z$};
 
 %draw a vector from origin to point (P) 
-\draw[-stealth,color=red,thick] (O) -- (P) node[midway, below]{$\ortsvektor[v]$};
-\draw[-stealth,color=green,thick] (P) -- +(0,0,0.2) node[above]{$\magvekpot[uv]=\magvekpot[u]_z\einheitsvek{z}$};
+\draw[-stealth,color=red,thick] (O) -- (P) node[midway, below]{$\Ortsr[v]$};
+\draw[-stealth,color=green,thick] (P) -- +(0,0,0.2) node[above]{$\VektorPot[uv]=\VektorPot[u]_z\einheitsvek{z}$};
 
 %draw projection on xy plane, and a connecting line
 \draw[dashed, color=red] (O) -- (Pxy);
@@ -123,11 +123,11 @@
   \begin{itemize}[<+->]
     \item Für harmonische Zeitabhängigkeit gilt für das Vektorpotential in Lorenzeichung
       \begin{equation*}
-        \magvekpot[uv](\ortsvektor[v]) = \frac{\mu}{4\pi} \iiint_V \frac{\euler^{-\komplex\wellenzahl|\ortsvektor[v]-\ortsvektor[vs]|}}{|\ortsvektor[v]-\ortsvektor[vs]|} \elstromdichte[uv](\ortsvektor[vs]) \upd^3 \ortsvektor[s]
+        \VektorPot[uv](\Ortsr[v]) = \frac{\mu}{4\pi} \iiint_V \frac{\euler^{-\komplex\Wellenzahl|\Ortsr[v]-\Ortsr[vs]|}}{|\Ortsr[v]-\Ortsr[vs]|} \StromDichte[uv](\Ortsr[vs]) \upd^3 \Ortsr[s]
         \end{equation*}
-    \item Mit einem \alert{dünnen Leiter} in \(z\)-Richtung gilt \(\elstromdichte[uv](\ortsvektor[vs]) \upd^3 \ortsvektor[s] = \underline{I}(\ortsvektor[vs])\einheitsvek{z}\upd z^\prime \) und es folgt
+    \item Mit einem \alert{dünnen Leiter} in \(z\)-Richtung gilt \(\StromDichte[uv](\Ortsr[vs]) \upd^3 \Ortsr[s] = \underline{I}(\Ortsr[vs])\einheitsvek{z}\upd z^\prime \) und es folgt
       \begin{equation*}
-        \magvekpot[uv](\ortsvektor[v]) = \frac{\mu}{4\pi} \int_{-\nicefrac{\ell}{2}}^{\nicefrac{\ell}{2}} \frac{\euler^{-\komplex\wellenzahl |\ortsvektor[v]-\ortsvektor[vs]|}}{|\ortsvektor[v]-\ortsvektor[vs]|} \underline{I}(\ortsvektor[vs])\einheitsvek{z}\upd z^\prime
+        \VektorPot[uv](\Ortsr[v]) = \frac{\mu}{4\pi} \int_{-\nicefrac{\ell}{2}}^{\nicefrac{\ell}{2}} \frac{\euler^{-\komplex\Wellenzahl |\Ortsr[v]-\Ortsr[vs]|}}{|\Ortsr[v]-\Ortsr[vs]|} \underline{I}(\Ortsr[vs])\einheitsvek{z}\upd z^\prime
         \end{equation*}
 \end{itemize}
 \end{frame}
@@ -136,23 +136,23 @@
 \begin{frame}
   \frametitle{Hertzscher Dipol - Vektorpotential}
       \begin{equation*}
-        \magvekpot[uv](\ortsvektor[v]) = \frac{\mu}{4\pi} \int_{-\nicefrac{\ell}{2}}^{\nicefrac{\ell}{2}} \frac{\euler^{-\komplex\wellenzahl |\ortsvektor[v]-\ortsvektor[vs]|}}{|\ortsvektor[v]-\ortsvektor[vs]|} \underline{I}(\ortsvektor[vs])\einheitsvek{z}\upd z^\prime
+        \VektorPot[uv](\Ortsr[v]) = \frac{\mu}{4\pi} \int_{-\nicefrac{\ell}{2}}^{\nicefrac{\ell}{2}} \frac{\euler^{-\komplex\Wellenzahl |\Ortsr[v]-\Ortsr[vs]|}}{|\Ortsr[v]-\Ortsr[vs]|} \underline{I}(\Ortsr[vs])\einheitsvek{z}\upd z^\prime
         \end{equation*}
   \begin{itemize}[<+->]
   \item Von einem \alert{Hertzschem Dipol} spricht man, wenn
     \begin{enumerate}
     \item Die Länge \(\ell\) des Leiters \alert{wesentlich kleiner als die Wellenlänge} \(\lambda\) ist: \(\ell \ll \lambda\)
     \item Der Leiter ist \alert{linienförmig}.
-      \item Die Stromverteilung auf dem Leiter ist \alert{konstant}: \(\underline{I}(\ortsvektor[vs]) = \underline{I} \)
+      \item Die Stromverteilung auf dem Leiter ist \alert{konstant}: \(\underline{I}(\Ortsr[vs]) = \underline{I} \)
       \end{enumerate}
-    \item Für einen \alert{Dipol im Ursprung}: \(\ortsvektor[vs] \simeq \vec{0} \to |\ortsvektor[v]-\ortsvektor[vs]| \simeq |\ortsvektor[v]|=\ortsvektor\)
+    \item Für einen \alert{Dipol im Ursprung}: \(\Ortsr[vs] \simeq \vec{0} \to |\Ortsr[v]-\Ortsr[vs]| \simeq |\Ortsr[v]|=\Ortsr\)
       \begin{equation*}
-        \boxed{\magvekpot[uv](\ortsvektor[v]) = \frac{\mu}{4\pi} \frac{\euler^{-\komplex\wellenzahl\ortsvektor}}{\ortsvektor} \underline{I}\einheitsvek{z}\int_{-\nicefrac{\ell}{2}}^{\nicefrac{\ell}{2}} \upd z^\prime = \frac{\mu}{4\pi} \underline{I} \ell  \frac{\euler^{-\komplex\wellenzahl\ortsvektor}}{\ortsvektor} \einheitsvek{z}} = \magvekpot[u]_z \einheitsvek{z} 
+        \boxed{\VektorPot[uv](\Ortsr[v]) = \frac{\mu}{4\pi} \frac{\euler^{-\komplex\Wellenzahl\Ortsr}}{\Ortsr} \underline{I}\einheitsvek{z}\int_{-\nicefrac{\ell}{2}}^{\nicefrac{\ell}{2}} \upd z^\prime = \frac{\mu}{4\pi} \underline{I} \ell  \frac{\euler^{-\komplex\Wellenzahl\Ortsr}}{\Ortsr} \einheitsvek{z}} = \VektorPot[u]_z \einheitsvek{z} 
         \end{equation*}
       \item Vektorpotential in Kugelkoordinaten \((r,\vartheta,\varphi)\):
         \begin{align*}
-          \magvekpot[u]_r &=  \magvekpot[u]_z \cos\vartheta & \magvekpot[u]_\vartheta &=  -\magvekpot[u]_z \sin\vartheta & \Aboxed{\magvekpot[u]_\varphi &=0}\\
-          \Aboxed{\magvekpot[u]_r &=  \frac{\mu}{4\pi} \underline{I} \ell  \frac{\euler^{-\komplex\wellenzahl\ortsvektor}}{\ortsvektor} \cos\vartheta} & \Aboxed{\magvekpot[u]_\vartheta &=  - \frac{\mu}{4\pi} \underline{I} \ell  \frac{\euler^{-\komplex\wellenzahl\ortsvektor}}{\ortsvektor} \sin\vartheta} & &  
+          \VektorPot[u]_r &=  \VektorPot[u]_z \cos\vartheta & \VektorPot[u]_\vartheta &=  -\VektorPot[u]_z \sin\vartheta & \Aboxed{\VektorPot[u]_\varphi &=0}\\
+          \Aboxed{\VektorPot[u]_r &=  \frac{\mu}{4\pi} \underline{I} \ell  \frac{\euler^{-\komplex\Wellenzahl\Ortsr}}{\Ortsr} \cos\vartheta} & \Aboxed{\VektorPot[u]_\vartheta &=  - \frac{\mu}{4\pi} \underline{I} \ell  \frac{\euler^{-\komplex\Wellenzahl\Ortsr}}{\Ortsr} \sin\vartheta} & &  
           \end{align*}
   \end{itemize}
 \end{frame}
@@ -162,16 +162,16 @@
   \begin{itemize}[<+->]
 \item Aus dem Vektorpotential
         \begin{align*}
-          \magvekpot[u]_r &=  \frac{\mu}{4\pi} \underline{I} \ell  \frac{\euler^{-\komplex\wellenzahl\ortsvektor}}{\ortsvektor} \cos\vartheta & \magvekpot[u]_\vartheta &=  -\frac{\mu}{4\pi} \underline{I} \ell  \frac{\euler^{-\komplex\wellenzahl\ortsvektor}}{\ortsvektor} \sin\vartheta & \magvekpot[u]_\varphi &=0  
+          \VektorPot[u]_r &=  \frac{\mu}{4\pi} \underline{I} \ell  \frac{\euler^{-\komplex\Wellenzahl\Ortsr}}{\Ortsr} \cos\vartheta & \VektorPot[u]_\vartheta &=  -\frac{\mu}{4\pi} \underline{I} \ell  \frac{\euler^{-\komplex\Wellenzahl\Ortsr}}{\Ortsr} \sin\vartheta & \VektorPot[u]_\varphi &=0  
           \end{align*}
   \item berechnet sich unmittelbar das Magnetfeld:
     \begin{align*}
-      \magfeld[uv] &= \magfeld[u]_\varphi \einheitsvek{\varphi} = \frac{1}{\mu} \rotation\magvekpot[uv] = \frac{1}{\mu} \frac{1}{r} \left[ \frac{\d \left(r \magvekpot[u]_\vartheta  \right)}{\d r} - \frac{\d \magvekpot[u]_r}{\d \vartheta} \right] \einheitsvek{\varphi} \text{ nur \(\varphi\)-Komponente} \\
-      &= \frac{1}{4\pi} \underline{I} \ell  \frac{\euler^{-\komplex\wellenzahl\ortsvektor}}{\ortsvektor}\sin\vartheta \left[\frac{1}{\ortsvektor} + \komplex\wellenzahl\right]\; \einheitsvek{\varphi}\\  
-                                                                                                       &= \frac{1}{4\pi} \underline{I} \ell  \frac{\euler^{-\komplex\wellenzahl\ortsvektor}}{\ortsvektor^2} \sin\vartheta \left[1+\komplex \wellenzahl \ortsvektor \right]\; \einheitsvek{\varphi} \quad \wellenzahl = \nicefrac{\omega}{\geschw_p}\\
-      &= \frac{1}{4\pi} \frac{\omega^2}{\geschw_p^2}\underline{I} \ell  \frac{\euler^{-\komplex\wellenzahl\ortsvektor}}{(\wellenzahl\ortsvektor)^2} \sin\vartheta \left[1+\komplex \wellenzahl \ortsvektor \right]\; \einheitsvek{\varphi} = \frac{1}{4\pi} \frac{\omega^2}{\geschw_p^2}\underline{I} \ell  \euler^{-\komplex\wellenzahl\ortsvektor} \sin\vartheta \left[\frac{1}{(\wellenzahl\ortsvektor)^2}+ \frac{\komplex}{\wellenzahl \ortsvektor} \right]\; \einheitsvek{\varphi}
+      \HFeld[uv] &= \HFeld[u]_\varphi \einheitsvek{\varphi} = \frac{1}{\mu} \rotation\VektorPot[uv] = \frac{1}{\mu} \frac{1}{r} \left[ \frac{\d \left(r \VektorPot[u]_\vartheta  \right)}{\d r} - \frac{\d \VektorPot[u]_r}{\d \vartheta} \right] \einheitsvek{\varphi} \text{ nur \(\varphi\)-Komponente} \\
+      &= \frac{1}{4\pi} \underline{I} \ell  \frac{\euler^{-\komplex\Wellenzahl\Ortsr}}{\Ortsr}\sin\vartheta \left[\frac{1}{\Ortsr} + \komplex\Wellenzahl\right]\; \einheitsvek{\varphi}\\  
+                                                                                                       &= \frac{1}{4\pi} \underline{I} \ell  \frac{\euler^{-\komplex\Wellenzahl\Ortsr}}{\Ortsr^2} \sin\vartheta \left[1+\komplex \Wellenzahl \Ortsr \right]\; \einheitsvek{\varphi} \quad \Wellenzahl = \nicefrac{\omega}{\Geschwindigkeit_p}\\
+      &= \frac{1}{4\pi} \frac{\omega^2}{\Geschwindigkeit_p^2}\underline{I} \ell  \frac{\euler^{-\komplex\Wellenzahl\Ortsr}}{(\Wellenzahl\Ortsr)^2} \sin\vartheta \left[1+\komplex \Wellenzahl \Ortsr \right]\; \einheitsvek{\varphi} = \frac{1}{4\pi} \frac{\omega^2}{\Geschwindigkeit_p^2}\underline{I} \ell  \euler^{-\komplex\Wellenzahl\Ortsr} \sin\vartheta \left[\frac{1}{(\Wellenzahl\Ortsr)^2}+ \frac{\komplex}{\Wellenzahl \Ortsr} \right]\; \einheitsvek{\varphi}
     \end{align*}
-    \item \(\wellenzahl \ortsvektor = 2\pi\frac{\ortsvektor}{\lambda}\): Wellenlänge als \enquote{natürliche} Längeneinheit
+    \item \(\Wellenzahl \Ortsr = 2\pi\frac{\Ortsr}{\lambda}\): Wellenlänge als \enquote{natürliche} Längeneinheit
   \end{itemize}
 \end{frame}
 
@@ -181,17 +181,17 @@
   \begin{itemize}[<+->]
   \item Das Elektrische Feld könnte prinzipiell auch direkt aus dem Vektorpotential berechnet werden:
     \begin{align*}
-      \text{LE: } \divergenz\magvekpot[uv] + \komplex \omega \varepsilon\mu \elpotential[u]  = 0 &\Rightarrow \elpotential[u] = -\frac{1}{\komplex \omega \varepsilon\mu} \divergenz\magvekpot[uv]\\
-      \efeld[uv] = -\gradient \elpotential[u] - \komplex \omega \magvekpot[uv] &\Rightarrow \efeld[uv]  = \frac{1}{\komplex \omega \varepsilon\mu} \gradient \divergenz\magvekpot[uv]- \komplex \omega \magvekpot[uv]    
+      \text{LE: } \divergenz\VektorPot[uv] + \komplex \omega \varepsilon\mu \SkalarPot[u]  = 0 &\Rightarrow \SkalarPot[u] = -\frac{1}{\komplex \omega \varepsilon\mu} \divergenz\VektorPot[uv]\\
+      \EFeld[uv] = -\gradient \SkalarPot[u] - \komplex \omega \VektorPot[uv] &\Rightarrow \EFeld[uv]  = \frac{1}{\komplex \omega \varepsilon\mu} \gradient \divergenz\VektorPot[uv]- \komplex \omega \VektorPot[uv]    
     \end{align*}
   \item Einfacher direkt über Maxwell-Gleichung
     \begin{equation*}
-      \rotation \magfeld[uv] = \elstromdichte[uv] + \komplex\omega\varepsilon\efeld[uv] \Rightarrow \efeld[uv] = \frac{1}{\komplex\omega\varepsilon} \rotation \magfeld[uv] \quad \elstromdichte[uv] = \vec{0} \text{ im Lösungsgebiet} 
+      \rotation \HFeld[uv] = \StromDichte[uv] + \komplex\omega\varepsilon\EFeld[uv] \Rightarrow \EFeld[uv] = \frac{1}{\komplex\omega\varepsilon} \rotation \HFeld[uv] \quad \StromDichte[uv] = \vec{0} \text{ im Lösungsgebiet} 
     \end{equation*}
   \item Es ergibt sich
     \begin{align*}
-      \efeld[uv] = &\left\{\frac{1}{2\pi} Z \frac{\omega^2}{\geschw_p^2}\underline{I} \ell  \euler^{-\komplex\wellenzahl\ortsvektor} \cos\vartheta\left[\frac{1}{(\wellenzahl\ortsvektor)^2} - \frac{\komplex}{(\wellenzahl\ortsvektor)^3}\right]\right\} \einheitsvek{r} + \\
-      &\left\{ \frac{1}{4\pi} Z \frac{\omega^2}{\geschw_p^2}\underline{I} \ell  \euler^{-\komplex\wellenzahl\ortsvektor} \sin\vartheta\left[\frac{\komplex}{\wellenzahl\ortsvektor}  + \frac{1}{(\wellenzahl\ortsvektor)^2} - \frac{\komplex}{(\wellenzahl\ortsvektor)^3} \right] \right\} \einheitsvek{\vartheta}
+      \EFeld[uv] = &\left\{\frac{1}{2\pi} Z \frac{\omega^2}{\Geschwindigkeit_p^2}\underline{I} \ell  \euler^{-\komplex\Wellenzahl\Ortsr} \cos\vartheta\left[\frac{1}{(\Wellenzahl\Ortsr)^2} - \frac{\komplex}{(\Wellenzahl\Ortsr)^3}\right]\right\} \einheitsvek{r} + \\
+      &\left\{ \frac{1}{4\pi} Z \frac{\omega^2}{\Geschwindigkeit_p^2}\underline{I} \ell  \euler^{-\komplex\Wellenzahl\Ortsr} \sin\vartheta\left[\frac{\komplex}{\Wellenzahl\Ortsr}  + \frac{1}{(\Wellenzahl\Ortsr)^2} - \frac{\komplex}{(\Wellenzahl\Ortsr)^3} \right] \right\} \einheitsvek{\vartheta}
       \end{align*}
   \end{itemize}
 \end{frame}
@@ -201,16 +201,16 @@
   \begin{itemize}[<+->]
   \item Die allgemeine Feldlösung lautet:
     \begin{align*}
-            \magfeld[uv] = &\left\{\frac{1}{4\pi} \frac{\omega^2}{\geschw_p^2}\underline{I} \ell  \euler^{-\komplex\wellenzahl\ortsvektor} \sin\vartheta \left[\frac{1}{(\wellenzahl\ortsvektor)^2}+ \frac{\komplex}{\wellenzahl \ortsvektor} \right]\right\}\; \einheitsvek{\varphi}\\
-      \efeld[uv] = &\left\{\frac{1}{2\pi} Z \frac{\omega^2}{\geschw_p^2}\underline{I} \ell  \euler^{-\komplex\wellenzahl\ortsvektor} \cos\vartheta\left[\frac{1}{(\wellenzahl\ortsvektor)^2} - \frac{\komplex}{(\wellenzahl\ortsvektor)^3}\right]\right\}\; \einheitsvek{r} + \\
-      &\left\{ \frac{1}{4\pi} Z \frac{\omega^2}{\geschw_p^2}\underline{I} \ell  \euler^{-\komplex\wellenzahl\ortsvektor} \sin\vartheta\left[\frac{\komplex}{\wellenzahl\ortsvektor}  + \frac{1}{(\wellenzahl\ortsvektor)^2} - \frac{\komplex}{(\wellenzahl\ortsvektor)^3} \right] \right\}\; \einheitsvek{\vartheta}
+            \HFeld[uv] = &\left\{\frac{1}{4\pi} \frac{\omega^2}{\Geschwindigkeit_p^2}\underline{I} \ell  \euler^{-\komplex\Wellenzahl\Ortsr} \sin\vartheta \left[\frac{1}{(\Wellenzahl\Ortsr)^2}+ \frac{\komplex}{\Wellenzahl \Ortsr} \right]\right\}\; \einheitsvek{\varphi}\\
+      \EFeld[uv] = &\left\{\frac{1}{2\pi} Z \frac{\omega^2}{\Geschwindigkeit_p^2}\underline{I} \ell  \euler^{-\komplex\Wellenzahl\Ortsr} \cos\vartheta\left[\frac{1}{(\Wellenzahl\Ortsr)^2} - \frac{\komplex}{(\Wellenzahl\Ortsr)^3}\right]\right\}\; \einheitsvek{r} + \\
+      &\left\{ \frac{1}{4\pi} Z \frac{\omega^2}{\Geschwindigkeit_p^2}\underline{I} \ell  \euler^{-\komplex\Wellenzahl\Ortsr} \sin\vartheta\left[\frac{\komplex}{\Wellenzahl\Ortsr}  + \frac{1}{(\Wellenzahl\Ortsr)^2} - \frac{\komplex}{(\Wellenzahl\Ortsr)^3} \right] \right\}\; \einheitsvek{\vartheta}
     \end{align*}
-  \item Für \(\wellenzahl \ortsvektor \gg 1 \to\) nur führenden Term nehmen \(\to\) \alert{Fernfeld}
+  \item Für \(\Wellenzahl \Ortsr \gg 1 \to\) nur führenden Term nehmen \(\to\) \alert{Fernfeld}
     \begin{align*}
-            \Aboxed{\magfeld[uv]= \magfeld[u]_\varphi \; \einheitsvek{\varphi} = &\frac{\komplex}{4\pi} \frac{\omega^2}{\geschw_p^2}\underline{I} \ell  \frac{\euler^{-\komplex\wellenzahl\ortsvektor}}{\wellenzahl\ortsvektor} \sin\vartheta \; \einheitsvek{\varphi}}\\
-      \Aboxed{\efeld[uv] = \efeld[u]_\vartheta \; \einheitsvek{\vartheta} = &Z \frac{\komplex}{4\pi} \frac{\omega^2}{\geschw_p^2}\underline{I} \ell  \frac{\euler^{-\komplex\wellenzahl\ortsvektor}}{\wellenzahl\ortsvektor} \sin\vartheta\; \einheitsvek{\vartheta}} = Z\; \magfeld[u]_\varphi \; \einheitsvek{\vartheta}
+            \Aboxed{\HFeld[uv]= \HFeld[u]_\varphi \; \einheitsvek{\varphi} = &\frac{\komplex}{4\pi} \frac{\omega^2}{\Geschwindigkeit_p^2}\underline{I} \ell  \frac{\euler^{-\komplex\Wellenzahl\Ortsr}}{\Wellenzahl\Ortsr} \sin\vartheta \; \einheitsvek{\varphi}}\\
+      \Aboxed{\EFeld[uv] = \EFeld[u]_\vartheta \; \einheitsvek{\vartheta} = &Z \frac{\komplex}{4\pi} \frac{\omega^2}{\Geschwindigkeit_p^2}\underline{I} \ell  \frac{\euler^{-\komplex\Wellenzahl\Ortsr}}{\Wellenzahl\Ortsr} \sin\vartheta\; \einheitsvek{\vartheta}} = Z\; \HFeld[u]_\varphi \; \einheitsvek{\vartheta}
     \end{align*}
-    \item Hierbei ist \(Z=\frac{|\efeld[uv]|}{|\magfeld[uv]|} = \sqrt{\frac{\mu}{\varepsilon}} = \frac{\wellenzahl}{\omega\varepsilon}\) der \alert{Feldwellenwiderstand}
+    \item Hierbei ist \(Z=\frac{|\EFeld[uv]|}{|\HFeld[uv]|} = \sqrt{\frac{\mu}{\varepsilon}} = \frac{\Wellenzahl}{\omega\varepsilon}\) der \alert{Feldwellenwiderstand}
     \end{itemize}
     \ 
 \end{frame}
@@ -229,9 +229,9 @@
   \begin{itemize}[<+->]
   \item Im Fernfeld berecht sich die \alert{mittlere Energieflussdichte} zu
     \begin{align*}
-      \poyvec[uv] &= \frac{1}{2} \efeld[uv] \times \magfeld[uv]^\star = \frac{1}{2} \left( Z \frac{\komplex}{4\pi} \frac{\omega^2}{\geschw_p^2}\underline{I} \ell  \frac{\euler^{-\komplex\wellenzahl\ortsvektor}}{\wellenzahl\ortsvektor} \sin\vartheta\; \einheitsvek{\vartheta} \right) \times \left(\frac{\komplex}{4\pi} \frac{\omega^2}{\geschw_p^2}\underline{I} \ell  \frac{\euler^{-\komplex\wellenzahl\ortsvektor}}{\wellenzahl\ortsvektor} \sin\vartheta \; \einheitsvek{\varphi} \right)^\star\\
-                  &= \frac{1}{2} Z \left( \frac{1}{4\pi} \frac{\omega^2}{\geschw_p^2}\frac{|\underline{I}| \ell}{\wellenzahl\ortsvektor} \right)^2 \left(\sin\vartheta\right)^2 \; \einheitsvek{r} \in \mathbb{R} \\
-                    & = \poyvec_r(r,\vartheta) \; \einheitsvek{r} = \langle \poyvec[v] \rangle 
+      \PoyntingVektor[uv] &= \frac{1}{2} \EFeld[uv] \times \HFeld[uv]^\star = \frac{1}{2} \left( Z \frac{\komplex}{4\pi} \frac{\omega^2}{\Geschwindigkeit_p^2}\underline{I} \ell  \frac{\euler^{-\komplex\Wellenzahl\Ortsr}}{\Wellenzahl\Ortsr} \sin\vartheta\; \einheitsvek{\vartheta} \right) \times \left(\frac{\komplex}{4\pi} \frac{\omega^2}{\Geschwindigkeit_p^2}\underline{I} \ell  \frac{\euler^{-\komplex\Wellenzahl\Ortsr}}{\Wellenzahl\Ortsr} \sin\vartheta \; \einheitsvek{\varphi} \right)^\star\\
+                  &= \frac{1}{2} Z \left( \frac{1}{4\pi} \frac{\omega^2}{\Geschwindigkeit_p^2}\frac{|\underline{I}| \ell}{\Wellenzahl\Ortsr} \right)^2 \left(\sin\vartheta\right)^2 \; \einheitsvek{r} \in \mathbb{R} \\
+                    & = \PoyntingVektor_r(r,\vartheta) \; \einheitsvek{r} = \langle \PoyntingVektor[v] \rangle 
     \end{align*}
   \item Verlauf -- \enquote{Donut}
     \begin{columns}
@@ -265,7 +265,7 @@
   \begin{itemize}[<+->]
   \item Das \alert{Strahlungsdiagramm} ist die normierte Darstellung der mittleren Energieflussdichte (analog z.B. auch für Feldstärken definierbar), also von
     \begin{equation*}
-      \frac{\poyvec_r(r,\vartheta, \varphi)}{\max(\poyvec_r(r,\vartheta, \varphi))}
+      \frac{\PoyntingVektor_r(r,\vartheta, \varphi)}{\max(\PoyntingVektor_r(r,\vartheta, \varphi))}
     \end{equation*}
   \item Dargestellt werden in der Regel die zweidimensionalen Hauptschnitte.
   \item Für den Hertzschen Dipol ergeben sich das \alert{\enquote{Horizontaldiagramm}} (für \(\vartheta=\nicefrac{\pi}{2}\))
@@ -301,14 +301,14 @@
   \begin{itemize}[<+->]
   \item Die mittlere abgestrahlte Leistung \(\langle P_a \rangle\) ergibt sich direkt aus der mittleren Energieflussdichte integriert über die Oberfläche einer Kugel mit Radius \(r\) (\(O(K_r)\)):
     \begin{align*}
-      \langle P_a \rangle &= \oiint_{O(K_r)} \textcolor{red}{\langle \poyvec[v] \rangle} \cdot \textcolor{green}{\upd\vec{A}} \\
-      &= \int_0^{2\pi}\int_0^\pi \textcolor{red}{\frac{1}{2} Z \left( \frac{1}{4\pi} \frac{\omega^2}{\geschw_p^2}\frac{|\underline{I}| \ell}{\wellenzahl\ortsvektor} \right)^2 \left(\sin\vartheta\right)^2 \; \einheitsvek{r}} \cdot \textcolor{green}{\einheitsvek{r} r^2\sin\vartheta \upd\varphi\upd\vartheta}  \\
-      &= \frac{1}{2} Z \left( \frac{1}{4\pi} \frac{\omega^2}{\geschw_p^2}\frac{|\underline{I}| \ell}{\wellenzahl} \right)^2 2\pi \frac{4}{3} = \frac{1}{12\pi} Z \left( \frac{\omega}{\geschw_p}|\underline{I}| \ell \right)^2 = \frac{\pi}{3} Z \left( \frac{|\underline{I}| \ell}{\lambda} \right)^2 
+      \langle P_a \rangle &= \oiint_{O(K_r)} \textcolor{red}{\langle \PoyntingVektor[v] \rangle} \cdot \textcolor{green}{\upd\vec{A}} \\
+      &= \int_0^{2\pi}\int_0^\pi \textcolor{red}{\frac{1}{2} Z \left( \frac{1}{4\pi} \frac{\omega^2}{\Geschwindigkeit_p^2}\frac{|\underline{I}| \ell}{\Wellenzahl\Ortsr} \right)^2 \left(\sin\vartheta\right)^2 \; \einheitsvek{r}} \cdot \textcolor{green}{\einheitsvek{r} r^2\sin\vartheta \upd\varphi\upd\vartheta}  \\
+      &= \frac{1}{2} Z \left( \frac{1}{4\pi} \frac{\omega^2}{\Geschwindigkeit_p^2}\frac{|\underline{I}| \ell}{\Wellenzahl} \right)^2 2\pi \frac{4}{3} = \frac{1}{12\pi} Z \left( \frac{\omega}{\Geschwindigkeit_p}|\underline{I}| \ell \right)^2 = \frac{\pi}{3} Z \left( \frac{|\underline{I}| \ell}{\lambda} \right)^2 
     \end{align*}
   \item Ein (hypothetischer) \alert{isotroper Strahler} würde pro Raumwinkel somit die Leistung \(P_{iso}= \nicefrac{\langle P_a \rangle}{4\pi r^2} \) abstrahlen.
   \item Für den Hertzschen Dipol ergibt sich so die \alert{Direktivität} (Richtwirkung)
     \begin{equation*}
-      D(\vartheta,\varphi) = \frac{\poyvec_r(r,\vartheta, \varphi)}{P_{iso}} = \frac{3}{2} \sin^2\vartheta \; ; \; D_{max} = D(\vartheta=\frac{\pi}{2}) = \frac{3}{2} \hateq 1.76\; \text{dBi} \hateq 0\; \text{dBd}  
+      D(\vartheta,\varphi) = \frac{\PoyntingVektor_r(r,\vartheta, \varphi)}{P_{iso}} = \frac{3}{2} \sin^2\vartheta \; ; \; D_{max} = D(\vartheta=\frac{\pi}{2}) = \frac{3}{2} \hateq 1.76\; \text{dBi} \hateq 0\; \text{dBd}  
       \end{equation*}
  \end{itemize}
   \end{frame}
@@ -324,13 +324,13 @@
   \item Auf der Kugel (\(n=2\)): \alert{\enquote{Jeder stetig gekämmte Igel hat mindestens einen Glatzpunkt.}}
   \item Der ideale Hertzsche Dipol kann durch extrem kurze Antennen (\(\ell < \frac{\lambda}{10}\)) tatsächlich \alert{näherungsweise} realisiert werden.
   \item Sowohl der Hertzsche Dipol als auch der isotrope Strahler werden als Bezugsgrößen in der Antennentechnik genutzt (\alert{Elementarquellen}).
-  \item Das zum Hertzschen Dipol \alert{duale} System ist der \alert{Fitzgeraldsche Dipol}: infinitisimale Leiterschleife; Flächennormale in \(z\)-Richtung \(\to\) nur \(\efeld[uv]_\varphi\) und \(\magfeld[uv]_\vartheta\) im Fernfeld.
-  \item Feldwellenwiderstand \(Z=\frac{|\efeld[uv]|}{|\magfeld[uv]|}\) nur im Fernfeld konstant mit \(Z=\SI{120\pi}{\ohm}\).
+  \item Das zum Hertzschen Dipol \alert{duale} System ist der \alert{Fitzgeraldsche Dipol}: infinitisimale Leiterschleife; Flächennormale in \(z\)-Richtung \(\to\) nur \(\EFeld[uv]_\varphi\) und \(\HFeld[uv]_\vartheta\) im Fernfeld.
+  \item Feldwellenwiderstand \(Z=\frac{|\EFeld[uv]|}{|\HFeld[uv]|}\) nur im Fernfeld konstant mit \(Z=\SI{120\pi}{\ohm}\).
 
     Im Nahfeld des Hertzschen Dipols: \alert{Hochimpedanzfeld}
 
     Im Nahfeld des Fitzgeraldschen Dipols: \alert{Niederimpedanzfeld}
-  \item \alert{Grenze zum Fernfeld} bei kurzen Antennen: \(\wellenzahl \ortsvektor \gg 1 \to \ortsvektor \gg  \frac{\lambda}{2\pi} = \frac{\geschw_p}{2\pi f}\):
+  \item \alert{Grenze zum Fernfeld} bei kurzen Antennen: \(\Wellenzahl \Ortsr \gg 1 \to \Ortsr \gg  \frac{\lambda}{2\pi} = \frac{\Geschwindigkeit_p}{2\pi f}\):
     \begin{tabular}{c||c|c|c|c|c}
       $f$ & \SI{50}{\hertz} & \SI{1}{\kilo\hertz} & \SI{100}{\mega\hertz}& \SI{1}{\giga\hertz}\\
       \hline
@@ -345,7 +345,7 @@
   \frametitle{Linearantenne}
   \begin{itemize}[<+->]
   \item Bei den Elementardipolen: infinitisimales Element \(\to\) zeitlich harmonischer aber \alert{räumlicher konstanter Strom}.
-  \item \alert{Lineare Antenne}: dünner perfekt leitender Draht, der von einem \alert{ortsabhängigen} (harmonischen) Wechselstrom \(\underline{I}(\ortsvektor[vs])\) durchflossen wird.
+  \item \alert{Lineare Antenne}: dünner perfekt leitender Draht, der von einem \alert{ortsabhängigen} (harmonischen) Wechselstrom \(\underline{I}(\Ortsr[vs])\) durchflossen wird.
   \item Betrachte zunächst: Stromelement im Ursprung \(\to\) Hertzscher Dipol
       \begin{columns}
     \begin{column}{.35\textwidth}
@@ -382,8 +382,8 @@
 \draw[thick,->] (0,0,0) -- (0,0,.5) node[anchor=south]{$z$};
 
 %draw a vector from origin to point (P) 
-\draw[-stealth,color=red,thick] (O) -- (P) node[midway, below]{$\ortsvektor[v]$};
-\draw[-stealth,color=green,thick] (P) -- +(0,0,0.2) node[above]{$\upd\magvekpot[uv]=\upd\magvekpot[u]_z\einheitsvek{z}$};
+\draw[-stealth,color=red,thick] (O) -- (P) node[midway, below]{$\Ortsr[v]$};
+\draw[-stealth,color=green,thick] (P) -- +(0,0,0.2) node[above]{$\upd\VektorPot[uv]=\upd\VektorPot[u]_z\einheitsvek{z}$};
 
 %draw projection on xy plane, and a connecting line
 \draw[dashed, color=red] (O) -- (Pxy);
@@ -429,12 +429,12 @@
   \begin{itemize}[<+->]
   \item Beitrag zum Vektorpotential am Punkt \(P\):
     \begin{equation*}
-      \upd\magvekpot[uv](\ortsvektor[v]) = \frac{\mu}{4\pi} \underline{I} \upd z^\prime \frac{\euler^{-\komplex\wellenzahl\ortsvektor}}{\ortsvektor} \einheitsvek{z}
+      \upd\VektorPot[uv](\Ortsr[v]) = \frac{\mu}{4\pi} \underline{I} \upd z^\prime \frac{\euler^{-\komplex\Wellenzahl\Ortsr}}{\Ortsr} \einheitsvek{z}
     \end{equation*}
   \item Für das Magnetfeld
     \begin{align*}
-      \upd\magfeld[uv](\ortsvektor[v]) &= \frac{1}{\mu} \rotation \upd\magvekpot[uv](\ortsvektor[v])\\
-      &= \frac{1}{4\pi} \underline{I} \upd z^\prime \rotation\left(\frac{\euler^{-\komplex\wellenzahl\ortsvektor}}{\ortsvektor} \einheitsvek{z}\right)
+      \upd\HFeld[uv](\Ortsr[v]) &= \frac{1}{\mu} \rotation \upd\VektorPot[uv](\Ortsr[v])\\
+      &= \frac{1}{4\pi} \underline{I} \upd z^\prime \rotation\left(\frac{\euler^{-\komplex\Wellenzahl\Ortsr}}{\Ortsr} \einheitsvek{z}\right)
       \end{align*}
       \end{itemize}
 \end{column}
@@ -448,14 +448,14 @@
   \begin{itemize}[<+->]
   \item Wir formen weiter um:
         \begin{align*}
-          \upd\magfeld[uv](\ortsvektor[v])  &= \frac{1}{4\pi}\underline{I} \upd z^\prime \rotation_{\textcolor{green}{\ortsvektor}}\left(\frac{\euler^{-\komplex\wellenzahl\ortsvektor}}{\ortsvektor} \einheitsvek{z}\right) \\
-                                            &= \frac{1}{4\pi} \underline{I}\upd z^\prime \bigg[ \frac{\euler^{-\komplex\wellenzahl\ortsvektor}}{\ortsvektor} \underbrace{\rotation \einheitsvek{z}}_{=\vec{0}} - \einheitsvek{z} \times \textcolor{red}{\gradient\left( \frac{\euler^{-\komplex\wellenzahl\ortsvektor}}{\ortsvektor} \right)}\bigg] \\
-          &= \frac{1}{4\pi} \underline{I}\upd z^\prime \bigg[- \einheitsvek{z} \times \textcolor{red}{\left( -\frac{\ortsvektor[v]}{\ortsvektor} \left(\frac{1}{\ortsvektor} +\komplex\wellenzahl \right)   \right) \frac{\euler^{-\komplex\wellenzahl\ortsvektor}}{\ortsvektor}} \bigg]\\
-          &= \frac{1}{4\pi} \underline{I}\upd z^\prime \left( \einheitsvek{z} \times \frac{\ortsvektor[v]}{\ortsvektor} \right) \left(\frac{1}{\ortsvektor} +\komplex\wellenzahl \right) \frac{\euler^{-\komplex\wellenzahl\ortsvektor}}{\ortsvektor} 
+          \upd\HFeld[uv](\Ortsr[v])  &= \frac{1}{4\pi}\underline{I} \upd z^\prime \rotation_{\textcolor{green}{\Ortsr}}\left(\frac{\euler^{-\komplex\Wellenzahl\Ortsr}}{\Ortsr} \einheitsvek{z}\right) \\
+                                            &= \frac{1}{4\pi} \underline{I}\upd z^\prime \bigg[ \frac{\euler^{-\komplex\Wellenzahl\Ortsr}}{\Ortsr} \underbrace{\rotation \einheitsvek{z}}_{=\vec{0}} - \einheitsvek{z} \times \textcolor{red}{\gradient\left( \frac{\euler^{-\komplex\Wellenzahl\Ortsr}}{\Ortsr} \right)}\bigg] \\
+          &= \frac{1}{4\pi} \underline{I}\upd z^\prime \bigg[- \einheitsvek{z} \times \textcolor{red}{\left( -\frac{\Ortsr[v]}{\Ortsr} \left(\frac{1}{\Ortsr} +\komplex\Wellenzahl \right)   \right) \frac{\euler^{-\komplex\Wellenzahl\Ortsr}}{\Ortsr}} \bigg]\\
+          &= \frac{1}{4\pi} \underline{I}\upd z^\prime \left( \einheitsvek{z} \times \frac{\Ortsr[v]}{\Ortsr} \right) \left(\frac{1}{\Ortsr} +\komplex\Wellenzahl \right) \frac{\euler^{-\komplex\Wellenzahl\Ortsr}}{\Ortsr} 
         \end{align*}
-      \item Stromelement beliebiger Länge: \(\underline{I}\to \underline{I}(\ortsvektor[vs])\), \(\upd z^\prime \einheitsvek{z} \to \upd\ortsvektor[vs]\), \(\ortsvektor[v] \to \ortsvektor[v] - \ortsvektor[vs]\):
+      \item Stromelement beliebiger Länge: \(\underline{I}\to \underline{I}(\Ortsr[vs])\), \(\upd z^\prime \einheitsvek{z} \to \upd\Ortsr[vs]\), \(\Ortsr[v] \to \Ortsr[v] - \Ortsr[vs]\):
         \begin{equation*}
-          \boxed{\upd\magfeld[uv](\ortsvektor[v]) = \frac{1}{4\pi} \underline{I}(\ortsvektor[vs]) \left( \upd\ortsvektor[vs] \times \frac{\ortsvektor[v]-\ortsvektor[vs]}{|\ortsvektor[v]-\ortsvektor[vs]|} \right) \left(\frac{1}{|\ortsvektor[v]-\ortsvektor[vs]|} +\komplex\wellenzahl \right) \frac{\euler^{-\komplex\wellenzahl |\ortsvektor[v]-\ortsvektor[vs]|}}{|\ortsvektor[v]-\ortsvektor[vs]|}}
+          \boxed{\upd\HFeld[uv](\Ortsr[v]) = \frac{1}{4\pi} \underline{I}(\Ortsr[vs]) \left( \upd\Ortsr[vs] \times \frac{\Ortsr[v]-\Ortsr[vs]}{|\Ortsr[v]-\Ortsr[vs]|} \right) \left(\frac{1}{|\Ortsr[v]-\Ortsr[vs]|} +\komplex\Wellenzahl \right) \frac{\euler^{-\komplex\Wellenzahl |\Ortsr[v]-\Ortsr[vs]|}}{|\Ortsr[v]-\Ortsr[vs]|}}
           \end{equation*}
   \end{itemize}
   \end{frame}
@@ -464,18 +464,18 @@
 \begin{frame}
   \frametitle{Fernfeld}
         \begin{equation*}
-          \upd\magfeld[uv](\ortsvektor[v]) = \frac{1}{4\pi} \underline{I}(\ortsvektor[vs]) \left( \upd\ortsvektor[vs] \times \frac{\ortsvektor[v]-\ortsvektor[vs]}{|\ortsvektor[v]-\ortsvektor[vs]|} \right) \left(\frac{1}{|\ortsvektor[v]-\ortsvektor[vs]|} +\komplex\wellenzahl \right) \frac{\euler^{-\komplex\wellenzahl |\ortsvektor[v]-\ortsvektor[vs]|}}{|\ortsvektor[v]-\ortsvektor[vs]|}
+          \upd\HFeld[uv](\Ortsr[v]) = \frac{1}{4\pi} \underline{I}(\Ortsr[vs]) \left( \upd\Ortsr[vs] \times \frac{\Ortsr[v]-\Ortsr[vs]}{|\Ortsr[v]-\Ortsr[vs]|} \right) \left(\frac{1}{|\Ortsr[v]-\Ortsr[vs]|} +\komplex\Wellenzahl \right) \frac{\euler^{-\komplex\Wellenzahl |\Ortsr[v]-\Ortsr[vs]|}}{|\Ortsr[v]-\Ortsr[vs]|}
           \end{equation*}
   \begin{itemize}[<+->]
   \item Fernfeld: Folgende Näherungen sind möglich (vgl. auch \alert{Elektromagnetische Wellen XI - Erzeugung} - Strahlungszonen)
     \begin{align*}
-      \wellenzahl |\ortsvektor[v]-\ortsvektor[vs]| \gg 1 &\Rightarrow \wellenzahl \gg \frac{1}{|\ortsvektor[v]-\ortsvektor[vs]|}\\
-      \frac{\ortsvektor[v]-\ortsvektor[vs]}{|\ortsvektor[v]-\ortsvektor[vs]|} &\simeq \frac{\ortsvektor[v]}{\ortsvektor}\\
-      \frac{\euler^{-\komplex\wellenzahl |\ortsvektor[v]-\ortsvektor[vs]|}}{|\ortsvektor[v]-\ortsvektor[vs]|} &\simeq \frac{\euler^{-\komplex\wellenzahl \ortsvektor}}{\ortsvektor} \euler^{\komplex\wellenzahl \frac{\ortsvektor[v]\cdot \ortsvektor[vs]}{\ortsvektor}}
+      \Wellenzahl |\Ortsr[v]-\Ortsr[vs]| \gg 1 &\Rightarrow \Wellenzahl \gg \frac{1}{|\Ortsr[v]-\Ortsr[vs]|}\\
+      \frac{\Ortsr[v]-\Ortsr[vs]}{|\Ortsr[v]-\Ortsr[vs]|} &\simeq \frac{\Ortsr[v]}{\Ortsr}\\
+      \frac{\euler^{-\komplex\Wellenzahl |\Ortsr[v]-\Ortsr[vs]|}}{|\Ortsr[v]-\Ortsr[vs]|} &\simeq \frac{\euler^{-\komplex\Wellenzahl \Ortsr}}{\Ortsr} \euler^{\komplex\Wellenzahl \frac{\Ortsr[v]\cdot \Ortsr[vs]}{\Ortsr}}
     \end{align*}
   \item damit gilt im \alert{Fernfeld}:
             \begin{equation*}
-          \boxed{\upd\magfeld[uv](\ortsvektor[v]) = \frac{\komplex\wellenzahl}{4\pi} \underline{I}(\ortsvektor[vs]) \left( \upd\ortsvektor[vs] \times \frac{\ortsvektor[v]}{\ortsvektor} \right) \frac{\euler^{-\komplex\wellenzahl \ortsvektor}}{\ortsvektor} \euler^{\komplex\wellenzahl \frac{\ortsvektor[v]\cdot \ortsvektor[vs]}{\ortsvektor}}}
+          \boxed{\upd\HFeld[uv](\Ortsr[v]) = \frac{\komplex\Wellenzahl}{4\pi} \underline{I}(\Ortsr[vs]) \left( \upd\Ortsr[vs] \times \frac{\Ortsr[v]}{\Ortsr} \right) \frac{\euler^{-\komplex\Wellenzahl \Ortsr}}{\Ortsr} \euler^{\komplex\Wellenzahl \frac{\Ortsr[v]\cdot \Ortsr[vs]}{\Ortsr}}}
           \end{equation*}
 
   \end{itemize}
@@ -484,7 +484,7 @@
 \begin{frame}
   \frametitle{Fernfeld (\dots)}
             \begin{equation*}
-          \upd\magfeld[uv](\ortsvektor[v]) = \frac{\komplex\wellenzahl}{4\pi} \underline{I}(\ortsvektor[vs]) \left( \upd\ortsvektor[vs] \times \frac{\ortsvektor[v]}{\ortsvektor} \right) \frac{\euler^{-\komplex\wellenzahl \ortsvektor}}{\ortsvektor} \euler^{\komplex\wellenzahl \frac{\ortsvektor[v]\cdot \ortsvektor[vs]}{\ortsvektor}}
+          \upd\HFeld[uv](\Ortsr[v]) = \frac{\komplex\Wellenzahl}{4\pi} \underline{I}(\Ortsr[vs]) \left( \upd\Ortsr[vs] \times \frac{\Ortsr[v]}{\Ortsr} \right) \frac{\euler^{-\komplex\Wellenzahl \Ortsr}}{\Ortsr} \euler^{\komplex\Wellenzahl \frac{\Ortsr[v]\cdot \Ortsr[vs]}{\Ortsr}}
           \end{equation*}
   \begin{itemize}[<+->]
   \item Dünner Draht mit Kontur \(C\):
@@ -495,13 +495,13 @@
   \draw (5,2) node[right]{$C$};
   \draw (0,4) node[left]{$0$}; 
   \draw (6,3.7) node[right]{$P$}; 
-    \draw[-stealth,thick] (0,4) -- (1,2.7) node[midway,left]{$\ortsvektor[vs]$}; 
-    \draw[-stealth,thick] (0,4) -- (6,3.7) node[midway,below]{$\ortsvektor[v]$}; 
-    \draw[-stealth,thick] (1,2.7) -- (6,3.7) node[midway,below]{$\ortsvektor[v]-\ortsvektor[vs]$}; 
+    \draw[-stealth,thick] (0,4) -- (1,2.7) node[midway,left]{$\Ortsr[vs]$}; 
+    \draw[-stealth,thick] (0,4) -- (6,3.7) node[midway,below]{$\Ortsr[v]$}; 
+    \draw[-stealth,thick] (1,2.7) -- (6,3.7) node[midway,below]{$\Ortsr[v]-\Ortsr[vs]$}; 
 \end{tikzpicture}
 \item Damit ist das Magnetfeld im Fernfeld prinzipiell berechenbar aus:
             \begin{equation*}
-          \boxed{\magfeld[uv](\ortsvektor[v]) = \frac{\komplex\wellenzahl}{4\pi} \frac{\euler^{-\komplex\wellenzahl \ortsvektor}}{\ortsvektor} \int_{C}\underline{I}(\ortsvektor[vs]) \euler^{\komplex\wellenzahl \frac{\ortsvektor[v]\cdot \ortsvektor[vs]}{\ortsvektor}} \left( \upd\ortsvektor[vs] \times \frac{\ortsvektor[v]}{\ortsvektor} \right)} 
+          \boxed{\HFeld[uv](\Ortsr[v]) = \frac{\komplex\Wellenzahl}{4\pi} \frac{\euler^{-\komplex\Wellenzahl \Ortsr}}{\Ortsr} \int_{C}\underline{I}(\Ortsr[vs]) \euler^{\komplex\Wellenzahl \frac{\Ortsr[v]\cdot \Ortsr[vs]}{\Ortsr}} \left( \upd\Ortsr[vs] \times \frac{\Ortsr[v]}{\Ortsr} \right)} 
           \end{equation*}
   \end{itemize}
   \end{frame}

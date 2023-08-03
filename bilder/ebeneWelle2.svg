@@ -187,7 +187,7 @@
          id="tspan2618"
          x="96.277344"
          y="81.191147"
-         style="stroke-width:0.264583">$\ortsvektor[v]_0$</tspan></text>
+         style="stroke-width:0.264583">$\Ortsr[v]_0$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -198,7 +198,7 @@
          id="tspan2622"
          x="195.84621"
          y="81.739731"
-         style="stroke-width:0.264583">$\ortsvektor[v]_1$</tspan></text>
+         style="stroke-width:0.264583">$\Ortsr[v]_1$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"

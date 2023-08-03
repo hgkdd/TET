@@ -162,10 +162,10 @@
 \end{columns}
   \begin{itemize}[<+->]
   \item \alert{Linear polarisierte ebene Welle} am Übergang zweier Medien (hom., isotrop, linear)
-  \item Wellenvektor der einfallenden Welle \(\wellenzahl[v]_i\) und Normalenvektor der Grenzfläche \(\vec{n}\) spannen die \alert{Einfallsebene} auf. OBdA: \(\vec{n} = \einheitsvek{z}\)
+  \item Wellenvektor der einfallenden Welle \(\Wellenzahl[v]_i\) und Normalenvektor der Grenzfläche \(\vec{n}\) spannen die \alert{Einfallsebene} auf. OBdA: \(\vec{n} = \einheitsvek{z}\)
 \item Indizes: i - inzident, r - reflektiert, t - transmittiert
-  \item Zwei Fälle: (1) \(\perp \to \efeld[v]_i \perp\) zur Einfallsebene (\alert{senkrechte Polarisation}, \enquote{horizontal})\\
-    \phantom{Zwei Fälle: }(2) \(\parallel \to \efeld[v]_i\) in der Einfallsebene (\alert{parallele Polarisation}, \enquote{vertikal})
+  \item Zwei Fälle: (1) \(\perp \to \EFeld[v]_i \perp\) zur Einfallsebene (\alert{senkrechte Polarisation}, \enquote{horizontal})\\
+    \phantom{Zwei Fälle: }(2) \(\parallel \to \EFeld[v]_i\) in der Einfallsebene (\alert{parallele Polarisation}, \enquote{vertikal})
     \item Zunächst unbekannt: (1) \(\omega_i=\omega_r=\omega_t\)? (2) \(\varphi_r=\varphi_t=0\)? (3) \(\vartheta_i = \vartheta_r\)? 
   \end{itemize}
 \end{frame}
@@ -175,15 +175,15 @@
   \begin{itemize}[<+->]
   \item Wir gehen von harmonischer Zeitabhängigkeit aus:
     \begin{align*}
-      \efeld[uv]_i(\ortsvektor[v], t) &= \efeld[uv]_{0i} \euler^{\komplex(\omega_i t - \wellenzahl[v]_i \cdot \ortsvektor[v])} & \tetB[uv]_i(\ortsvektor[v], t) &= \frac{1}{\omega_i} \left(\wellenzahl[v]_i \times \efeld[uv]_i(\ortsvektor[v], t)\right)\\
-      \efeld[uv]_r(\ortsvektor[v], t) &= \efeld[uv]_{0r} \euler^{\komplex(\omega_r t - \wellenzahl[v]_r \cdot \ortsvektor[v])} & \tetB[uv]_r(\ortsvektor[v], t) &= \frac{1}{\omega_r} \left(\wellenzahl[v]_r \times \efeld[uv]_r(\ortsvektor[v], t)\right)\\
-      \efeld[uv]_t(\ortsvektor[v], t) &= \efeld[uv]_{0t} \euler^{\komplex(\omega_t t - \wellenzahl[v]_t \cdot \ortsvektor[v])} & \tetB[uv]_t(\ortsvektor[v], t) &= \frac{1}{\omega_t} \left(\wellenzahl[v]_t \times \efeld[uv]_t(\ortsvektor[v], t)\right)
+      \EFeld[uv]_i(\Ortsr[v], t) &= \EFeld[uv]_{0i} \euler^{\komplex(\omega_i t - \Wellenzahl[v]_i \cdot \Ortsr[v])} & \BFeld[uv]_i(\Ortsr[v], t) &= \frac{1}{\omega_i} \left(\Wellenzahl[v]_i \times \EFeld[uv]_i(\Ortsr[v], t)\right)\\
+      \EFeld[uv]_r(\Ortsr[v], t) &= \EFeld[uv]_{0r} \euler^{\komplex(\omega_r t - \Wellenzahl[v]_r \cdot \Ortsr[v])} & \BFeld[uv]_r(\Ortsr[v], t) &= \frac{1}{\omega_r} \left(\Wellenzahl[v]_r \times \EFeld[uv]_r(\Ortsr[v], t)\right)\\
+      \EFeld[uv]_t(\Ortsr[v], t) &= \EFeld[uv]_{0t} \euler^{\komplex(\omega_t t - \Wellenzahl[v]_t \cdot \Ortsr[v])} & \BFeld[uv]_t(\Ortsr[v], t) &= \frac{1}{\omega_t} \left(\Wellenzahl[v]_t \times \EFeld[uv]_t(\Ortsr[v], t)\right)
     \end{align*}
   \item Allgemeine Beziehung zwischen elektrischen und magnetischen Feldern bei ebene Wellen
     \begin{align*}
-      \tetB[uv] &= \frac{1}{\omega} \left(\wellenzahl[v] \times \efeld[uv]\right) = \frac{\wellenzahl}{\omega} \left(\einheitsvek{k} \times \efeld[uv]\right) = \frac{1}{\geschw_p} \left(\einheitsvek{k} \times \efeld[uv]\right) = \sqrt{\varepsilon\mu} \left(\einheitsvek{k} \times \efeld[uv]\right)\\
-      \magfeld[uv] = \frac{1}{\mu}\tetB[uv] &= \frac{1}{\mu}\sqrt{\varepsilon\mu} \left(\einheitsvek{k} \times \efeld[uv]\right) = \sqrt{\frac{\varepsilon}{\mu}} \left(\einheitsvek{k} \times \efeld[uv]\right) = \frac{1}{Z} \left(\einheitsvek{k} \times \efeld[uv]\right)\\
-      \efeld[uv] &= -Z \left(\einheitsvek{k} \times \magfeld[uv]\right)
+      \BFeld[uv] &= \frac{1}{\omega} \left(\Wellenzahl[v] \times \EFeld[uv]\right) = \frac{\Wellenzahl}{\omega} \left(\einheitsvek{k} \times \EFeld[uv]\right) = \frac{1}{\Geschwindigkeit_p} \left(\einheitsvek{k} \times \EFeld[uv]\right) = \sqrt{\varepsilon\mu} \left(\einheitsvek{k} \times \EFeld[uv]\right)\\
+      \HFeld[uv] = \frac{1}{\mu}\BFeld[uv] &= \frac{1}{\mu}\sqrt{\varepsilon\mu} \left(\einheitsvek{k} \times \EFeld[uv]\right) = \sqrt{\frac{\varepsilon}{\mu}} \left(\einheitsvek{k} \times \EFeld[uv]\right) = \frac{1}{Z} \left(\einheitsvek{k} \times \EFeld[uv]\right)\\
+      \EFeld[uv] &= -Z \left(\einheitsvek{k} \times \HFeld[uv]\right)
       \end{align*}
   \end{itemize}
 \end{frame}
@@ -194,16 +194,16 @@
   \begin{itemize}[<+->]
   \item Abschnitt \enquote{Verhalten an Grenzflächen}: Für Normalenvektor \(\vec{n}\) \alert{von {\larger\textcircled{\smaller[2]1}} nach {\larger\textcircled{\smaller[2]2}}}:
     \begin{align*}
-      \vec{n} \times \left(\efeld[v]_2 - \efeld[v]_1 \right) &=\vec{0} &\text{Tangentialkomponente von \(\efeld[v]\) stetig}\\
-      \vec{n} \cdot \left(\verschiebung[v]_2 - \verschiebung[v]_1 \right) &=\laddichte{F} &\text{Normalkomponente von \(\verschiebung[v]\) unstetig}\\
-      \vec{n} \times \left(\magfeld[v]_2 - \magfeld[v]_1 \right) &=\elstromdichte[v]_{A} &\text{Tangentialkomponente von \(\magfeld[v]\) unstetig}\\
-      \vec{n} \cdot \left(\tetB[v]_2 - \tetB[v]_1 \right) &=0 &\text{Normalkomponente von \(\tetB[v]\) stetig}
+      \vec{n} \times \left(\EFeld[v]_2 - \EFeld[v]_1 \right) &=\vec{0} &\text{Tangentialkomponente von \(\EFeld[v]\) stetig}\\
+      \vec{n} \cdot \left(\DFeld[v]_2 - \DFeld[v]_1 \right) &=\laddichte{F} &\text{Normalkomponente von \(\DFeld[v]\) unstetig}\\
+      \vec{n} \times \left(\HFeld[v]_2 - \HFeld[v]_1 \right) &=\StromDichte[v]_{A} &\text{Tangentialkomponente von \(\HFeld[v]\) unstetig}\\
+      \vec{n} \cdot \left(\BFeld[v]_2 - \BFeld[v]_1 \right) &=0 &\text{Normalkomponente von \(\BFeld[v]\) stetig}
     \end{align*}
-  \item Betrachte Tangentialkomponente von \(\efeld[v]\). Für \(z=0\) muss gelten:
+  \item Betrachte Tangentialkomponente von \(\EFeld[v]\). Für \(z=0\) muss gelten:
     \begin{equation*}
-      \vec{n} \times \left( \efeld[uv]_{0t} \euler^{\komplex(\omega_t t - \wellenzahl[v]_t \cdot \ortsvektor[v])} -\left( \efeld[uv]_{0i} \euler^{\komplex(\omega_i t - \wellenzahl[v]_i \cdot \ortsvektor[v])} + \efeld[uv]_{0r} \euler^{\komplex(\omega_r t - \wellenzahl[v]_r \cdot \ortsvektor[v])}\right)\right) \stackrel{!}{=} \vec{0}
+      \vec{n} \times \left( \EFeld[uv]_{0t} \euler^{\komplex(\omega_t t - \Wellenzahl[v]_t \cdot \Ortsr[v])} -\left( \EFeld[uv]_{0i} \euler^{\komplex(\omega_i t - \Wellenzahl[v]_i \cdot \Ortsr[v])} + \EFeld[uv]_{0r} \euler^{\komplex(\omega_r t - \Wellenzahl[v]_r \cdot \Ortsr[v])}\right)\right) \stackrel{!}{=} \vec{0}
     \end{equation*}
-  \item Für \alert{beliebige Zeitpunkte \(t \ne 0\) und \(\ortsvektor[v] = \vec{0}\)} kann dies nur erfüllt werden, wenn gilt
+  \item Für \alert{beliebige Zeitpunkte \(t \ne 0\) und \(\Ortsr[v] = \vec{0}\)} kann dies nur erfüllt werden, wenn gilt
     \begin{equation*}
       \euler^{\komplex\omega_i t} = \euler^{\komplex\omega_r t} =\euler^{\komplex\omega_t t} \Rightarrow \boxed{\omega_i =\omega_r = \omega_t} \quad \to\text{ Keine Änderung der Frequenz!}
       \end{equation*}
@@ -211,23 +211,23 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Wellenvektoren \(\wellenzahl[v]_r\) und \(\wellenzahl[v]_t\) in Einfallsebene}
+  \frametitle{Wellenvektoren \(\Wellenzahl[v]_r\) und \(\Wellenzahl[v]_t\) in Einfallsebene}
   \begin{itemize}[<+->]
   \item Im gewählten Koordinatensystem gilt
     \begin{align*}
-      \wellenzahl[v]_i &= \wellenzahl_i \left( \sin\vartheta_i\einheitsvek{x} + \cos\vartheta_i\einheitsvek{z} \right)\\
-      \wellenzahl[v]_r &= \wellenzahl_r \left( \cos\varphi_r\sin\vartheta_r\einheitsvek{x} + \sin\varphi_r\sin\vartheta_r\einheitsvek{y}  - \cos\vartheta_r\einheitsvek{z}\right) \\
-      \wellenzahl[v]_t &= \wellenzahl_t \left( \cos\varphi_t\sin\vartheta_t\einheitsvek{x} + \sin\varphi_t\sin\vartheta_t\einheitsvek{y}  + \cos\vartheta_t\einheitsvek{z}\right) 
+      \Wellenzahl[v]_i &= \Wellenzahl_i \left( \sin\vartheta_i\einheitsvek{x} + \cos\vartheta_i\einheitsvek{z} \right)\\
+      \Wellenzahl[v]_r &= \Wellenzahl_r \left( \cos\varphi_r\sin\vartheta_r\einheitsvek{x} + \sin\varphi_r\sin\vartheta_r\einheitsvek{y}  - \cos\vartheta_r\einheitsvek{z}\right) \\
+      \Wellenzahl[v]_t &= \Wellenzahl_t \left( \cos\varphi_t\sin\vartheta_t\einheitsvek{x} + \sin\varphi_t\sin\vartheta_t\einheitsvek{y}  + \cos\vartheta_t\einheitsvek{z}\right) 
     \end{align*}
-    \item Betrachte Punkt auf der Grenzfläche (\(z=0\)): \(\ortsvektor[v] = x\einheitsvek{x} + y\einheitsvek{y} \)
+    \item Betrachte Punkt auf der Grenzfläche (\(z=0\)): \(\Ortsr[v] = x\einheitsvek{x} + y\einheitsvek{y} \)
     \begin{align*}
-      \wellenzahl[v]_i\cdot\ortsvektor[v] &= \wellenzahl_i x\sin\vartheta_i \\
-      \wellenzahl[v]_r \cdot\ortsvektor[v]&= \wellenzahl_r \left( x\cos\varphi_r\sin\vartheta_r + y\sin\varphi_r\sin\vartheta_r \right) \\
-      \wellenzahl[v]_t \cdot\ortsvektor[v]&= \wellenzahl_t \left( x\cos\varphi_t\sin\vartheta_t + y\sin\varphi_t\sin\vartheta_t \right) 
+      \Wellenzahl[v]_i\cdot\Ortsr[v] &= \Wellenzahl_i x\sin\vartheta_i \\
+      \Wellenzahl[v]_r \cdot\Ortsr[v]&= \Wellenzahl_r \left( x\cos\varphi_r\sin\vartheta_r + y\sin\varphi_r\sin\vartheta_r \right) \\
+      \Wellenzahl[v]_t \cdot\Ortsr[v]&= \Wellenzahl_t \left( x\cos\varphi_t\sin\vartheta_t + y\sin\varphi_t\sin\vartheta_t \right) 
     \end{align*}
-  \item Für \(t=0\) muss für \(x\)- und \(y\)-Komponente gelten (\(\euler^{-\komplex\wellenzahl[v]_i\cdot\ortsvektor[v]} = \euler^{-\komplex\wellenzahl[v]_r\cdot\ortsvektor[v]} = \euler^{-\komplex\wellenzahl[v]_t\cdot\ortsvektor[v]}\)):
+  \item Für \(t=0\) muss für \(x\)- und \(y\)-Komponente gelten (\(\euler^{-\komplex\Wellenzahl[v]_i\cdot\Ortsr[v]} = \euler^{-\komplex\Wellenzahl[v]_r\cdot\Ortsr[v]} = \euler^{-\komplex\Wellenzahl[v]_t\cdot\Ortsr[v]}\)):
     \begin{equation*}
-      \text{x: }\wellenzahl_i\sin\vartheta_i = \wellenzahl_r\cos\varphi_r\sin\vartheta_r =\wellenzahl_t\cos\varphi_t\sin\vartheta_t \quad \text{y: }0=\wellenzahl_r\sin\varphi_r\sin\vartheta_r = \wellenzahl_t\sin\varphi_t\sin\vartheta_t
+      \text{x: }\Wellenzahl_i\sin\vartheta_i = \Wellenzahl_r\cos\varphi_r\sin\vartheta_r =\Wellenzahl_t\cos\varphi_t\sin\vartheta_t \quad \text{y: }0=\Wellenzahl_r\sin\varphi_r\sin\vartheta_r = \Wellenzahl_t\sin\varphi_t\sin\vartheta_t
     \end{equation*}
   \item Aus der \(y\)-Komponente folgt für \(\vartheta_r\ne 0\) und \(\vartheta_t\ne 0\): \(\boxed{\varphi_r=\varphi_t=0}\) (\alert{r und t in EFE})
   \end{itemize}
@@ -238,12 +238,12 @@
   \begin{itemize}[<+->]
   \item Die Bedingung für die \(x\)-Komponente vereinfacht sich damit zu
     \begin{equation*}
-      \wellenzahl_i\sin\vartheta_i = \wellenzahl_r\sin\vartheta_r =\wellenzahl_t\sin\vartheta_t
+      \Wellenzahl_i\sin\vartheta_i = \Wellenzahl_r\sin\vartheta_r =\Wellenzahl_t\sin\vartheta_t
     \end{equation*}
   \item Die Beträge der Wellenvektoren sind durch die Materialien bestimmt:
     \begin{align*}
-      \wellenzahl_i = \wellenzahl_r &= \frac{2\pi}{\lambda_1} = \frac{\omega}{\geschw_{c_1}} = \omega\sqrt{\varepsilon_1\mu_1} = \frac{\omega}{\lichtgeschw}\sqrt{\varepsilon_{r_1}\mu_{r_1}} = \frac{\omega}{\lichtgeschw} n_1 = k_1\\ 
-      \wellenzahl_t &= \frac{2\pi}{\lambda_2} = \frac{\omega}{\geschw_{c_2}} = \omega\sqrt{\varepsilon_2\mu_2} = \frac{\omega}{\lichtgeschw}\sqrt{\varepsilon_{r_2}\mu_{r_2}} = \frac{\omega}{\lichtgeschw} n_2 = k_2
+      \Wellenzahl_i = \Wellenzahl_r &= \frac{2\pi}{\lambda_1} = \frac{\omega}{\Geschwindigkeit_{c_1}} = \omega\sqrt{\varepsilon_1\mu_1} = \frac{\omega}{\lichtgeschw}\sqrt{\varepsilon_{r_1}\mu_{r_1}} = \frac{\omega}{\lichtgeschw} n_1 = k_1\\ 
+      \Wellenzahl_t &= \frac{2\pi}{\lambda_2} = \frac{\omega}{\Geschwindigkeit_{c_2}} = \omega\sqrt{\varepsilon_2\mu_2} = \frac{\omega}{\lichtgeschw}\sqrt{\varepsilon_{r_2}\mu_{r_2}} = \frac{\omega}{\lichtgeschw} n_2 = k_2
     \end{align*}
   \item Einsetzen in die obige Gleichung ergibt
     \begin{enumerate}[<+->]
@@ -333,10 +333,10 @@
 \end{column}
 \end{columns}
     \begin{align*}
-      \vec{n} \times \left(\efeld[v]_2 - \efeld[v]_1 \right) &=\vec{0} &\text{Tangentialkomponente von \(\efeld[v]\) stetig}\\
-      \vec{n} \cdot \left(\verschiebung[v]_2 - \verschiebung[v]_1 \right) &=\laddichte{F} &\text{Normalkomponente von \(\verschiebung[v]\) unstetig}\\
-      \vec{n} \times \left(\magfeld[v]_2 - \magfeld[v]_1 \right) &=\elstromdichte[v]_{A} &\text{Tangentialkomponente von \(\magfeld[v]\) unstetig}\\
-      \vec{n} \cdot \left(\tetB[v]_2 - \tetB[v]_1 \right) &=0 &\text{Normalkomponente von \(\tetB[v]\) stetig}
+      \vec{n} \times \left(\EFeld[v]_2 - \EFeld[v]_1 \right) &=\vec{0} &\text{Tangentialkomponente von \(\EFeld[v]\) stetig}\\
+      \vec{n} \cdot \left(\DFeld[v]_2 - \DFeld[v]_1 \right) &=\laddichte{F} &\text{Normalkomponente von \(\DFeld[v]\) unstetig}\\
+      \vec{n} \times \left(\HFeld[v]_2 - \HFeld[v]_1 \right) &=\StromDichte[v]_{A} &\text{Tangentialkomponente von \(\HFeld[v]\) unstetig}\\
+      \vec{n} \cdot \left(\BFeld[v]_2 - \BFeld[v]_1 \right) &=0 &\text{Normalkomponente von \(\BFeld[v]\) stetig}
     \end{align*}
 
 \end{frame}
@@ -382,7 +382,7 @@
 \end{column}
 \begin{column}{.7\textwidth}
   \begin{itemize}[<+->]
-  \item Betrachtung \(\efeld[v]\) (in y-Richtung)
+  \item Betrachtung \(\EFeld[v]\) (in y-Richtung)
   \item k-Richtungen
     \begin{align*}
       \einheitsvek{k_i} &= \sin\vartheta_1\einheitsvek{x} + \cos\vartheta_1\einheitsvek{z} \\
@@ -390,20 +390,20 @@
       \einheitsvek{k_t} &= \sin\vartheta_2\einheitsvek{x} + \cos\vartheta_2\einheitsvek{z} 
     \end{align*}
   \item Ortsvektor bei \(z=0
-    \): \(\ortsvektor[v] = x\einheitsvek{x} + y \einheitsvek{y}\)
+    \): \(\Ortsr[v] = x\einheitsvek{x} + y \einheitsvek{y}\)
     \end{itemize}
 \end{column}
 \end{columns}
 
 \begin{itemize}[<+->]
-\item Stetigkeit der Tangentialkomponente von \(\efeld[v]\)
+\item Stetigkeit der Tangentialkomponente von \(\EFeld[v]\)
     \begin{align*}
-      \einheitsvek{z} \times \left(\efeld[u]_{0i} \einheitsvek{y}\euler^{-\komplex \wellenzahl_i x \sin\vartheta_1} + \efeld[u]_{0r} \einheitsvek{y}\euler^{-\komplex \wellenzahl_r x \sin\vartheta_1}   \right) &= \einheitsvek{z} \times \efeld[u]_{0t} \einheitsvek{y}\euler^{-\komplex \wellenzahl_t x \sin\vartheta_2} \; ; \; \einheitsvek{z} \times \einheitsvek{y} = -\einheitsvek{x} \\
-      -\einheitsvek{x}  \left(\efeld[u]_{0i} \euler^{-\komplex \wellenzahl_i x \sin\vartheta_1} + \efeld[u]_{0r}\euler^{-\komplex \wellenzahl_r x \sin\vartheta_1}   \right) &= -\einheitsvek{x}  \efeld[u]_{0t} \euler^{-\komplex \wellenzahl_t x \sin\vartheta_2} 
+      \einheitsvek{z} \times \left(\EFeld[u]_{0i} \einheitsvek{y}\euler^{-\komplex \Wellenzahl_i x \sin\vartheta_1} + \EFeld[u]_{0r} \einheitsvek{y}\euler^{-\komplex \Wellenzahl_r x \sin\vartheta_1}   \right) &= \einheitsvek{z} \times \EFeld[u]_{0t} \einheitsvek{y}\euler^{-\komplex \Wellenzahl_t x \sin\vartheta_2} \; ; \; \einheitsvek{z} \times \einheitsvek{y} = -\einheitsvek{x} \\
+      -\einheitsvek{x}  \left(\EFeld[u]_{0i} \euler^{-\komplex \Wellenzahl_i x \sin\vartheta_1} + \EFeld[u]_{0r}\euler^{-\komplex \Wellenzahl_r x \sin\vartheta_1}   \right) &= -\einheitsvek{x}  \EFeld[u]_{0t} \euler^{-\komplex \Wellenzahl_t x \sin\vartheta_2} 
     \end{align*}
   \item Für \(x=0\) folgt:
     \begin{equation*}
-      \boxed{ \efeld[u]_{0i} + \efeld[u]_{0r}= \efeld[u]_{0t}}
+      \boxed{ \EFeld[u]_{0i} + \EFeld[u]_{0r}= \EFeld[u]_{0t}}
       \end{equation*}
     \end{itemize}
 \end{frame}
@@ -450,22 +450,22 @@
 \end{column}
 \begin{column}{.7\textwidth}
   \begin{itemize}[<+->]
-  \item Betrachtung \(\magfeld[v]\)
-  \item Oberflächenstromdichte \(\elstromdichte[v]_A = \vec{0}\) (vgl. Felddiffusion im Halbraum)
+  \item Betrachtung \(\HFeld[v]\)
+  \item Oberflächenstromdichte \(\StromDichte[v]_A = \vec{0}\) (vgl. Felddiffusion im Halbraum)
     \begin{align*}
-      \einheitsvek{z} \times \left( \magfeld[v]_i + \magfeld[v]_r \right) &= \einheitsvek{z} \times \magfeld[v]_t  \quad \magfeld[v] = \frac{1}{Z} \einheitsvek{k} \times \efeld[v] \\ 
-      \einheitsvek{z} \times \left( \frac{1}{Z_1} \einheitsvek{k_i} \times \efeld[v]_i + \frac{1}{Z_1} \einheitsvek{k_r} \times \efeld[v]_r \right) &= \einheitsvek{z} \times \frac{1}{Z_2} \einheitsvek{k_t} \times \efeld[v]_t  
+      \einheitsvek{z} \times \left( \HFeld[v]_i + \HFeld[v]_r \right) &= \einheitsvek{z} \times \HFeld[v]_t  \quad \HFeld[v] = \frac{1}{Z} \einheitsvek{k} \times \EFeld[v] \\ 
+      \einheitsvek{z} \times \left( \frac{1}{Z_1} \einheitsvek{k_i} \times \EFeld[v]_i + \frac{1}{Z_1} \einheitsvek{k_r} \times \EFeld[v]_r \right) &= \einheitsvek{z} \times \frac{1}{Z_2} \einheitsvek{k_t} \times \EFeld[v]_t  
     \end{align*}
     \end{itemize}
 \end{column}
 \end{columns}
 
 \begin{itemize}[<+->]
-\item Auflösen des doppelten Kreuzproduktes (nutze: \(\einheitsvek{z}\cdot \efeld[v]_{irt}=0\))
+\item Auflösen des doppelten Kreuzproduktes (nutze: \(\einheitsvek{z}\cdot \EFeld[v]_{irt}=0\))
   \begin{align*}
-    \frac{1}{Z_1}\left[   - \efeld[v]_i\left(\einheitsvek{z}\cdot \einheitsvek{k_i}  \right)  - \efeld[v]_r\left(\einheitsvek{z}\cdot \einheitsvek{k_r}  \right) \right] &= \frac{1}{Z_2}\left[   - \efeld[v]_t\left(\einheitsvek{z}\cdot \einheitsvek{k_t}  \right)\right]\\
-    \frac{1}{Z_1}\left[   - \cos\vartheta_1\efeld[v]_i  +\cos\vartheta_1 \efeld[v]_r \right] &= -\frac{1}{Z_2} \cos\vartheta_2 \efeld[v]_t\\
-    \Aboxed{\frac{1}{Z_1}\left[   \cos\vartheta_1\efeld[u]_{0i}  -\cos\vartheta_1 \efeld[u]_{0r} \right] &= \frac{1}{Z_2} \cos\vartheta_2 \efeld[u]_{0t}}
+    \frac{1}{Z_1}\left[   - \EFeld[v]_i\left(\einheitsvek{z}\cdot \einheitsvek{k_i}  \right)  - \EFeld[v]_r\left(\einheitsvek{z}\cdot \einheitsvek{k_r}  \right) \right] &= \frac{1}{Z_2}\left[   - \EFeld[v]_t\left(\einheitsvek{z}\cdot \einheitsvek{k_t}  \right)\right]\\
+    \frac{1}{Z_1}\left[   - \cos\vartheta_1\EFeld[v]_i  +\cos\vartheta_1 \EFeld[v]_r \right] &= -\frac{1}{Z_2} \cos\vartheta_2 \EFeld[v]_t\\
+    \Aboxed{\frac{1}{Z_1}\left[   \cos\vartheta_1\EFeld[u]_{0i}  -\cos\vartheta_1 \EFeld[u]_{0r} \right] &= \frac{1}{Z_2} \cos\vartheta_2 \EFeld[u]_{0t}}
     \end{align*}
     \end{itemize}
 \end{frame}
@@ -476,19 +476,19 @@
 \begin{itemize}[<+->]
 \item Zwei Beziehungen gefunden:
   \begin{equation*}
-    \efeld[u]_{0i} + \efeld[u]_{0r}= \efeld[u]_{0t} \quad\text{ und }\quad \frac{1}{Z_1}\left[   \cos\vartheta_1\efeld[u]_{0i}  -\cos\vartheta_1 \efeld[u]_{0r} \right] = \frac{1}{Z_2} \cos\vartheta_2 \efeld[u]_{0t}
+    \EFeld[u]_{0i} + \EFeld[u]_{0r}= \EFeld[u]_{0t} \quad\text{ und }\quad \frac{1}{Z_1}\left[   \cos\vartheta_1\EFeld[u]_{0i}  -\cos\vartheta_1 \EFeld[u]_{0r} \right] = \frac{1}{Z_2} \cos\vartheta_2 \EFeld[u]_{0t}
   \end{equation*}
 \item Damit können der \alert{Reflexions-} und der \alert{Transmissionskoeffizient}
   \begin{equation*}
-    \underline{r}_\perp = \frac{\efeld[u]_{0r}}{\efeld[u]_{0i}} \qquad \underline{t}_\perp = \frac{\efeld[u]_{0t}}{\efeld[u]_{0i}} \quad\text{ bestimmt werden.} 
+    \underline{r}_\perp = \frac{\EFeld[u]_{0r}}{\EFeld[u]_{0i}} \qquad \underline{t}_\perp = \frac{\EFeld[u]_{0t}}{\EFeld[u]_{0i}} \quad\text{ bestimmt werden.} 
   \end{equation*}
 \item Aus der ersten Gleichung ergibt sich
   \begin{equation*}
-    \efeld[u]_{0i} + \efeld[u]_{0r}= \efeld[u]_{0t} \Rightarrow  1+ \frac{\efeld[u]_{0r}}{\efeld[u]_{0i}}= \frac{\efeld[u]_{0t}}{\efeld[u]_{0i}} \Rightarrow \boxed{1+\underline{r}_\perp = \underline{t}_\perp}
+    \EFeld[u]_{0i} + \EFeld[u]_{0r}= \EFeld[u]_{0t} \Rightarrow  1+ \frac{\EFeld[u]_{0r}}{\EFeld[u]_{0i}}= \frac{\EFeld[u]_{0t}}{\EFeld[u]_{0i}} \Rightarrow \boxed{1+\underline{r}_\perp = \underline{t}_\perp}
 \end{equation*}
 \item Aus der zweiten Gleichung ergibt sich
   \begin{equation*}
-    \frac{1}{Z_1}\left[   \cos\vartheta_1\efeld[u]_{0i}  -\cos\vartheta_1 \efeld[u]_{0r} \right] = \frac{1}{Z_2} \cos\vartheta_2 \efeld[u]_{0t} \Rightarrow  \boxed{Z_2\cos\vartheta_1\left(1-\underline{r}_\perp\right) = Z_1 \cos\vartheta_2\underline{t}_\perp}
+    \frac{1}{Z_1}\left[   \cos\vartheta_1\EFeld[u]_{0i}  -\cos\vartheta_1 \EFeld[u]_{0r} \right] = \frac{1}{Z_2} \cos\vartheta_2 \EFeld[u]_{0t} \Rightarrow  \boxed{Z_2\cos\vartheta_1\left(1-\underline{r}_\perp\right) = Z_1 \cos\vartheta_2\underline{t}_\perp}
 \end{equation*}
   \end{itemize}
 \end{frame}
@@ -575,7 +575,7 @@
 \item Fall 1: \(\vartheta_1=\vartheta_2 \to n_1=n_2 \to\) \alert{optische gleiches Material}
 \item Fall 2: Nur für \alert{parallele Polarisation} ergibt sich eine weitere Möglichkeit
    \begin{equation*}
-     \underline{r}_\parallel = \frac{\tan\left(\vartheta_1-\vartheta_2\right)}{\tan\left(\vartheta_1+\vartheta_2\right)} \to 0 \text{ für } \boxed{\vartheta_1+\vartheta_2 = \frac{\pi}{2}} \Rightarrow \alert{\wellenzahl[v]_r \perp \wellenzahl[v]_t}
+     \underline{r}_\parallel = \frac{\tan\left(\vartheta_1-\vartheta_2\right)}{\tan\left(\vartheta_1+\vartheta_2\right)} \to 0 \text{ für } \boxed{\vartheta_1+\vartheta_2 = \frac{\pi}{2}} \Rightarrow \alert{\Wellenzahl[v]_r \perp \Wellenzahl[v]_t}
    \end{equation*}
 \item Nach dem Brechungsgesetz von Snellius gilt in diesem Fall:
   \begin{equation*}
@@ -667,12 +667,12 @@
          \begin{equation*}
            \sin\vartheta_{1G} = \frac{n_2}{n_1} \Rightarrow \frac{n_1}{n_2}\sin\vartheta_{1G} = 1 \Rightarrow \boxed{\frac{n_1}{n_2}\sin\vartheta_{1} > 1 \text{ für } \vartheta_{1}>\vartheta_{1G}}
          \end{equation*}
-       \item Wir betrachten \(\wellenzahl[v]_t\):
+       \item Wir betrachten \(\Wellenzahl[v]_t\):
          \begin{align*}
-           \wellenzahl[v]_t=\wellenzahl_2 \einheitsvek{k_t} &= \wellenzahl_2 \left( \sin\vartheta_2\einheitsvek{x} +   \cos\vartheta_2\einheitsvek{z}\right) \\
-                                                        &= \wellenzahl_2 \left(\frac{n_1}{n_2} \sin\vartheta_1\einheitsvek{x} \pm \sqrt{\left(1-   \sin^2\vartheta_2\right)}\;\einheitsvek{z}\right)\\
-                                                        &= \wellenzahl_2 \left(\frac{n_1}{n_2} \sin\vartheta_1\einheitsvek{x} \pm \sqrt{\left(1-  \left(\frac{n_1}{n_2}\right)^2 \sin^2\vartheta_1\right)}\;\einheitsvek{z}\right)\\
-                                                        &= \wellenzahl_2 \left(\frac{n_1}{n_2} \sin\vartheta_1\einheitsvek{x} \pm \komplex\sqrt{\left( \left(\frac{n_1}{n_2}\right)^2 \sin^2\vartheta_1-1\right)}\;\einheitsvek{z}\right)\\
+           \Wellenzahl[v]_t=\Wellenzahl_2 \einheitsvek{k_t} &= \Wellenzahl_2 \left( \sin\vartheta_2\einheitsvek{x} +   \cos\vartheta_2\einheitsvek{z}\right) \\
+                                                        &= \Wellenzahl_2 \left(\frac{n_1}{n_2} \sin\vartheta_1\einheitsvek{x} \pm \sqrt{\left(1-   \sin^2\vartheta_2\right)}\;\einheitsvek{z}\right)\\
+                                                        &= \Wellenzahl_2 \left(\frac{n_1}{n_2} \sin\vartheta_1\einheitsvek{x} \pm \sqrt{\left(1-  \left(\frac{n_1}{n_2}\right)^2 \sin^2\vartheta_1\right)}\;\einheitsvek{z}\right)\\
+                                                        &= \Wellenzahl_2 \left(\frac{n_1}{n_2} \sin\vartheta_1\einheitsvek{x} \pm \komplex\sqrt{\left( \left(\frac{n_1}{n_2}\right)^2 \sin^2\vartheta_1-1\right)}\;\einheitsvek{z}\right)\\
            &= \beta \einheitsvek{x} \pm \komplex \alpha \einheitsvek{z} 
            \end{align*}
 \end{itemize}
@@ -683,14 +683,14 @@
   \begin{itemize}[<+->]
   \item Für das elektrische Feld im Medium 2 ergibt sich mit diesem Wellenvektor und dem Transmissionskoeffizienten \(t\)
     \begin{align*}
-      \efeld[uv]_t &= t \efeld[u]_{0i} \euler^{\komplex \left(\omega t - \wellenzahl[v]_t\cdot\ortsvektor[v] \right)} \einheitsvek{E_t}\\
-                   &= t \efeld[u]_{0i} \euler^{\pm\alpha z} \euler^{\komplex\left(\omega t - \beta x \right)}\einheitsvek{E_t} \quad \text{\(+\alpha z\) Lösung unphysikalisch} \\
-       &= t \efeld[u]_{0i} \euler^{-\alpha z} \euler^{\komplex\left(\omega t - \beta x \right)}\einheitsvek{E_t} \quad \text{exponentialler Abfall in z; Welle in x}
+      \EFeld[uv]_t &= t \EFeld[u]_{0i} \euler^{\komplex \left(\omega t - \Wellenzahl[v]_t\cdot\Ortsr[v] \right)} \einheitsvek{E_t}\\
+                   &= t \EFeld[u]_{0i} \euler^{\pm\alpha z} \euler^{\komplex\left(\omega t - \beta x \right)}\einheitsvek{E_t} \quad \text{\(+\alpha z\) Lösung unphysikalisch} \\
+       &= t \EFeld[u]_{0i} \euler^{-\alpha z} \euler^{\komplex\left(\omega t - \beta x \right)}\einheitsvek{E_t} \quad \text{exponentialler Abfall in z; Welle in x}
     \end{align*}
   \item Poyntingscher Vektor:
     \begin{align*}
-      \poyvec[uv] &= \frac{1}{2} \efeld[uv]_t \times \magfeld[uv]_t^\star = \frac{1}{2 Z_2} \efeld[uv]_t \times \left(\einheitsvek{k_t}^\star \times \efeld[uv]_t^\star\right) = \frac{1}{2 Z_2} \left|\efeld[uv]_t\right|^2 \einheitsvek{k_t}^\star \; ,\; \wellenzahl[uv]_t = \beta \einheitsvek{x} - \komplex \alpha \einheitsvek{z}\\
-                    &= \frac{1}{2 Z_2 k_2} \left|t \efeld[u]_{0i} \right|^2 \euler^{-2\alpha z}\left( \beta \einheitsvek{x} +\komplex \alpha \einheitsvek{z}\right)
+      \PoyntingVektor[uv] &= \frac{1}{2} \EFeld[uv]_t \times \HFeld[uv]_t^\star = \frac{1}{2 Z_2} \EFeld[uv]_t \times \left(\einheitsvek{k_t}^\star \times \EFeld[uv]_t^\star\right) = \frac{1}{2 Z_2} \left|\EFeld[uv]_t\right|^2 \einheitsvek{k_t}^\star \; ,\; \Wellenzahl[uv]_t = \beta \einheitsvek{x} - \komplex \alpha \einheitsvek{z}\\
+                    &= \frac{1}{2 Z_2 k_2} \left|t \EFeld[u]_{0i} \right|^2 \euler^{-2\alpha z}\left( \beta \einheitsvek{x} +\komplex \alpha \einheitsvek{z}\right)
     \end{align*}
     \item Wirkleistungsfluss in x-Richtung und Blindleistungsfluss in z-Richtung
 \end{itemize}

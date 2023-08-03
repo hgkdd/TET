@@ -31,7 +31,7 @@
 	\draw [->] (0,0,-1) -- (0,0,2) node[anchor=north east] {$z$};
 	% Differenzvektor R
 	\draw [->, color=red!60] (1,1.8) -- (4.5,2.5);
-	\draw [color=red!60] (3.8,2.25) node[anchor=south east] {$\ortsvektor[v] = \ortsvektor[v] - \ortsvektor[vs] $};
+	\draw [color=red!60] (3.8,2.25) node[anchor=south east] {$\Ortsr[v] = \Ortsr[v] - \Ortsr[vs] $};
 	% Aufpunkt
 	\draw [->,color=blue!70] (0,0) -- (4.5,2.5) node[anchor=west] {$\punkt$};
 	\filldraw [color=blue!70] (4.5,2.5) circle (2pt);
@@ -46,7 +46,7 @@
 	\shade[ball color=white!10!green!20,opacity=0.20] plot [smooth cycle, tension = 1] coordinates {(a) (b) (c) (d) (e) (f) (g)};
 	\draw [color=darkgreen] plot [smooth cycle, tension = 1] coordinates {(a) (b) (c) (d) (e) (f) (g)} node [sloped, above] {\ $ \laddichte{V} $};
 	\draw [->,color=darkgreen] (0,0) -- (1,1.8);
-	\draw [color=darkgreen] (0.5,1.0) node[anchor=north east] {$ \ortsvektor[vs] $};
+	\draw [color=darkgreen] (0.5,1.0) node[anchor=north east] {$ \Ortsr[vs] $};
 \end{tikzpicture}}
     %          \end{column}
      %         \end{columns}
@@ -59,7 +59,7 @@
 
                 \begin{block}{Problem}
     Im Lösungsgebiet gibt als Quelle eine Ladungsverteilung
-    $\rho_v(\ortsvektor[v])$. Abgesehen davon ist der Raum entweder Vakuum
+    $\rho_v(\Ortsr[v])$. Abgesehen davon ist der Raum entweder Vakuum
     mit $\varepsilon=\varepsilon_0$ oder kann als perfekt leitend
     $\kappa \to\infty$ angesehen
     werden.
@@ -68,7 +68,7 @@
     leitenden Gebieten ist so schnell, dass alle elektrischen Felder
     praktisch instantan kompensiert werden:
     $$
-    \efeld[v] = \vec{0} \text{ in den perfekt leitenden Gebieten}
+    \EFeld[v] = \vec{0} \text{ in den perfekt leitenden Gebieten}
     $$
 
     \alert{gesucht:} Feld im Raum außerhalb der perfekten Leiter
@@ -86,15 +86,15 @@
 \begin{frame}
     \onslide<+->{\begin{block}{Grundgleichungen (außerhalb der perf. leitenden Gebiete)}
     \begin{align*}
-	& \rotation \efeld[v] = \vec{0}
-		&& \oint\limits_{\rand(\flaeche)} \efeld[v] \cdot \intweg[v] = 0\\
-	& \divergenz \verschiebung[v] = \divergenz \left( \varepsilon_0 \cdot \efeld[v] \right) = \laddichte{V}
+	& \rotation \EFeld[v] = \vec{0}
+		&& \oint\limits_{\rand(\Flaeche)} \EFeld[v] \cdot \intweg[v] = 0\\
+	& \divergenz \DFeld[v] = \divergenz \left( \varepsilon_0 \cdot \EFeld[v] \right) = \laddichte{V}
 		&& \only<-1|handout:0>{\varepsilon_0\oiint\limits_{\oberfl(\volumen)}
-                   \efeld[v] \cdot \intflaeche[v] =
+                   \EFeld[v] \cdot \intflaeche[v] =
                    \iiint\limits_{\volumen} \laddichte{V} \intvolumen
                    = \ladung \text{ in V}}
                    \only<2->{\boxed{\varepsilon_0\oiint\limits_{\oberfl(\volumen)}
-                   \efeld[v] \cdot \intflaeche[v] =
+                   \EFeld[v] \cdot \intflaeche[v] =
                    \iiint\limits_{\volumen} \laddichte{V} \intvolumen
                    = \ladung \text{ in V}}}
 \end{align*}
@@ -112,29 +112,29 @@ In einfachen Fällen (geeignete Symmetrie) kann aus dem obigen
   \begin{exampleblock}{Kugelsymmetrische Ladungsverteilung am
       Ursprung}
     $$
-    \rho_V (\ortsvektor[vs]) =  \rho_v(r') \qquad \efeld[v] (\ortsvektor[vs]) = E(r')\einheitsvek{r'}
+    \rho_V (\Ortsr[vs]) =  \rho_v(r') \qquad \EFeld[v] (\Ortsr[vs]) = E(r')\einheitsvek{r'}
     $$
     V: Kugel mit Radius r um den Ursprung: $\intflaeche[v] =
-    \intflaeche \einheitsvek{r'}  \rightarrow \alert{\efeld[v] \cdot
-      \intflaeche[v] = \efeld(r) \intflaeche}$
+    \intflaeche \einheitsvek{r'}  \rightarrow \alert{\EFeld[v] \cdot
+      \intflaeche[v] = \EFeld(r) \intflaeche}$
 
     \begin{align*}
     \oiint\limits_{\oberfl(\volumen)}
-                   \efeld[v] \cdot \intflaeche[v] = & \efeld(r) \oiint\limits_{\oberfl(\volumen)}
-                                                       \intflaeche = 4\pi r^2 \efeld(r) \\
+                   \EFeld[v] \cdot \intflaeche[v] = & \EFeld(r) \oiint\limits_{\oberfl(\volumen)}
+                                                       \intflaeche = 4\pi r^2 \EFeld(r) \\
       = & \frac{1}{\varepsilon_0} \iiint\limits_{\volumen}
            \laddichte{V} \intvolumen =  \frac{1}{\varepsilon_0} \int_0^r \rho_v(r') r'^2\upd r'
            \int_0^{2\pi} \upd \varphi \int_0^\pi \sin\vartheta
           \upd\vartheta \\
       = & \frac{4\pi}{\varepsilon_0}\int_0^r \rho_v(r') r'^2\upd r'\\
-       \efeld(r) = & \frac{1}{\varepsilon_0 r^2} \int_0^r \rho_v(r') r'^2\upd r'
+       \EFeld(r) = & \frac{1}{\varepsilon_0 r^2} \int_0^r \rho_v(r') r'^2\upd r'
     \end{align*}
     Homogen geladene Kugel mit Radius R; keine Ladung außerhalb:
    $$
-    \rho_V (\ortsvektor[vs]) = \begin{cases}
+    \rho_V (\Ortsr[vs]) = \begin{cases}
       \rho_V  & \text{ für } r' \le R\\
       0 & \text{ für } r' > R
-    \end{cases};\quad \efeld(r) =  \begin{cases}
+    \end{cases};\quad \EFeld(r) =  \begin{cases}
       \frac{\rho_V}{\varepsilon_0r^2}\frac{1}{3}r^3 =
       \frac{\rho_V}{3\varepsilon_0}r= \frac{Q r}{4\pi\varepsilon_0 R^3}& \text{ für } r \le R\\
       \frac{\rho_V}{\varepsilon_0r^2}\frac{1}{3}R^3 = \frac{Q}{4\pi\varepsilon_0r^2} & \text{ für } r > R
@@ -152,12 +152,12 @@ In einfachen Fällen (geeignete Symmetrie) kann aus dem obigen
         \alert{Coulomb-Gauss-Integral}
         $$
         \oiint\limits_{\oberfl(\volumen)}
-                   \efeld[v] \cdot \intflaeche[v] = \frac{1}{\varepsilon_0}
+                   \EFeld[v] \cdot \intflaeche[v] = \frac{1}{\varepsilon_0}
                    \iiint\limits_{\volumen} \laddichte{V} \intvolumen
                    $$
       ist ein guter und intuitiver Lösungsweg, wenn das \alert{linke Integral}
-      leicht zu einem Ausdruck für $\efeld[v](\ortsvektor[v])$ für alle
-      $\ortsvektor[v]$ im Lösungsvolumen umgeformt werden kann.
+      leicht zu einem Ausdruck für $\EFeld[v](\Ortsr[v])$ für alle
+      $\Ortsr[v]$ im Lösungsvolumen umgeformt werden kann.
       \item Ob das \alert{rechte Integral} dann \alert{analytisch}
         gelöst werden kann, ist grundsätzlich sekundär.
         \item Eine
@@ -181,37 +181,37 @@ In einfachen Fällen (geeignete Symmetrie) kann aus dem obigen
       \frametitle{Coulomb-Integral - Skalarpotential}
       \begin{itemize}[<+->]
         \item Für die \alert{Überlagerung} (Superposition) von $n$
-          einzelnen Punktladungen $q_j$ an Positionen $\ortsvektor[v]_j$ ist
+          einzelnen Punktladungen $q_j$ an Positionen $\Ortsr[v]_j$ ist
           das Feld bekannt, falls keine weiteren
           \alert{Randbedingungen im Endlichen} vorliegen:
           $$
-          \efeld[v] (\ortsvektor[v])= \frac{1}{4\pi\varepsilon_0} \sum_{j=1}^n \frac{q_j\left(\ortsvektor[v]-\ortsvektor[v]_j\right)}{\left|\ortsvektor[v]-\ortsvektor[v]_j\right|^3}
+          \EFeld[v] (\Ortsr[v])= \frac{1}{4\pi\varepsilon_0} \sum_{j=1}^n \frac{q_j\left(\Ortsr[v]-\Ortsr[v]_j\right)}{\left|\Ortsr[v]-\Ortsr[v]_j\right|^3}
           $$
           \item Beim Übergang auf eine \alert{kontinuierliche
               Ladungsverteilung}
             $$
             \upd q =
-            \laddichte{V}(\ortsvektor[vs])\upd^3r'$$
+            \laddichte{V}(\Ortsr[vs])\upd^3r'$$
 
             ergibt sich sofort das \alert{Coulomb-Integral}
 
             $$
-          \efeld[v] (\ortsvektor[v])= \frac{1}{4\pi\varepsilon_0}
+          \EFeld[v] (\Ortsr[v])= \frac{1}{4\pi\varepsilon_0}
           \int
-          \frac{\laddichte{V}(\ortsvektor[vs])\left(\ortsvektor[v]-\ortsvektor[vs]\right)}{\left|\ortsvektor[v]-\ortsvektor[vs]\right|^3
+          \frac{\laddichte{V}(\Ortsr[vs])\left(\Ortsr[v]-\Ortsr[vs]\right)}{\left|\Ortsr[v]-\Ortsr[vs]\right|^3
           } \upd^3r'
           $$
         \item Es gilt
           $$
-          \frac{\ortsvektor[v]-\ortsvektor[vs]}{\left|\ortsvektor[v]-\ortsvektor[vs]\right|^3}
-            = -\gradient_r \frac{1}{\left|\ortsvektor[v]-\ortsvektor[vs]\right|}
+          \frac{\Ortsr[v]-\Ortsr[vs]}{\left|\Ortsr[v]-\Ortsr[vs]\right|^3}
+            = -\gradient_r \frac{1}{\left|\Ortsr[v]-\Ortsr[vs]\right|}
             $$
           \item und somit
             $$
-            \efeld[v](\ortsvektor[v]) = -\gradient \phi \quad\text{mit}\quad
-            \boxed{\phi(\ortsvektor[v]) = \frac{1}{4\pi\varepsilon_0}
+            \EFeld[v](\Ortsr[v]) = -\gradient \phi \quad\text{mit}\quad
+            \boxed{\phi(\Ortsr[v]) = \frac{1}{4\pi\varepsilon_0}
           \int
-          \frac{\laddichte{V}(\ortsvektor[vs])}{\left|\ortsvektor[v]-\ortsvektor[vs]\right|} \upd^3r'} \quad\alert{\text{Skalarpotential}}
+          \frac{\laddichte{V}(\Ortsr[vs])}{\left|\Ortsr[v]-\Ortsr[vs]\right|} \upd^3r'} \quad\alert{\text{Skalarpotential}}
             $$
         \end{itemize}
       \end{frame}
@@ -251,7 +251,7 @@ In einfachen Fällen (geeignete Symmetrie) kann aus dem obigen
         \begin{itemize}[<+->]
         \item Für statische Probleme gilt immer \qquad$\rotation\vec{E} = \vec{0}$
         \item daher: \hspace{4cm} $\vec{E} = - \gradient \phi$
-          \item Für \alert{einfache} Medien mit $\verschiebung[v] = \varepsilon \efeld[v]$:\qquad $\divergenz \vec{E} =
+          \item Für \alert{einfache} Medien mit $\DFeld[v] = \varepsilon \EFeld[v]$:\qquad $\divergenz \vec{E} =
             \frac{1}{\varepsilon} \laddichte{V} $
           \item einsetzen:
             \begin{align*}
@@ -270,8 +270,8 @@ In einfachen Fällen (geeignete Symmetrie) kann aus dem obigen
               zweite Gleichung $\rotation\vec{E} = \vec{0}$
               \item Nachteil: Anstelle von zwei DGLs erster Ordnung nun
                 eine \alert{DGL zweiter Ordnung}.
-                \item Bemerkung: $\efeld[v](\phi + \text{const.}) =
-                  \efeld[v](\phi)$, $\phi$ nur bis auf additive
+                \item Bemerkung: $\EFeld[v](\phi + \text{const.}) =
+                  \EFeld[v](\phi)$, $\phi$ nur bis auf additive
                   Konstante bestimmt.
           \end{itemize}
 
@@ -282,9 +282,9 @@ In einfachen Fällen (geeignete Symmetrie) kann aus dem obigen
 \frametitle{Kraft - Feldlinie - Äquipotentialfläche}
 
 \begin{itemize}[<+->]
-\item Kraft auf eine Probeladung $q$ im Feld $\efeld[v](\ortsvektor[v])$
+\item Kraft auf eine Probeladung $q$ im Feld $\EFeld[v](\Ortsr[v])$
 $$
-\vec{F}(\ortsvektor[v]) = q \efeld[v](\ortsvektor[v])
+\vec{F}(\Ortsr[v]) = q \EFeld[v](\Ortsr[v])
 $$ 
 \item Die \alert{Trajektorie} einer solchen fiktiven Testladung
   beschreibt eine \alert{Feldlinie} (Orientierung: von \enquote{+}
@@ -294,13 +294,13 @@ $$
 \item Sei $\upd\vec{s}$ eine kleine Verschiebung auf einer
   Äquipotentialfläche, dann gilt:
 \begin{align*}
-\upd \phi = & \phi(\ortsvektor[v]+\upd\vec{s}) - \phi(\ortsvektor[v]) \equiv 0\\
+\upd \phi = & \phi(\Ortsr[v]+\upd\vec{s}) - \phi(\Ortsr[v]) \equiv 0\\
  = & \gradient \phi \cdot \upd\vec{s}
 \end{align*}
 also:
 $$
-\gradient \phi \perp \upd\vec{s} \land \gradient \phi \parallel \efeld[v] \to
-\boxed{\efeld[v] (Feldlinien) \perp \text{Äquipotentialflächen}}  
+\gradient \phi \perp \upd\vec{s} \land \gradient \phi \parallel \EFeld[v] \to
+\boxed{\EFeld[v] (Feldlinien) \perp \text{Äquipotentialflächen}}  
 $$
 \end{itemize}
 
@@ -323,10 +323,10 @@ $$
 	\draw[->,color=violet] (4,-2) -- (5,-1) node[anchor=north west] {$\rand_2$};
 	% Punkt 0
 	\filldraw (a) circle (1.5pt);
-	\draw (a) node[anchor=north east] {$\ortsvektor[v]_0$};
+	\draw (a) node[anchor=north east] {$\Ortsr[v]_0$};
 	% allgemeiner Punkt
 	\filldraw (b) circle (1.5pt);
-	\draw (b) node [anchor = south west] {$\ortsvektor[v]$};
+	\draw (b) node [anchor = south west] {$\Ortsr[v]$};
 \end{tikzpicture}}
 \resizebox{1.1\columnwidth}{!}{%
 \begin{tikzpicture}[line width = 1.2pt,
@@ -352,23 +352,23 @@ $$
 	\draw [decorate, decoration={markings,
     mark=between positions 0.2 and 0.5 step 3mm with
     {\arrow[green]{latex}}}] plot[smooth, tension = 0.8] coordinates{(-3,5) (a) (0,-2)}; 
-	\draw (0,-2) node[anchor=north] {$\elpotential(\ortsvektor[v]_0)$};
+	\draw (0,-2) node[anchor=north] {$\SkalarPot(\Ortsr[v]_0)$};
 	% Fläche 2 
 	\draw  plot[smooth, tension = 0.8] coordinates{(7,8) (b) (e) (10,2)}; 
 	\draw  [decorate, decoration={markings,
     mark=between positions 0.6 and 0.95 step 3mm with
     {\arrow[green]{latex}}}] plot[smooth, tension = 0.8] coordinates{(7,8) (b) (e) (10,2)}; 
-	\draw (10,2) node[anchor=north west] {$\elpotential(\ortsvektor[v])$};
+	\draw (10,2) node[anchor=north west] {$\SkalarPot(\Ortsr[v])$};
 	% Punkte
 	\draw (a) circle (1.5pt);
-	\draw (a) node[anchor=north east] {$\ortsvektor[v]_1$}; 
+	\draw (a) node[anchor=north east] {$\Ortsr[v]_1$}; 
 	\draw (b) circle (1.5pt);
-	\draw (b) node[anchor=south west] {$\ortsvektor[v]_2$}; 
+	\draw (b) node[anchor=south west] {$\Ortsr[v]_2$}; 
 	\draw (d) circle (1.5pt); 
-	\draw (d) node[anchor=south west] {$\ortsvektor[v]_0$}; 
+	\draw (d) node[anchor=south west] {$\Ortsr[v]_0$}; 
 	%\draw [color=green] plot[smooth] coordinates{(d) (f) (a)}; 
 
-	\draw (e) node[anchor=north east] {$\ortsvektor[v]$};
+	\draw (e) node[anchor=north east] {$\Ortsr[v]$};
         \draw (e) circle (1.5pt); 
 
 	% Weg
@@ -376,39 +376,39 @@ $$
 	\draw [decorate, , decoration={markings,
     mark=between positions 0.1 and 0.99 step 3mm with
     {\arrow[green]{latex}}}] plot[smooth, tension=0.8] coordinates{(a) (c) (6,4) (b)}; 
-	\draw [->,color=magenta] (c) -- ++(3,{2/5*3}) node[anchor=south] {$\efeld[v]$};
-	\draw [->,color=blue] (c) -- ++(2,{2/5*2}) node[anchor=south east] {$\upd \weg[v]$};
+	\draw [->,color=magenta] (c) -- ++(3,{2/5*3}) node[anchor=south] {$\EFeld[v]$};
+	\draw [->,color=blue] (c) -- ++(2,{2/5*2}) node[anchor=south east] {$\upd \Weg[v]$};
 \end{tikzpicture}}
 \end{column}
 \begin{column}{.6\linewidth}
   \begin{itemize}[<+->]
     \item Betrachte zwei beliebige Wege $C_1$ und $C_2$ zwischen
-      $\ortsvektor[v]_0$ und $\ortsvektor[v]$.
-      \item Wegen $\rotation \efeld[v] =\vec{0} $ gilt für jeden geschlossenen
+      $\Ortsr[v]_0$ und $\Ortsr[v]$.
+      \item Wegen $\rotation \EFeld[v] =\vec{0} $ gilt für jeden geschlossenen
         Weg $C$:
         $
-        \oint_C \efeld[v]\cdot\upd\vec{s} = 0 
+        \oint_C \EFeld[v]\cdot\upd\vec{s} = 0 
         $
         \item Der Weg $C_1 + (-C_2)$ ist ein geschlossener Weg. Daher
           folgt die \alert{Wegunabhängigkeit}:
           $$
-       \boxed{\int_{\ortsvektor[v]_0, C_1}^{\ortsvektor[v]} \efeld[v]\cdot\upd\vec{s} =        \int_{\ortsvektor[v]_0, C_2}^{\ortsvektor[v]} \efeld[v]\cdot\upd\vec{s}} 
+       \boxed{\int_{\Ortsr[v]_0, C_1}^{\Ortsr[v]} \EFeld[v]\cdot\upd\vec{s} =        \int_{\Ortsr[v]_0, C_2}^{\Ortsr[v]} \EFeld[v]\cdot\upd\vec{s}} 
        $$
-       \item Wege auf Äquipotentialfläche ($\ortsvektor[v]_0\to\ortsvektor[v]_1$ und
-         $\ortsvektor[v]_2\to\ortsvektor[v]$) tragen nicht bei, da $\upd\vec{s}
-         \perp \efeld[v]$
-         \item Wege entlang einer Feldlinie ($\ortsvektor[v]_1\to\ortsvektor[v]_2$):
-           $\efeld[v]\cdot\upd\vec{s} = E \upd s = -|\gradient\phi| \upd s$
+       \item Wege auf Äquipotentialfläche ($\Ortsr[v]_0\to\Ortsr[v]_1$ und
+         $\Ortsr[v]_2\to\Ortsr[v]$) tragen nicht bei, da $\upd\vec{s}
+         \perp \EFeld[v]$
+         \item Wege entlang einer Feldlinie ($\Ortsr[v]_1\to\Ortsr[v]_2$):
+           $\EFeld[v]\cdot\upd\vec{s} = E \upd s = -|\gradient\phi| \upd s$
          \item Somit
            $$
-             \boxed{\int_{\ortsvektor[v]_0}^{\ortsvektor[v]} \efeld[v]\cdot\upd\vec{s} = 
+             \boxed{\int_{\Ortsr[v]_0}^{\Ortsr[v]} \EFeld[v]\cdot\upd\vec{s} = 
                                                                        -
-                                                                       \int_{\ortsvektor[v]_1}^{\ortsvektor[v]_2}
+                                                                       \int_{\Ortsr[v]_1}^{\Ortsr[v]_2}
                                                                        |\gradient\phi|\upd
                                                                        s
                                                                        =
-                                                                       \phi(\ortsvektor[v]_0)
-                                                                       - \phi(\ortsvektor[v])}
+                                                                       \phi(\Ortsr[v]_0)
+                                                                       - \phi(\Ortsr[v])}
              $$
     \end{itemize}
 \end{column}
@@ -421,21 +421,21 @@ $$
     Man definiert die
     \alert{Spannung} $U_{21}$ als \alert{Potentialdifferenz}:
     $$
-    U_{21} = \phi_2 - \phi_1 = - \int_{\ortsvektor[v]_1}^{\ortsvektor[v]_2}
-    \efeld[v]\cdot \upd \vec{s}; \quad [U] = \si{\volt}
+    U_{21} = \phi_2 - \phi_1 = - \int_{\Ortsr[v]_1}^{\Ortsr[v]_2}
+    \EFeld[v]\cdot \upd \vec{s}; \quad [U] = \si{\volt}
     $$
     \end{block}
     \begin{block}{Arbeit}
       Auf eine Probeladung $q$ wirkt im E-Feld die elektrostatische
-      Kraft $\vec{F}_e = q\efeld[v]$. Um die Ladung am Ort
+      Kraft $\vec{F}_e = q\EFeld[v]$. Um die Ladung am Ort
       festzuhalten ist eine gegengerichtete Kraft aufzuwenden
       $\vec{F}_\text{mech} = -\vec{F}_e$. Die \alert{Arbeit} $A$
-      auf dem Weg von $\ortsvektor[v]_1$ nach $\vec{r_2}$ ist somit
+      auf dem Weg von $\Ortsr[v]_1$ nach $\vec{r_2}$ ist somit
       $$
-      A = \int_{\ortsvektor[v]_1}^{\ortsvektor[v]_2}
-      \vec{F}_\text{mech}\cdot\upd\vec{s} = - \int_{\ortsvektor[v]_1}^{\ortsvektor[v]_2}
-      \vec{F}_e\cdot\upd\vec{s} = -q\int_{\ortsvektor[v]_1}^{\ortsvektor[v]_2}
-      \efeld[v]\cdot\upd\vec{s} = q (\phi(\ortsvektor[v]_2)-\phi({\ortsvektor[v]_1)})
+      A = \int_{\Ortsr[v]_1}^{\Ortsr[v]_2}
+      \vec{F}_\text{mech}\cdot\upd\vec{s} = - \int_{\Ortsr[v]_1}^{\Ortsr[v]_2}
+      \vec{F}_e\cdot\upd\vec{s} = -q\int_{\Ortsr[v]_1}^{\Ortsr[v]_2}
+      \EFeld[v]\cdot\upd\vec{s} = q (\phi(\Ortsr[v]_2)-\phi({\Ortsr[v]_1)})
       = q U_{21}  
       $$
      
@@ -448,24 +448,24 @@ $$
 %       Arbeit = Änderung der potentiellen Energie. Damit ist \alert{die
 %         elektrostatische Energie}
 %       $$
-%       \boxed{W_e(\ortsvektor[v])= q \phi(\ortsvektor[v])} \quad [W_e] =
+%       \boxed{W_e(\Ortsr[v])= q \phi(\Ortsr[v])} \quad [W_e] =
 %       \si{\volt\ampere\second} = \si{\watt\second} 
 %       $$
 %       Durch Vergleich mit der elektrostatischen Kraft findet man
 %       $
 %       W_e = -\vec{F}_e\cdot\upd \vec{s} \Rightarrow \boxed{\vec{F}_e =
-%       -\gradient W_e = q\efeld[v]}$
+%       -\gradient W_e = q\EFeld[v]}$
 %       \end{block}
 %     \begin{block}{Energiedichte}
 %       Durch den Übergang $q\to\laddichte{V}$ ergibt sich aus der
 %       Energie die \alert{elektrostatische Energiedichte}
 %       $$
-%       \boxed{w_e(\ortsvektor[v])= \laddichte{V}(\ortsvektor[v]) \phi(\ortsvektor[v])} \quad [w_e]  = \si{\watt\second\per\meter\cubed} 
+%       \boxed{w_e(\Ortsr[v])= \laddichte{V}(\Ortsr[v]) \phi(\Ortsr[v])} \quad [w_e]  = \si{\watt\second\per\meter\cubed} 
 %       $$
 %       Wie oben ergibt sich eine \alert{elektrostatische Kraftdichte}
 %       $
 %       \boxed{\vec{f}_e =
-%       -\gradient w_e = \laddichte{V}\efeld[v]} $
+%       -\gradient w_e = \laddichte{V}\EFeld[v]} $
 %       \end{block}
 
 %     \end{frame}
@@ -477,26 +477,26 @@ $$
     Ladungskonfiguration $\laddichte{V}$ entspricht der Arbeit, um
     Ladungen aus dem Unendlichen zu dieser Konfiguration zu bringen.
 
-    Wegen $\phi(\ortsvektor[v]) =
-    \frac{1}{4\pi\varepsilon_0}\int\frac{\laddichte{V}(\ortsvektor[vs])}{\left|\ortsvektor[v]-\ortsvektor[vs]\right|}
+    Wegen $\phi(\Ortsr[v]) =
+    \frac{1}{4\pi\varepsilon_0}\int\frac{\laddichte{V}(\Ortsr[vs])}{\left|\Ortsr[v]-\Ortsr[vs]\right|}
     \upd^3r$ ist \alert{$\phi(\infty) = 0$} für eine räumlich begrenzte Ladungsverteilung.
   \end{block}
   \begin{itemize}[<+->]
-  \item $N$ Punktladungen: Potential am Ort $\ortsvektor[v]_i$ der ersten $(i-1)$ Punktladungen
-    mit Ladung $q_j$ an den Orten $\ortsvektor[v]_j$:
+  \item $N$ Punktladungen: Potential am Ort $\Ortsr[v]_i$ der ersten $(i-1)$ Punktladungen
+    mit Ladung $q_j$ an den Orten $\Ortsr[v]_j$:
     $$
-    \phi(\ortsvektor[v]_i) = \frac{1}{4\pi\varepsilon_0} \sum_{j=1}^{i-1}
-    \frac{q_j}{|\ortsvektor[v]_i - \ortsvektor[v]_j|}
+    \phi(\Ortsr[v]_i) = \frac{1}{4\pi\varepsilon_0} \sum_{j=1}^{i-1}
+    \frac{q_j}{|\Ortsr[v]_i - \Ortsr[v]_j|}
     $$
-    Arbeit um Ladung $q_i$ von $\infty$ nach $\ortsvektor[v]_i$ zu bewegen: $A_i = q_i\phi(\ortsvektor[v]_i)$
+    Arbeit um Ladung $q_i$ von $\infty$ nach $\Ortsr[v]_i$ zu bewegen: $A_i = q_i\phi(\Ortsr[v]_i)$
 
     Die Gesamtarbeit $A = \sum_{i=2}^N A_i$ (der Term für $i=1$
     verschwindet, da der Raum bei der Verlagerung der ersten Ladung
     noch feldfrei ist) entspricht der \alert{elektrostatischen
       Energie} $W_e$:
     $$A = W_e = \frac{1}{4\pi\varepsilon_0} \sum_{i=2}^N \sum_{j=1}^{i-1}
-    \frac{q_i q_j}{|\ortsvektor[v]_i - \ortsvektor[v]_j|} = \frac{1}{\alert{8}\pi\varepsilon_0} \sum_{i=1}^N \sum_{j=1}^{N}
-    \frac{q_i q_j}{|\ortsvektor[v]_i - \ortsvektor[v]_j|} \alert{(1-\delta_{ij})}
+    \frac{q_i q_j}{|\Ortsr[v]_i - \Ortsr[v]_j|} = \frac{1}{\alert{8}\pi\varepsilon_0} \sum_{i=1}^N \sum_{j=1}^{N}
+    \frac{q_i q_j}{|\Ortsr[v]_i - \Ortsr[v]_j|} \alert{(1-\delta_{ij})}
     $$
     \end{itemize}
   \end{frame}
@@ -510,9 +510,9 @@ $$
             völlig Äquivalente} Ausdruck heißt in diesem Fall somit:
           $$
          \boxed{ W_e = \frac{1}{8\pi\varepsilon_0} \iint
-    \frac{\laddichte{V}(\ortsvektor[v]) \laddichte{V}(\ortsvektor[vs])}{|\ortsvektor[v]-
-      \ortsvektor[vs]|} \upd^3 r\upd^3 r' = \frac{1}{2} \int
-    \laddichte{V}(\ortsvektor[v])\phi(\ortsvektor[v]) \upd^3 r}
+    \frac{\laddichte{V}(\Ortsr[v]) \laddichte{V}(\Ortsr[vs])}{|\Ortsr[v]-
+      \Ortsr[vs]|} \upd^3 r\upd^3 r' = \frac{1}{2} \int
+    \laddichte{V}(\Ortsr[v])\phi(\Ortsr[v]) \upd^3 r}
   $$
   \item Nebenbemerkung: Die Diskussion des Unterschieds führt zum Begriff der
     \alert{Selbstenergie} einer Punktladung, der jedoch (bisher) nicht
@@ -525,8 +525,8 @@ $$
       W_e = & -\frac{\varepsilon_0}{2}\left(\int \divergenz(\phi\gradient\phi)
       \upd^3 r - \int (\gradient\phi)^2 \upd^3 r\right)  =
                      \frac{\varepsilon_0}{2} \int (\gradient\phi)^2 \upd^3 r\\
-        = & \frac{\varepsilon_0}{2} \int |\efeld[v]|^2 \upd^3 r
-            \quad\alert{Energiedichte:} \boxed{w_e = \frac{\varepsilon_0}{2} |\efeld[v]|^2}
+        = & \frac{\varepsilon_0}{2} \int |\EFeld[v]|^2 \upd^3 r
+            \quad\alert{Energiedichte:} \boxed{w_e = \frac{\varepsilon_0}{2} |\EFeld[v]|^2}
       \end{align*}
     \end{itemize}
     \end{frame}

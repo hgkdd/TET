@@ -24,16 +24,16 @@
   \begin{itemize}[<+->]
   \item Wir untersuchen weiterhin Lösungsmethoden der \alert{Poisson-Gleichung}
     $$
-    \laplace \phi = -\frac{1}{\varepsilon_0} \rho(\ortsvektor[v]) \text{ in } V
+    \laplace \phi = -\frac{1}{\varepsilon_0} \rho(\Ortsr[v]) \text{ in } V
     $$
     mit \alert{Dirichlet-} und/oder \alert{Neumann-Randbedingungen} auf der Oberfläche von $V$:
     $$
-    \forall \ortsvektor[v]_{b} \in O(V) : \phi(\ortsvektor[v]_b) \veebar \left. \frac{\partial \phi}{\partial n}\right|_{\ortsvektor[v]=\ortsvektor[v]_b} \text{ vorgegeben}
+    \forall \Ortsr[v]_{b} \in O(V) : \phi(\Ortsr[v]_b) \veebar \left. \frac{\partial \phi}{\partial n}\right|_{\Ortsr[v]=\Ortsr[v]_b} \text{ vorgegeben}
     $$
   \item In Fällen, in denen die Problemgeometrie gut zu den Symmetrien des Koordinatensystems passt, kann sich ein \alert{Separationsansatz} bzw. \alert{Produktansatz} lohnen.
   \item Ziel ist es hierbei, die partielle Differentialgleichung in ein System gewöhnlicher Differentialgleichungen zu überführen.
   \item Randbedingungen werden dann durch geeignete Anpassung der Konstanten berücksichtigt.
-    \item Ansatz für Koordinaten $(x_1,x_2,x_3)$: $\boxed{\phi(\ortsvektor[v])= f(x_1) \cdot g(x_2) \cdot h(x_3) }$
+    \item Ansatz für Koordinaten $(x_1,x_2,x_3)$: $\boxed{\phi(\Ortsr[v])= f(x_1) \cdot g(x_2) \cdot h(x_3) }$
     \end{itemize}
   
   \end{frame}
@@ -108,7 +108,7 @@
   \begin{itemize}[<+->]
   \item Lösungsvolumen: $V = [-\infty,\infty] \times [0,d]\times [-\infty,\infty]$
   \item Randwerte: $\phi(x,y=0,z)=\phi(x,y=d,z) = 0$
-  \item Quelle: konstante Ladungsdichte entlang $z$: $\rho_V (\ortsvektor[v])
+  \item Quelle: konstante Ladungsdichte entlang $z$: $\rho_V (\Ortsr[v])
     = \rho_L \delta(x-x_0)\delta(y-y_0);\; x_0 \text{ beliebig};\; y_0
     \in (0,d)$
   \item Symmetrie: \alert{Translationsinvarianz} in $z$-Richtung: Lösung unabhängig von $z$ $\to$ \alert{2D}
@@ -118,8 +118,8 @@
   \item Möglichkeit: Formale Lösung $\to$ Greensche-Funktion z.B: durch (unendliche) Spiegelung $\to$ fertig.
   \item Alternative: Aufteilen des Lösungsgebietes in den Bereich $A_-$ \enquote{links} von $x=x_0$ und den Bereich $A_+$ \enquote{rechts} von $x=x_0$:
     \begin{align*}
-      A_- &= \{\ortsvektor[v] = (x,y)\; |\; x<x_0 \land 0\le y\le d \} \\
-      A_+ &= \{\ortsvektor[v] = (x,y)\; |\; x>x_0 \land 0\le y\le d \} 
+      A_- &= \{\Ortsr[v] = (x,y)\; |\; x<x_0 \land 0\le y\le d \} \\
+      A_+ &= \{\Ortsr[v] = (x,y)\; |\; x>x_0 \land 0\le y\le d \} 
       \end{align*}
   \end{itemize}
 \end{frame}
@@ -184,7 +184,7 @@ $$
 \begin{itemize}[<+->]
 \item Problem: Potential einer geladene Kugelfläche mit Radius $R$ und \alert{rotationssymmetrischer} Ladungsverteilung
   $$
-  \laddichte{V} (\ortsvektor[v]) =\laddichte{V} (r,\vartheta,\varphi) = \laddichte{F} (\textcolor{red}{\vartheta}) \delta(r-R) = \sigma(\vartheta) \delta(r-R) 
+  \laddichte{V} (\Ortsr[v]) =\laddichte{V} (r,\vartheta,\varphi) = \laddichte{F} (\textcolor{red}{\vartheta}) \delta(r-R) = \sigma(\vartheta) \delta(r-R) 
   $$
 \item Idee: Unterteilung in \enquote{innen} und \enquote{außen}; $\sigma$ $\to$ Neumann Randbedingung bei $R$.
 \item Potential ($\to$ Elektrostatik-VI: Orthogonale Funktionensysteme):
@@ -227,7 +227,7 @@ $$
   $$
 \item Offensichtlich sollte das Potential aufgeteilt werden in
   $$
-  \phi(\ortsvektor[v]) = \phi(r,\vartheta) = \begin{cases}
+  \phi(\Ortsr[v]) = \phi(r,\vartheta) = \begin{cases}
     \phi_- (r,\vartheta) = \sum_{l=0}^{\infty} (A_{l}^- r^l+ B_{l}^- r^{-(l+1)}) \frac{2l+1}{2} P_l (\cos\vartheta) & \text{ für } r < R \\
     \phi_+ (r,\vartheta)=\sum_{l=0}^{\infty} (A_{l}^+ r^l+ B_{l}^+ r^{-(l+1)}) \frac{2l+1}{2} P_l (\cos\vartheta) & \text{ für } r > R
     \end{cases}
@@ -252,7 +252,7 @@ $$
     $$
   \item Damit ist die Gesamtlösung gefunden:
     $$
-    \phi(\ortsvektor[v]) = \phi(r,\vartheta) =
+    \phi(\Ortsr[v]) = \phi(r,\vartheta) =
     \begin{cases}
       \phi_-(r,\vartheta) & = \frac{R}{\varepsilon_0} \sum_{l=0}^{\infty} \frac{\sigma_l}{2} \left(\frac{r}{R}\right)^l P_l(\cos\vartheta) \text{ für } r<R\\ 
       \phi_+(r,\vartheta) & = \frac{R}{\varepsilon_0} \sum_{l=0}^{\infty} \frac{\sigma_l}{2} \left(\frac{R}{r}\right)^{l+1} P_l(\cos\vartheta) \text{ für } r>R\\ 
@@ -273,7 +273,7 @@ $$
    \item Damit Potentiale und Felder:
      \begin{align*}
        \phi_-(r) & = \frac{Q}{4\pi\varepsilon_0 R} & \phi_+(r) & = \frac{Q}{4\pi\varepsilon_0 r}\\
-       \efeld[v]_- (r) &= \vec{0} & \efeld[v]_+ (r) &= \frac{Q}{4\pi\varepsilon_0} \frac{\ortsvektor[v]}{r^3} 
+       \EFeld[v]_- (r) &= \vec{0} & \EFeld[v]_+ (r) &= \frac{Q}{4\pi\varepsilon_0} \frac{\Ortsr[v]}{r^3} 
        \end{align*}
      \end{itemize}
 \end{frame}  

@@ -5,22 +5,22 @@
 	\coordinate (c) at (2.1,0.4);
 	\draw plot [smooth cycle, tension=0.8] coordinates {(2.1,1) (1.65,1.2) (1,1.2) (0.6,0.8) (a) (b) (c) (2.15,0.7)} node [anchor=west] {$ 1 $};
 	% Strom 1
-	\draw [->, color=violet] (a) -- (b) node [anchor = north,midway] {$ \elstrom_1 $};
+	\draw [->, color=violet] (a) -- (b) node [anchor = north,midway] {$ \Strom_1 $};
 	% differentieller Weg 1
-	\draw [->, color = blue]  (c) -- ++(0.3,0.3) node[anchor=west] { $ \upd \weg[v]_1 $ };
+	\draw [->, color = blue]  (c) -- ++(0.3,0.3) node[anchor=west] { $ \upd \Weg[v]_1 $ };
 	% magnetische Flussdichte
-	\draw [->,color=red] (0.8,0.8) .. controls (1,1.3) and (0.9,1.8) .. (0.7,2.2) node[anchor=south east]{$ \tetB[v]_1 $};
-	\draw [->,color=red] (1.2,0.8) .. controls (1.4,1.4) and (1.4,2.1) .. (1.3,2.6) node[anchor=south]{$ \tetB[v]_1 $};
-	\draw [->,color=red] (1.6,0.7) .. controls (1.5,1.4) and (1.9,2) .. (2.2,2.5) node[anchor=south]{$ \tetB[v]_1 $};
-	\draw [->,color=red] (2,0.6) .. controls (1.8,1.1) and (2,1.5) .. (2.2,1.8) node[anchor=south west]{$ \tetB[v]_1 $};
+	\draw [->,color=red] (0.8,0.8) .. controls (1,1.3) and (0.9,1.8) .. (0.7,2.2) node[anchor=south east]{$ \BFeld[v]_1 $};
+	\draw [->,color=red] (1.2,0.8) .. controls (1.4,1.4) and (1.4,2.1) .. (1.3,2.6) node[anchor=south]{$ \BFeld[v]_1 $};
+	\draw [->,color=red] (1.6,0.7) .. controls (1.5,1.4) and (1.9,2) .. (2.2,2.5) node[anchor=south]{$ \BFeld[v]_1 $};
+	\draw [->,color=red] (2,0.6) .. controls (1.8,1.1) and (2,1.5) .. (2.2,1.8) node[anchor=south west]{$ \BFeld[v]_1 $};
 	% Schleife 2
 	\coordinate (ab) at (1.5,1.9);
 	\coordinate (bb) at (0.9,2.1);
 	\draw plot [smooth cycle, tension=0.8] coordinates {(2,2.3) (1.7,2.2) (bb) (ab) (2,2) (2.2,2.15) } node[anchor=west]{$ 2 $};
 	% differentieller Weg 2
-	\draw [->,color=blue] (ab) -- ++(0.5,0) node[anchor = west] { $ \upd \weg[v]_2 $ };
+	\draw [->,color=blue] (ab) -- ++(0.5,0) node[anchor = west] { $ \upd \Weg[v]_2 $ };
 	% Ortsvektoren
-	\draw [->,color=darkgreen] (0,0) -- (a) node[anchor=north west,midway] {$ \ortsvektor[vs]_1 $};
-	\draw [->,color=darkgreen] (0,0) -- (bb) node[anchor=west,midway] {$ \ortsvektor[vs]_2 $};
-	\draw [->,color=darkgreen] (0,0) -- (0.3,2.4) node[anchor=east,midway] {$ \ortsvektor[v] $};
+	\draw [->,color=darkgreen] (0,0) -- (a) node[anchor=north west,midway] {$ \Ortsr[vs]_1 $};
+	\draw [->,color=darkgreen] (0,0) -- (bb) node[anchor=west,midway] {$ \Ortsr[vs]_2 $};
+	\draw [->,color=darkgreen] (0,0) -- (0.3,2.4) node[anchor=east,midway] {$ \Ortsr[v] $};
 \end{tikzpicture}

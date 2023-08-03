@@ -8,9 +8,9 @@
 	\draw [->] (1.5,1) -- (1.5,2);
 	% Vektoren für ds Zeichnen
 	\draw [->,line width = 2pt] (-1.5,0) -- (-1.5,-2);
-	\draw (-1.5,-1) node[anchor=east] {$\upd \weg[v]_1$};
+	\draw (-1.5,-1) node[anchor=east] {$\upd \Weg[v]_1$};
 	\draw [->,line width = 2pt] (1.5,-2) -- (1.5,0);
-	\draw (1.5,-1) node[anchor=west] {$\upd \weg[v]_2$};
+	\draw (1.5,-1) node[anchor=west] {$\upd \Weg[v]_2$};
 	% Breite der Schleife
 	\draw [|<->|] (1.5,5.5) -- (-1.5,5.5) node[anchor=south west] {$ h $};
 	% Höhe der Schleife
@@ -25,11 +25,11 @@
 	\filldraw (0,-10) circle (1.2pt);
 	\draw (0,-10.3) node[anchor=north] {$ \tangentialvektor_2 $};
 	% Flächenbezeichnung und Randbezeichnung
-	\draw (0,-4.3) node[anchor=west] {$ \flaeche $};
-	\draw (1.5,-4.3) node[anchor=west] {$ \rand(\flaeche) $};
+	\draw (0,-4.3) node[anchor=west] {$ \Flaeche $};
+	\draw (1.5,-4.3) node[anchor=west] {$ \rand(\Flaeche) $};
 	% magnetisches Feld
-	\draw [->] (-2.5,-6) -- (-1,-5.6) node[anchor=north east] {$ \magfeld[v]_1 $};
-	\draw [->] (1,-5.9) -- (2.55,-5.7) node[anchor=north east] {$ \magfeld[v]_2 $};
+	\draw [->] (-2.5,-6) -- (-1,-5.6) node[anchor=north east] {$ \HFeld[v]_1 $};
+	\draw [->] (1,-5.9) -- (2.55,-5.7) node[anchor=north east] {$ \HFeld[v]_2 $};
 	% Definition der Seiten
 	\draw (-4,7.5) node[anchor=west] {\circled{1}};
 	\draw (4,7.5) node[anchor=east] {\circled{2}};

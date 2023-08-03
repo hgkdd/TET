@@ -23,18 +23,18 @@
   \begin{itemize}[<+->]
   \item Die bisher betrachteten \alert{ebenen Wellen} sind eine sehr wichtige Klasse der Lösungen der \alert{homogenen Wellengleichung}
     \begin{equation*}
-      \square\Psi(\ortsvektor[v],t) = \left(\laplace - \varepsilon\mu\frac{\d^2}{\d t^2}\right)\Psi(\ortsvektor[v],t) = \left(\laplace - \frac{1}{\geschw_c^2}\frac{\d^2}{\d t^2}\right)\Psi(\ortsvektor[v],t) = 0
+      \square\Psi(\Ortsr[v],t) = \left(\laplace - \varepsilon\mu\frac{\d^2}{\d t^2}\right)\Psi(\Ortsr[v],t) = \left(\laplace - \frac{1}{\Geschwindigkeit_c^2}\frac{\d^2}{\d t^2}\right)\Psi(\Ortsr[v],t) = 0
     \end{equation*}
   \item Eine andere ebenso wichtige Klasse von Lösungen sind die \alert{Kugelwellen}.
   \item Diese werden genutzt (angesetzt), wenn eine \alert{kugelsymmetrische Lösung} dem Problem besser angepasst erscheint.
   \item Der \alert{Ansatz} ist dann:
     \begin{equation*}
-      \boxed{\Psi(\ortsvektor[v],t) \stackrel{!}{=} \Psi(\ortsvektor,t)} \text{ mit } \ortsvektor = |\ortsvektor[v]|
+      \boxed{\Psi(\Ortsr[v],t) \stackrel{!}{=} \Psi(\Ortsr,t)} \text{ mit } \Ortsr = |\Ortsr[v]|
     \end{equation*}
   \item Für den \alert{Laplace-Operator} in \alert{Kugelkoordinaten} \((r,\varphi,\vartheta)\) gilt dann:
     \begin{align*}
       \laplace \Psi &= \frac{1}{r} \frac{\d^2}{\d r^2}(r\Psi) + \frac{1}{r^2\sin\vartheta} \frac{\d}{\d\vartheta} \left(\sin\vartheta\frac{\d}{\d \vartheta}\right)\Psi + \frac{1}{r^2\sin^2\vartheta}\frac{\d^2}{\d \varphi^2}\Psi &\text{allgemein}\\
-      \Aboxed{\laplace \Psi&= \frac{1}{r}\frac{\d^2}{\d r^2}(r\Psi)} & \Psi(\ortsvektor[v],t) = \Psi(\ortsvektor,t)
+      \Aboxed{\laplace \Psi&= \frac{1}{r}\frac{\d^2}{\d r^2}(r\Psi)} & \Psi(\Ortsr[v],t) = \Psi(\Ortsr,t)
       \end{align*}
   \end{itemize}
   \end{frame}
@@ -44,35 +44,35 @@
   \begin{itemize}[<+->]
   \item Laplace Operator den für kugelsymmetrischen Fall
     \begin{equation*}
-      \boxed{\laplace \Psi= \frac{1}{r}\frac{\d^2}{\d r^2}(r\Psi)} \text{ für } \Psi(\ortsvektor[v],t) = \Psi(\ortsvektor,t)
+      \boxed{\laplace \Psi= \frac{1}{r}\frac{\d^2}{\d r^2}(r\Psi)} \text{ für } \Psi(\Ortsr[v],t) = \Psi(\Ortsr,t)
     \end{equation*}
   \item Einsetzen in die Wellengleichung ergibt:
     \begin{align*}
-      \laplace \Psi(\ortsvektor,t) - \frac{1}{\geschw_c^2}\frac{\d^2}{\d t^2}\Psi(\ortsvektor,t) &= 0\\
-      \frac{1}{r}\frac{\d^2}{\d r^2}(r\Psi(\ortsvektor,t)) - \frac{1}{\geschw_c^2}\frac{\d^2}{\d t^2}\Psi(\ortsvektor,t) &= 0\\
-      \ergo \Aboxed{\left(\frac{\d^2}{\d r^2} - \frac{1}{\geschw_c^2}\frac{\d^2}{\d t^2}\right)(r\Psi(\ortsvektor,t)) &= 0} 
+      \laplace \Psi(\Ortsr,t) - \frac{1}{\Geschwindigkeit_c^2}\frac{\d^2}{\d t^2}\Psi(\Ortsr,t) &= 0\\
+      \frac{1}{r}\frac{\d^2}{\d r^2}(r\Psi(\Ortsr,t)) - \frac{1}{\Geschwindigkeit_c^2}\frac{\d^2}{\d t^2}\Psi(\Ortsr,t) &= 0\\
+      \ergo \Aboxed{\left(\frac{\d^2}{\d r^2} - \frac{1}{\Geschwindigkeit_c^2}\frac{\d^2}{\d t^2}\right)(r\Psi(\Ortsr,t)) &= 0} 
     \end{align*}
-    \item Die Funktion \alert{\(r\Psi(\ortsvektor,t)\)} ist somit Lösung der homogenen eindimensionalen Wellengleichung! \(\to\) Bekannt aus Block \alert{Ebene Wellen}.
+    \item Die Funktion \alert{\(r\Psi(\Ortsr,t)\)} ist somit Lösung der homogenen eindimensionalen Wellengleichung! \(\to\) Bekannt aus Block \alert{Ebene Wellen}.
   \end{itemize}
   \end{frame}
 
 \begin{frame}
   \frametitle{Kugelwellen}
   \begin{itemize}[<+->]
-  \item Offenbar kann \(r\Psi(\ortsvektor,t)\) dann als Überlagerung der Funktionen \(\Psi_+\) und \(\Psi_-\) geschrieben werden:
+  \item Offenbar kann \(r\Psi(\Ortsr,t)\) dann als Überlagerung der Funktionen \(\Psi_+\) und \(\Psi_-\) geschrieben werden:
     \begin{align*}
-      r\Psi(\ortsvektor, t) &= \Psi_+(\omega t + \wellenzahl r) + \Psi_-(\omega t - \wellenzahl r) \text{ mit } \omega=\wellenzahl \geschw_p \; (\omega \ge 0)\\
-      \ergo \Aboxed{\Psi(\ortsvektor, t) &= \frac{1}{r} \left(\Psi_+(\omega t + \wellenzahl r) + \Psi_-(\omega t - \wellenzahl r)\right)} \\
-      & \Psi_+(\omega t + \wellenzahl r)  \text{ einlaufende Welle}\\
-      & \Psi_-(\omega t - \wellenzahl r)  \text{ auslaufende Welle}
+      r\Psi(\Ortsr, t) &= \Psi_+(\omega t + \Wellenzahl r) + \Psi_-(\omega t - \Wellenzahl r) \text{ mit } \omega=\Wellenzahl \Geschwindigkeit_p \; (\omega \ge 0)\\
+      \ergo \Aboxed{\Psi(\Ortsr, t) &= \frac{1}{r} \left(\Psi_+(\omega t + \Wellenzahl r) + \Psi_-(\omega t - \Wellenzahl r)\right)} \\
+      & \Psi_+(\omega t + \Wellenzahl r)  \text{ einlaufende Welle}\\
+      & \Psi_-(\omega t - \Wellenzahl r)  \text{ auslaufende Welle}
     \end{align*}
   \item Wir haben damit eine \alert{neue Klasse} von Lösungen gefunden. Die Eigenschaften sind:
     \begin{enumerate}[<+->]
-    \item Phase: \(\varphi_\pm = \omega t \pm kr \to \) nur abhängig von \(\ortsvektor =|\ortsvektor[v]| \Rightarrow \) \alert{Die Phasenflächen sind Kugelflächen}
-    \item Amplitude: \(\propto \dfrac{1}{\ortsvektor}\)
+    \item Phase: \(\varphi_\pm = \omega t \pm kr \to \) nur abhängig von \(\Ortsr =|\Ortsr[v]| \Rightarrow \) \alert{Die Phasenflächen sind Kugelflächen}
+    \item Amplitude: \(\propto \dfrac{1}{\Ortsr}\)
     \item Für \alert{harmonische Zeitabhängigkeit}: \(\underline{\Psi}_\pm = \dfrac{1}{r}\underline{A}_\pm\euler^{\komplex(\omega t \pm kr)}\) \ergo Kugelwellen im engeren Sinne
-    \item Phasengeschwindigkeit: \(\geschw_p = \mp \dfrac{\omega}{k} \mp \dfrac{c}{n} =\geschw_c\)
-      \item Abstand von Flächen gleicher Phase (Wellenlänge): \(\wellenzahl \lambda = 2\pi\)
+    \item Phasengeschwindigkeit: \(\Geschwindigkeit_p = \mp \dfrac{\omega}{k} \mp \dfrac{c}{n} =\Geschwindigkeit_c\)
+      \item Abstand von Flächen gleicher Phase (Wellenlänge): \(\Wellenzahl \lambda = 2\pi\)
       \end{enumerate}
     \end{itemize}
     \ 
@@ -94,7 +94,7 @@
       \centerline{Amplitude entlang Radialrichtung}
       \begin{itemize}
       \item Einhüllende \(\propto \nicefrac{1}{r}\)
-        \item hier: \(\geschw_p = c \to \SI{1}{\nano\second} \simeq \SI{33}{\centi\meter}\)
+        \item hier: \(\Geschwindigkeit_p = c \to \SI{1}{\nano\second} \simeq \SI{33}{\centi\meter}\)
       \item Bisher nur eine Größe; z.B. nur E-Feld 
         \end{itemize}
       \end{column}
@@ -106,15 +106,15 @@
   \begin{itemize}[<+->]
   \item Formal haben Lösungen der homogenen Wellengleichung für elektrisches Feld und magnetische Flussdichte die \alert{gleiche Form}.
   \item Aber natürlich sind die Größen weiterhin über die Maxwell-Gleichungen miteinander \alert{verkoppelt}
-  \item Es sind \(\efeld[uv]\) und \(\tetB[uv]\) gegeben durch
+  \item Es sind \(\EFeld[uv]\) und \(\BFeld[uv]\) gegeben durch
     \begin{equation*}
-      \efeld[uv](\ortsvektor, t) = \efeld[uv]_0 \frac{1}{r} \euler^{\komplex(\omega t - kr)} \text{ und } \tetB[uv](\ortsvektor, t) = \tetB[uv]_0 \frac{1}{r} \euler^{\komplex(\omega t - kr)}
+      \EFeld[uv](\Ortsr, t) = \EFeld[uv]_0 \frac{1}{r} \euler^{\komplex(\omega t - kr)} \text{ und } \BFeld[uv](\Ortsr, t) = \BFeld[uv]_0 \frac{1}{r} \euler^{\komplex(\omega t - kr)}
     \end{equation*}
-  \item Dann folgt wegen \(\divergenz \efeld[uv] = 0\) und \(\divergenz\tetB[uv]=0\) z.B. für das elektrische Feld:
+  \item Dann folgt wegen \(\divergenz \EFeld[uv] = 0\) und \(\divergenz\BFeld[uv]=0\) z.B. für das elektrische Feld:
      \begin{align*}
-      \divergenz \efeld[uv]  & = \frac{1}{r^2} \frac{\d}{\d r} \left( r^2 \efeld[uv]_0 \frac{1}{r} \euler^{\komplex(\omega t -kr)} \right) \cdot \einheitsvek{r} \\
-                             &= \left( \efeld[uv]_0 \cdot \ortsvektor[v] \right) \frac{1}{r} \euler^{\komplex(\omega t -kr)} \left(1- kr \right) \stackrel{!}{=} 0 \text{ für alle } k \text{ und } r  \\
-       \Rightarrow \quad & \boxed{\efeld[v] \perp \ortsvektor[v]} \text{ und analog } \boxed{\tetB[v] \perp \ortsvektor[v]} \Rightarrow \text{ \alert{beide trasversal!}}
+      \divergenz \EFeld[uv]  & = \frac{1}{r^2} \frac{\d}{\d r} \left( r^2 \EFeld[uv]_0 \frac{1}{r} \euler^{\komplex(\omega t -kr)} \right) \cdot \einheitsvek{r} \\
+                             &= \left( \EFeld[uv]_0 \cdot \Ortsr[v] \right) \frac{1}{r} \euler^{\komplex(\omega t -kr)} \left(1- kr \right) \stackrel{!}{=} 0 \text{ für alle } k \text{ und } r  \\
+       \Rightarrow \quad & \boxed{\EFeld[v] \perp \Ortsr[v]} \text{ und analog } \boxed{\BFeld[v] \perp \Ortsr[v]} \Rightarrow \text{ \alert{beide trasversal!}}
        \end{align*}
      \end{itemize}
   \end{frame}
@@ -124,15 +124,15 @@
   \begin{itemize}[<+->]
   \item Wir nutzen das Induktionsgesetz
     \begin{equation*}
-      \rotation \efeld[v] = -\dfrac{\d}{\d t}\tetB[v] \text{ bzw. } -\komplex \wellenzahl \left(\einheitsvek{r} \times \efeld[uv] \right) = -\komplex \omega \tetB[uv]
+      \rotation \EFeld[v] = -\dfrac{\d}{\d t}\BFeld[v] \text{ bzw. } -\komplex \Wellenzahl \left(\einheitsvek{r} \times \EFeld[uv] \right) = -\komplex \omega \BFeld[uv]
     \end{equation*}
   \item Hiermit folgt unmittelbar, dass es sich (lokal) wieder um eine \alert{TEM-Welle} handelt:
     \begin{equation*}
-      \tetB[v] = - \frac{\wellenzahl}{\omega} \left(\efeld[uv] \times \einheitsvek{r} \right) = - \frac{1}{\geschw_p} \left(\efeld[uv] \times \einheitsvek{r} \right) = - \frac{1}{\geschw_p} \left(\efeld[uv] \times \einheitsvek{k} \right)  \quad \raisebox{-.5cm}{\kartkoordinatensystem[2]{\tetB[v]}{\wellenzahl[v]}{\efeld[v]}}
+      \BFeld[v] = - \frac{\Wellenzahl}{\omega} \left(\EFeld[uv] \times \einheitsvek{r} \right) = - \frac{1}{\Geschwindigkeit_p} \left(\EFeld[uv] \times \einheitsvek{r} \right) = - \frac{1}{\Geschwindigkeit_p} \left(\EFeld[uv] \times \einheitsvek{k} \right)  \quad \raisebox{-.5cm}{\kartkoordinatensystem[2]{\BFeld[v]}{\Wellenzahl[v]}{\EFeld[v]}}
     \end{equation*}
   \item Für viele Anwendungen wichtig ist der \alert{Wellenwiderstand}:
     \begin{equation*}
-      \boxed{\underline{Z} = \frac{\efeld[u]_0}{\magfeld[u]_0} = \frac{\mu \efeld[u]_0}{\tetB[u]_0} = \mu\geschw_p  = \mu \geschw_c= \sqrt{\frac{\mu}{\varepsilon}}} \quad \text{ hier: reel; allgemein: komplex}
+      \boxed{\underline{Z} = \frac{\EFeld[u]_0}{\HFeld[u]_0} = \frac{\mu \EFeld[u]_0}{\BFeld[u]_0} = \mu\Geschwindigkeit_p  = \mu \Geschwindigkeit_c= \sqrt{\frac{\mu}{\varepsilon}}} \quad \text{ hier: reel; allgemein: komplex}
     \end{equation*}
     \item \alert{Wellenwiderstand des Vakuums:} \(\boxed{Z_0 = \sqrt{\dfrac{\mu_0}{\varepsilon_0}} =\mu_0c\simeq \SI{120\pi}{\ohm} \simeq \SI{377}{\ohm}}\)
     \end{itemize}
@@ -180,15 +180,15 @@
 \end{column}
 \begin{column}{.65\textwidth}
   \begin{itemize}[<+->]
-  \item \(\efeld[uv]_1 = \efeld[uv]_0 \euler^{\komplex (\omega t - \wellenzahl[v]_1\cdot\ortsvektor[v])} = \efeld[u]_{0} \einheitsvek{x} \euler^{\komplex (\omega t - \wellenzahl[v]_1\cdot\ortsvektor[v])}\) und
-    \( \tetB[uv]_1 = \dfrac{\wellenzahl[v]}{\omega}\times\efeld[uv]_1=\dfrac{1}{\geschw_p} \left( \einheitsvek{k_1} \times \efeld[uv]_0 \euler^{-\komplex \wellenzahl[v]_1\cdot\ortsvektor[v]}\right) \euler^{\komplex \omega t }\)
-  \item \(\efeld[uv]_2 = \efeld[uv]_0 \euler^{\komplex (\omega t - \wellenzahl[v]_2\cdot\ortsvektor[v])} = \efeld[u]_{0}\einheitsvek{x}\euler^{\komplex (\omega t - \wellenzahl[v]_2\cdot\ortsvektor[v])}\) und
-    \( \tetB[uv]_2 = \dfrac{\wellenzahl[v]}{\omega}\times\efeld[uv]_2=\dfrac{1}{\geschw_p} \left( \einheitsvek{k_2} \times \efeld[uv]_0 \euler^{-\komplex \wellenzahl[v]_2\cdot\ortsvektor[v]}\right) \euler^{\komplex \omega t }\)
-  \item \( \wellenzahl[v]_1 = -\wellenzahl_y\einheitsvek{y} + \wellenzahl_z\einheitsvek{z}  \) und \( \wellenzahl[v]_2 = \wellenzahl_y\einheitsvek{y} + \wellenzahl_z\einheitsvek{z}  \)
+  \item \(\EFeld[uv]_1 = \EFeld[uv]_0 \euler^{\komplex (\omega t - \Wellenzahl[v]_1\cdot\Ortsr[v])} = \EFeld[u]_{0} \einheitsvek{x} \euler^{\komplex (\omega t - \Wellenzahl[v]_1\cdot\Ortsr[v])}\) und
+    \( \BFeld[uv]_1 = \dfrac{\Wellenzahl[v]}{\omega}\times\EFeld[uv]_1=\dfrac{1}{\Geschwindigkeit_p} \left( \einheitsvek{k_1} \times \EFeld[uv]_0 \euler^{-\komplex \Wellenzahl[v]_1\cdot\Ortsr[v]}\right) \euler^{\komplex \omega t }\)
+  \item \(\EFeld[uv]_2 = \EFeld[uv]_0 \euler^{\komplex (\omega t - \Wellenzahl[v]_2\cdot\Ortsr[v])} = \EFeld[u]_{0}\einheitsvek{x}\euler^{\komplex (\omega t - \Wellenzahl[v]_2\cdot\Ortsr[v])}\) und
+    \( \BFeld[uv]_2 = \dfrac{\Wellenzahl[v]}{\omega}\times\EFeld[uv]_2=\dfrac{1}{\Geschwindigkeit_p} \left( \einheitsvek{k_2} \times \EFeld[uv]_0 \euler^{-\komplex \Wellenzahl[v]_2\cdot\Ortsr[v]}\right) \euler^{\komplex \omega t }\)
+  \item \( \Wellenzahl[v]_1 = -\Wellenzahl_y\einheitsvek{y} + \Wellenzahl_z\einheitsvek{z}  \) und \( \Wellenzahl[v]_2 = \Wellenzahl_y\einheitsvek{y} + \Wellenzahl_z\einheitsvek{z}  \)
   \item \alert{Überlagerung} der beiden Wellen:
     \begin{align*}
-      \efeld[uv] &= 2\efeld[u]_{0}\cos(\wellenzahl_yy) \einheitsvek{x} \euler^{\komplex(\omega t - \wellenzahl_z z)} \\
-      \tetB[uv] &= \frac{2\efeld[u]_{0}}{\wellenzahl \geschw_c} \left( \wellenzahl_z \cos(\wellenzahl_y y) \einheitsvek{y} - \komplex \wellenzahl_y\sin(\wellenzahl_y y) \einheitsvek{z}\right) \euler^{\komplex(\omega t - \wellenzahl_z z)}
+      \EFeld[uv] &= 2\EFeld[u]_{0}\cos(\Wellenzahl_yy) \einheitsvek{x} \euler^{\komplex(\omega t - \Wellenzahl_z z)} \\
+      \BFeld[uv] &= \frac{2\EFeld[u]_{0}}{\Wellenzahl \Geschwindigkeit_c} \left( \Wellenzahl_z \cos(\Wellenzahl_y y) \einheitsvek{y} - \komplex \Wellenzahl_y\sin(\Wellenzahl_y y) \einheitsvek{z}\right) \euler^{\komplex(\omega t - \Wellenzahl_z z)}
     \end{align*}
   \item \alert{TE-Welle}, Propagation in z-Richtung (H-Wellen) \\
     analog: \alert{TM-Wellen} (E-Welle)
@@ -203,12 +203,12 @@
 \begin{frame}
   \frametitle{TE und TM-Wellen -- Phasengeschwindigkeit}
   \begin{itemize}[<+->]
-  \item Phasengeschwindigkeit: \( \geschw_p = \dfrac{\omega}{\wellenzahl_z}\); \(\wellenzahl_z\) weil Ausbreitung in z-Richtung
-  \item Für die einzelnen Wellen gilt \(\geschw_c = \dfrac{\omega}{\wellenzahl} = \dfrac{\omega}{\sqrt{\wellenzahl_y^2+\wellenzahl_z^2}} \Rightarrow \wellenzahl_z = \sqrt{\dfrac{\omega^2}{\geschw_c^2}-\wellenzahl_y^2 }\)
+  \item Phasengeschwindigkeit: \( \Geschwindigkeit_p = \dfrac{\omega}{\Wellenzahl_z}\); \(\Wellenzahl_z\) weil Ausbreitung in z-Richtung
+  \item Für die einzelnen Wellen gilt \(\Geschwindigkeit_c = \dfrac{\omega}{\Wellenzahl} = \dfrac{\omega}{\sqrt{\Wellenzahl_y^2+\Wellenzahl_z^2}} \Rightarrow \Wellenzahl_z = \sqrt{\dfrac{\omega^2}{\Geschwindigkeit_c^2}-\Wellenzahl_y^2 }\)
   \item Hiermit folgt für die Phasengeschwindigkeit:
     \begin{align*}
-      \geschw_p & = \frac{\omega}{\wellenzahl_z} = \frac{\omega}{\sqrt{\frac{\omega^2}{\geschw_c^2}-\wellenzahl_y^2 }} \\
-                & = \frac{\omega}{\frac{\omega}{\geschw_c}\sqrt{1-\frac{\wellenzahl_y^2 \geschw_c^2}{\omega^2} }} = \frac{\geschw_c}{\sqrt{1-\frac{\wellenzahl_y^2 \geschw_c^2}{\omega^2} }} \ge \geschw_c 
+      \Geschwindigkeit_p & = \frac{\omega}{\Wellenzahl_z} = \frac{\omega}{\sqrt{\frac{\omega^2}{\Geschwindigkeit_c^2}-\Wellenzahl_y^2 }} \\
+                & = \frac{\omega}{\frac{\omega}{\Geschwindigkeit_c}\sqrt{1-\frac{\Wellenzahl_y^2 \Geschwindigkeit_c^2}{\omega^2} }} = \frac{\Geschwindigkeit_c}{\sqrt{1-\frac{\Wellenzahl_y^2 \Geschwindigkeit_c^2}{\omega^2} }} \ge \Geschwindigkeit_c 
       \end{align*}
     \item Die Phasengeschwindigkeit ist hier also mindestens so groß wie die Ausbreitungsgeschwindigkeit im Medium
     \item Im Vakuum kann die Phasengeschwindigkeit somit \alert{größer als die Lichtgeschwindigkeit} sein!

@@ -26,22 +26,22 @@
     Das Grundproblem der Elektrostatik ist die Lösung der
     \alert{Poisson-Gleichung}
     $$
-    \laplace \phi(\ortsvektor[v]) = -\frac{1}{\varepsilon_0}
-    \laddichte{V} (\ortsvektor[v])
+    \laplace \phi(\Ortsr[v]) = -\frac{1}{\varepsilon_0}
+    \laddichte{V} (\Ortsr[v])
     $$
     Falls \alert{keine Randbedingungen auf Grenzflächen im Endlichen}
     erfüllt sein müssen kann das Potential bei bekannter
     Ladungsverteilung aus dem \alert{Coulomb-Integral} (manchmal auch:
     \alert{Poisson-Integral}) berechnet werden:
     $$
-   \phi(\ortsvektor[v]) = \frac{1}{4\pi\varepsilon_0} \int
-   \frac{\laddichte{V}(\ortsvektor[vs])}{|\ortsvektor[v]-\ortsvektor[vs]|}
-   \upd^3\ortsvektor[s]
+   \phi(\Ortsr[v]) = \frac{1}{4\pi\varepsilon_0} \int
+   \frac{\laddichte{V}(\Ortsr[vs])}{|\Ortsr[v]-\Ortsr[vs]|}
+   \upd^3\Ortsr[s]
    $$
  \end{block}
 
  \begin{block}{Randwertproblem}<+->
-   \alert{Gegeben} sei $\laddichte{V}(\ortsvektor[vs])$ in einem Volumen $V$ und \alert{$\phi$} und/oder \alert{$\frac{\partial\phi}{\partial n}=\gradient\phi\cdot\vec{n}=-\efeld[v] \cdot \vec{n}$} auf Grenz- oder Randflächen in $V$. \alert{Gesucht} ist $\phi(\ortsvektor[v])$ für $\ortsvektor[v] \in V$.   
+   \alert{Gegeben} sei $\laddichte{V}(\Ortsr[vs])$ in einem Volumen $V$ und \alert{$\phi$} und/oder \alert{$\frac{\partial\phi}{\partial n}=\gradient\phi\cdot\vec{n}=-\EFeld[v] \cdot \vec{n}$} auf Grenz- oder Randflächen in $V$. \alert{Gesucht} ist $\phi(\Ortsr[v])$ für $\Ortsr[v] \in V$.   
    \end{block}
   
  \end{frame}
@@ -56,19 +56,19 @@
      \int_V \left[ f\laplace g - g \laplace f \right] \upd^3r' &= \oint_{O(V)} \left[ f \frac{\partial g}{\partial n} - g \frac{\partial f}{\partial n} \right] \upd^2r' &\text{ 2. Greensche Identität}
      \end{align*}
    \item Normalenableitung: $\frac{\partial f}{\partial n} = \gradient f \cdot \vec{n}$
-     \item Beziehung für die $\delta$-Funktion (Distribution): $\delta^3(\ortsvektor[v] - \ortsvektor[vs]) = -\frac{1}{4\pi}\laplace\frac{1}{|\ortsvektor[v] - \ortsvektor[vs]|}$
-     \item Um die Poisson-Gleichung in eine Integralgleichung umzuwandeln, setzen wir in der 2. Greenschen Identität $f\to\phi(\ortsvektor[vs])$ und $g\to \frac{1}{|\ortsvektor[v] - \ortsvektor[vs]|}$:
+     \item Beziehung für die $\delta$-Funktion (Distribution): $\delta^3(\Ortsr[v] - \Ortsr[vs]) = -\frac{1}{4\pi}\laplace\frac{1}{|\Ortsr[v] - \Ortsr[vs]|}$
+     \item Um die Poisson-Gleichung in eine Integralgleichung umzuwandeln, setzen wir in der 2. Greenschen Identität $f\to\phi(\Ortsr[vs])$ und $g\to \frac{1}{|\Ortsr[v] - \Ortsr[vs]|}$:
        \begin{align*}
-         \int_V \left[  \phi(\ortsvektor[vs]) \laplace_{\ortsvektor[s]} \frac{1}{|\ortsvektor[v] - \ortsvektor[vs]|}  - \frac{1}{|\ortsvektor[v] - \ortsvektor[vs]|} \laplace_{\ortsvektor[s]}  \phi(\ortsvektor[vs]) \right] \upd^3\ortsvektor[s] &=  -4\pi \int_V  \phi(\ortsvektor[vs]) \delta (\ortsvektor[v] - \ortsvektor[vs]) \upd^3r' \\
-         &+ \frac{1}{\varepsilon_0} \int_V \frac{\rho(\ortsvektor[vs])}{|\ortsvektor[v] - \ortsvektor[vs]|} \upd^3r'\\
-                                                                                                                                                                                                                                                   &= \oint_{O(V)} \left[\phi\frac{\partial}{\partial n'}\frac{1}{|\ortsvektor[v] - \ortsvektor[vs]|}
-                                                                                                                                                                                                                                                     - \frac{1}{|\ortsvektor[v] - \ortsvektor[vs]|}\frac{\partial\phi}{\partial n'} \right] \upd^2r'
+         \int_V \left[  \phi(\Ortsr[vs]) \laplace_{\Ortsr[s]} \frac{1}{|\Ortsr[v] - \Ortsr[vs]|}  - \frac{1}{|\Ortsr[v] - \Ortsr[vs]|} \laplace_{\Ortsr[s]}  \phi(\Ortsr[vs]) \right] \upd^3\Ortsr[s] &=  -4\pi \int_V  \phi(\Ortsr[vs]) \delta (\Ortsr[v] - \Ortsr[vs]) \upd^3r' \\
+         &+ \frac{1}{\varepsilon_0} \int_V \frac{\rho(\Ortsr[vs])}{|\Ortsr[v] - \Ortsr[vs]|} \upd^3r'\\
+                                                                                                                                                                                                                                                   &= \oint_{O(V)} \left[\phi\frac{\partial}{\partial n'}\frac{1}{|\Ortsr[v] - \Ortsr[vs]|}
+                                                                                                                                                                                                                                                     - \frac{1}{|\Ortsr[v] - \Ortsr[vs]|}\frac{\partial\phi}{\partial n'} \right] \upd^2r'
        \end{align*}
      \item Somit:
        $$
-      \boxed{ \phi(\ortsvektor[v]) = \frac{1}{4\pi\varepsilon_0} \int_V
-   \frac{\laddichte{V}(\ortsvektor[vs])}{|\ortsvektor[v]-\ortsvektor[vs]|}
-   \upd^3\ortsvektor[s] + \frac{1}{4\pi} \oint_{O(V)} \left[\frac{1}{|\ortsvektor[v] - \ortsvektor[vs]|}\frac{\partial\phi}{\partial n'} - \phi\frac{\partial}{\partial n'}\frac{1}{|\ortsvektor[v] - \ortsvektor[vs]|} \right] \upd^2r'}
+      \boxed{ \phi(\Ortsr[v]) = \frac{1}{4\pi\varepsilon_0} \int_V
+   \frac{\laddichte{V}(\Ortsr[vs])}{|\Ortsr[v]-\Ortsr[vs]|}
+   \upd^3\Ortsr[s] + \frac{1}{4\pi} \oint_{O(V)} \left[\frac{1}{|\Ortsr[v] - \Ortsr[vs]|}\frac{\partial\phi}{\partial n'} - \phi\frac{\partial}{\partial n'}\frac{1}{|\Ortsr[v] - \Ortsr[vs]|} \right] \upd^2r'}
        $$
      \end{itemize}
    
@@ -79,13 +79,13 @@
      \begin{itemize}[<+->]
      \item Wir haben folgende Integralgleichung für $\phi$ gefunden:
        $$
-      \phi(\ortsvektor[v]) = \frac{1}{4\pi\varepsilon_0} \int_V
-   \frac{\laddichte{V}(\ortsvektor[vs])}{|\ortsvektor[v]-\ortsvektor[vs]|}
-   \upd^3\ortsvektor[s] + \frac{1}{4\pi} \oint_{O(V)} \left[\frac{1}{|\ortsvektor[v] - \ortsvektor[vs]|}\frac{\partial\phi}{\partial n'} - \phi\frac{\partial}{\partial n'}\frac{1}{|\ortsvektor[v] - \ortsvektor[vs]|} \right] \upd^2r'
+      \phi(\Ortsr[v]) = \frac{1}{4\pi\varepsilon_0} \int_V
+   \frac{\laddichte{V}(\Ortsr[vs])}{|\Ortsr[v]-\Ortsr[vs]|}
+   \upd^3\Ortsr[s] + \frac{1}{4\pi} \oint_{O(V)} \left[\frac{1}{|\Ortsr[v] - \Ortsr[vs]|}\frac{\partial\phi}{\partial n'} - \phi\frac{\partial}{\partial n'}\frac{1}{|\Ortsr[v] - \Ortsr[vs]|} \right] \upd^2r'
        $$
        \item Nur Ladungen \alert{im} Volumen $V$ sowie $\phi$
          bzw. $\frac{\partial\phi}{\partial n}=\gradient\phi\cdot
-         \vec{n}=-\efeld[v]\cdot\vec{n}$ bestimmen das Skalarpotential
+         \vec{n}=-\EFeld[v]\cdot\vec{n}$ bestimmen das Skalarpotential
          $\phi$ in $V$. Ladungen außerhalb von $V$ wirken nur indirekt.
          \item Spezialfall: Wenn keine Ladungen in $V$ vorhanden sind,
            ist das Skarpotential vollständig durch die Randwerte
@@ -102,7 +102,7 @@
                  \item überall $\phi$ gegeben ist: \alert{Dirichlet
                      Randbedingungen}
                    \item oder überall $\frac{\partial\phi}{\partial n}=\gradient\phi\cdot
-         \vec{n}=-\efeld[v]\cdot\vec{n}$ gegeben ist: \alert{Neumann
+         \vec{n}=-\EFeld[v]\cdot\vec{n}$ gegeben ist: \alert{Neumann
            Randbedingungen}
          \item oder für einen Teil der $O_1(V)\subseteq O(V)$ Dirichlet
            Randbedingungen und für einen anderen Teil $O_2(V)\subseteq
@@ -117,12 +117,12 @@
          \frametitle{Eindeutigkeit}
          \begin{itemize}[<+->]
            \item Seien $\phi_1$ und $\phi_2$ Lösungen der Poisson-Gleichung
-             $\laplace\phi_{1,2}(\ortsvektor[v]) =
-             -\frac{1}{\varepsilon_0}\laddichte{V}(\ortsvektor[v])$
+             $\laplace\phi_{1,2}(\Ortsr[v]) =
+             -\frac{1}{\varepsilon_0}\laddichte{V}(\Ortsr[v])$
              mit gleichen Werten oder gleichen Normalenableitungen auf
              $O(V)$.
              \item Dann ist $\psi=\phi_1-\phi_2$ Lösung der
-               Laplace-Gleichung $\laplace\psi(\ortsvektor[v]) = 0$
+               Laplace-Gleichung $\laplace\psi(\Ortsr[v]) = 0$
                mit verschwindenden Werten bzw. verschwindender
                Normalenableitung auf $O(V)$.
                \item Wir wenden die \alert{1. Greenschen Identität} für
@@ -139,21 +139,21 @@
                    \item<7-> \alert{Dirichlet}: $\psi=0$ auf dem
                      Rand. $\Rightarrow \psi = 0$ in $V$. $\to
                      \alert{\phi_1=\phi_2}\to
-                     \alert{\efeld[v]_1=\efeld[v]_2}$
+                     \alert{\EFeld[v]_1=\EFeld[v]_2}$
                      \item<8-> \alert{Neumann}:
                        $\frac{\partial\psi}{\partial n}=0$ auf dem
                      Rand. $\Rightarrow \psi = \text{const.}$ in $V$. $\to
                      \alert{\phi_1=\phi_2 +C} \to
-                     \alert{\efeld[v]_1=\efeld[v]_2}$
+                     \alert{\EFeld[v]_1=\EFeld[v]_2}$
                      \item<9-> Durch Angabe von $\phi$ \alert{UND}
                        $\frac{\partial\phi}{\partial n}$ an irgendeinem
                        Punkt von $O(V)$ wäre das Problem bereits
                        \alert{physikalisch überbestimmt}!
                      \item<10-> Die Gleichung
                        \vspace*{-1em}$$
-                       \phi(\ortsvektor[v]) = \frac{1}{4\pi\varepsilon_0} \int_V
-   \frac{\laddichte{V}(\ortsvektor[vs])}{|\ortsvektor[v]-\ortsvektor[vs]|}
-   \upd^3\ortsvektor[s] + \frac{1}{4\pi} \oint_{O(V)} \left[\frac{1}{|\ortsvektor[v] - \ortsvektor[vs]|}\frac{\partial\phi}{\partial n'} - \phi\frac{\partial}{\partial n'}\frac{1}{|\ortsvektor[v] - \ortsvektor[vs]|} \right] \upd^2r'
+                       \phi(\Ortsr[v]) = \frac{1}{4\pi\varepsilon_0} \int_V
+   \frac{\laddichte{V}(\Ortsr[vs])}{|\Ortsr[v]-\Ortsr[vs]|}
+   \upd^3\Ortsr[s] + \frac{1}{4\pi} \oint_{O(V)} \left[\frac{1}{|\Ortsr[v] - \Ortsr[vs]|}\frac{\partial\phi}{\partial n'} - \phi\frac{\partial}{\partial n'}\frac{1}{|\Ortsr[v] - \Ortsr[vs]|} \right] \upd^2r'
    $$
    ist somit noch nicht die Lösung, sondern \alert{\enquote{nur}} äquivalent zur Poisson-Gleichung.
            \end{itemize}

@@ -2,7 +2,7 @@
 	% Grenzfläche
 	\draw [color = darkgreen] (0,-5) -- (0,10);
 	% Geschwindigkeit
-	\draw [color = blue,->] (3,1) -- ++(2,0) node [anchor = west] {$ \geschw[v] $};
+	\draw [color = blue,->] (3,1) -- ++(2,0) node [anchor = west] {$ \Geschwindigkeit[v] $};
 	% Leiterschleife
 	\draw (-6,0) rectangle (3,7);
 	\filldraw [fill = white, draw = black] (3,3.5) circle (1);
@@ -11,7 +11,7 @@
 	\coordinate (a) at (-2,3.5);
 	\filldraw (a) circle (1.5pt);
 	\draw (a) circle (8pt);
-	\draw (a) node [anchor = west] {$ \ \flaeche[v] $};
+	\draw (a) node [anchor = west] {$ \ \Flaeche[v] $};
 	% Höhe der Schleife
 	\draw [|<->|] (-7,0) -- ++(0,7) node [anchor = east, midway] {$ h $};
 	% Durchflossene Schleife
@@ -23,8 +23,8 @@
 	\coordinate (mc) at (1,9);
 	\draw [color = red] (ma) circle (1.5pt);
 	\draw [color = red] (ma) circle (8pt);
-	\draw [color = red] (ma) node [anchor = east] {$ \tetB[v] = \tetB[v]_0\  $};
+	\draw [color = red] (ma) node [anchor = east] {$ \BFeld[v] = \BFeld[v]_0\  $};
 	\draw [color = red] (mb) circle (1.5pt);
 	\draw [color = red] (mb) circle (8pt);
-	\draw [color = red] (mc) node [anchor = west] {$ \tetB[v] = \vec{0} $};
+	\draw [color = red] (mc) node [anchor = west] {$ \BFeld[v] = \vec{0} $};
 \end{tikzpicture}

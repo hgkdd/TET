@@ -181,8 +181,8 @@
       \begin{itemize}[<+->]
       \item Homogene Wellengleichung (\(\frac{\d}{\d t}\)) \(\to\) \alert{Helmholtz-Gleichung} (\(\komplex\omega\))
         \begin{align*}
-          \square \efeld[uv](\ortsvektor[v], t) = \left(\laplace - \varepsilon\mu\frac{\d^2}{\d t^2}\right) \efeld[uv] (\ortsvektor[v], t) = \vec{0} &&\rightarrow  &&\left(\laplace + \varepsilon\mu\omega^2\right) \efeld[uv](\ortsvektor[v]) =\vec{0} \\
-          \square \tetB[uv](\ortsvektor[v], t) = \left(\laplace - \varepsilon\mu\frac{\d^2}{\d t^2}\right) \tetB[uv] (\ortsvektor[v], t) = \vec{0} &&\rightarrow  &&\left(\laplace + \varepsilon\mu\omega^2\right) \tetB[uv](\ortsvektor[v]) =\vec{0} 
+          \square \EFeld[uv](\Ortsr[v], t) = \left(\laplace - \varepsilon\mu\frac{\d^2}{\d t^2}\right) \EFeld[uv] (\Ortsr[v], t) = \vec{0} &&\rightarrow  &&\left(\laplace + \varepsilon\mu\omega^2\right) \EFeld[uv](\Ortsr[v]) =\vec{0} \\
+          \square \BFeld[uv](\Ortsr[v], t) = \left(\laplace - \varepsilon\mu\frac{\d^2}{\d t^2}\right) \BFeld[uv] (\Ortsr[v], t) = \vec{0} &&\rightarrow  &&\left(\laplace + \varepsilon\mu\omega^2\right) \BFeld[uv](\Ortsr[v]) =\vec{0} 
         \end{align*}
         %\item Lösung in Zylinderkoordinaten \((\rho,\varphi,z)\)
         \end{itemize}
@@ -227,7 +227,7 @@
 
 %draw a vector from origin to point (P) 
 \draw[-stealth,color=red,thick] (O) -- (P) node[midway, above,xshift=-5]{$\vec{E}$} node[above,black]{$(\textcolor{green}{x}, \textcolor{green}{y}, \textcolor{cyan}{z})$} ;
-%\draw[-stealth,color=green,thick] (P) -- +(0,0,0.2) node[above]{$\magvekpot[uv]=\magvekpot[u]_z\einheitsvek{z}$};
+%\draw[-stealth,color=green,thick] (P) -- +(0,0,0.2) node[above]{$\VektorPot[uv]=\VektorPot[u]_z\einheitsvek{z}$};
 
 %draw projection on xy plane, and a connecting line
 \draw[color=green, -stealth] (O) -- (Pxy) node[right]{$\vec{E}_t$};
@@ -269,15 +269,15 @@
   \begin{itemize}[<+->]
   \item Jeder Vektor kann immer in eine \alert{transversale} und eine \alert{longitudinalen} Komponente zerlegt werden:
     \begin{align*}
-      \textcolor{red}{\efeld[uv]} &= \textcolor{green}{\efeld[uv]_t} + \textcolor{cyan}{\efeld[uv]_z} = \textcolor{green}{\efeld[uv]_t} + \textcolor{cyan}{\efeld[u]_z\einheitsvek{z}} \\ 
-      \textcolor{green}{\efeld[uv]_t} &= \textcolor{green}{(\einheitsvek{z}\times\efeld[uv])\times\einheitsvek{z}} 
+      \textcolor{red}{\EFeld[uv]} &= \textcolor{green}{\EFeld[uv]_t} + \textcolor{cyan}{\EFeld[uv]_z} = \textcolor{green}{\EFeld[uv]_t} + \textcolor{cyan}{\EFeld[u]_z\einheitsvek{z}} \\ 
+      \textcolor{green}{\EFeld[uv]_t} &= \textcolor{green}{(\einheitsvek{z}\times\EFeld[uv])\times\einheitsvek{z}} 
     \end{align*}
     \item Analog für magnetische Flussdichte.
       \end{itemize}
 \end{column}
 \end{columns}
        \begin{itemize}[<+->]
-       \item Kopplung über Maxwell-Gleichung: \(\rotation\efeld[uv] = -\komplex\omega\tetB[uv]\)
+       \item Kopplung über Maxwell-Gleichung: \(\rotation\EFeld[uv] = -\komplex\omega\BFeld[uv]\)
        \item Rotation in kartesischen Koordinaten:
          \begin{align*}
            \rotation \vec{F} &= \left[ \frac{\partial F_{z}}{\partial y} - \frac{\partial F_{y}}{\partial z} \right] \einheitsvek{x} + \left[ \frac{\partial F_{x}}{\partial z} - \frac{\partial F_{z}}{\partial x} \right] \einheitsvek{y } + \left[ \frac{\partial F_{y}}{\partial x} - \frac{\partial F_{x}}{\partial y}\right] \einheitsvek{z} \\
@@ -305,7 +305,7 @@
          \end{equation*}
        \item Angewendet auf die \(z\)-Komponente des Induktionsgesetzes bedeutet das
          \begin{equation*}
-           \einheitsvek{z} \cdot \left(\rotation_t \efeld[uv]\right)=\einheitsvek{z} \cdot \left(\rotation_t \efeld[uv]_t + \rotation_t \efeld[uv]_z\right) =\boxed{\einheitsvek{z} \cdot \left(\rotation_t \efeld[uv]_t\right) = -\komplex\omega\tetB[u]_z}
+           \einheitsvek{z} \cdot \left(\rotation_t \EFeld[uv]\right)=\einheitsvek{z} \cdot \left(\rotation_t \EFeld[uv]_t + \rotation_t \EFeld[uv]_z\right) =\boxed{\einheitsvek{z} \cdot \left(\rotation_t \EFeld[uv]_t\right) = -\komplex\omega\BFeld[u]_z}
            \end{equation*}
        \end{itemize}
 \end{frame}
@@ -315,15 +315,15 @@
   \begin{itemize}[<+->]
   \item Für die transversalen Komponenten gilt
     \begin{align*}
-      (\einheitsvek{z}\times\rotation\efeld[uv])\times\einheitsvek{z} &= (\einheitsvek{z}\times(-\komplex\omega\tetB[uv]))\times\einheitsvek{z}\\
-      \left[ \frac{\partial \efeld[u]_{z}}{\partial y} - \frac{\partial \efeld[u]_{y}}{\partial z} \right] \einheitsvek{x} + \left[ \frac{\partial \efeld[u]_{x}}{\partial z} - \frac{\partial \efeld[u]_{z}}{\partial x} \right] \einheitsvek{y} &= -\komplex\omega \left(\tetB[u]_x \einheitsvek{x} + \tetB[u]_y \einheitsvek{y} \right) = -\komplex\omega \tetB[uv]_t \;\;|\; \einheitsvek{z}\times\\
-      \left[ \frac{\partial \efeld[u]_{z}}{\partial y} - \frac{\partial \efeld[u]_{y}}{\partial z} \right] \einheitsvek{y} - \left[ \frac{\partial \efeld[u]_{x}}{\partial z} - \frac{\partial \efeld[u]_{z}}{\partial x} \right] \einheitsvek{x} &= -\komplex\omega \einheitsvek{z}\times \tetB[uv]_t \\
-      \left[ \frac{\partial \efeld[u]_{z}}{\partial x} \einheitsvek{x} + \frac{\partial \efeld[u]_{z}}{\partial y} \einheitsvek{y} \right] - \frac{\partial}{\partial z}\left(\efeld[u]_{x}\einheitsvek{x} + \efeld[u]_{y}\einheitsvek{y} \right) &= -\komplex\omega \einheitsvek{z}\times \tetB[uv]_t \\
-      \Aboxed{\gradient_t \efeld[u]_{z} - \frac{\partial}{\partial z}\efeld[uv]_t &= -\komplex\omega \einheitsvek{z}\times \tetB[uv]_t} 
+      (\einheitsvek{z}\times\rotation\EFeld[uv])\times\einheitsvek{z} &= (\einheitsvek{z}\times(-\komplex\omega\BFeld[uv]))\times\einheitsvek{z}\\
+      \left[ \frac{\partial \EFeld[u]_{z}}{\partial y} - \frac{\partial \EFeld[u]_{y}}{\partial z} \right] \einheitsvek{x} + \left[ \frac{\partial \EFeld[u]_{x}}{\partial z} - \frac{\partial \EFeld[u]_{z}}{\partial x} \right] \einheitsvek{y} &= -\komplex\omega \left(\BFeld[u]_x \einheitsvek{x} + \BFeld[u]_y \einheitsvek{y} \right) = -\komplex\omega \BFeld[uv]_t \;\;|\; \einheitsvek{z}\times\\
+      \left[ \frac{\partial \EFeld[u]_{z}}{\partial y} - \frac{\partial \EFeld[u]_{y}}{\partial z} \right] \einheitsvek{y} - \left[ \frac{\partial \EFeld[u]_{x}}{\partial z} - \frac{\partial \EFeld[u]_{z}}{\partial x} \right] \einheitsvek{x} &= -\komplex\omega \einheitsvek{z}\times \BFeld[uv]_t \\
+      \left[ \frac{\partial \EFeld[u]_{z}}{\partial x} \einheitsvek{x} + \frac{\partial \EFeld[u]_{z}}{\partial y} \einheitsvek{y} \right] - \frac{\partial}{\partial z}\left(\EFeld[u]_{x}\einheitsvek{x} + \EFeld[u]_{y}\einheitsvek{y} \right) &= -\komplex\omega \einheitsvek{z}\times \BFeld[uv]_t \\
+      \Aboxed{\gradient_t \EFeld[u]_{z} - \frac{\partial}{\partial z}\EFeld[uv]_t &= -\komplex\omega \einheitsvek{z}\times \BFeld[uv]_t} 
     \end{align*}
-  \item Aus dem Durchflutungsgesetz \(\rotation\tetB[uv] = j\omega\varepsilon\mu\efeld[uv]\) folgt analog:
+  \item Aus dem Durchflutungsgesetz \(\rotation\BFeld[uv] = j\omega\varepsilon\mu\EFeld[uv]\) folgt analog:
     \begin{equation*}
-\boxed{\einheitsvek{z} \cdot \left(\rotation_t \tetB[uv]_t\right) = \komplex\omega\varepsilon\mu\efeld[u]_z} \quad \boxed{\gradient_t \tetB[u]_{z} - \frac{\partial}{\partial z}\tetB[uv]_t = \komplex\omega\varepsilon\mu \einheitsvek{z}\times \efeld[uv]_t}
+\boxed{\einheitsvek{z} \cdot \left(\rotation_t \BFeld[uv]_t\right) = \komplex\omega\varepsilon\mu\EFeld[u]_z} \quad \boxed{\gradient_t \BFeld[u]_{z} - \frac{\partial}{\partial z}\BFeld[uv]_t = \komplex\omega\varepsilon\mu \einheitsvek{z}\times \EFeld[uv]_t}
     \end{equation*}
        \end{itemize}
 \end{frame}
@@ -333,13 +333,13 @@
   \begin{itemize}[<+->]
   \item Die beiden Gleichungen
     \begin{equation*}
-\boxed{\gradient_t \efeld[u]_{z} - \frac{\partial}{\partial z}\efeld[uv]_t = -\komplex\omega \einheitsvek{z}\times \tetB[uv]_t}\quad \boxed{\gradient_t \tetB[u]_{z} - \frac{\partial}{\partial z}\tetB[uv]_t = \komplex\omega\varepsilon\mu \einheitsvek{z}\times \efeld[uv]_t}
+\boxed{\gradient_t \EFeld[u]_{z} - \frac{\partial}{\partial z}\EFeld[uv]_t = -\komplex\omega \einheitsvek{z}\times \BFeld[uv]_t}\quad \boxed{\gradient_t \BFeld[u]_{z} - \frac{\partial}{\partial z}\BFeld[uv]_t = \komplex\omega\varepsilon\mu \einheitsvek{z}\times \EFeld[uv]_t}
     \end{equation*}
-    können leicht entkoppelt werden (\(\frac{\d}{\d z}\), einsetzen, \(\frac{\d \efeld[u]_z}{\d z} = \mp \komplex\wellenzahl \efeld[u]_z\), \(\frac{\d^2 \efeld[u]_t}{\d z^2} = - \wellenzahl^2 \efeld[u]_t\)).
+    können leicht entkoppelt werden (\(\frac{\d}{\d z}\), einsetzen, \(\frac{\d \EFeld[u]_z}{\d z} = \mp \komplex\Wellenzahl \EFeld[u]_z\), \(\frac{\d^2 \EFeld[u]_t}{\d z^2} = - \Wellenzahl^2 \EFeld[u]_t\)).
   \item Die entkoppelten Gleichungen lauten:
     \begin{align*}
-      \Aboxed{\efeld[uv]_t &= \frac{\komplex}{\omega^2\varepsilon\mu - \wellenzahl^2} \left[ \mp \wellenzahl\, \gradient_t \efeld[u]_{z} + \omega  \einheitsvek{z}\times\gradient_t \tetB[u]_{z}\right]}\\
-      \Aboxed{\tetB[uv]_t &= \frac{\komplex}{\omega^2\varepsilon\mu - \wellenzahl^2} \left[ \mp \wellenzahl\, \gradient_t \tetB[u]_{z} - \omega\varepsilon\mu  \einheitsvek{z}\times\gradient_t \efeld[u]_{z}\right]}
+      \Aboxed{\EFeld[uv]_t &= \frac{\komplex}{\omega^2\varepsilon\mu - \Wellenzahl^2} \left[ \mp \Wellenzahl\, \gradient_t \EFeld[u]_{z} + \omega  \einheitsvek{z}\times\gradient_t \BFeld[u]_{z}\right]}\\
+      \Aboxed{\BFeld[uv]_t &= \frac{\komplex}{\omega^2\varepsilon\mu - \Wellenzahl^2} \left[ \mp \Wellenzahl\, \gradient_t \BFeld[u]_{z} - \omega\varepsilon\mu  \einheitsvek{z}\times\gradient_t \EFeld[u]_{z}\right]}
     \end{align*}
   \item Sind die \alert{longitudinalen Feldkomponente bekannt}, so lassen sich die \alert{transversalen Feldkomponente berechnen}.
     \item Im allgemeinen schwierig, aber einfache Spezialfälle.
@@ -356,16 +356,16 @@
            \end{equation*}
        \item Zur Lösung der Helmholtzgleichung (z.B. für das elektrische Feld)
          \begin{equation*}
-           \left(\laplace + \varepsilon\mu\omega^2\right) \efeld[uv](\ortsvektor[v]) =\vec{0}
+           \left(\laplace + \varepsilon\mu\omega^2\right) \EFeld[uv](\Ortsr[v]) =\vec{0}
          \end{equation*}
          setzen wir \alert{in \(z\)-Richtung propagierende Wellen} an:
          \begin{equation*}
-           \efeld[uv](\ortsvektor[v], t) = \efeld[uv]_0(x,y) \euler^{\komplex(\omega t \pm \wellenzahl z)} \stackrel{\text{ruhender Zeiger}}{\to}  \efeld[uv](\ortsvektor[v]) = \efeld[uv]_0(x,y) \euler^{\pm\komplex\wellenzahl z}
+           \EFeld[uv](\Ortsr[v], t) = \EFeld[uv]_0(x,y) \euler^{\komplex(\omega t \pm \Wellenzahl z)} \stackrel{\text{ruhender Zeiger}}{\to}  \EFeld[uv](\Ortsr[v]) = \EFeld[uv]_0(x,y) \euler^{\pm\komplex\Wellenzahl z}
          \end{equation*}
        \item Hierbei propagiert die \enquote{+}-Lösung in Richtung \(-\einheitsvek{z}\) und die \enquote{-}-Lösung in Richtung \(+\einheitsvek{z}\)
-       \item Mit der Zerlegung des Laplace-Operators und mit \(\frac{\d^2}{\d z^2} = -\wellenzahl^2\) schreibt sich die Helmholtzgleichung nun in dieser Form
+       \item Mit der Zerlegung des Laplace-Operators und mit \(\frac{\d^2}{\d z^2} = -\Wellenzahl^2\) schreibt sich die Helmholtzgleichung nun in dieser Form
          \begin{equation*}
-           \boxed{\laplace_t \efeld[uv](\ortsvektor[v]) + \underbrace{(\varepsilon\mu\omega^2 - \wellenzahl^2)}_{=\gamma^2} \efeld[uv](\ortsvektor[v]) =\vec{0}}
+           \boxed{\laplace_t \EFeld[uv](\Ortsr[v]) + \underbrace{(\varepsilon\mu\omega^2 - \Wellenzahl^2)}_{=\gamma^2} \EFeld[uv](\Ortsr[v]) =\vec{0}}
            \end{equation*}
        \end{itemize}
 \end{frame}
@@ -373,17 +373,17 @@
 \begin{frame}
   \frametitle{Modentypen}
   \begin{itemize}[<+->]
-  \item \alert{Fallunterscheidung} auf der Basis der Gleichungen (mit \(\gamma^2= \omega^2\varepsilon\mu - \wellenzahl^2\))
+  \item \alert{Fallunterscheidung} auf der Basis der Gleichungen (mit \(\gamma^2= \omega^2\varepsilon\mu - \Wellenzahl^2\))
     \begin{align*}
-      \gamma^2\efeld[uv]_t &= \komplex \left[ \mp \wellenzahl\, \gradient_t \efeld[u]_{z} + \omega  \einheitsvek{z}\times\gradient_t \tetB[u]_{z}\right]\\
-      \gamma^2\tetB[uv]_t &= \komplex \left[ \mp \wellenzahl\, \gradient_t \tetB[u]_{z} - \omega\varepsilon\mu  \einheitsvek{z}\times\gradient_t \efeld[u]_{z}\right]
+      \gamma^2\EFeld[uv]_t &= \komplex \left[ \mp \Wellenzahl\, \gradient_t \EFeld[u]_{z} + \omega  \einheitsvek{z}\times\gradient_t \BFeld[u]_{z}\right]\\
+      \gamma^2\BFeld[uv]_t &= \komplex \left[ \mp \Wellenzahl\, \gradient_t \BFeld[u]_{z} - \omega\varepsilon\mu  \einheitsvek{z}\times\gradient_t \EFeld[u]_{z}\right]
     \end{align*}
-  \item \alert{TEM-Mode}: \(\efeld[u]_z=0\) und \(\tetB[u]_z=0\)
+  \item \alert{TEM-Mode}: \(\EFeld[u]_z=0\) und \(\BFeld[u]_z=0\)
     \begin{itemize}[<+->]
-    \item Triviale Lösung: \(\efeld[uv]=\vec{0}\) und \(\tetB[uv]=\vec{0}\) \(\to\) nicht weiter interessant
+    \item Triviale Lösung: \(\EFeld[uv]=\vec{0}\) und \(\BFeld[uv]=\vec{0}\) \(\to\) nicht weiter interessant
     \item \alert{Bedingung für TEM-Mode}
       \begin{equation*}
-        \gamma^2=0 \Rightarrow \boxed{\wellenzahl^2 = \wellenzahl_0^2= \varepsilon\mu\omega^2}
+        \gamma^2=0 \Rightarrow \boxed{\Wellenzahl^2 = \Wellenzahl_0^2= \varepsilon\mu\omega^2}
       \end{equation*}
       \item Wenn TEM-Moden, dann für beliebige Frequenzen! Kein TEM-Mode für verschiedene Materialen im Lösungsvolumen \(\to\) \alert{Quasi-TEM-Mode} (Mikrostreifenleitung, isolierte Zweidrahtleitung)
       \end{itemize}
@@ -395,24 +395,24 @@
 \begin{frame}
 \frametitle{TEM-Lösungen}
      \begin{itemize}[<+->]
-     \item TEM-Lösung: \(\efeld[u]_z = 0\) und \(\tetB[u]_z=0 \Rightarrow \boxed{\wellenzahl_0 = \omega \sqrt{\varepsilon\mu}}\)~(für~\alert{jedes}~\(\omega\) gibt es ein \(\wellenzahl\)) 
+     \item TEM-Lösung: \(\EFeld[u]_z = 0\) und \(\BFeld[u]_z=0 \Rightarrow \boxed{\Wellenzahl_0 = \omega \sqrt{\varepsilon\mu}}\)~(für~\alert{jedes}~\(\omega\) gibt es ein \(\Wellenzahl\)) 
     \item Für die transversale Rotation hatten wir schon
       \begin{equation*}
-      \rotation_t \efeld[uv] =  \left[ \frac{\partial \efeld[u]_z}{\partial y} \right] \einheitsvek{x} + \left[ - \frac{\partial \efeld[u]_{z}}{\partial x} \right] \einheitsvek{y } + \left[ \frac{\partial \efeld[u]_{y}}{\partial x} - \frac{\partial \efeld[u]_{x}}{\partial y}\right] \einheitsvek{z}
+      \rotation_t \EFeld[uv] =  \left[ \frac{\partial \EFeld[u]_z}{\partial y} \right] \einheitsvek{x} + \left[ - \frac{\partial \EFeld[u]_{z}}{\partial x} \right] \einheitsvek{y } + \left[ \frac{\partial \EFeld[u]_{y}}{\partial x} - \frac{\partial \EFeld[u]_{x}}{\partial y}\right] \einheitsvek{z}
     \end{equation*}
-  \item Im TEM-Fall sind \alert{\(x\) und \(y\)-Komponente} von \(\rotation_t \efeld[uv]\) also \alert{offensichtlich Null}.
+  \item Im TEM-Fall sind \alert{\(x\) und \(y\)-Komponente} von \(\rotation_t \EFeld[uv]\) also \alert{offensichtlich Null}.
   \item Die \alert{\(z\)-Komponenten} ergibt sich aus der \(z\)-Komponente des Induktionsgesetz
      \begin{equation*}
-        \einheitsvek{z} \cdot \left(\rotation_t \efeld[uv]_t\right) = -\komplex\omega\tetB[u]_z  \stackrel{!}{=} 0 \Rightarrow
-        \rotation_t \efeld[uv]_t = \vec{0} \Rightarrow \boxed{\rotation_t \efeld[uv] = \vec{0}} 
+        \einheitsvek{z} \cdot \left(\rotation_t \EFeld[uv]_t\right) = -\komplex\omega\BFeld[u]_z  \stackrel{!}{=} 0 \Rightarrow
+        \rotation_t \EFeld[uv]_t = \vec{0} \Rightarrow \boxed{\rotation_t \EFeld[uv] = \vec{0}} 
       \end{equation*}
     \item Ohne Ladungsquellen im Lösungsgebiet gilt auch
       \begin{equation*}
-     \divergenz\efeld[uv] = 0 \Rightarrow \divergenz_t\efeld[uv]_t = -\frac{\d \efeld[u]_z}{\d z} = 0 \Rightarrow  \boxed{\divergenz_t\efeld[uv]=0}
+     \divergenz\EFeld[uv] = 0 \Rightarrow \divergenz_t\EFeld[uv]_t = -\frac{\d \EFeld[u]_z}{\d z} = 0 \Rightarrow  \boxed{\divergenz_t\EFeld[uv]=0}
      \end{equation*}
-    \item Hieraus folgt mit \(\efeld[uv] = -\gradient\elpotential\), dass \(\efeld[uv] = \efeld[uv]_t\) aus der \alert{Lösung der zweidimensionalen Laplace-Gleichung} für \(\elpotential\) folgt
+    \item Hieraus folgt mit \(\EFeld[uv] = -\gradient\SkalarPot\), dass \(\EFeld[uv] = \EFeld[uv]_t\) aus der \alert{Lösung der zweidimensionalen Laplace-Gleichung} für \(\SkalarPot\) folgt
       \begin{equation*}
-        \boxed{\laplace_t \elpotential = \laplace_t \elpotential_t = 0} \quad \text{ Lösungsmethoden aus Elektrostatik bekannt}
+        \boxed{\laplace_t \SkalarPot = \laplace_t \SkalarPot_t = 0} \quad \text{ Lösungsmethoden aus Elektrostatik bekannt}
        \end{equation*}
      \end{itemize}
 \end{frame}
@@ -420,21 +420,21 @@
 \begin{frame}
    \frametitle{TEM-Lösungen -- Zusammenfassung}
    \begin{itemize}[<+->]
-   \item Dispersionsrelation: \( \wellenzahl = \wellenzahl_0 = \omega \sqrt{\varepsilon\mu} \)
-   \item Rotationsfreiheit in der Transversalebene: \( \rotation_t \efeld[uv] = \vec{0} \to \efeld[uv] =\efeld[uv]_t= -\gradient\elpotential\)
-  \item Laplace-Lösung: \( \laplace_t \elpotential = \laplace_t \elpotential_t = 0 \)
+   \item Dispersionsrelation: \( \Wellenzahl = \Wellenzahl_0 = \omega \sqrt{\varepsilon\mu} \)
+   \item Rotationsfreiheit in der Transversalebene: \( \rotation_t \EFeld[uv] = \vec{0} \to \EFeld[uv] =\EFeld[uv]_t= -\gradient\SkalarPot\)
+  \item Laplace-Lösung: \( \laplace_t \SkalarPot = \laplace_t \SkalarPot_t = 0 \)
    \item Aus der Transversalkomponente des Induktionsgesetz folgt zusammen mit der Dispersionsrelation
      \begin{equation*}
-       \gradient_t \underbrace{\efeld[u]_{z}}_{=0} - \underbrace{\frac{\partial}{\partial z}\efeld[uv]_t}_{=\pm\komplex\wellenzahl_0 \efeld[uv]}
-       = -\komplex\omega \einheitsvek{z} \times \tetB[uv]_t
+       \gradient_t \underbrace{\EFeld[u]_{z}}_{=0} - \underbrace{\frac{\partial}{\partial z}\EFeld[uv]_t}_{=\pm\komplex\Wellenzahl_0 \EFeld[uv]}
+       = -\komplex\omega \einheitsvek{z} \times \BFeld[uv]_t
        \Rightarrow
-       \boxed{\tetB[uv] = \mp \frac{\wellenzahl_0}{\omega}\, \einheitsvek{z}\times\efeld[uv] = \mp \sqrt{\varepsilon\mu}\, \einheitsvek{z}\times\efeld[uv]} \quad \text{ (\enquote{+} = hin)}
+       \boxed{\BFeld[uv] = \mp \frac{\Wellenzahl_0}{\omega}\, \einheitsvek{z}\times\EFeld[uv] = \mp \sqrt{\varepsilon\mu}\, \einheitsvek{z}\times\EFeld[uv]} \quad \text{ (\enquote{+} = hin)}
  \end{equation*}
  \item Für das Magnetfeld schreibt sich diese Beziehung wieder mit der \alert{Feldimpedanz} (Feldwellenwiderstand) \( Z=Z_0 =\sqrt{\frac{\mu}{\varepsilon}}\) als
    \begin{equation*}
-     \boxed{\magfeld[uv] = \mp \frac{1}{Z_0}\, \einheitsvek{z}\times\efeld[uv]} \quad\text{ (\enquote{+} = hin, orthogonales Rechtssystem)}
+     \boxed{\HFeld[uv] = \mp \frac{1}{Z_0}\, \einheitsvek{z}\times\EFeld[uv]} \quad\text{ (\enquote{+} = hin, orthogonales Rechtssystem)}
      \end{equation*}
-   \item Wichtige Folgerung: Wegen \(\rotation_t \efeld[uv] = \vec{0}\) kann in den Transversalebenen mit \alert{Spannungen} im Sinne von Potentialdifferenzen gearbeitet werden.
+   \item Wichtige Folgerung: Wegen \(\rotation_t \EFeld[uv] = \vec{0}\) kann in den Transversalebenen mit \alert{Spannungen} im Sinne von Potentialdifferenzen gearbeitet werden.
    \end{itemize}
    \ 
  \end{frame}
@@ -464,9 +464,9 @@
           \end{column}
     \begin{column}{.65\textwidth}
   \begin{itemize}[<+->]
-  \item Betrachte Ampèresches Durchflutungsgesetz \(\rotation\magfeld[v]=\elstromdichte[v]+\frac{\d \verschiebung[v]}{\d t}\) entlang einer beliebigen magnetischen Feldlinie:
+  \item Betrachte Ampèresches Durchflutungsgesetz \(\rotation\HFeld[v]=\StromDichte[v]+\frac{\d \DFeld[v]}{\d t}\) entlang einer beliebigen magnetischen Feldlinie:
     \begin{equation*}
-      \oint_{O(A)} \tetB[uv] \cdot \upd\vec{s} = \komplex\omega\varepsilon\mu \iint_{A} \efeld[uv]\cdot\upd\vec{A} + \mu\iint_{A} \elstromdichte[uv]\cdot\upd\vec{A}
+      \oint_{O(A)} \BFeld[uv] \cdot \upd\vec{s} = \komplex\omega\varepsilon\mu \iint_{A} \EFeld[uv]\cdot\upd\vec{A} + \mu\iint_{A} \StromDichte[uv]\cdot\upd\vec{A}
     \end{equation*}
   \item \(\kappa\to\infty\): Feldlinie muss sich im Gebiet schließen
   \item Einfach zusammenhängend: Kein Strom durch Fläche
@@ -481,14 +481,14 @@
 \begin{frame}
   \frametitle{TM- und TE-Lösungen}
   \begin{itemize}[<+->]
-  \item Ausgangspunkt ist die \alert{Helmholtzgleichung} für \(\efeld[uv]\):
+  \item Ausgangspunkt ist die \alert{Helmholtzgleichung} für \(\EFeld[uv]\):
     \begin{equation*}
-      \laplace_t \efeld[uv] + \left(\omega^2\varepsilon\mu -\wellenzahl^2 \right) \efeld[uv] = \laplace_t \efeld[uv] + \gamma^2 \efeld[uv] =  \vec{0}
+      \laplace_t \EFeld[uv] + \left(\omega^2\varepsilon\mu -\Wellenzahl^2 \right) \EFeld[uv] = \laplace_t \EFeld[uv] + \gamma^2 \EFeld[uv] =  \vec{0}
     \end{equation*}
   \item Gleichungen für die Transversalkomponenten der Felder:
        \begin{align*}
-      \efeld[uv]_t &= \frac{\komplex}{\omega^2\varepsilon\mu - \wellenzahl^2} \left[ \mp \wellenzahl\, \gradient_t \efeld[u]_{z} + \omega  \einheitsvek{z}\times\gradient_t \tetB[u]_{z}\right]\\
-      \tetB[uv]_t &= \frac{\komplex}{\omega^2\varepsilon\mu - \wellenzahl^2} \left[ \mp \wellenzahl\, \gradient_t \tetB[u]_{z} - \omega\varepsilon\mu  \einheitsvek{z}\times\gradient_t \efeld[u]_{z}\right]
+      \EFeld[uv]_t &= \frac{\komplex}{\omega^2\varepsilon\mu - \Wellenzahl^2} \left[ \mp \Wellenzahl\, \gradient_t \EFeld[u]_{z} + \omega  \einheitsvek{z}\times\gradient_t \BFeld[u]_{z}\right]\\
+      \BFeld[uv]_t &= \frac{\komplex}{\omega^2\varepsilon\mu - \Wellenzahl^2} \left[ \mp \Wellenzahl\, \gradient_t \BFeld[u]_{z} - \omega\varepsilon\mu  \einheitsvek{z}\times\gradient_t \EFeld[u]_{z}\right]
     \end{align*}
 
   \end{itemize}
@@ -496,21 +496,21 @@
 
 
 \begin{frame}
-  \frametitle{TM-Lösungen -- \(\tetB[u]_z = 0\)}
+  \frametitle{TM-Lösungen -- \(\BFeld[u]_z = 0\)}
   \begin{itemize}[<+->]
-  \item Betrachte \(z\)-Komponente der Helmholtzgleichung für \(\efeld[uv]\):
+  \item Betrachte \(z\)-Komponente der Helmholtzgleichung für \(\EFeld[uv]\):
     \begin{equation*}
-      \boxed{\left(\laplace_t + \gamma^2\right) \efeld[u]_z =  0} \text{ mit Randbedingung } \left. \efeld[u]_z\right|_{O(V)} = 0 
+      \boxed{\left(\laplace_t + \gamma^2\right) \EFeld[u]_z =  0} \text{ mit Randbedingung } \left. \EFeld[u]_z\right|_{O(V)} = 0 
     \end{equation*}
-  \item Dieses \alert{Dirichletsche Randwertproblem} kann mit den Methoden der Elektrostatik gelöst werden. \(\to\) \alert{\(\efeld[u]_z\) bekannt}
-  \item Transversalkomponente des elektrischen Feldes für \(\tetB[u]_z = 0\):
+  \item Dieses \alert{Dirichletsche Randwertproblem} kann mit den Methoden der Elektrostatik gelöst werden. \(\to\) \alert{\(\EFeld[u]_z\) bekannt}
+  \item Transversalkomponente des elektrischen Feldes für \(\BFeld[u]_z = 0\):
     \begin{equation*}
-      \efeld[uv]_t =  \mp \wellenzahl \frac{\komplex}{\gamma^2} \, \gradient_t \efeld[u]_{z}  \to \alert{\efeld[uv]_t \text{ bekannt}}  
+      \EFeld[uv]_t =  \mp \Wellenzahl \frac{\komplex}{\gamma^2} \, \gradient_t \EFeld[u]_{z}  \to \alert{\EFeld[uv]_t \text{ bekannt}}  
       \end{equation*}
-  \item Transversalkomponente der magnetischen Flussdichte für \(\tetB[u]_z = 0\):
+  \item Transversalkomponente der magnetischen Flussdichte für \(\BFeld[u]_z = 0\):
        \begin{align*}
-         \tetB[uv]_t = \mu\magfeld[uv]_t&= -\frac{\komplex}{\gamma^2} \omega\varepsilon\mu  \einheitsvek{z}\times\gradient_t \efeld[u]_{z}\\
-         &= \pm \frac{\omega\varepsilon\mu}{\wellenzahl} \einheitsvek{z}\times \efeld[uv]_{t} = \pm \mu \frac{1}{Z} \einheitsvek{z}\times \efeld[uv]_{t} \text{ mit } Z=\frac{\wellenzahl}{\omega\varepsilon} = \frac{\wellenzahl}{\wellenzahl_0}\sqrt{\frac{\mu}{\varepsilon}} = \frac{\wellenzahl}{\wellenzahl_0} Z_0 
+         \BFeld[uv]_t = \mu\HFeld[uv]_t&= -\frac{\komplex}{\gamma^2} \omega\varepsilon\mu  \einheitsvek{z}\times\gradient_t \EFeld[u]_{z}\\
+         &= \pm \frac{\omega\varepsilon\mu}{\Wellenzahl} \einheitsvek{z}\times \EFeld[uv]_{t} = \pm \mu \frac{1}{Z} \einheitsvek{z}\times \EFeld[uv]_{t} \text{ mit } Z=\frac{\Wellenzahl}{\omega\varepsilon} = \frac{\Wellenzahl}{\Wellenzahl_0}\sqrt{\frac{\mu}{\varepsilon}} = \frac{\Wellenzahl}{\Wellenzahl_0} Z_0 
        \end{align*}
        \item Damit ist auch die \alert{magnetische Flussdichte im Lösungsvolumen bestimmt}. 
        \end{itemize}
@@ -519,20 +519,20 @@
 
 
 \begin{frame}
-  \frametitle{TE-Lösungen -- \(\efeld[u]_z = 0\)}
+  \frametitle{TE-Lösungen -- \(\EFeld[u]_z = 0\)}
   \begin{itemize}[<+->]
-  \item Betrachte \(z\)-Komponente der Helmholtzgleichung für \(\magfeld[uv]\):
+  \item Betrachte \(z\)-Komponente der Helmholtzgleichung für \(\HFeld[uv]\):
     \begin{equation*}
-      \boxed{\left(\laplace_t + \gamma^2\right) \magfeld[u]_z =  0} \text{ mit Randbedingung } \left. \frac{\d \magfeld[u]_z}{\d \vec{n}}\right|_{O(V)} = 0 
+      \boxed{\left(\laplace_t + \gamma^2\right) \HFeld[u]_z =  0} \text{ mit Randbedingung } \left. \frac{\d \HFeld[u]_z}{\d \vec{n}}\right|_{O(V)} = 0 
     \end{equation*}
-  \item Dieses \alert{Neumannsche Randwertproblem} kann mit den Methoden der Magnetostatik gelöst werden. \(\to\) \alert{\(\magfeld[u]_z\) bekannt}
-  \item Transversalkomponente des magnetischen Feldes für \(\efeld[u]_z = 0\):
+  \item Dieses \alert{Neumannsche Randwertproblem} kann mit den Methoden der Magnetostatik gelöst werden. \(\to\) \alert{\(\HFeld[u]_z\) bekannt}
+  \item Transversalkomponente des magnetischen Feldes für \(\EFeld[u]_z = 0\):
     \begin{equation*}
-      \magfeld[uv]_t = \mp \frac{\komplex}{\gamma^2} \wellenzahl\, \gradient_t \magfeld[u]_{z}  \to \alert{\magfeld[uv]_t \text{ bekannt}}
+      \HFeld[uv]_t = \mp \frac{\komplex}{\gamma^2} \Wellenzahl\, \gradient_t \HFeld[u]_{z}  \to \alert{\HFeld[uv]_t \text{ bekannt}}
     \end{equation*}
-  \item Transversalkomponente der elektrischen Feldes für \(\efeld[u]_z = 0\):
+  \item Transversalkomponente der elektrischen Feldes für \(\EFeld[u]_z = 0\):
        \begin{align*}
-         \efeld[uv]_t &= \pm Z\, \einheitsvek{z}\times \magfeld[uv]_{t} \text{ mit } Z=\frac{\mu\omega}{\wellenzahl} = \frac{\wellenzahl_0}{\wellenzahl}\sqrt{\frac{\mu}{\varepsilon}} = \frac{\wellenzahl_0}{\wellenzahl} Z_0 
+         \EFeld[uv]_t &= \pm Z\, \einheitsvek{z}\times \HFeld[uv]_{t} \text{ mit } Z=\frac{\mu\omega}{\Wellenzahl} = \frac{\Wellenzahl_0}{\Wellenzahl}\sqrt{\frac{\mu}{\varepsilon}} = \frac{\Wellenzahl_0}{\Wellenzahl} Z_0 
        \end{align*}
        \item Damit ist auch die \alert{elektrische Feldstärke im Lösungsvolumen bestimmt}. 
        \end{itemize}
@@ -545,20 +545,20 @@
   \begin{itemize}[<+->]
   \item Für den \alert{TEM-Mode} hatten wir schon gesehen, dass für ihn -- wenn er existiert -- die \alert{Dispersionsrelation des TEM-Modes} erfüllt sein muss:
     \begin{equation*}
-      \gamma^2=0 \Leftrightarrow \boxed{\wellenzahl=\wellenzahl_0=\omega\sqrt{\varepsilon\mu}}
+      \gamma^2=0 \Leftrightarrow \boxed{\Wellenzahl=\Wellenzahl_0=\omega\sqrt{\varepsilon\mu}}
     \end{equation*}
   \item Wenn der TEM-Mode existiert, existiert es für beliebige Frequenzen!
-  \item Das ist bei TM- und TE-moden anders! Z.B. für den TM-Mode muss zunächst das Randwertproblem zur \(\efeld[u]_z\) gelöst werden:
+  \item Das ist bei TM- und TE-moden anders! Z.B. für den TM-Mode muss zunächst das Randwertproblem zur \(\EFeld[u]_z\) gelöst werden:
     \begin{equation*}
-      \left(\laplace_t + \gamma^2\right) \efeld[u]_z =  0 \text{ mit } \left. \efeld[u]_z\right|_{O(V)} = 0
+      \left(\laplace_t + \gamma^2\right) \EFeld[u]_z =  0 \text{ mit } \left. \EFeld[u]_z\right|_{O(V)} = 0
     \end{equation*}
-  \item Dies ist eine \alert{Eigenwertgleichung} für die \alert{Eigenfunktionen=Moden} \(\efeld[u]_{z\lambda}\) und den (diskreten) \alert{Eigenwerten} \(\gamma^2_\lambda\) mit \(\lambda = 1,2,3,\ldots\).
+  \item Dies ist eine \alert{Eigenwertgleichung} für die \alert{Eigenfunktionen=Moden} \(\EFeld[u]_{z\lambda}\) und den (diskreten) \alert{Eigenwerten} \(\gamma^2_\lambda\) mit \(\lambda = 1,2,3,\ldots\).
    \begin{equation*}
-      \left(\laplace_t + \gamma_\lambda^2\right) \efeld[u]_{z\lambda} =  0
+      \left(\laplace_t + \gamma_\lambda^2\right) \EFeld[u]_{z\lambda} =  0
     \end{equation*}
   \item Für eine Kreisfrequenz \(\omega\) gilt dann
     \begin{equation*}
-      \gamma_\lambda^2 = \mu\varepsilon\omega^2-\wellenzahl_\lambda^2 \Rightarrow \wellenzahl_\lambda=\sqrt{\mu\varepsilon\omega^2-\gamma^2} \Rightarrow  \boxed{\wellenzahl_\lambda=\sqrt{\mu\varepsilon}\sqrt{\omega^2-\omega_\lambda^2}} \text{ mit } \omega_\lambda=\frac{\gamma_\lambda}{\sqrt{\mu\varepsilon}} 
+      \gamma_\lambda^2 = \mu\varepsilon\omega^2-\Wellenzahl_\lambda^2 \Rightarrow \Wellenzahl_\lambda=\sqrt{\mu\varepsilon\omega^2-\gamma^2} \Rightarrow  \boxed{\Wellenzahl_\lambda=\sqrt{\mu\varepsilon}\sqrt{\omega^2-\omega_\lambda^2}} \text{ mit } \omega_\lambda=\frac{\gamma_\lambda}{\sqrt{\mu\varepsilon}} 
       \end{equation*}
  \end{itemize}
 \end{frame}
@@ -568,15 +568,15 @@
   \begin{itemize}[<+->]
   \item Wir haben die \alert{Dispersionsrelation}
     \begin{equation*}
-      \wellenzahl_\lambda=\sqrt{\mu\varepsilon}\sqrt{\omega^2-\omega_\lambda^2} \text{ mit } \omega_\lambda=\frac{\gamma_\lambda}{\sqrt{\mu\varepsilon}} 
+      \Wellenzahl_\lambda=\sqrt{\mu\varepsilon}\sqrt{\omega^2-\omega_\lambda^2} \text{ mit } \omega_\lambda=\frac{\gamma_\lambda}{\sqrt{\mu\varepsilon}} 
     \end{equation*}
   \item Die \(z\)-Abhängigkeit der Lösung ist (z.B. für das elektrische Feld)
              \begin{equation*}
-           \efeld[uv]_\lambda(\ortsvektor[v]) = \efeld[uv]_{0\lambda}(x,y) \euler^{\pm\komplex\wellenzahl_\lambda z}
+           \EFeld[uv]_\lambda(\Ortsr[v]) = \EFeld[uv]_{0\lambda}(x,y) \euler^{\pm\komplex\Wellenzahl_\lambda z}
          \end{equation*}
-   \item Für \alert{\(\omega < \omega_\lambda\)} wird \(\wellenzahl_\lambda\) \alert{imaginär} und die Lösung ist \alert{keine propagierende Welle} mehr. Diese Lösungen sind \alert{evaneszente Moden}:
+   \item Für \alert{\(\omega < \omega_\lambda\)} wird \(\Wellenzahl_\lambda\) \alert{imaginär} und die Lösung ist \alert{keine propagierende Welle} mehr. Diese Lösungen sind \alert{evaneszente Moden}:
 \begin{equation*}
-           \efeld[uv]_\lambda(\ortsvektor[v]) = \efeld[uv]_{0\lambda}(x,y) \euler^{\mp|\wellenzahl_\lambda| z} \text{ für } \omega < \omega_\lambda
+           \EFeld[uv]_\lambda(\Ortsr[v]) = \EFeld[uv]_{0\lambda}(x,y) \euler^{\mp|\Wellenzahl_\lambda| z} \text{ für } \omega < \omega_\lambda
          \end{equation*}
          \item Die (Kreis)-Frequenz \(\omega_\lambda = 2\pi f_\lambda\) heißt \alert{Cut-Off Frequenz} des Modes \(\lambda\). 
  \end{itemize}
@@ -585,9 +585,9 @@
 \begin{frame}
   \frametitle{Dispersionsrelation}
   \begin{itemize}[<+->]
-  \item Wir können die Dispersionsrelation \(\wellenzahl_\lambda=\sqrt{\mu\varepsilon}\sqrt{\omega^2-\omega_\lambda^2}\) auf \(\wellenzahl_0=\sqrt{\mu\varepsilon}\omega\) normieren:
+  \item Wir können die Dispersionsrelation \(\Wellenzahl_\lambda=\sqrt{\mu\varepsilon}\sqrt{\omega^2-\omega_\lambda^2}\) auf \(\Wellenzahl_0=\sqrt{\mu\varepsilon}\omega\) normieren:
     \begin{equation*}
-      \frac{\wellenzahl_\lambda}{\wellenzahl_0}=\sqrt{1-\frac{\omega_\lambda^2}{\omega^2}}
+      \frac{\Wellenzahl_\lambda}{\Wellenzahl_0}=\sqrt{1-\frac{\omega_\lambda^2}{\omega^2}}
     \end{equation*}
   \item Dies ergibt folgendes Bild:
     \bigskip
@@ -599,7 +599,7 @@
         ymin = 0, ymax = 1.2,
         xtick = {0,1,2,4,4.5,5},
         xlabel = {$\omega$},
-        ylabel = {$\frac{\wellenzahl_\lambda}{\wellenzahl}$},
+        ylabel = {$\frac{\Wellenzahl_\lambda}{\Wellenzahl}$},
         xticklabels = {0, $\omega_1$, $\omega_2$, $\omega_3$, $\omega_4$, $\omega_5$},
         width=\textwidth,height=.65\textheight]
         \addplot[domain=0:6,samples=500,smooth,thick,red] {sqrt(1.-(1./x)^2)}; 
@@ -618,27 +618,27 @@
 \begin{frame}
   \frametitle{Phasen- und Gruppengeschwindigkeiten}
   \begin{itemize}[<+->]
-  \item \alert{Phasengeschwindigkeit} ist definiert als \(\geschw_p = \frac{\omega}{\wellenzahl}\)
+  \item \alert{Phasengeschwindigkeit} ist definiert als \(\Geschwindigkeit_p = \frac{\omega}{\Wellenzahl}\)
     \begin{itemize}[<+->]
-    \item TEM-Mode \(\wellenzahl_0=\sqrt{\varepsilon\mu}\, \omega\): 
+    \item TEM-Mode \(\Wellenzahl_0=\sqrt{\varepsilon\mu}\, \omega\): 
       \begin{equation*}
-        \geschw_{p0} = \frac{\omega}{\wellenzahl_0} = \frac{1}{\sqrt{\varepsilon\mu}} = \geschw_c
+        \Geschwindigkeit_{p0} = \frac{\omega}{\Wellenzahl_0} = \frac{1}{\sqrt{\varepsilon\mu}} = \Geschwindigkeit_c
         \end{equation*}
-      \item TM/TE-Mode \(\wellenzahl_\lambda=\sqrt{\mu\varepsilon}\sqrt{\omega^2-\omega_\lambda^2}\):
+      \item TM/TE-Mode \(\Wellenzahl_\lambda=\sqrt{\mu\varepsilon}\sqrt{\omega^2-\omega_\lambda^2}\):
       \begin{equation*}
-        \geschw_{p\lambda} = \frac{\omega}{\wellenzahl_\lambda} = \frac{\geschw_{p0}}{\sqrt{1-\frac{\omega_\lambda^2}{\omega^2}}} = \frac{\geschw_{c}}{\sqrt{1-\frac{\omega_\lambda^2}{\omega^2}}}\quad \geschw_{p\lambda}(\omega\to\omega_\lambda)\to\infty \quad \geschw_{p\lambda}(\omega\to\infty)\to\geschw_c 
+        \Geschwindigkeit_{p\lambda} = \frac{\omega}{\Wellenzahl_\lambda} = \frac{\Geschwindigkeit_{p0}}{\sqrt{1-\frac{\omega_\lambda^2}{\omega^2}}} = \frac{\Geschwindigkeit_{c}}{\sqrt{1-\frac{\omega_\lambda^2}{\omega^2}}}\quad \Geschwindigkeit_{p\lambda}(\omega\to\omega_\lambda)\to\infty \quad \Geschwindigkeit_{p\lambda}(\omega\to\infty)\to\Geschwindigkeit_c 
         \end{equation*}
         
   \end{itemize}
-  \item \alert{Gruppengeschwindigkeit} ist definiert als \(\geschw_g = \frac{\d \omega}{\d \wellenzahl}\)
+  \item \alert{Gruppengeschwindigkeit} ist definiert als \(\Geschwindigkeit_g = \frac{\d \omega}{\d \Wellenzahl}\)
     \begin{itemize}[<+->]
-    \item TEM-Mode \(\wellenzahl_0=\sqrt{\varepsilon\mu}\, \omega\): 
+    \item TEM-Mode \(\Wellenzahl_0=\sqrt{\varepsilon\mu}\, \omega\): 
       \begin{equation*}
-        \geschw_{g0} = \frac{\omega}{\wellenzahl_0} = \frac{1}{\sqrt{\varepsilon\mu}} = \geschw_{p0}=\geschw_c
+        \Geschwindigkeit_{g0} = \frac{\omega}{\Wellenzahl_0} = \frac{1}{\sqrt{\varepsilon\mu}} = \Geschwindigkeit_{p0}=\Geschwindigkeit_c
         \end{equation*}
-      \item TM/TE-Mode \(\wellenzahl_\lambda=\sqrt{\mu\varepsilon}\sqrt{\omega^2-\omega_\lambda^2}\):
+      \item TM/TE-Mode \(\Wellenzahl_\lambda=\sqrt{\mu\varepsilon}\sqrt{\omega^2-\omega_\lambda^2}\):
       \begin{equation*}
-        \geschw_{g\lambda} = \frac{\d \omega}{\d \wellenzahl_\lambda} = \geschw_{c} \sqrt{1-\frac{\omega_\lambda^2}{\omega^2}} \quad \geschw_{g\lambda}(\omega\to\omega_\lambda)=0 \quad \geschw_{g\lambda}(\omega\to\infty)\to\geschw_c 
+        \Geschwindigkeit_{g\lambda} = \frac{\d \omega}{\d \Wellenzahl_\lambda} = \Geschwindigkeit_{c} \sqrt{1-\frac{\omega_\lambda^2}{\omega^2}} \quad \Geschwindigkeit_{g\lambda}(\omega\to\omega_\lambda)=0 \quad \Geschwindigkeit_{g\lambda}(\omega\to\infty)\to\Geschwindigkeit_c 
         \end{equation*}
         
   \end{itemize}

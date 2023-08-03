@@ -23,24 +23,24 @@
   \begin{itemize}[<+->]
   \item Wir betrachten \alert{monochromatische ebene Wellen}, die in \(+z\)-Richtung propagieren
 \begin{align*}
-\efeld[uv] &= \left( \efeld[u]_{0x}\einheitsvek{x} + \efeld[u]_{0y}\einheitsvek{y}\right)\euler^{\komplex ( \omega t - \wellenzahl z)} &
-\tetB[uv] &= \frac{1}{\geschw_{\mathrm{p}}}\left(-\efeld[u]_{0y}\einheitsvek{x} +\efeld[u]_{0x}\einheitsvek{y}\right) \euler^{\komplex(\omega t - \wellenzahl z)} & \geschw_{\mathrm{p}}= \frac{\omega}{k} \stackrel{\text{hier}}{=} \geschw_{\mathrm{c}}
+\EFeld[uv] &= \left( \EFeld[u]_{0x}\einheitsvek{x} + \EFeld[u]_{0y}\einheitsvek{y}\right)\euler^{\komplex ( \omega t - \Wellenzahl z)} &
+\BFeld[uv] &= \frac{1}{\Geschwindigkeit_{\mathrm{p}}}\left(-\EFeld[u]_{0y}\einheitsvek{x} +\EFeld[u]_{0x}\einheitsvek{y}\right) \euler^{\komplex(\omega t - \Wellenzahl z)} & \Geschwindigkeit_{\mathrm{p}}= \frac{\omega}{k} \stackrel{\text{hier}}{=} \Geschwindigkeit_{\mathrm{c}}
 \end{align*}
 \item Hierbei sind: 
 \begin{align*}
-\efeld[u]_{0x} &= \vert \efeld[u]_{0x} \vert \cdot \euler^{\komplex \varphi_x} \text{ komplexe Komponente in \(x\)-Richtung bei \(t=0, z=0\)}\\
-\efeld[u]_{0y} &= \vert \efeld[u]_{0y} \vert \cdot \euler^{\komplex (\varphi_x+ \delta)} \text{ dito für \(y\)-Komponente}\\
-\efeld[v] (\ortsvektor[v], t) &= \real{\efeld[u](\ortsvektor[v], t)} = \efeld_x \einheitsvek{x} + \efeld_y \einheitsvek{y} \text{ Physikalische Lösung}\\
-\efeld_x &= \vert \efeld[u]_{0x} \vert \cos(\omega t - \wellenzahl z + \varphi_x )\\
-\efeld_y &= \vert \efeld[u]_{0y} \vert \cos(\omega t - \wellenzahl z + \varphi_x +\delta)\\
+\EFeld[u]_{0x} &= \vert \EFeld[u]_{0x} \vert \cdot \euler^{\komplex \varphi_x} \text{ komplexe Komponente in \(x\)-Richtung bei \(t=0, z=0\)}\\
+\EFeld[u]_{0y} &= \vert \EFeld[u]_{0y} \vert \cdot \euler^{\komplex (\varphi_x+ \delta)} \text{ dito für \(y\)-Komponente}\\
+\EFeld[v] (\Ortsr[v], t) &= \real{\EFeld[u](\Ortsr[v], t)} = \EFeld_x \einheitsvek{x} + \EFeld_y \einheitsvek{y} \text{ Physikalische Lösung}\\
+\EFeld_x &= \vert \EFeld[u]_{0x} \vert \cos(\omega t - \Wellenzahl z + \varphi_x )\\
+\EFeld_y &= \vert \EFeld[u]_{0y} \vert \cos(\omega t - \Wellenzahl z + \varphi_x +\delta)\\
 \varphi_x &: \text{ gemeinsamer Phasenwinkel \(\to\) relativ unwichtig}\\
 \delta &: \text{ relative Phase \(\to\) \alert{Fallunterscheidung}}
 \end{align*}
-\item Fallunterscheidung in drei Spezialfälle (sowie: \(\delta\) und \(\vert \efeld[u]_{0x} \vert, \vert \efeld[u]_{0y} \vert\) beliebig):
+\item Fallunterscheidung in drei Spezialfälle (sowie: \(\delta\) und \(\vert \EFeld[u]_{0x} \vert, \vert \EFeld[u]_{0y} \vert\) beliebig):
   \begin{itemize}[<+->]
   \item \(\delta = 0, \pm \pi , \pm 2\pi, \ldots\)
-  \item \(  \delta = \pm \frac{\pi}{2}, \pm \frac{3\pi}{2},\ldots \quad ;\quad\vert \efeld[u]_{0x} \vert = \vert \efeld[u]_{0y} \vert = \hat{\efeld} \)
-  \item \( \delta = \pm \frac{\pi}{2}, \pm \frac{3\pi}{2},\ldots \quad ;\quad\vert \efeld[u]_{0x} \vert \neq \vert \efeld[u]_{0y} \vert \)
+  \item \(  \delta = \pm \frac{\pi}{2}, \pm \frac{3\pi}{2},\ldots \quad ;\quad\vert \EFeld[u]_{0x} \vert = \vert \EFeld[u]_{0y} \vert = \hat{\EFeld} \)
+  \item \( \delta = \pm \frac{\pi}{2}, \pm \frac{3\pi}{2},\ldots \quad ;\quad\vert \EFeld[u]_{0x} \vert \neq \vert \EFeld[u]_{0y} \vert \)
   \end{itemize}
 \end{itemize}
 \ 
@@ -60,9 +60,9 @@
 \end{align*}
 \item Hiermit ergibt sich für das elektrische Feld
 \begin{align*}
-  \Rightarrow \efeld[v]&= \underbrace{(\vert \efeld[u]_{0x} \vert \einheitsvek{x} \cpm \vert \efeld[u]_{0y}\vert \einheitsvek{y})}_{\substack{\text{fester Vektor, orts- und}\\ \text{zeitunabhängig}}} \cos (\omega t - \wellenzahl z + \varphi_x)\\
-  &= \hat{\efeld}\cdot \einheitsvek{\efeld}\cos (\omega t - \wellenzahl z + \varphi_x ) \text{ \(\to\) \alert{linear Polarisiert}}\\
-  \hat{\efeld} &= \vert \efeld[v] \vert = \sqrt{\vert \efeld[u]_{0x} \vert ^2 + \vert \efeld[u]_{0y} \vert ^2}
+  \Rightarrow \EFeld[v]&= \underbrace{(\vert \EFeld[u]_{0x} \vert \einheitsvek{x} \cpm \vert \EFeld[u]_{0y}\vert \einheitsvek{y})}_{\substack{\text{fester Vektor, orts- und}\\ \text{zeitunabhängig}}} \cos (\omega t - \Wellenzahl z + \varphi_x)\\
+  &= \hat{\EFeld}\cdot \einheitsvek{\EFeld}\cos (\omega t - \Wellenzahl z + \varphi_x ) \text{ \(\to\) \alert{linear Polarisiert}}\\
+  \hat{\EFeld} &= \vert \EFeld[v] \vert = \sqrt{\vert \EFeld[u]_{0x} \vert ^2 + \vert \EFeld[u]_{0y} \vert ^2}
 \end{align*}
 \item \alert{Polarisationswinkel}
   \begin{columns}
@@ -72,12 +72,12 @@
 	\draw[->,thick] (0,0) -- (3,0) node[right] {$x$};
 	\draw[->,thick] (0,0) -- (0,3) node[above] {$y$};
 	%Plot
-    \draw[->] (0,0) --(40:2) node[right] {$\einheitsvek{\efeld}$};
+    \draw[->] (0,0) --(40:2) node[right] {$\einheitsvek{\EFeld}$};
     \draw[->] (0:1)arc(0:40:1) node[right] {$\alpha$};
 \end{tikzpicture}
       \end{column}
       \begin{column}{.2\linewidth}
-        \(\tan \alpha = \cpm \dfrac{|\efeld[u]_{0y}|}{|\efeld[u]_{0x}|}\)
+        \(\tan \alpha = \cpm \dfrac{|\EFeld[u]_{0y}|}{|\EFeld[u]_{0x}|}\)
       \end{column}
       \begin{column}{.6\linewidth}
 Allgemeinen Lösung: Überlagerung zweier linear polarisierter Beiträge in \(x\)- bzw. \(y\)-Richtung.\\
@@ -91,7 +91,7 @@ Allgemeinen Lösung: Überlagerung zweier linear polarisierter Beiträge in \(x\
 \begin{frame}
   \frametitle{2. Fall: Zirkulare Polarisation}
   \begin{itemize}[<+->]
-  \item Wir betrachten: \(\delta = (2m+1) \frac{\pi}{2}, \quad m \in \IZ , \quad\delta = \pm \frac{\pi}{2}, \pm \frac{3\pi}{2},\ldots \quad ;\quad\vert \efeld_{0x} \vert = \vert \efeld_{0y} \vert = \hat{\efeld} \)
+  \item Wir betrachten: \(\delta = (2m+1) \frac{\pi}{2}, \quad m \in \IZ , \quad\delta = \pm \frac{\pi}{2}, \pm \frac{3\pi}{2},\ldots \quad ;\quad\vert \EFeld_{0x} \vert = \vert \EFeld_{0y} \vert = \hat{\EFeld} \)
   \item Für den Cosinus gilt die Beziehung
     \begin{align*}
 \begin{split}
@@ -100,9 +100,9 @@ Allgemeinen Lösung: Überlagerung zweier linear polarisierter Beiträge in \(x\
 \end{align*}
 \item Hiermit ergibt sich für das elektrische Feld
 \begin{align*}
-  \efeld[v] &= \hat{\efeld}(\cos(\omega t - \wellenzahl z + \varphi_x)\einheitsvek{x} \cmp \sin (\omega t - \wellenzahl z + \varphi_x)\einheitsvek{y})
+  \EFeld[v] &= \hat{\EFeld}(\cos(\omega t - \Wellenzahl z + \varphi_x)\einheitsvek{x} \cmp \sin (\omega t - \Wellenzahl z + \varphi_x)\einheitsvek{y})
 \end{align*}
-\item Für festes \(z\) oder \(t\): Kreis mit Radius \(\hat{\efeld}\)
+\item Für festes \(z\) oder \(t\): Kreis mit Radius \(\hat{\EFeld}\)
   \(\to\) \alert{Zirkulare Polarisation}
   \medskip
   
@@ -117,8 +117,8 @@ Allgemeinen Lösung: Überlagerung zweier linear polarisierter Beiträge in \(x\
 	\draw (0, 0) circle (1.2);
 	\draw (0, 0) circle (.2);
 	\draw[fill=black] (0, 0) circle (.1);
-	\draw (0,0) node[below right] {$\wellenzahl[v]$};
-	\draw[->,>=stealth] (0,0)--(20:1.2) node[above right] {$\efeld[v]$};
+	\draw (0,0) node[below right] {$\Wellenzahl[v]$};
+	\draw[->,>=stealth] (0,0)--(20:1.2) node[above right] {$\EFeld[v]$};
 	\draw[->] (20:.6) arc (20:50:.6) node [above] {$\omega$};
 	\draw [->,thick,color=red] (120:1.2) arc (120:160:1.2) node[above left] {$\delta = -\frac{\pi}{2}$};
 	\draw (0,-1.5) node[below]{rechts-zirkular}; 
@@ -132,8 +132,8 @@ Allgemeinen Lösung: Überlagerung zweier linear polarisierter Beiträge in \(x\
 	\draw (0, 0) circle (1.2);
 	\draw (0, 0) circle (.2);
 	\draw[fill=black] (0, 0) circle (.1);
-	\draw (0,0) node[below right] {$\wellenzahl[v]$};
-	\draw[->,>=stealth] (0,0)--(50:1.2) node[above right] {$\efeld[v]$};
+	\draw (0,0) node[below right] {$\Wellenzahl[v]$};
+	\draw[->,>=stealth] (0,0)--(50:1.2) node[above right] {$\EFeld[v]$};
 	\draw[->] (50:.6) arc (50:20:.6) node [right] {$\omega$};
 	\draw [->,thick,color=green!70] (160:1.2) arc (160:120:1.2) node[above left] {$\delta = +\frac{\pi}{2}$};
 	\draw (0,-1.5) node[below]{links-zirkular}; 
@@ -154,12 +154,12 @@ Allgemeinen Lösung: Überlagerung zweier linear polarisierter Beiträge in \(x\
 \begin{frame}
   \frametitle{3. Fall: Elliptische Polarisation}
   \begin{itemize}[<+->]
-  \item Wir betrachten: \(\delta = (2m+1) \frac{\pi}{2}, \quad m \in \IZ , \quad\delta = \pm \frac{\pi}{2}, \pm \frac{3\pi}{2},\ldots \quad ;\quad\vert \efeld_{0x} \vert \neq \vert \efeld_{0y} \vert  \)
+  \item Wir betrachten: \(\delta = (2m+1) \frac{\pi}{2}, \quad m \in \IZ , \quad\delta = \pm \frac{\pi}{2}, \pm \frac{3\pi}{2},\ldots \quad ;\quad\vert \EFeld_{0x} \vert \neq \vert \EFeld_{0y} \vert  \)
 \item Analog zur zirkularen Polarisation folgt für das elektrische Feld
     \begin{align*}
-\efeld_x &= \vert \efeld_{0x} \vert \cos (\omega t - \wellenzahl \ortsvektor + \varphi_x)\\
-\efeld_y &= \cmp \vert \efeld_{0y} \vert \sin (\omega t - \wellenzahl \ortsvektor + \varphi_x)\\
-\Rightarrow &\left[ \frac{\efeld_x}{\vert \efeld[u]_{0x}\vert}\right]^2+\left[\frac{\efeld_y}{\vert \efeld[u]_{0y}\vert}\right]^2 = 1\quad\text{Ellipse, Halbachsen }\vert \efeld_{0x} \vert , \vert \efeld_{0y} \vert
+\EFeld_x &= \vert \EFeld_{0x} \vert \cos (\omega t - \Wellenzahl \Ortsr + \varphi_x)\\
+\EFeld_y &= \cmp \vert \EFeld_{0y} \vert \sin (\omega t - \Wellenzahl \Ortsr + \varphi_x)\\
+\Rightarrow &\left[ \frac{\EFeld_x}{\vert \EFeld[u]_{0x}\vert}\right]^2+\left[\frac{\EFeld_y}{\vert \EFeld[u]_{0y}\vert}\right]^2 = 1\quad\text{Ellipse, Halbachsen }\vert \EFeld_{0x} \vert , \vert \EFeld_{0y} \vert
 \end{align*}
 \item \alert{Elliptisch polarisierte Wellen} (rechts und links umlaufend)
 
@@ -170,15 +170,15 @@ Allgemeinen Lösung: Überlagerung zweier linear polarisierter Beiträge in \(x\
 	%Plot
 	%\draw[style=dashed] (-1.27,-1.05) rectangle (1.27,1.05);
 	\draw (0, 0) ellipse (1.6 and 1);
-	\draw(1.6,0) node[below right] {$|\efeld_{0x}|$} ;
-	\draw(0,1.3) node[left] {$|\efeld_{0y}|$} ;
-	\draw[->,>=stealth] (0,0)--(1.2,0.7) node[above right] {$\efeld[v]$};
+	\draw(1.6,0) node[below right] {$|\EFeld_{0x}|$} ;
+	\draw(0,1.3) node[left] {$|\EFeld_{0y}|$} ;
+	\draw[->,>=stealth] (0,0)--(1.2,0.7) node[above right] {$\EFeld[v]$};
 	%\draw[->,color=green] (40:1) arc (40:160:1.3);
 	\draw [->,thick,color=green!70] plot[domain=340:300] ({cos(\x)*1.6},{sin(\x)}) node[below right] {$\delta = +\frac{\pi}{2}$};
 	\draw [->,thick,color=red] plot[domain=120:160] ({cos(\x)*1.6},{sin(\x)}) node[above left] {$\delta = -\frac{\pi}{2}$};
 	\draw (0, 0) circle (.2);
 	\draw[fill=black] (0, 0) circle (.1);
-	\draw (0,0) node[below right] {$\wellenzahl[v]$};
+	\draw (0,0) node[below right] {$\Wellenzahl[v]$};
 \end{tikzpicture}
 \end{itemize}
 \end{frame}
@@ -187,7 +187,7 @@ Allgemeinen Lösung: Überlagerung zweier linear polarisierter Beiträge in \(x\
 \begin{frame}
   \frametitle{4. Fall: keine Einschränkungen}
   \begin{itemize}[<+->]
-  \item Keine Einschränkungen für \(\delta\) und \(\vert \efeld_{0x} \vert\) bzw. \(\vert \efeld_{0y} \vert  \)
+  \item Keine Einschränkungen für \(\delta\) und \(\vert \EFeld_{0x} \vert\) bzw. \(\vert \EFeld_{0y} \vert  \)
   \item Analog zur zirkularen Polarisation folgt ohne weitere Herleitung:
     \begin{itemize}[<+->]
     \item Ebenfalls \alert{elliptisch polarisiert}
@@ -199,11 +199,11 @@ Allgemeinen Lösung: Überlagerung zweier linear polarisierter Beiträge in \(x\
 	%Plot
 	\draw[style=dashed] (-1.27,-1.05) rectangle (1.27,1.05);
 	\draw[rotate=30] (0, 0) ellipse (1.35 and 0.9);
-	\draw(1.25,0) node[below right] {$|\efeld_{0x}|$} ;
-	\draw(0,1.05) node[above left] {$|\efeld_{0y}|$} ;
+	\draw(1.25,0) node[below right] {$|\EFeld_{0x}|$} ;
+	\draw(0,1.05) node[above left] {$|\EFeld_{0y}|$} ;
 	\draw (0, 0) circle (.12);
 	\draw[fill=black] (0, 0) circle (.06);
-	\draw (0,0) node[below right] {$\wellenzahl[v]$};
+	\draw (0,0) node[below right] {$\Wellenzahl[v]$};
 \end{tikzpicture}
       \end{itemize}
 

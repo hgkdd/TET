@@ -502,9 +502,9 @@ $$
 $$\pause
 Verallgemeinerung auf 3D:
 $$
-\ortsvektor[v] = x\vu{x} +y\vu{y}+z\vu{z} \to
-\delta^3(\ortsvektor[v])=\delta(x) \delta(y) \delta(z) \to
-\int_{\mathbb{R}^3} \delta^3(\ortsvektor[v]) dV = 1 
+\Ortsr[v] = x\vu{x} +y\vu{y}+z\vu{z} \to
+\delta^3(\Ortsr[v])=\delta(x) \delta(y) \delta(z) \to
+\int_{\mathbb{R}^3} \delta^3(\Ortsr[v]) dV = 1 
 $$
  
  
@@ -531,7 +531,7 @@ $\divergenz\left(\frac{1}{r^2}\vu{r}\right)$ leicht bestimmen:
   = & 2\pi \int_0^\pi \frac{1}{R^2} R^2 \sin\vartheta d\vartheta \\
   \pause
   = & 4\pi \\\pause
-  \divergenz\left(\frac{1}{r^2}\vu{r}\right)  =& 4\pi\delta^3(\ortsvektor[v])
+  \divergenz\left(\frac{1}{r^2}\vu{r}\right)  =& 4\pi\delta^3(\Ortsr[v])
 \end{align*}\pause
 
 Einfach berechnen lässt sich:
@@ -541,19 +541,19 @@ $$\pause
 Hiermit folgt die wichtige Beziehung für den \alert{Laplace-Operator}
 $\Delta = \divergenz\gradient$:
 $$
-\Delta \frac{1}{r} = \divergenz\gradient \frac{1}{r} = -4\pi\delta^3(\ortsvektor[v]) 
+\Delta \frac{1}{r} = \divergenz\gradient \frac{1}{r} = -4\pi\delta^3(\Ortsr[v]) 
 $$
 \end{frame}
 \begin{frame}
   \frametitle{Zerlegung von Vektorfeldern (I)}
   \begin{block}{Helmholtz-Theorem}
-    Ein Vektorfeld $\vec{F}(\ortsvektor[v])$, welches für $r\to\infty$
+    Ein Vektorfeld $\vec{F}(\Ortsr[v])$, welches für $r\to\infty$
     stärker als $1/r$ gegen Null abfällt (das ist für praktisch
     relevante Probleme regelmäßig erfüllt), lässt sich als Summe eines
-    rotationsfreien Anteils $\vec{a}(\ortsvektor[v])$ und eines
-    divergenzfreien Anteils $\vec{b}(\ortsvektor[v])$ darstellen:
+    rotationsfreien Anteils $\vec{a}(\Ortsr[v])$ und eines
+    divergenzfreien Anteils $\vec{b}(\Ortsr[v])$ darstellen:
     $$
-    \vec{F}(\ortsvektor[v]) = \vec{a}(\ortsvektor[v]) + \vec{b}(\ortsvektor[v]) \text{ mit
+    \vec{F}(\Ortsr[v]) = \vec{a}(\Ortsr[v]) + \vec{b}(\Ortsr[v]) \text{ mit
     } \rotation  \vec{a} = \vec{0} \land \divergenz  \vec{b} = 0 
     $$\pause
     \begin{align*}
@@ -564,38 +564,38 @@ $$
     Hiermit folgt die Darstellung mit einen \alert{Skalarpotential}
     $\phi$ und einem \alert{Vektorpotential} $\vec{A}$:
     $$
-    \vec{F}(\ortsvektor[v]) = - \gradient \phi (\ortsvektor[v]) + \rotation
-    \vec{A}(\ortsvektor[v]) \text{ (\enquote{-} ist Konvention)}
+    \vec{F}(\Ortsr[v]) = - \gradient \phi (\Ortsr[v]) + \rotation
+    \vec{A}(\Ortsr[v]) \text{ (\enquote{-} ist Konvention)}
     $$
   \end{block}
   \end{frame}
 \begin{frame}
   \frametitle{Zerlegung von Vektorfeldern (II)}
   \begin{block}{Skalar- und Vektorpotential}
-    \alert{Skalar-} $\phi (\ortsvektor[v])$ und \alert{Vektorpotential}
-    $\vec{A}(\ortsvektor[v])$ lassen sich direkt aus dem Feld
-    $\vec{F}(\ortsvektor[v])$ berechnen. Es gilt:
+    \alert{Skalar-} $\phi (\Ortsr[v])$ und \alert{Vektorpotential}
+    $\vec{A}(\Ortsr[v])$ lassen sich direkt aus dem Feld
+    $\vec{F}(\Ortsr[v])$ berechnen. Es gilt:
 
     \begin{align*}
-  \phi (\ortsvektor[v]) = & \frac{1}{4\pi} \int_V \frac{\divergenz'
-                     \vec{F}(\ortsvektor[vs])}{\left|\ortsvektor[v]-\ortsvektor[vs]\right|}
+  \phi (\Ortsr[v]) = & \frac{1}{4\pi} \int_V \frac{\divergenz'
+                     \vec{F}(\Ortsr[vs])}{\left|\Ortsr[v]-\Ortsr[vs]\right|}
                      d^3r'  \uncover<2->{- \frac{1}{4\pi} \oint_{O(V)}
-                     \vec{n}' \cdot \frac{\vec{F}(\ortsvektor[vs])}{\left|\ortsvektor[v]-\ortsvektor[vs]\right|}
+                     \vec{n}' \cdot \frac{\vec{F}(\Ortsr[vs])}{\left|\Ortsr[v]-\Ortsr[vs]\right|}
                      d^2r'}\\
-  \vec{A} (\ortsvektor[v]) = & \frac{1}{4\pi} \int_V \frac{\rotation'
-                     \vec{F}(\ortsvektor[vs])}{\left|\ortsvektor[v]-\ortsvektor[vs]\right|}
+  \vec{A} (\Ortsr[v]) = & \frac{1}{4\pi} \int_V \frac{\rotation'
+                     \vec{F}(\Ortsr[vs])}{\left|\Ortsr[v]-\Ortsr[vs]\right|}
                      d^3r'  \uncover<2->{- \frac{1}{4\pi} \oint_{O(V)}
-                     \vec{n}' \times \frac{\vec{F}(\ortsvektor[vs])}{\left|\ortsvektor[v]-\ortsvektor[vs]\right|}
+                     \vec{n}' \times \frac{\vec{F}(\Ortsr[vs])}{\left|\Ortsr[v]-\Ortsr[vs]\right|}
                      d^2r'}
     \end{align*}\pause
   \end{block}\pause
 
   \begin{block}{Longidudinale und transversale Komponente}
     Häufig bezeichnet man die rotationsfreie Komponente $ - \gradient
-    \phi (\ortsvektor[v])$ als \alert{longitudinale Komponente} und die
+    \phi (\Ortsr[v])$ als \alert{longitudinale Komponente} und die
     divergrenzfreie Komponente $\rotation
-    \vec{A}(\ortsvektor[v])$ als \alert{transversale Komponente} des
-    Vektorfeldes $\vec{F}(\ortsvektor[v])$.
+    \vec{A}(\Ortsr[v])$ als \alert{transversale Komponente} des
+    Vektorfeldes $\vec{F}(\Ortsr[v])$.
     \end{block}
   \end{frame}
 

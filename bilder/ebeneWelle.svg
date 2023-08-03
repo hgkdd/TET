@@ -181,7 +181,7 @@
          id="tspan1375"
          x="118.08236"
          y="83.269226"
-         style="font-size:7.05556px;stroke-width:0.264583">$\ortsvektor[v]$</tspan></text>
+         style="font-size:7.05556px;stroke-width:0.264583">$\Ortsr[v]$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -192,7 +192,7 @@
          id="tspan1379"
          x="31.519987"
          y="175.00655"
-         style="font-size:7.05556px;stroke-width:0.264583">$\nicefrac{\vec{k}\cdot\ortsvektor[v]}{|\vec{k}|}$</tspan></text>
+         style="font-size:7.05556px;stroke-width:0.264583">$\nicefrac{\vec{k}\cdot\Ortsr[v]}{|\vec{k}|}$</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 16.137239,141.13429 c -0.470448,14.58388 41.869841,0.94089 47.044765,15.52476 6.11582,-14.58387 50.337896,-0.94089 50.808346,-14.11342"

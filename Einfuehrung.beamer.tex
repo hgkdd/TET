@@ -27,37 +27,37 @@
     \begin{tabular}{l c c c l}
       differentielle Form & $\to$ & Satz & $\to$ & integrale Form \pause\\
       \hline
-      $\divergenz \verschiebung[v] = \laddichte{V}$ \pause& $\to$ & Gauss & $\to$ \pause& $\oiint\limits_{\oberfl(\volumen)}
-                                                                            \verschiebung[v] \cdot\intflaeche[v] =
+      $\divergenz \DFeld[v] = \laddichte{V}$ \pause& $\to$ & Gauss & $\to$ \pause& $\oiint\limits_{\oberfl(\volumen)}
+                                                                            \DFeld[v] \cdot\intflaeche[v] =
                                                                             \iiint\limits_{\volumen} \laddichte{V}
                                                                             \intvolumen$\pause \\
-      $\divergenz \tetB[v] = 0$  \pause& $\to$ & Gauss & $\to$ \pause& $\oiint\limits_{\oberfl(\volumen)} \tetB[v]\cdot
+      $\divergenz \BFeld[v] = 0$  \pause& $\to$ & Gauss & $\to$ \pause& $\oiint\limits_{\oberfl(\volumen)} \BFeld[v]\cdot
                                                                \intflaeche[v] = 0$\pause \\
-      $\rotation \efeld[v] + \dfrac{\partial
-      \tetB[v]}{\partial t} =\vec{0} $ \pause& $\to$ & Stokes & $\to$ \pause&
+      $\rotation \EFeld[v] + \dfrac{\partial
+      \BFeld[v]}{\partial t} =\vec{0} $ \pause& $\to$ & Stokes & $\to$ \pause&
                                                                  $
-                                                                             \oint\limits_{\oberfl(\flaeche)}
-                                                                             \efeld[v]\cdot
+                                                                             \oint\limits_{\oberfl(\Flaeche)}
+                                                                             \EFeld[v]\cdot
                                                                              \intweg[v]
                                                                              =
                                                                              -
-                                                                             \iint\limits_{\flaeche}
+                                                                             \iint\limits_{\Flaeche}
                                                                              \dfrac{\partial
-                                                                             \tetB[v]}{\partial
+                                                                             \BFeld[v]}{\partial
                                                                              t}
                                                                              \cdot\intflaeche[v]
                                                                              =
                                                                              -
                                                                              \dfrac{\upd}{\upd
                                                                              t} \left[
-                                                                             \iint\limits_{\flaeche}
-                                                                             \tetB[v]
+                                                                             \iint\limits_{\Flaeche}
+                                                                             \BFeld[v]
                                                                              \cdot\intflaeche[v]\right]
                                                                              $
                                                                              \pause \\
-      $\rotation \magfeld[v] - \dfrac{\partial
-      \verschiebung[v]}{\partial t} = \elstromdichte[v] $ \pause&
-                                                                       $\to$ & Stokes & $\to$ \pause& $\oint\limits_{\oberfl(\flaeche)} \magfeld[v]\cdot \intweg[v] = \iint\limits_{\flaeche} \elstromdichte[v] \cdot\upd \flaeche[v] + \dfrac{\upd}{\upd t} \left[ \iint\limits_{\flaeche} \verschiebung[v] \cdot\intflaeche[v] \right]$\pause
+      $\rotation \HFeld[v] - \dfrac{\partial
+      \DFeld[v]}{\partial t} = \StromDichte[v] $ \pause&
+                                                                       $\to$ & Stokes & $\to$ \pause& $\oint\limits_{\oberfl(\Flaeche)} \HFeld[v]\cdot \intweg[v] = \iint\limits_{\Flaeche} \StromDichte[v] \cdot\upd \Flaeche[v] + \dfrac{\upd}{\upd t} \left[ \iint\limits_{\Flaeche} \DFeld[v] \cdot\intflaeche[v] \right]$\pause
     \end{tabular}
 
     
@@ -65,14 +65,14 @@
 
   \begin{block}{Feldgrößen - Einheiten}
     \begin{itemize}[<+->]
-    \item Elektrische Feldstärke $\efeld[v]$  mit
-      \(\left[\efeld[v]\right] = \si{\volt\per\metre} \)
-    \item Magnetische Feldstärke \(\magfeld[v] \) mit \(\left[\magfeld[v]\right] = \si{\ampere\per\metre} \)
-    \item Elektrische Flussdichte \(\verschiebung[v]\)  mit
-      \(\left[\verschiebung[v]\right] =
+    \item Elektrische Feldstärke $\EFeld[v]$  mit
+      \(\left[\EFeld[v]\right] = \si{\volt\per\metre} \)
+    \item Magnetische Feldstärke \(\HFeld[v] \) mit \(\left[\HFeld[v]\right] = \si{\ampere\per\metre} \)
+    \item Elektrische Flussdichte \(\DFeld[v]\)  mit
+      \(\left[\DFeld[v]\right] =
       \si{\coulomb\per\square\metre} =
       \si{\ampere\second\per\square\metre}\)
-    \item Magnetische Flussdichte \(\tetB[v]\) mit \(\left[\tetB[v]\right] = \si{\tesla} = \si{\volt\second\per\square\metre} \)
+    \item Magnetische Flussdichte \(\BFeld[v]\) mit \(\left[\BFeld[v]\right] = \si{\tesla} = \si{\volt\second\per\square\metre} \)
     \end{itemize}
   \end{block}
 \end{frame}
@@ -80,11 +80,11 @@
 \begin{frame}
   \frametitle{Alternative Bezeichnungen}
   \begin{itemize}[<+->]
-    \item Elektrisches Feld $\efeld[v]$: - 
-    \item Magnetisches Feld $\magfeld[v]$: in der Physik heute
+    \item Elektrisches Feld $\EFeld[v]$: - 
+    \item Magnetisches Feld $\HFeld[v]$: in der Physik heute
       teilweise auch \alert{magnetische Anregung/Erregung} $\to$ Axiomatische
       Einführung
-    \item Elektrische Flussdichte $\verschiebung[v]$:
+    \item Elektrische Flussdichte $\DFeld[v]$:
       \begin{itemize}[<+->]
         \item in der Physik heute
       teilweise auch \alert{elektrische Anregung/Erregung} $\to$ Axiomatische
@@ -92,7 +92,7 @@
       \item alternativ: \alert{dielektrischte Verschiebung,
           Verschiebungsdichte, Verschiebungsflussdichte, D-Feld}
         \end{itemize}
-      \item Magnetische Flussdichte $\tetB[v]$:
+      \item Magnetische Flussdichte $\BFeld[v]$:
         \begin{itemize}[<+->]
           \item in der Physik heute
       teilweise auch \alert{Magnetisches Feld} $\to$ Axiomatische Einführung
@@ -109,26 +109,26 @@
       \item Volumenladungsdichte $\laddichte{V}$:
         $\left[\laddichte{V}\right] = \si{\coulomb\per\cubic\metre} $
         (später auch Flächenladungsdichte und Linienladungsdichte)
-        \item Stromdichte	\(\elstromdichte[v]\) mit
-          \(\left[\elstromdichte[v]\right] =
+        \item Stromdichte	\(\StromDichte[v]\) mit
+          \(\left[\StromDichte[v]\right] =
           \si{\ampere\per\square\metre} \)
           \begin{itemize}[<+->]
 		\item Allgemein Summe von drei Beiträgen:
 		\begin{equation*}
-			\elstromdichte[v] = \elstromdichte[v]_\mathrm{E} + \elstromdichte[v]_\mathrm{L} + \elstromdichte[v]_\mathrm{K}
+			\StromDichte[v] = \StromDichte[v]_\mathrm{E} + \StromDichte[v]_\mathrm{L} + \StromDichte[v]_\mathrm{K}
 		\end{equation*}
                 \item Die eingeprägte Stromdichte
-                  \(\elstromdichte[v]_\mathrm{E}\) ist unabhängig vom
+                  \(\StromDichte[v]_\mathrm{E}\) ist unabhängig vom
                   betrachtetem E-Feld.
-                \item Die Leitungsstromdichte \(\elstromdichte[v]_\mathrm{L}\) mit
+                \item Die Leitungsstromdichte \(\StromDichte[v]_\mathrm{L}\) mit
 		\begin{equation*}
-			\elstromdichte[v]_\mathrm{L} = \kappa \cdot \efeld[v]
+			\StromDichte[v]_\mathrm{L} = \kappa \cdot \EFeld[v]
 		\end{equation*}
 		wird in aller Regel hier betrachtet. $\kappa$ ist die
                 elektrische Leitfähigkeit; $\left[\kappa\right] =\si{\ampere\metre\per\volt\per\square\metre}=\si{(\ohm\metre)^{-1}}=\si{S\per\metre}$
-                \item Die Konvektionsstromdichte \(\elstromdichte[v]_K\) mit
+                \item Die Konvektionsstromdichte \(\StromDichte[v]_K\) mit
 		\begin{equation*}
-			\elstromdichte[v]_\mathrm{K} = \laddichte{V} \cdot \vec{v} \pointspacek
+			\StromDichte[v]_\mathrm{K} = \laddichte{V} \cdot \vec{v} \pointspacek
 		\end{equation*}
 		welches z.B. in Plasma vorkommt, spielt hier meist
                 keine Rolle. 
@@ -138,26 +138,26 @@
     \begin{frame}
       \frametitle{Materialgleichungen}
       \begin{itemize}[<+->]
-        \item Die elektrischen Feldgrößen $\efeld[v]$ und $\verschiebung[v]$
+        \item Die elektrischen Feldgrößen $\EFeld[v]$ und $\DFeld[v]$
           sind voneinander abhängig:
           
           $$
-         \verschiebung[v] = \varepsilon_0 \efeld[v] +\vec{P}
+         \DFeld[v] = \varepsilon_0 \EFeld[v] +\vec{P}
                 $$
-           mit \alert{Polarisation} $\vec{P}$; $\left[\vec{P}\right] = \left[\verschiebung[v]\right] =
+           mit \alert{Polarisation} $\vec{P}$; $\left[\vec{P}\right] = \left[\DFeld[v]\right] =
            \si{\coulomb\per\square\metre}$
-           \item Die magnetischen Feldgrößen $\magfeld[v]$ und
-             $\tetB[v]$ sind voneinander abhängig:
+           \item Die magnetischen Feldgrößen $\HFeld[v]$ und
+             $\BFeld[v]$ sind voneinander abhängig:
 
              $$
-             \tetB[v] = \mu_0  \left( \magfeld[v] + \magnetis[v] \right)
+             \BFeld[v] = \mu_0  \left( \HFeld[v] + \Magnetisierung[v] \right)
              $$
              mit \alert{Magnetisierung} $\vec{M}$, $\left[\vec{M}\right] =
              \left[\vec{H}\right] = \si{\ampere\per\metre}$
              \item Ohne Materie (im \alert{Vakuum}) gibt es keine
                Polarisation und keine Magnetisierung. Es gilt
-               $\verschiebung[v] = \varepsilon_0 \efeld[v]$ und
-               $\tetB[v] = \mu_0  \magfeld[v]$.
+               $\DFeld[v] = \varepsilon_0 \EFeld[v]$ und
+               $\BFeld[v] = \mu_0  \HFeld[v]$.
                \item Die \alert{Dielektrizitätskonstante/Permittivität des Vakuums}
                  $\varepsilon_0$ und die \alert{Permeabilität des
                    Vakuums} $\mu_0$ sind universelle Konstanten und
@@ -199,10 +199,10 @@
                    \item Es gelten dann die
                      \alert{Materialgleichungen für homogene,
                        lineare, und isotrope Medien}:
-                     $$ \verschiebung[v] =
+                     $$ \DFeld[v] =
                      \underbrace{\varepsilon_0\varepsilon_r}_{=\varepsilon}
-                     \efeld[v] \text{ und } \tetB[v] =
-                     \underbrace{\mu_0  \mu_r}_{=\mu} \magfeld[v] $$
+                     \EFeld[v] \text{ und } \BFeld[v] =
+                     \underbrace{\mu_0  \mu_r}_{=\mu} \HFeld[v] $$
                    \item Für Polarisation und Magnetisierung
               $$\vec{P} = \varepsilon_0(\varepsilon_r - 1) \vec{E}
               \text{ und }  \vec{M} = (\mu_r-1) \vec{H}$$

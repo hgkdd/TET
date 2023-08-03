@@ -50,7 +50,7 @@
 
 \begin{frame}
 
-  \frametitle{Monopol - Punktladung $q$ am Ort $\ortsvektor[v]_0$}
+  \frametitle{Monopol - Punktladung $q$ am Ort $\Ortsr[v]_0$}
 
   \begin{columns}[T]
     \begin{column}{.3\linewidth}
@@ -58,8 +58,8 @@
     \end{column}
     \begin{column}{.7\linewidth}
       \begin{align*}
-      \efeld[v](\ortsvektor[v]) = & \frac{1}{4\pi\varepsilon_0} q\frac{\ortsvektor[v]-\ortsvektor[v]_0}{|\ortsvektor[v]-\ortsvektor[v]_0|^3} \\
-        \phi (\ortsvektor[v]) = & \frac{1}{4\pi\varepsilon_0} q\frac{1}{|\ortsvektor[v]-\ortsvektor[v]_0|}
+      \EFeld[v](\Ortsr[v]) = & \frac{1}{4\pi\varepsilon_0} q\frac{\Ortsr[v]-\Ortsr[v]_0}{|\Ortsr[v]-\Ortsr[v]_0|^3} \\
+        \phi (\Ortsr[v]) = & \frac{1}{4\pi\varepsilon_0} q\frac{1}{|\Ortsr[v]-\Ortsr[v]_0|}
       \end{align*}
       \end{column}
 \end{columns}
@@ -101,10 +101,10 @@
 	\draw [color=blue] (1.5,1) node[anchor = south] {$\vec{a}$};
 	% Vektor r
 	\draw [->,color=violet] (0,0) -- (c);
-	\draw [color=violet] (0.55,1.5) node [anchor=east] {$\ortsvektor[v]$};
+	\draw [color=violet] (0.55,1.5) node [anchor=east] {$\Ortsr[v]$};
 	% Vektor r-a
 	\draw [->,color=violet] (b) -- (c);
-	\draw [color=violet] (2,2.6) node[anchor=south] {$\ortsvektor[v] - \vec{a}$};
+	\draw [color=violet] (2,2.6) node[anchor=south] {$\Ortsr[v] - \vec{a}$};
 	% partielle Ladungen
 	\filldraw [color=blue] (a) circle (1.5pt);
 	\draw [color=blue] (a) node[anchor=north] {$-\partladung$};
@@ -123,7 +123,7 @@
         \end{itemize}
         \onslide<3->{\tiny
       $$
-      \efeld[v](\ortsvektor[v]) =  \frac{1}{4\pi\varepsilon_0} \left( -q\frac{\ortsvektor[v]}{|\ortsvektor[v]|^3}  + q\frac{\ortsvektor[v]-\vec{a}}{|\ortsvektor[v]-\vec{a}|^3}  \right) \quad \phi (\ortsvektor[v]) =  \frac{1}{4\pi\varepsilon_0} \left( -q\frac{1}{|\ortsvektor[v]|}  + q\frac{1}{|\ortsvektor[v]-\vec{a}|} \right)
+      \EFeld[v](\Ortsr[v]) =  \frac{1}{4\pi\varepsilon_0} \left( -q\frac{\Ortsr[v]}{|\Ortsr[v]|^3}  + q\frac{\Ortsr[v]-\vec{a}}{|\Ortsr[v]-\vec{a}|^3}  \right) \quad \phi (\Ortsr[v]) =  \frac{1}{4\pi\varepsilon_0} \left( -q\frac{1}{|\Ortsr[v]|}  + q\frac{1}{|\Ortsr[v]-\vec{a}|} \right)
       $$}
     
     \vspace*{-.3cm}\ 
@@ -135,18 +135,18 @@
 \begin{frame}
   \frametitle{Potential des Dipols - Taylorentwicklung}
 \begin{itemize}[<+->]
-\item Der Ausdruck für das Potential $\phi (\ortsvektor[v]) =  \frac{1}{4\pi\varepsilon_0} \left( -q\frac{1}{|\ortsvektor[v]|}  + q\frac{1}{|\ortsvektor[v]-\vec{a}|} \right)$ ist einfacher
-\item \alert{Taylorentwicklung} eines skalaren Feldes $f$ am Punkt $\ortsvektor[v]$ in Richtung $\vec{a}$
+\item Der Ausdruck für das Potential $\phi (\Ortsr[v]) =  \frac{1}{4\pi\varepsilon_0} \left( -q\frac{1}{|\Ortsr[v]|}  + q\frac{1}{|\Ortsr[v]-\vec{a}|} \right)$ ist einfacher
+\item \alert{Taylorentwicklung} eines skalaren Feldes $f$ am Punkt $\Ortsr[v]$ in Richtung $\vec{a}$
   $$
-\boxed{  f(\ortsvektor[v]+\vec{a}) = \sum_{n=0}^\infty \frac{1}{n!} (\vec{a} \cdot \nabla)^n f(\ortsvektor[v]) = \exp(\vec{a} \cdot \nabla) f(\ortsvektor[v]) } 
+\boxed{  f(\Ortsr[v]+\vec{a}) = \sum_{n=0}^\infty \frac{1}{n!} (\vec{a} \cdot \nabla)^n f(\Ortsr[v]) = \exp(\vec{a} \cdot \nabla) f(\Ortsr[v]) } 
   $$
-\item \alert{Taylorentwicklung} von $\frac{1}{|\dots|}$ am Punkt $\ortsvektor[v]$ in Richtung $-\vec{a}$
+\item \alert{Taylorentwicklung} von $\frac{1}{|\dots|}$ am Punkt $\Ortsr[v]$ in Richtung $-\vec{a}$
   $$
-  \boxed{\frac{1}{|\ortsvektor[v]-\vec{a}|} = \frac{1}{r} + \frac{\ortsvektor[v]\cdot\vec{a}}{r^3} + \frac{1}{2} \frac{3(\ortsvektor[v]\cdot\vec{a})^2-r^2a^2}{r^5} + \ldots }
+  \boxed{\frac{1}{|\Ortsr[v]-\vec{a}|} = \frac{1}{r} + \frac{\Ortsr[v]\cdot\vec{a}}{r^3} + \frac{1}{2} \frac{3(\Ortsr[v]\cdot\vec{a})^2-r^2a^2}{r^5} + \ldots }
   $$
 \item Entwicklung des Potentials - Term $1/r$ fällt weg:
   $$
-  \phi (\ortsvektor[v]) =  \frac{q}{4\pi\varepsilon_0} \left[ \frac{\ortsvektor[v]\cdot\vec{a}}{r^3} + \frac{3(\ortsvektor[v]\cdot\vec{a})^2-r^2a^2}{2r^5} + \ldots \right] 
+  \phi (\Ortsr[v]) =  \frac{q}{4\pi\varepsilon_0} \left[ \frac{\Ortsr[v]\cdot\vec{a}}{r^3} + \frac{3(\Ortsr[v]\cdot\vec{a})^2-r^2a^2}{2r^5} + \ldots \right] 
   $$
   
 \end{itemize}
@@ -159,7 +159,7 @@
   \item Für $\vec{a}\to \vec{0}$ muss gleichzeitig $q\to\infty$ gehen, damit $\lim \limits_{\vec{a}\to \vec{0}}\vec{p} =\vec{p}$ bleibt.
   \item Dieser Übergang führt zum \alert{Potential des Punktdipols} $\phi_D$, wobei die Terme $qa^2$, $qa^3$, \dots vernachlässigt werden können
     $$
-    \boxed{\phi_D(\ortsvektor[v]) = \frac{1}{4\pi\varepsilon_0} \frac{\ortsvektor[v]\cdot\vec{p}}{r^3} = -\frac{1}{4\pi\varepsilon_0} \vec{p}\cdot\gradient \frac{1}{r} }
+    \boxed{\phi_D(\Ortsr[v]) = \frac{1}{4\pi\varepsilon_0} \frac{\Ortsr[v]\cdot\vec{p}}{r^3} = -\frac{1}{4\pi\varepsilon_0} \vec{p}\cdot\gradient \frac{1}{r} }
     $$
     \end{itemize}
   \end{frame}
@@ -167,9 +167,9 @@
   \begin{frame}
     \frametitle{E-Feld des Punktdipols}
     \begin{itemize}[<+->]
-    \item Weitere Berechnung in Kugelkoordinaten mit $\vec{p}\parallel\vu{z}$: $\ortsvektor[v]\cdot\vec{p} = r p \cos\vartheta$
+    \item Weitere Berechnung in Kugelkoordinaten mit $\vec{p}\parallel\vu{z}$: $\Ortsr[v]\cdot\vec{p} = r p \cos\vartheta$
       $$
-    \boxed{\phi_D(\ortsvektor[v]) = \frac{1}{4\pi\varepsilon_0} \frac{p\cos\vartheta}{r^2} }
+    \boxed{\phi_D(\Ortsr[v]) = \frac{1}{4\pi\varepsilon_0} \frac{p\cos\vartheta}{r^2} }
     $$
   \item Das Feld folgt aus $\vec{E}_D = -\gradient \phi_D $; $\gradient\psi = \frac{\partial\psi}{\partial r}\vu{r} + \frac{1}{r} \frac{\partial\psi}{\partial \vartheta}\vu{\vartheta} + \frac{1}{r\sin\theta} \frac{\partial\psi}{\partial \varphi}\vu{\varphi}$:
     $$
@@ -177,7 +177,7 @@
     $$
   \item Koordinatenfrei:
     $$
-    \boxed{\vec{E}_{D} = \frac{1}{4\pi\varepsilon_0}\left[ \frac{3(\ortsvektor[v]\cdot\vec{p}) \ortsvektor[v]}{r^5} -\frac{\vec{p}}{r^3} \right]}    
+    \boxed{\vec{E}_{D} = \frac{1}{4\pi\varepsilon_0}\left[ \frac{3(\Ortsr[v]\cdot\vec{p}) \Ortsr[v]}{r^5} -\frac{\vec{p}}{r^3} \right]}    
     $$
       \end{itemize}
     \end{frame}
@@ -185,18 +185,18 @@
     \begin{frame}
       \frametitle{$N$ diskrete Dipole - Dipoldichte - Kraft - Drehmoment}
       \begin{itemize}[<+->]
-        \item Potential (und Feld) von $N$ Dipolen $\vec{p}_j$ bei $\ortsvektor[v]_j$ folgt einfach aus Superposition:
+        \item Potential (und Feld) von $N$ Dipolen $\vec{p}_j$ bei $\Ortsr[v]_j$ folgt einfach aus Superposition:
         $$
-        \phi_D(\ortsvektor[v]) = \frac{1}{4\pi\varepsilon_0} \sum_{j=1}^N \frac{\vec{p}_j\cdot ( \ortsvektor[v]-\ortsvektor[v]_j)}{|\ortsvektor[v]-\ortsvektor[v]_j|^3} = -\frac{1}{4\pi\varepsilon_0} \sum_{j=1}^N \vec{p}_j\cdot \gradient_r \frac{1}{|\ortsvektor[v]-\ortsvektor[v]_j|}   
+        \phi_D(\Ortsr[v]) = \frac{1}{4\pi\varepsilon_0} \sum_{j=1}^N \frac{\vec{p}_j\cdot ( \Ortsr[v]-\Ortsr[v]_j)}{|\Ortsr[v]-\Ortsr[v]_j|^3} = -\frac{1}{4\pi\varepsilon_0} \sum_{j=1}^N \vec{p}_j\cdot \gradient_r \frac{1}{|\Ortsr[v]-\Ortsr[v]_j|}   
         $$
-      \item Übergang zu einer kontinuerlichen \alert{Dipoldichte} $\vec{m}(\ortsvektor[v])$; $\vec{p} = \int_V \vec{m}(\ortsvektor[vs])\upd^3 r'$:
+      \item Übergang zu einer kontinuerlichen \alert{Dipoldichte} $\vec{m}(\Ortsr[v])$; $\vec{p} = \int_V \vec{m}(\Ortsr[vs])\upd^3 r'$:
         $$
-        \phi_D(\ortsvektor[v]) = \frac{1}{4\pi\varepsilon_0} \int_V \frac{\vec{m}(\ortsvektor[vs])\cdot ( \ortsvektor[v]-\ortsvektor[vs])}{|\ortsvektor[v]-\ortsvektor[vs]|^3} \upd^3 r'= -\frac{1}{4\pi\varepsilon_0} \int_V \vec{m}(\ortsvektor[vs])\cdot \gradient_r \frac{1}{|\ortsvektor[v]-\ortsvektor[vs]|}  \upd^3 r'  
+        \phi_D(\Ortsr[v]) = \frac{1}{4\pi\varepsilon_0} \int_V \frac{\vec{m}(\Ortsr[vs])\cdot ( \Ortsr[v]-\Ortsr[vs])}{|\Ortsr[v]-\Ortsr[vs]|^3} \upd^3 r'= -\frac{1}{4\pi\varepsilon_0} \int_V \vec{m}(\Ortsr[vs])\cdot \gradient_r \frac{1}{|\Ortsr[v]-\Ortsr[vs]|}  \upd^3 r'  
         $$
       \item Die \alert{Kraft} $\vec{F}_D$ und das \alert{Drehmoment} $\vec{M}_D$ berechnet mal völlig analog durch Superposition:
         \begin{align*}
-          \vec{F}_D(\ortsvektor[v]) &= (\vec{p}\cdot\nabla) \vec{E}(\ortsvektor[v]) \stackrel{\rotation\vec{E}=\vec{0}}{=} \gradient(\vec{p}\cdot \vec{E}(\ortsvektor[v]))\\
-          \vec{M}_D(\ortsvektor[v]) &= \vec{p} \times \vec{E}(\ortsvektor[v])
+          \vec{F}_D(\Ortsr[v]) &= (\vec{p}\cdot\nabla) \vec{E}(\Ortsr[v]) \stackrel{\rotation\vec{E}=\vec{0}}{=} \gradient(\vec{p}\cdot \vec{E}(\Ortsr[v]))\\
+          \vec{M}_D(\Ortsr[v]) &= \vec{p} \times \vec{E}(\Ortsr[v])
         \end{align*}
       \item Überlagerung von zwei Dipolen $\to$ \alert{Quadrupol} mit \alert{Quadrupolmoment}
         \item Stattdessen direkt: \alert{Multipolentwicklung}
@@ -242,34 +242,34 @@
 	\coordinate (ob) at (-0.7,1);
 	% Ortsvektor
 	\draw [->] (0,0) -- (oa);
-	\draw (5,1.5) node[anchor = north west] {$\ortsvektor[v]$};
+	\draw (5,1.5) node[anchor = north west] {$\Ortsr[v]$};
 	% Quellvektor
 	\draw [->] (0,0) -- (ob);
-	\draw (-0.35,0.4) node[anchor = east] {$ \ortsvektor[vs] $};
+	\draw (-0.35,0.4) node[anchor = east] {$ \Ortsr[vs] $};
 	% Abstandsvektor
 	\draw [->,color=red] (ob) -- (oa);
-	\draw [color=red] (5,2) node[anchor=south east] {$\ortsvektor[v] - \ortsvektor[vs]$};
+	\draw [color=red] (5,2) node[anchor=south east] {$\Ortsr[v] - \Ortsr[vs]$};
 \end{tikzpicture}}
       \end{column}
       \begin{column}{.4\linewidth}
         $$
-        \phi(\ortsvektor[v]) = \frac{1}{4\pi\varepsilon_0} \int \frac{\rho_V(\ortsvektor[vs])}{|\ortsvektor[v]-\ortsvektor[vs]|} \upd^3r'
+        \phi(\Ortsr[v]) = \frac{1}{4\pi\varepsilon_0} \int \frac{\rho_V(\Ortsr[vs])}{|\Ortsr[v]-\Ortsr[vs]|} \upd^3r'
         $$
         \end{column}
 \end{columns}
         \begin{itemize}[<+->]
           \item Lösung über z.B. über Coulomb-Integral möglich; in der Regel aber nicht analytisch 
-          \item Gesucht ist eine analytische Näherungslösung für \(\left| \ortsvektor[v] \right| \gg \left| \ortsvektor[vs] \right| \)
-          \item Dafür: Entwicklung von $\frac{1}{|\ortsvektor[v]-\ortsvektor[vs]|}$ für \(\left| \ortsvektor[v] \right| \gg \left| \ortsvektor[vs] \right| \) nötig
+          \item Gesucht ist eine analytische Näherungslösung für \(\left| \Ortsr[v] \right| \gg \left| \Ortsr[vs] \right| \)
+          \item Dafür: Entwicklung von $\frac{1}{|\Ortsr[v]-\Ortsr[vs]|}$ für \(\left| \Ortsr[v] \right| \gg \left| \Ortsr[vs] \right| \) nötig
           \item Kosinussatz
             \begin{align*}
-              	\left| \ortsvektor[v] - \ortsvektor[vs] \right|^2
-		&= \ortsvektor^2 + \ortsvektor[s]^2 - 2 \cdot \ortsvektor \cdot \ortsvektor[s] \cdot \cos \vartheta' \\
-		&= \ortsvektor^2 \cdot \left[ 1 + \left(\dfrac{\ortsvektor[s]}{\ortsvektor} \right)^2 - 2 \cdot \dfrac{\ortsvektor[s]}{\ortsvektor} \cdot
+              	\left| \Ortsr[v] - \Ortsr[vs] \right|^2
+		&= \Ortsr^2 + \Ortsr[s]^2 - 2 \cdot \Ortsr \cdot \Ortsr[s] \cdot \cos \vartheta' \\
+		&= \Ortsr^2 \cdot \left[ 1 + \left(\dfrac{\Ortsr[s]}{\Ortsr} \right)^2 - 2 \cdot \dfrac{\Ortsr[s]}{\Ortsr} \cdot
 		 \cos \vartheta' \right]
             \end{align*}
             \begin{equation*}
-	\left| \ortsvektor[v] - \ortsvektor[vs] \right| = \ortsvektor \cdot \sqrt{1 + \varepsilon} \text{ mit } \varepsilon = \dfrac{\ortsvektor[s]}{\ortsvektor} \cdot \left( \dfrac{\ortsvektor[s]}{\ortsvektor} - 2 \cdot \cos \vartheta' \right) \quad \left| \ortsvektor[v] \right| \gg \left| \ortsvektor[vs] \right| \to \varepsilon \ll 1
+	\left| \Ortsr[v] - \Ortsr[vs] \right| = \Ortsr \cdot \sqrt{1 + \varepsilon} \text{ mit } \varepsilon = \dfrac{\Ortsr[s]}{\Ortsr} \cdot \left( \dfrac{\Ortsr[s]}{\Ortsr} - 2 \cdot \cos \vartheta' \right) \quad \left| \Ortsr[v] \right| \gg \left| \Ortsr[vs] \right| \to \varepsilon \ll 1
 \end{equation*}
 
           \end{itemize}
@@ -280,64 +280,64 @@
 \begin{frame}
 
   \begin{align*}
-	\dfrac{1}{\left| \ortsvektor[v] - \ortsvektor[vs] \right|}
-		&= \dfrac{1}{\ortsvektor} \cdot \left( 1 + \varepsilon \right)^{-\frac{1}{2}} = \dfrac{1}{\ortsvektor} \cdot \left( 1 - \dfrac{1}{2} \cdot \varepsilon + \dfrac{3}{8} \cdot \varepsilon^2 - \dfrac{5}{16} \cdot \varepsilon + \dots \right)
+	\dfrac{1}{\left| \Ortsr[v] - \Ortsr[vs] \right|}
+		&= \dfrac{1}{\Ortsr} \cdot \left( 1 + \varepsilon \right)^{-\frac{1}{2}} = \dfrac{1}{\Ortsr} \cdot \left( 1 - \dfrac{1}{2} \cdot \varepsilon + \dfrac{3}{8} \cdot \varepsilon^2 - \dfrac{5}{16} \cdot \varepsilon + \dots \right)
 \end{align*}
 mit eingesetztem \(\varepsilon\)
 \begin{equation*}
 	\begin{split}
-		\dfrac{1}{\left| \ortsvektor[v] - \ortsvektor[vs] \right|}
-			= \dfrac{1}{\ortsvektor} \cdot &\left[ 1
-			- \dfrac{1}{2} \cdot \dfrac{\ortsvektor[s]}{\ortsvektor} \cdot \left( \dfrac{\ortsvektor[s]}{\ortsvektor} - 2 \cdot \cos \vartheta' \right) \right. \\
-			&+ \dfrac{3}{8} \cdot \left( \dfrac{\ortsvektor[s]}{\ortsvektor} \right)^2 \cdot \left( \dfrac{\ortsvektor[s]}{\ortsvektor} - 2 \cdot \cos \vartheta' \right)^2 \\
-			&\left. - \dfrac{5}{16} \cdot \left( \dfrac{\ortsvektor[s]}{\ortsvektor} \right)^3 \cdot \left( \dfrac{\ortsvektor[s]}{\ortsvektor} - 2 \cdot \cos \vartheta' \right)^3  + \dots \right]
+		\dfrac{1}{\left| \Ortsr[v] - \Ortsr[vs] \right|}
+			= \dfrac{1}{\Ortsr} \cdot &\left[ 1
+			- \dfrac{1}{2} \cdot \dfrac{\Ortsr[s]}{\Ortsr} \cdot \left( \dfrac{\Ortsr[s]}{\Ortsr} - 2 \cdot \cos \vartheta' \right) \right. \\
+			&+ \dfrac{3}{8} \cdot \left( \dfrac{\Ortsr[s]}{\Ortsr} \right)^2 \cdot \left( \dfrac{\Ortsr[s]}{\Ortsr} - 2 \cdot \cos \vartheta' \right)^2 \\
+			&\left. - \dfrac{5}{16} \cdot \left( \dfrac{\Ortsr[s]}{\Ortsr} \right)^3 \cdot \left( \dfrac{\Ortsr[s]}{\Ortsr} - 2 \cdot \cos \vartheta' \right)^3  + \dots \right]
 	\end{split}
 \end{equation*}
 und nach ein wenig Sortierung
 \begin{align*}
 	\begin{split}
-		\dfrac{1}{\left| \ortsvektor[v] - \ortsvektor[vs] \right|}
-			= \dfrac{1}{\ortsvektor} \cdot &\left[ \textcolor{red}{1}
-			+ \dfrac{\ortsvektor[s]}{\ortsvektor} \cdot \textcolor{red}{\cos \vartheta'} \right. \\
-			&+ \left(\dfrac{\ortsvektor[s]}{\ortsvektor}\right)^2 \cdot \textcolor{red}{\dfrac{3 \cdot \cos^2 \vartheta' - 1}{2}} \\
-			&+ \left. \left(\dfrac{\ortsvektor[s]}{\ortsvektor}\right)^3 \cdot \textcolor{red}{\dfrac{5 \cdot \cos^3 \vartheta' - 3 \cdot \cos \vartheta'}{2}}  + \dots \right] \pointspacep
+		\dfrac{1}{\left| \Ortsr[v] - \Ortsr[vs] \right|}
+			= \dfrac{1}{\Ortsr} \cdot &\left[ \textcolor{red}{1}
+			+ \dfrac{\Ortsr[s]}{\Ortsr} \cdot \textcolor{red}{\cos \vartheta'} \right. \\
+			&+ \left(\dfrac{\Ortsr[s]}{\Ortsr}\right)^2 \cdot \textcolor{red}{\dfrac{3 \cdot \cos^2 \vartheta' - 1}{2}} \\
+			&+ \left. \left(\dfrac{\Ortsr[s]}{\Ortsr}\right)^3 \cdot \textcolor{red}{\dfrac{5 \cdot \cos^3 \vartheta' - 3 \cdot \cos \vartheta'}{2}}  + \dots \right] \pointspacep
 	\end{split}
 \end{align*}
 \end{frame}
 \begin{frame}
 Die \textcolor{red}{roten} Terme sind \alert{Legendre-Polynome} \(P_{n}(\cos \vartheta')\), somit lässt sich der Ausdruck zu
 \begin{equation*}
-	\dfrac{1}{\left| \ortsvektor[v] - \ortsvektor[vs] \right|}
-		= \dfrac{1}{\ortsvektor} \cdot \sum\limits_{n=0}^{\infty} \left( \dfrac{\ortsvektor[s]}{\ortsvektor} \right)^n \cdot P_n(\cos \vartheta')
+	\dfrac{1}{\left| \Ortsr[v] - \Ortsr[vs] \right|}
+		= \dfrac{1}{\Ortsr} \cdot \sum\limits_{n=0}^{\infty} \left( \dfrac{\Ortsr[s]}{\Ortsr} \right)^n \cdot P_n(\cos \vartheta')
 \end{equation*}
-verkürzen. Setzt man dies in das Coulomb-Integral ein ergibt sich für \(\ortsvektor \gg \ortsvektor[s] \)
+verkürzen. Setzt man dies in das Coulomb-Integral ein ergibt sich für \(\Ortsr \gg \Ortsr[s] \)
 \begin{equation*}
-	\boxed{\elpotential(\ortsvektor[v]) = \durchvierpie \cdot \sum\limits_{n = 0}^{\infty} \dfrac{1}{\ortsvektor^{n+1}} \cdot \iiint\limits_{\volumen'} (\ortsvektor[s])^n \cdot P_\mathrm{n}(\cos \vartheta') \cdot \laddichte{V}(\ortsvektor[vs]) \intvolumen'} \pointspacek
+	\boxed{\SkalarPot(\Ortsr[v]) = \durchvierpie \cdot \sum\limits_{n = 0}^{\infty} \dfrac{1}{\Ortsr^{n+1}} \cdot \iiint\limits_{\volumen'} (\Ortsr[s])^n \cdot P_\mathrm{n}(\cos \vartheta') \cdot \laddichte{V}(\Ortsr[vs]) \intvolumen'} \pointspacek
 \end{equation*}
 oder in ausführlicher Schreibweise
 \begin{equation*}
 	\begin{split}
-		\elpotential(\ortsvektor[v]) = \durchvierpie \cdot	&\Biggl[ \dfrac{1}{\ortsvektor} \cdot
-		\underbrace{\iiint\limits_{\volumen'} \laddichte{V}(\ortsvektor[vs]) \intvolumen'}_{\ladung \text{ in Volumen}}
-		+ \dfrac{1}{\ortsvektor^2} \cdot \iiint\limits_{\volumen'} \underbrace{\ortsvektor[s] \cdot \cos \vartheta'}_{=\dfrac{\ortsvektor[v] \cdot \ortsvektor[vs]}{\ortsvektor}} \laddichte{V} \intvolumen' \\
-		&+ \dfrac{1}{\ortsvektor^3} \cdot \iiint\limits_{\volumen'} (\ortsvektor[s])^2 \cdot \left( \dfrac{3}{2} \cdot \cos \vartheta' - \dfrac{1}{2} \right) \cdot \laddichte{V}(\ortsvektor[vs]) \intvolumen' + \dots \Biggr] \pointspacep
+		\SkalarPot(\Ortsr[v]) = \durchvierpie \cdot	&\Biggl[ \dfrac{1}{\Ortsr} \cdot
+		\underbrace{\iiint\limits_{\volumen'} \laddichte{V}(\Ortsr[vs]) \intvolumen'}_{\ladung \text{ in Volumen}}
+		+ \dfrac{1}{\Ortsr^2} \cdot \iiint\limits_{\volumen'} \underbrace{\Ortsr[s] \cdot \cos \vartheta'}_{=\dfrac{\Ortsr[v] \cdot \Ortsr[vs]}{\Ortsr}} \laddichte{V} \intvolumen' \\
+		&+ \dfrac{1}{\Ortsr^3} \cdot \iiint\limits_{\volumen'} (\Ortsr[s])^2 \cdot \left( \dfrac{3}{2} \cdot \cos \vartheta' - \dfrac{1}{2} \right) \cdot \laddichte{V}(\Ortsr[vs]) \intvolumen' + \dots \Biggr] \pointspacep
 	\end{split}
 \end{equation*}
 \end{frame}
 \begin{frame}
 Aus der Ferne betrachtet ist der Multipol eine Punktladung und es ergibt sich eine unendliche Summe aus dem Monopolterm
 \begin{equation*}
-	\elpotential_\mathrm{M}(\ortsvektor[v])
-		= \durchvierpie \cdot \dfrac{1}{\ortsvektor} \cdot \iiint\limits_{\volumen'} \laddichte{V}(\ortsvektor[vs]) \intvolumen'
-		= \durchvierpie \cdot \dfrac{\ladung}{\ortsvektor} \pointspacek
+	\SkalarPot_\mathrm{M}(\Ortsr[v])
+		= \durchvierpie \cdot \dfrac{1}{\Ortsr} \cdot \iiint\limits_{\volumen'} \laddichte{V}(\Ortsr[vs]) \intvolumen'
+		= \durchvierpie \cdot \dfrac{\ladung}{\Ortsr} \pointspacek
 \end{equation*}
 dem Dipolterm
 \begin{align*}
-	\elpotential_\mathrm{D}(\ortsvektor[v])
-		&= \durchvierpie \cdot \dfrac{1}{\ortsvektor^2} \cdot \iiint\limits_{\volumen'} \ortsvektor[s] \cdot \cos \vartheta' \cdot \laddichte{V}(\ortsvektor[vs]) \intvolumen'\\
-		&= \durchvierpie \cdot \dfrac{\ortsvektor[v]}{\ortsvektor^3} \cdot
-			\underbrace{\iiint\limits_{\volumen'} \ortsvektor[vs] \cdot \laddichte{V}(\ortsvektor[vs]) \intvolumen'}_{\dipolmoment[v] \text{ von Volumen}}\\
-		&= \durchvierpie \cdot \dfrac{\ortsvektor[v] \cdot \dipolmoment[v]}{\ortsvektor^3} \pointspacek
+	\SkalarPot_\mathrm{D}(\Ortsr[v])
+		&= \durchvierpie \cdot \dfrac{1}{\Ortsr^2} \cdot \iiint\limits_{\volumen'} \Ortsr[s] \cdot \cos \vartheta' \cdot \laddichte{V}(\Ortsr[vs]) \intvolumen'\\
+		&= \durchvierpie \cdot \dfrac{\Ortsr[v]}{\Ortsr^3} \cdot
+			\underbrace{\iiint\limits_{\volumen'} \Ortsr[vs] \cdot \laddichte{V}(\Ortsr[vs]) \intvolumen'}_{\Dipolmoment[v] \text{ von Volumen}}\\
+		&= \durchvierpie \cdot \dfrac{\Ortsr[v] \cdot \Dipolmoment[v]}{\Ortsr^3} \pointspacek
 \end{align*}
 dem Quadrupolterm, Oktopolterm und so weiter.
 

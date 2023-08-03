@@ -25,22 +25,22 @@
   \begin{itemize}[<+->]
   \item Wie bereits in \enquote{Elektrostatik VIII - Materie} diskutiert und erläutert: Die Maxwell-Gleichungen des Vakuums gelten auch in Materie.
   \item Allerdings müssten dann die \alert{Bewegungen aller Ladungsträger} betrachtet werden, die aber nur zu einem Bruchteil zu einer \alert{makroskopischen Stromdichte} beiträgt. $\to$ Makroskopische Betrachtung im Sinne von Mittelwerten.
-    \item Analog zur elektrischen Flussdichte \(\verschiebung[v] \) mit
-$\verschiebung[v] = \varepsilon_0 \efeld[v] + \vec{P}$
-folgt für das Magnetfeld in Materie unter Einführung der \alert{Magnetisierung} \(\magnetis[v] \)
+    \item Analog zur elektrischen Flussdichte \(\DFeld[v] \) mit
+$\DFeld[v] = \varepsilon_0 \EFeld[v] + \vec{P}$
+folgt für das Magnetfeld in Materie unter Einführung der \alert{Magnetisierung} \(\Magnetisierung[v] \)
 \begin{align*}
-	& \boxed{\magfeld[v] = \dfrac{1}{\mu_0} \tetB[v] - \magnetis[v]}
+	& \boxed{\HFeld[v] = \dfrac{1}{\mu_0} \BFeld[v] - \Magnetisierung[v]}
 		&& \Leftrightarrow
-		&&	\boxed{\tetB[v] = \mu_0  \left( \magfeld[v] + \magnetis[v] \right)}
+		&&	\boxed{\BFeld[v] = \mu_0  \left( \HFeld[v] + \Magnetisierung[v] \right)}
 \end{align*}
-\item In der Maxwellgleichung $\rotation \magfeld[v] = \elstromdichte[v]$
-ist $\elstromdichte[v]$ als \alert{makroskopisch gemittelte Stromdichte} zu verstehen.
-\item Für ein \alert{lineares, isotropes und homogenes Medium} kann mit Hilfe der \alert{magnetischen Suszeptibilität} \(\chi_\mathrm{m} \) gilt für die Magnetisierung:$\boxed{\magnetis[v] = \chi_\mathrm{m}  \magfeld[v]}$
+\item In der Maxwellgleichung $\rotation \HFeld[v] = \StromDichte[v]$
+ist $\StromDichte[v]$ als \alert{makroskopisch gemittelte Stromdichte} zu verstehen.
+\item Für ein \alert{lineares, isotropes und homogenes Medium} kann mit Hilfe der \alert{magnetischen Suszeptibilität} \(\chi_\mathrm{m} \) gilt für die Magnetisierung:$\boxed{\Magnetisierung[v] = \chi_\mathrm{m}  \HFeld[v]}$
 \item Damit folgt für die magnetische Permeabilität:
 $\boxed{\mu_\mathrm{r} = 1 + \chi_\mathrm{m} }$
 \item Somit ergibt sich für die magnetische Induktion:
-$\boxed{\tetB[v] = \left( 1 + \chi_\mathrm{m} \right) \mu_0 \magfeld[v]
-		= \mu_0 \mu_\mathrm{r} \magfeld[v] }$
+$\boxed{\BFeld[v] = \left( 1 + \chi_\mathrm{m} \right) \mu_0 \HFeld[v]
+		= \mu_0 \mu_\mathrm{r} \HFeld[v] }$
 \end{itemize}
 \end{frame}
 
@@ -127,17 +127,17 @@ $\boxed{\tetB[v] = \left( 1 + \chi_\mathrm{m} \right) \mu_0 \magfeld[v]
 \begin{frame}
   \frametitle{Randwertaufgaben - magnetische Skalarpotential}
   \begin{itemize}[<+->]
-  \item Einfachster Fall: lineares, isotropes, homogenes Medium im \alert{gesamten} Lösungsvolumen: $\laplace \magvekpot[v]= -\mu \elstromdichte[v](\ortsvektor[v])$ $\to$ Lösungsmethoden bekannt
+  \item Einfachster Fall: lineares, isotropes, homogenes Medium im \alert{gesamten} Lösungsvolumen: $\laplace \VektorPot[v]= -\mu \StromDichte[v](\Ortsr[v])$ $\to$ Lösungsmethoden bekannt
   \item Auch einfach: \alert{bereichsweise} lineare, isotrope, homogene Medien im Lösungsvolumen: Lösung in jedem Teilbereich, freie Konstanten so anpassen, dass Stetigkeitsbedingungen erfüllt werden.
   \item Keine Ströme im Lösungsvolumen $V$ und Randwerte auf $O(V)$:
       \begin{itemize}[<+->]
-      \item In V: $\rotation\magfeld[v] = \vec{0}$
+      \item In V: $\rotation\HFeld[v] = \vec{0}$
         $$
-        \magfeld[v](\ortsvektor[v]) = -\gradient \phi_m (\ortsvektor[v]) \quad \text{\alert{magnetisches Skalarpotential }} \phi_m (\ortsvektor[v]) 
+        \HFeld[v](\Ortsr[v]) = -\gradient \phi_m (\Ortsr[v]) \quad \text{\alert{magnetisches Skalarpotential }} \phi_m (\Ortsr[v]) 
         $$
       \item Mit zumindest bereichsweise konstanten $\mu_r$ folgt:
         $$
-        \divergenz \tetB[v] = 0 = \divergenz \left[\mu_0\mu_r \left(-\gradient \phi_m \right)\right] \Rightarrow \boxed{\laplace \phi_m = 0}
+        \divergenz \BFeld[v] = 0 = \divergenz \left[\mu_0\mu_r \left(-\gradient \phi_m \right)\right] \Rightarrow \boxed{\laplace \phi_m = 0}
         $$
         \item Aus der Elektrostatik bekannte Lösungsmethoden mit Berücksichtigung der vorgegebenen Randbedingungen anwenden.
 \end{itemize}
@@ -147,21 +147,21 @@ $\boxed{\tetB[v] = \left( 1 + \chi_\mathrm{m} \right) \mu_0 \magfeld[v]
 \begin{frame}
   \frametitle{Randwertaufgaben - magnetische Skalarpotential}
   \begin{itemize}[<+->]
-  \item Keine Ströme im Lösungsvolumen $V$ und Randwerte auf $O(V)$; \alert{zusätzlich:} $\vec{M}(\ortsvektor[v])\ne \vec{0}$ in $V$:
+  \item Keine Ströme im Lösungsvolumen $V$ und Randwerte auf $O(V)$; \alert{zusätzlich:} $\vec{M}(\Ortsr[v])\ne \vec{0}$ in $V$:
       \begin{itemize}[<+->]
-      \item In V: $\rotation\magfeld[v] = \vec{0}$
+      \item In V: $\rotation\HFeld[v] = \vec{0}$
         $$
-        \magfeld[v](\ortsvektor[v]) = -\gradient \phi_m (\ortsvektor[v]) 
+        \HFeld[v](\Ortsr[v]) = -\gradient \phi_m (\Ortsr[v]) 
         $$
       \item Mit zumindest bereichsweise konstanten $\mu_r$ folgt:
         $$
-        \divergenz \tetB[v] = 0 = \mu_0\divergenz ( \underbrace{-\gradient \phi_m }_{\magfeld[v]}+\vec{M}) \Rightarrow \boxed{\laplace \phi_m = \divergenz \vec{M}} \text{ Poisson-Gleichung}
+        \divergenz \BFeld[v] = 0 = \mu_0\divergenz ( \underbrace{-\gradient \phi_m }_{\HFeld[v]}+\vec{M}) \Rightarrow \boxed{\laplace \phi_m = \divergenz \vec{M}} \text{ Poisson-Gleichung}
         $$
       \item Ohne Randbedingungen folgt damit:
         $$
-        \phi_m (\ortsvektor[v]) = -\frac{1}{4\pi} \int \frac{\divergenz \vec{M} (\ortsvektor[vs]) }{|\ortsvektor[v]-\ortsvektor[vs]|} \upd V'
+        \phi_m (\Ortsr[v]) = -\frac{1}{4\pi} \int \frac{\divergenz \vec{M} (\Ortsr[vs]) }{|\Ortsr[v]-\Ortsr[vs]|} \upd V'
         $$
-        \item Mit Randbedingungen (Dirichlet: $\phi_m$ auf dem Rand gegeben; Neumann: $\frac{\partial\phi_m}{\partial n} = \vec{n}\cdot\gradient\phi_m = - \vec{n}\cdot\magfeld[v]$ auf dem Rand gegeben) $\to$ Lösungsmethoden für Poisson-Gleichung mit Randbedingungen anwenden.
+        \item Mit Randbedingungen (Dirichlet: $\phi_m$ auf dem Rand gegeben; Neumann: $\frac{\partial\phi_m}{\partial n} = \vec{n}\cdot\gradient\phi_m = - \vec{n}\cdot\HFeld[v]$ auf dem Rand gegeben) $\to$ Lösungsmethoden für Poisson-Gleichung mit Randbedingungen anwenden.
 \end{itemize}
 \end{itemize}
 \end{frame}

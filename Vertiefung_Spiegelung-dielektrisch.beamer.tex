@@ -23,13 +23,13 @@
   \frametitle{Problemstellung und Idee}
   \begin{itemize}[<+->]
   \item Volumen $V_2, \varepsilon_2$ eingebettet in Volumen $V_1,\varepsilon_1$
-  \item Ladungen $(Q_i, \ortsvektor[vs]_i)$ in $V_1$ vorgegeben.
+  \item Ladungen $(Q_i, \Ortsr[vs]_i)$ in $V_1$ vorgegeben.
   \item Gesucht ist die Lösung in $V_1$ \alert{und} $V_2$
   \item Lösungsidee:
     \begin{itemize}[<+->]
-    \item Für die Berechnung im eingebetteten Volumen $V_1$ $\to$ Bildladungen $(Q_i^\star, \ortsvektor[v]_i^\star)$ in $V_2$ als Ersatz für das eingebettete Material $\to$ $V_2$ mit $\varepsilon = \varepsilon_1$
-    \item Für die Berechnung im eingebetteten Volumen $V_2$ $\to$ Bildladungen $(Q_i^{\star\star}, \ortsvektor[v]_i^{\star\star})$ in $V_1$ als Ersatz für das externe Material $\to$ $V_1$ mit $\varepsilon = \varepsilon_2$
-      \item Versuch: $\ortsvektor[v]_i^{\star\star} = \ortsvektor[vs]_i$ $\to$ Faktisch \enquote{nur} Veränderung der ursprünglichen Ladungen; keine externen Ladungen an neuen Positionen.
+    \item Für die Berechnung im eingebetteten Volumen $V_1$ $\to$ Bildladungen $(Q_i^\star, \Ortsr[v]_i^\star)$ in $V_2$ als Ersatz für das eingebettete Material $\to$ $V_2$ mit $\varepsilon = \varepsilon_1$
+    \item Für die Berechnung im eingebetteten Volumen $V_2$ $\to$ Bildladungen $(Q_i^{\star\star}, \Ortsr[v]_i^{\star\star})$ in $V_1$ als Ersatz für das externe Material $\to$ $V_1$ mit $\varepsilon = \varepsilon_2$
+      \item Versuch: $\Ortsr[v]_i^{\star\star} = \Ortsr[vs]_i$ $\to$ Faktisch \enquote{nur} Veränderung der ursprünglichen Ladungen; keine externen Ladungen an neuen Positionen.
       \end{itemize}
     \end{itemize}
     \pause
@@ -39,7 +39,7 @@
 
       
       \begin{tikzpicture}[line width = 1.2pt, line join=round,>=stealth]
-        \filldraw [color=blue!70] (2.5,2.5) circle (1pt) node[above] {$Q_i, \ortsvektor[vs]_i$};
+        \filldraw [color=blue!70] (2.5,2.5) circle (1pt) node[above] {$Q_i, \Ortsr[vs]_i$};
         \filldraw [color=blue!70] (2.9,2.1) circle (1pt); 
         \filldraw [color=blue!70] (2.7,1.9) circle (1pt); 
         % Ladungsdichte
@@ -61,7 +61,7 @@
         \begin{column}{.3\textwidth}
           Berechnung in $V_1$:
       \begin{tikzpicture}[line width = 1.2pt, line join=round,>=stealth]
-        \filldraw [color=blue!70] (2.5,2.5) circle (1pt) node[above] {$Q_i, \ortsvektor[vs]_i$};
+        \filldraw [color=blue!70] (2.5,2.5) circle (1pt) node[above] {$Q_i, \Ortsr[vs]_i$};
         \filldraw [color=blue!70] (2.9,2.1) circle (1pt); 
         \filldraw [color=blue!70] (2.7,1.9) circle (1pt); 
         \filldraw [color=red!70] (1.2,1.7) circle (1pt); 
@@ -79,7 +79,7 @@
         \draw(1,1.1) node {$V_2$};
         \draw(1.2,0.8) node{$\varepsilon=\varepsilon_1$};
         \draw(0,2.2) node[align=center] {$V_1$\\$\varepsilon=\varepsilon_1$}; 
-        \filldraw [color=red!70] (1.3,1.9) circle (1pt) node[rectangle,fill=white,above,nearly opaque] {$-\lambda(\ortsvektor[vs]_i) Q^\star_i, \ortsvektor[v]^\star_i$}; 
+        \filldraw [color=red!70] (1.3,1.9) circle (1pt) node[rectangle,fill=white,above,nearly opaque] {$-\lambda(\Ortsr[vs]_i) Q^\star_i, \Ortsr[v]^\star_i$}; 
 \filldraw [color=red!70] (1.3,1.9) circle (1pt) ;
       \end{tikzpicture}
           
@@ -87,12 +87,12 @@
       \begin{column}{.3\textwidth}
           Berechnung in $V_2$:
       \begin{tikzpicture}[line width = 1.2pt, line join=round,>=stealth]
-        \filldraw [color=blue!70] (2.5,2.5) circle (1pt) node[above] {$Q_i, \ortsvektor[vs]_i$};
+        \filldraw [color=blue!70] (2.5,2.5) circle (1pt) node[above] {$Q_i, \Ortsr[vs]_i$};
         \filldraw [color=blue!70] (2.9,2.1) circle (1pt); 
         \filldraw [color=blue!70] (2.7,1.9) circle (1pt); 
         \filldraw [color=red!70] (2.5,2.5) circle (1pt);
         \filldraw [color=red!70] (2.9,2.1) circle (1pt); 
-        \filldraw [color=red!70] (2.7,1.9) circle (1pt) node[below] {$Q_i^{\star\star}, \ortsvektor[vs]_i$}; 
+        \filldraw [color=red!70] (2.7,1.9) circle (1pt) node[below] {$Q_i^{\star\star}, \Ortsr[vs]_i$}; 
 
         % Ladungsdichte
         \coordinate (a) at (2.1,1.8);
@@ -122,18 +122,18 @@
     \item $\vec{a} = a_n \vec{n} + a_t \frac{(\vec{n}\times \vec{a})\times\vec{n}}{\abs{\vec{n}\times \vec{a}}} = (\vec{a}\cdot\vec{n}) \vec{n} + (\vec{n}\times \vec{a})\times\vec{n}$  
   \item Induktionsgesetz $\to$ Tangentialkomponente der Elektrischen Feldstärke beim Übergang \alert{immer stetig}:
     \begin{equation*}
-      \boxed{\vec{n} \times \left( \efeld[v]_2 - \efeld[v]_1\right) = \vec{0}} \Rightarrow \efeld[v]_2 - \efeld[v]_1 = (\efeld_2\cdot\vec{n} - \efeld_1\cdot\vec{n}) \vec{n} 
+      \boxed{\vec{n} \times \left( \EFeld[v]_2 - \EFeld[v]_1\right) = \vec{0}} \Rightarrow \EFeld[v]_2 - \EFeld[v]_1 = (\EFeld_2\cdot\vec{n} - \EFeld_1\cdot\vec{n}) \vec{n} 
     \end{equation*}
-    \item Für das Skalarpotential folgt dann mit $\efeld[v] = -\gradient \elpotential$
+    \item Für das Skalarpotential folgt dann mit $\EFeld[v] = -\gradient \SkalarPot$
     \begin{equation*}
-      \boxed{\vec{n} \times \left( \gradient \elpotential_1 - \gradient \elpotential_2\right) = \vec{0}} \Rightarrow \gradient \elpotential_1 - \gradient \elpotential_2 = (\vec{n}\cdot\gradient \elpotential_1 - \vec{n}\cdot\gradient \elpotential_2) \vec{n}
+      \boxed{\vec{n} \times \left( \gradient \SkalarPot_1 - \gradient \SkalarPot_2\right) = \vec{0}} \Rightarrow \gradient \SkalarPot_1 - \gradient \SkalarPot_2 = (\vec{n}\cdot\gradient \SkalarPot_1 - \vec{n}\cdot\gradient \SkalarPot_2) \vec{n}
     \end{equation*}
-  \item Die Normalkomponente der Dielektrischen Verschiebung \alert{kann unstetig sein}: $\vec{n}\cdot (\verschiebung[v]_2 - \verschiebung[v]_1 ) = \rho_F$
+  \item Die Normalkomponente der Dielektrischen Verschiebung \alert{kann unstetig sein}: $\vec{n}\cdot (\DFeld[v]_2 - \DFeld[v]_1 ) = \rho_F$
   \item Hierzu muss es freie Ladungsträger geben. Für \alert{ideale Dielektrika} gilt
     \begin{equation*}
-      \vec{n}\cdot (\verschiebung[v]_2 - \verschiebung[v]_1 ) = 0 \Rightarrow \boxed{\vec{n}\cdot (\varepsilon_2\efeld[v]_2 - \varepsilon_1\efeld[v]_1 ) =0 } \text{ bzw. } \boxed{\vec{n}\cdot (-\varepsilon_2\gradient\elpotential_2 + \varepsilon_1\gradient\elpotential_1 ) =0 } 
+      \vec{n}\cdot (\DFeld[v]_2 - \DFeld[v]_1 ) = 0 \Rightarrow \boxed{\vec{n}\cdot (\varepsilon_2\EFeld[v]_2 - \varepsilon_1\EFeld[v]_1 ) =0 } \text{ bzw. } \boxed{\vec{n}\cdot (-\varepsilon_2\gradient\SkalarPot_2 + \varepsilon_1\gradient\SkalarPot_1 ) =0 } 
     \end{equation*}
-    \item Ohne \enquote{innere Quellen} (z.B. Dipolschicht):\\ \alert{Potential zweimal stetig diff.-bar}; insbesondere $\boxed{\elpotential_2-\elpotential_1 = 0}$
+    \item Ohne \enquote{innere Quellen} (z.B. Dipolschicht):\\ \alert{Potential zweimal stetig diff.-bar}; insbesondere $\boxed{\SkalarPot_2-\SkalarPot_1 = 0}$
     \end{itemize}
   \end{frame}
 
@@ -143,40 +143,40 @@
     \begin{itemize}[<+->]
     \item Greensche-Funktionen des Freiraums in $V_1$ und $V_2$:
       \begin{equation*}
-        G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs]) = \frac{1}{4\pi\varepsilon_1} \frac{1}{\abs{\ortsvektor[v] - \ortsvektor[vs]}} \text{ bzw. }         G_{\varepsilon_2}(\ortsvektor[v], \ortsvektor[vs]) = \frac{1}{4\pi\varepsilon_2} \frac{1}{\abs{\ortsvektor[v] - \ortsvektor[vs]}} \quad G_{\varepsilon_1}= \frac{\varepsilon_2}{\varepsilon_1} G_{\varepsilon_2}  
+        G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs]) = \frac{1}{4\pi\varepsilon_1} \frac{1}{\abs{\Ortsr[v] - \Ortsr[vs]}} \text{ bzw. }         G_{\varepsilon_2}(\Ortsr[v], \Ortsr[vs]) = \frac{1}{4\pi\varepsilon_2} \frac{1}{\abs{\Ortsr[v] - \Ortsr[vs]}} \quad G_{\varepsilon_1}= \frac{\varepsilon_2}{\varepsilon_1} G_{\varepsilon_2}  
       \end{equation*}
     \item Berechnung in $V_1$ (erstes Ersatzproblem):
       \begin{align*}
-        \elpotential_1(\ortsvektor[v]) & = Q G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs]) -  \lambda(\ortsvektor[vs])Q^\star G_{\varepsilon_1}(\ortsvektor[v], T(\ortsvektor[vs]))\\
-        & = Q G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs]) - \lambda(\ortsvektor[v]) Q^\star G_{\varepsilon_1}(T(\ortsvektor[v]), \ortsvektor[vs])
+        \SkalarPot_1(\Ortsr[v]) & = Q G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs]) -  \lambda(\Ortsr[vs])Q^\star G_{\varepsilon_1}(\Ortsr[v], T(\Ortsr[vs]))\\
+        & = Q G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs]) - \lambda(\Ortsr[v]) Q^\star G_{\varepsilon_1}(T(\Ortsr[v]), \Ortsr[vs])
         \end{align*}
     \item Berechnung in $V_2$ (zweites Ersatzproblem):
       \begin{align*}
-        \elpotential_2(\ortsvektor[v]) & = Q G_{\varepsilon_2}(\ortsvektor[v], \ortsvektor[vs]) +  Q^{\star\star} G_{\varepsilon_2}(\ortsvektor[v], \ortsvektor[vs])\\
-                                       & = \left( Q +  Q^{\star\star}\right) G_{\varepsilon_2}(\ortsvektor[v], \ortsvektor[vs])
+        \SkalarPot_2(\Ortsr[v]) & = Q G_{\varepsilon_2}(\Ortsr[v], \Ortsr[vs]) +  Q^{\star\star} G_{\varepsilon_2}(\Ortsr[v], \Ortsr[vs])\\
+                                       & = \left( Q +  Q^{\star\star}\right) G_{\varepsilon_2}(\Ortsr[v], \Ortsr[vs])
       \end{align*}
-      \item Wie bei \enquote{isolierte Kugel}: Gesamtladung erhalten: $\boxed{-\lambda(\ortsvektor[vs])Q^\star+Q^{\star\star}= 0}$
-      \item Ziel: Bestimme $Q^\star$, $\lambda$ und $\ortsvektor[v]^\star=T(\ortsvektor[vs])$ so, dass die Stetigkeitsbedingungen auf $O(V_2)$ erfüllt werden. 
+      \item Wie bei \enquote{isolierte Kugel}: Gesamtladung erhalten: $\boxed{-\lambda(\Ortsr[vs])Q^\star+Q^{\star\star}= 0}$
+      \item Ziel: Bestimme $Q^\star$, $\lambda$ und $\Ortsr[v]^\star=T(\Ortsr[vs])$ so, dass die Stetigkeitsbedingungen auf $O(V_2)$ erfüllt werden. 
       \end{itemize}
     \end{frame}
 
     \begin{frame}
       \frametitle{Stetigkeitsbedingungen}
       \begin{itemize}[<+->]
-      \item Stetigkeit des Skalarpotentials für $\ortsvektor[v]\in O(V_2)$:
+      \item Stetigkeit des Skalarpotentials für $\Ortsr[v]\in O(V_2)$:
 \begin{align*}
-0 \stackrel{!}{=}  (\elpotential_1 - \elpotential_2 ) & =   Q G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs]) - \underbrace{\lambda(\ortsvektor[v])}_{=1} Q^\star G_{\varepsilon_1}(\underbrace{T(\ortsvektor[v])}_{=\ortsvektor[v]}, \ortsvektor[vs])
-                                                        -\left( Q +  Q^{\star\star}\right) G_{\varepsilon_2}(\ortsvektor[v], \ortsvektor[vs])\\
-                                                      & = \left( (Q-Q^\star) -(Q+Q^{\star\star})\frac{\varepsilon_1}{\varepsilon_2}   \right) G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs])\\
+0 \stackrel{!}{=}  (\SkalarPot_1 - \SkalarPot_2 ) & =   Q G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs]) - \underbrace{\lambda(\Ortsr[v])}_{=1} Q^\star G_{\varepsilon_1}(\underbrace{T(\Ortsr[v])}_{=\Ortsr[v]}, \Ortsr[vs])
+                                                        -\left( Q +  Q^{\star\star}\right) G_{\varepsilon_2}(\Ortsr[v], \Ortsr[vs])\\
+                                                      & = \left( (Q-Q^\star) -(Q+Q^{\star\star})\frac{\varepsilon_1}{\varepsilon_2}   \right) G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs])\\
   0 &= \frac{Q-Q^\star}{\varepsilon_1} -\frac{Q+Q^{\star\star}}{\varepsilon_2} \Rightarrow \boxed{\frac{Q-Q^\star}{\varepsilon_1} = \frac{Q+Q^{\star\star}}{\varepsilon_2}}  
 \end{align*}
-\item Tangentialkomponente des Feldes für $\ortsvektor[v]\in O(V_2)$: $\vec{n}\times (\gradient\elpotential_1 - \gradient\elpotential_2 ) =\vec{0}$
+\item Tangentialkomponente des Feldes für $\Ortsr[v]\in O(V_2)$: $\vec{n}\times (\gradient\SkalarPot_1 - \gradient\SkalarPot_2 ) =\vec{0}$
   \begin{align*}
-    \vec{0} & \stackrel{!}{=} \vec{n}\times \gradient\elpotential_1 - \vec{n}\times \gradient\elpotential_2 \\
-      & = \vec{n}\times \gradient \left[ Q G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs]) - \lambda(\ortsvektor[v]) Q^\star G_{\varepsilon_1}(T(\ortsvektor[v]), \ortsvektor[vs]) \right]
-        - \vec{n}\times \gradient \left[ \left( Q +  Q^{\star\star}\right) G_{\varepsilon_2}(\ortsvektor[v], \ortsvektor[vs]) \right]\\
-      & = \vec{n}\times \gradient \left[ Q G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs]) - \lambda(\ortsvektor[v]) Q^\star G_{\varepsilon_1}(T(\ortsvektor[v]), \ortsvektor[vs]) \right]
-        - \vec{n}\times \gradient \left[ \left( Q +  Q^{\star\star}\right) \frac{\varepsilon_1}{\varepsilon_2} G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs]) \right]
+    \vec{0} & \stackrel{!}{=} \vec{n}\times \gradient\SkalarPot_1 - \vec{n}\times \gradient\SkalarPot_2 \\
+      & = \vec{n}\times \gradient \left[ Q G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs]) - \lambda(\Ortsr[v]) Q^\star G_{\varepsilon_1}(T(\Ortsr[v]), \Ortsr[vs]) \right]
+        - \vec{n}\times \gradient \left[ \left( Q +  Q^{\star\star}\right) G_{\varepsilon_2}(\Ortsr[v], \Ortsr[vs]) \right]\\
+      & = \vec{n}\times \gradient \left[ Q G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs]) - \lambda(\Ortsr[v]) Q^\star G_{\varepsilon_1}(T(\Ortsr[v]), \Ortsr[vs]) \right]
+        - \vec{n}\times \gradient \left[ \left( Q +  Q^{\star\star}\right) \frac{\varepsilon_1}{\varepsilon_2} G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs]) \right]
     \end{align*}
   \end{itemize}
       \end{frame}
@@ -184,20 +184,20 @@
    \begin{frame}
      \frametitle{Stetigkeitsbedingungen (fortgeführt)}
      \begin{equation*}
-       \vec{0}= \vec{n}\times \gradient \left[ Q G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs]) - \lambda(\ortsvektor[v]) Q^\star G_{\varepsilon_1}(T(\ortsvektor[v]), \ortsvektor[vs]) \right]
-        - \vec{n}\times \gradient \left[ \left( Q +  Q^{\star\star}\right) \frac{\varepsilon_1}{\varepsilon_2} G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs]) \right]
+       \vec{0}= \vec{n}\times \gradient \left[ Q G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs]) - \lambda(\Ortsr[v]) Q^\star G_{\varepsilon_1}(T(\Ortsr[v]), \Ortsr[vs]) \right]
+        - \vec{n}\times \gradient \left[ \left( Q +  Q^{\star\star}\right) \frac{\varepsilon_1}{\varepsilon_2} G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs]) \right]
        \end{equation*}
       \begin{itemize}[<+->]
-      \item Auf $\lambda$ und $T$ wird der Gradient angewendet. Es kann nicht einfach $\lambda(\ortsvektor[v])=1$ und $T(\ortsvektor[v])=\ortsvektor[v]$ für $\ortsvektor[v]\in O(V_2)$ verwendet werden.
+      \item Auf $\lambda$ und $T$ wird der Gradient angewendet. Es kann nicht einfach $\lambda(\Ortsr[v])=1$ und $T(\Ortsr[v])=\Ortsr[v]$ für $\Ortsr[v]\in O(V_2)$ verwendet werden.
       \item Weiterrechnen:
         \begin{align*}
-          \vec{0} &= Q \; \vec{n}\times \gradient G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs]) - Q^\star\; \vec{n}\times\gradient\left( \lambda(\ortsvektor[v]) G_{\varepsilon_1}(T(\ortsvektor[v]), \ortsvektor[vs]) \right)\\
-            &\quad - \left( Q +  Q^{\star\star}\right) \frac{\varepsilon_1}{\varepsilon_2}\; \vec{n}\times \gradient  G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs]) \\
-            &= \left( Q  - \left( Q +  Q^{\star\star}\right) \frac{\varepsilon_1}{\varepsilon_2} \right)\; \vec{n}\times \gradient G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs]) - Q^\star\; \vec{n}\times\gradient\left( \lambda(\ortsvektor[v]) G_{\varepsilon_1}(T(\ortsvektor[v]), \ortsvektor[vs]) \right)\\
-            &= \left( Q  - \left( Q +  Q^{\star\star}\right) \frac{\varepsilon_1}{\varepsilon_2} \right)\; \vec{n}\times \gradient G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs])  \\
-            &\quad - Q^\star G_{\varepsilon_1}(T(\ortsvektor[v]), \ortsvektor[vs])\; \vec{n}\times\gradient \lambda(\ortsvektor[v]) - Q^\star\lambda(\ortsvektor[v]) \; \vec{n}\times\gradient G_{\varepsilon_1}(T(\ortsvektor[v]), \ortsvektor[vs]) \\
-          &= \left( Q  - \left( Q +  Q^{\star\star}\right) \frac{\varepsilon_1}{\varepsilon_2} \right)\; \vec{n}\times \gradient G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs])  \\
-          &\quad - Q^\star G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs])\; \vec{n}\times\gradient \lambda(\ortsvektor[v]) - Q^\star \; \vec{n}\times\gradient G_{\varepsilon_1}(T(\ortsvektor[v]), \ortsvektor[vs])
+          \vec{0} &= Q \; \vec{n}\times \gradient G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs]) - Q^\star\; \vec{n}\times\gradient\left( \lambda(\Ortsr[v]) G_{\varepsilon_1}(T(\Ortsr[v]), \Ortsr[vs]) \right)\\
+            &\quad - \left( Q +  Q^{\star\star}\right) \frac{\varepsilon_1}{\varepsilon_2}\; \vec{n}\times \gradient  G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs]) \\
+            &= \left( Q  - \left( Q +  Q^{\star\star}\right) \frac{\varepsilon_1}{\varepsilon_2} \right)\; \vec{n}\times \gradient G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs]) - Q^\star\; \vec{n}\times\gradient\left( \lambda(\Ortsr[v]) G_{\varepsilon_1}(T(\Ortsr[v]), \Ortsr[vs]) \right)\\
+            &= \left( Q  - \left( Q +  Q^{\star\star}\right) \frac{\varepsilon_1}{\varepsilon_2} \right)\; \vec{n}\times \gradient G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs])  \\
+            &\quad - Q^\star G_{\varepsilon_1}(T(\Ortsr[v]), \Ortsr[vs])\; \vec{n}\times\gradient \lambda(\Ortsr[v]) - Q^\star\lambda(\Ortsr[v]) \; \vec{n}\times\gradient G_{\varepsilon_1}(T(\Ortsr[v]), \Ortsr[vs]) \\
+          &= \left( Q  - \left( Q +  Q^{\star\star}\right) \frac{\varepsilon_1}{\varepsilon_2} \right)\; \vec{n}\times \gradient G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs])  \\
+          &\quad - Q^\star G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs])\; \vec{n}\times\gradient \lambda(\Ortsr[v]) - Q^\star \; \vec{n}\times\gradient G_{\varepsilon_1}(T(\Ortsr[v]), \Ortsr[vs])
         \end{align*}
  \end{itemize}
       \end{frame}
@@ -206,27 +206,27 @@
       \begin{frame}
      \frametitle{Stetigkeitsbedingungen (fortgeführt)}
         \begin{equation*}
-          {\scriptstyle \vec{0} = \left( Q  - \left( Q +  Q^{\star\star}\right) \frac{\varepsilon_1}{\varepsilon_2} \right)\; \vec{n}\times \gradient G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs])  
-          - Q^\star G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs])\; \vec{n}\times\gradient \lambda(\ortsvektor[v]) - Q^\star \; \vec{n}\times\gradient G_{\varepsilon_1}(T(\ortsvektor[v]), \ortsvektor[vs])}
+          {\scriptstyle \vec{0} = \left( Q  - \left( Q +  Q^{\star\star}\right) \frac{\varepsilon_1}{\varepsilon_2} \right)\; \vec{n}\times \gradient G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs])  
+          - Q^\star G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs])\; \vec{n}\times\gradient \lambda(\Ortsr[v]) - Q^\star \; \vec{n}\times\gradient G_{\varepsilon_1}(T(\Ortsr[v]), \Ortsr[vs])}
         \end{equation*}
       \begin{itemize}[<+->]
-      \item $T$ stetig diff.-bar und $T(T(\ortsvektor[v]))=\ortsvektor[v]$ : $\gradient_{\ortsvektor[v]} G_{\varepsilon_1}(T(\ortsvektor[v]), \ortsvektor[vs])  = \gradient_{T(\ortsvektor[v])} G_{\varepsilon_1}(T(\ortsvektor[v]), \ortsvektor[vs])$
+      \item $T$ stetig diff.-bar und $T(T(\Ortsr[v]))=\Ortsr[v]$ : $\gradient_{\Ortsr[v]} G_{\varepsilon_1}(T(\Ortsr[v]), \Ortsr[vs])  = \gradient_{T(\Ortsr[v])} G_{\varepsilon_1}(T(\Ortsr[v]), \Ortsr[vs])$
         \item Damit lässt sich der Ausdruck weiter zusammenfassen:
         \begin{align*}
-          \vec{0} &= \underbrace{\left( \left(Q - Q^\star\right) - \left( Q +  Q^{\star\star}\right) \frac{\varepsilon_1}{\varepsilon_2} \right)}_{=0}\; \vec{n}\times \gradient G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs])   - Q^\star G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs])\; \vec{n}\times\gradient \lambda(\ortsvektor[v]) 
+          \vec{0} &= \underbrace{\left( \left(Q - Q^\star\right) - \left( Q +  Q^{\star\star}\right) \frac{\varepsilon_1}{\varepsilon_2} \right)}_{=0}\; \vec{n}\times \gradient G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs])   - Q^\star G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs])\; \vec{n}\times\gradient \lambda(\Ortsr[v]) 
         \end{align*}
-      \item Somit gilt für $\ortsvektor[v]\in O(V_2)$:
+      \item Somit gilt für $\Ortsr[v]\in O(V_2)$:
         \begin{equation*}
-          \boxed{\vec{n}\times\gradient \lambda(\ortsvektor[v]) = \vec{0}}
+          \boxed{\vec{n}\times\gradient \lambda(\Ortsr[v]) = \vec{0}}
           \end{equation*}
 
-     \item Führt man gleichen Operationen mit der Stetigkeitsbedingung für die Normalkomponente durch, so gilt für $\ortsvektor[v]\in O(V_2)$ auch:
+     \item Führt man gleichen Operationen mit der Stetigkeitsbedingung für die Normalkomponente durch, so gilt für $\Ortsr[v]\in O(V_2)$ auch:
         \begin{equation*}
-          \boxed{\vec{n}\cdot\gradient \lambda(\ortsvektor[v]) = 0}
+          \boxed{\vec{n}\cdot\gradient \lambda(\Ortsr[v]) = 0}
           \end{equation*}
- \item Insgesamt gilt also für $\ortsvektor[v]\in O(V_2)$:
+ \item Insgesamt gilt also für $\Ortsr[v]\in O(V_2)$:
         \begin{equation*}
-          \boxed{\gradient \lambda(\ortsvektor[v]) = \vec{0}}
+          \boxed{\gradient \lambda(\Ortsr[v]) = \vec{0}}
           \end{equation*}
         \end{itemize}
       \end{frame}
@@ -236,18 +236,18 @@
      \begin{itemize}[<+->]
      \item Aus der Konstanz der Gesamtladung:
        \begin{equation*}
-          \boxed{-\lambda(\ortsvektor[vs])Q^\star+Q^{\star\star}= 0}
+          \boxed{-\lambda(\Ortsr[vs])Q^\star+Q^{\star\star}= 0}
        \end{equation*}
-      \item Aus der Stetigkeit des Potentials für $\ortsvektor[v]\in O(V_2)$:
+      \item Aus der Stetigkeit des Potentials für $\Ortsr[v]\in O(V_2)$:
         \begin{equation*}
           \boxed{\frac{Q-Q^\star}{\varepsilon_1} = \frac{Q+Q^{\star\star}}{\varepsilon_2}}
        \end{equation*}
-     \item Aus Normal- und Tangentialkomponente des Feldes für $\ortsvektor[v]\in O(V_2)$:
+     \item Aus Normal- und Tangentialkomponente des Feldes für $\Ortsr[v]\in O(V_2)$:
        \begin{equation*}
-         \boxed{\gradient \lambda(\ortsvektor[v]) = \vec{0}}
+         \boxed{\gradient \lambda(\Ortsr[v]) = \vec{0}}
        \end{equation*}
-     \item Keine allgemeine Lösung. Aber $\lambda (\ortsvektor[v]) = 1$ (Ebene, Zylinder) erfüllt die letzte Beziehung.
-     \item Mit $\lambda (\ortsvektor[v]) = 1$:
+     \item Keine allgemeine Lösung. Aber $\lambda (\Ortsr[v]) = 1$ (Ebene, Zylinder) erfüllt die letzte Beziehung.
+     \item Mit $\lambda (\Ortsr[v]) = 1$:
        \begin{equation*}
          Q^\star = Q^{\star\star} \text{ und } \frac{Q-Q^\star}{\varepsilon_1} = \frac{Q+Q^{\star}}{\varepsilon_2} \Rightarrow \boxed{Q^\star = \frac{\varepsilon_2-\varepsilon_1}{\varepsilon_2+\varepsilon_1} Q}
          \end{equation*}
@@ -266,10 +266,10 @@
        \draw (a) -- (b);
        \draw[color=red, -stealth] (1.5,0) -- (1.5,.5) node[right] {$\vec{n}$}; 
        \draw[ -stealth] (O) -- (0,2) node[right] {$z$}; 
-       \draw[ -stealth] (O) -- (-1,1.5) node[left] {$\ortsvektor[v]$}; 
+       \draw[ -stealth] (O) -- (-1,1.5) node[left] {$\Ortsr[v]$}; 
        \draw[ -stealth] (O) -- (1,2) node[below right] {$Q^{\star\star}=Q^\star$};
-       \filldraw [color=blue!70] (1,2) circle (1pt) node[above right] {$Q, \ortsvektor[vs]$}; 
-       \draw[ dashed, -stealth] (O) -- (1,-2) node[below right] {$T(\ortsvektor[vs])$};
+       \filldraw [color=blue!70] (1,2) circle (1pt) node[above right] {$Q, \Ortsr[vs]$}; 
+       \draw[ dashed, -stealth] (O) -- (1,-2) node[below right] {$T(\Ortsr[vs])$};
        \filldraw [color=red!70] (1,-2) circle (1pt) node[above right] {$-Q^\star=-\frac{\varepsilon_2-\varepsilon_1}{\varepsilon_2+\varepsilon_1} Q$}; 
 \draw(-1.5,0.5) node {$V_1,\varepsilon_1$}; 
 \draw(-1.5,-0.5) node {$V_2,\varepsilon_2$}; 
@@ -280,16 +280,16 @@
          \begin{itemize}[<+->]
            \item In $V_1$:
       \begin{align*}
-        \elpotential_1(\ortsvektor[v]) & = Q G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs]) -  Q^\star G_{\varepsilon_1}(\ortsvektor[v], T(\ortsvektor[vs]))\\
-        & = Q\left( G_{\varepsilon_1}(\ortsvektor[v], \ortsvektor[vs]) -  \frac{\varepsilon_2-\varepsilon_1}{\varepsilon_2+\varepsilon_1} G_{\varepsilon_1}(\ortsvektor[v], T(\ortsvektor[vs]))\right)\\
-        & = Q\frac{\varepsilon_0}{\varepsilon_1}\left( G(\ortsvektor[v], \ortsvektor[vs]) -  \frac{\varepsilon_2-\varepsilon_1}{\varepsilon_2+\varepsilon_1} G(\ortsvektor[v], T(\ortsvektor[vs]))\right)
+        \SkalarPot_1(\Ortsr[v]) & = Q G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs]) -  Q^\star G_{\varepsilon_1}(\Ortsr[v], T(\Ortsr[vs]))\\
+        & = Q\left( G_{\varepsilon_1}(\Ortsr[v], \Ortsr[vs]) -  \frac{\varepsilon_2-\varepsilon_1}{\varepsilon_2+\varepsilon_1} G_{\varepsilon_1}(\Ortsr[v], T(\Ortsr[vs]))\right)\\
+        & = Q\frac{\varepsilon_0}{\varepsilon_1}\left( G(\Ortsr[v], \Ortsr[vs]) -  \frac{\varepsilon_2-\varepsilon_1}{\varepsilon_2+\varepsilon_1} G(\Ortsr[v], T(\Ortsr[vs]))\right)
         \end{align*}
     \item In $V_2$:
       \begin{align*}
-        \elpotential_2(\ortsvektor[v]) & = Q G_{\varepsilon_2}(\ortsvektor[v], \ortsvektor[vs]) +  Q^{\star\star} G_{\varepsilon_2}(\ortsvektor[v], \ortsvektor[vs])\\
-                                       & = Q \left( 1 +  \frac{\varepsilon_2-\varepsilon_1}{\varepsilon_2+\varepsilon_1}\right) G_{\varepsilon_2}(\ortsvektor[v], \ortsvektor[vs]) \\
-                                       & = Q\frac{\varepsilon_0}{\varepsilon_2} \left( 1 +  \frac{\varepsilon_2-\varepsilon_1}{\varepsilon_2+\varepsilon_1}\right) G(\ortsvektor[v], \ortsvektor[vs]) \\
-                                       & = Q\frac{\varepsilon_0}{\varepsilon_1} \left( 1 -  \frac{\varepsilon_2-\varepsilon_1}{\varepsilon_2+\varepsilon_1}\right) G(\ortsvektor[v], \ortsvektor[vs]) 
+        \SkalarPot_2(\Ortsr[v]) & = Q G_{\varepsilon_2}(\Ortsr[v], \Ortsr[vs]) +  Q^{\star\star} G_{\varepsilon_2}(\Ortsr[v], \Ortsr[vs])\\
+                                       & = Q \left( 1 +  \frac{\varepsilon_2-\varepsilon_1}{\varepsilon_2+\varepsilon_1}\right) G_{\varepsilon_2}(\Ortsr[v], \Ortsr[vs]) \\
+                                       & = Q\frac{\varepsilon_0}{\varepsilon_2} \left( 1 +  \frac{\varepsilon_2-\varepsilon_1}{\varepsilon_2+\varepsilon_1}\right) G(\Ortsr[v], \Ortsr[vs]) \\
+                                       & = Q\frac{\varepsilon_0}{\varepsilon_1} \left( 1 -  \frac{\varepsilon_2-\varepsilon_1}{\varepsilon_2+\varepsilon_1}\right) G(\Ortsr[v], \Ortsr[vs]) 
       \end{align*}
           \end{itemize}
        \end{column}

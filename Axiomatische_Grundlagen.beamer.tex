@@ -14,9 +14,9 @@
   \frametitle{Maxwellsche Gleichungen}
 {\tabulinesep=1.2mm
   \begin{tabu}{r|rl}
-    \(\rotation\efeld[v] + \dfrac{\partial \tetB[v]}{\partial t} = \vec{0} \) & \(\rotation \magfeld[v] -\dfrac{\partial \verschiebung[v]}{\partial t} = \elstromdichte[v] \) & vektorielle pDGL, zeitabhängig \(\to\) dynamisch \\
+    \(\rotation\EFeld[v] + \dfrac{\partial \BFeld[v]}{\partial t} = \vec{0} \) & \(\rotation \HFeld[v] -\dfrac{\partial \DFeld[v]}{\partial t} = \StromDichte[v] \) & vektorielle pDGL, zeitabhängig \(\to\) dynamisch \\
 \hline
-    \( \divergenz\tetB[v] = 0 \) & \( \divergenz \verschiebung[v] =\laddichte{V}\) & skalare pDGL, zeitunabhängig \(\to\) statisch\\
+    \( \divergenz\BFeld[v] = 0 \) & \( \divergenz \DFeld[v] =\laddichte{V}\) & skalare pDGL, zeitunabhängig \(\to\) statisch\\
     homogene pDGL & inhomogene pDGL & 
     \end{tabu}}
   
@@ -48,14 +48,14 @@
     Q = \iiint_V \laddichte{V} \upd V
   \end{equation*}
 \item<0> \(\laddichte{V} \) ist somit Ingetrand eines Volumenintegrals
-  \item<0> Mit Poincaré-Lemma(3) folgt unmittelbar das Coulomb-Gauß-Gesetz: \( \boxed{\divergenz\verschiebung[v] = \laddichte{V} }\)
-  \item<0> Ladungen bewegen sich mit (Material)-Geschwindigkeit \(\vec{u} \to\) Stromdichte \(\elstromdichte[v]\)
+  \item<0> Mit Poincaré-Lemma(3) folgt unmittelbar das Coulomb-Gauß-Gesetz: \( \boxed{\divergenz\DFeld[v] = \laddichte{V} }\)
+  \item<0> Ladungen bewegen sich mit (Material)-Geschwindigkeit \(\vec{u} \to\) Stromdichte \(\StromDichte[v]\)
     \begin{equation*}
-\elstromdichte[v](\ortsvektor[v]) = \laddichte{V}(\ortsvektor[v])\vec{u}(\ortsvektor[v])
+\StromDichte[v](\Ortsr[v]) = \laddichte{V}(\Ortsr[v])\vec{u}(\Ortsr[v])
 \end{equation*}
 \item<0> Strom \(I\) durch 2D-Fläche \(S\):
   \begin{equation*}
-    I = \iint_S \elstromdichte[v] \cdot \upd\vec{A}
+    I = \iint_S \StromDichte[v] \cdot \upd\vec{A}
     \end{equation*}
 
     
@@ -95,14 +95,14 @@
     Q = \iiint_V \laddichte{V} \upd V
   \end{equation*}
 \item \(\laddichte{V} \) ist somit Ingetrand eines Volumenintegrals
-  \item Mit Poincaré-Lemma(3) folgt unmittelbar das Coulomb-Gauß-Gesetz: \( \boxed{\divergenz\verschiebung[v] = \laddichte{V} }\)
-  \item Ladungen bewegen sich mit (Material)-Geschwindigkeit \(\vec{u} \to\) Stromdichte \(\elstromdichte[v]\)
+  \item Mit Poincaré-Lemma(3) folgt unmittelbar das Coulomb-Gauß-Gesetz: \( \boxed{\divergenz\DFeld[v] = \laddichte{V} }\)
+  \item Ladungen bewegen sich mit (Material)-Geschwindigkeit \(\vec{u} \to\) Stromdichte \(\StromDichte[v]\)
     \begin{equation*}
-\elstromdichte[v](\ortsvektor[v]) = \laddichte{V}(\ortsvektor[v])\vec{u}(\ortsvektor[v])
+\StromDichte[v](\Ortsr[v]) = \laddichte{V}(\Ortsr[v])\vec{u}(\Ortsr[v])
 \end{equation*}
 \item Strom \(I\) durch 2D-Fläche \(S\):
   \begin{equation*}
-    I = \iint_S \elstromdichte[v] \cdot \upd\vec{A}
+    I = \iint_S \StromDichte[v] \cdot \upd\vec{A}
     \end{equation*}
 \end{itemize}
 \end{frame}
@@ -115,14 +115,14 @@
 \item Wir betrachten die materielle Ableitung (Beobachter bewegt sich mit) $\frac{\mathrm{D}}{\mathrm{D} t}$ und nutzen das Reynolds-Transport-Theorem (*):
   \begin{align*}
 \frac{\mathrm{D} Q}{\mathrm{D} t} & = \frac{\mathrm{D}}{\mathrm{D} t}\left[ \int_{V(t)} \laddichte{V} \upd V \right] \stackrel{!}{=} 0\\
- &\stackrel{*}{=} \int_{V(t)} \frac{\partial \laddichte{V}}{\partial t} \upd V + \oint_{O(V)(t)}\laddichte{V} \vec{u}\cdot \upd\vec{A} \qquad \to \frac{\partial Q}{\partial t} + \oiint_{O(V)} \elstromdichte[v]\cdot d\vec{A} = 0\\
+ &\stackrel{*}{=} \int_{V(t)} \frac{\partial \laddichte{V}}{\partial t} \upd V + \oint_{O(V)(t)}\laddichte{V} \vec{u}\cdot \upd\vec{A} \qquad \to \frac{\partial Q}{\partial t} + \oiint_{O(V)} \StromDichte[v]\cdot d\vec{A} = 0\\
 & \stackrel{\text{Gauss}}{=} \int_{V(t)} \left(\frac{\partial \laddichte{V}}{\partial t} + \divergenz \left(\laddichte{V} \vec{u} \right) \right) \upd V  \\
-&= \int_{V(t)} \left(\frac{\partial \laddichte{V}}{\partial t} + \divergenz \elstromdichte[v] \right) \upd V  \qquad\qquad\qquad \to \frac{\partial \laddichte{V}}{\partial t} + \divergenz \elstromdichte[v] = 0 \\
-&= \int_{V(t)} \divergenz \left( \frac{\partial \verschiebung[v]}{\partial t} + \elstromdichte[v]\right) \upd V
+&= \int_{V(t)} \left(\frac{\partial \laddichte{V}}{\partial t} + \divergenz \StromDichte[v] \right) \upd V  \qquad\qquad\qquad \to \frac{\partial \laddichte{V}}{\partial t} + \divergenz \StromDichte[v] = 0 \\
+&= \int_{V(t)} \divergenz \left( \frac{\partial \DFeld[v]}{\partial t} + \StromDichte[v]\right) \upd V
   \end{align*}
   \item Damit dies für beliebige (zeitlich veränderliche) Volumina gelten kann, folgt:
     \begin{equation*}
-      \divergenz \left( \frac{\partial \verschiebung[v]}{\partial t} + \elstromdichte[v]\right) = 0
+      \divergenz \left( \frac{\partial \DFeld[v]}{\partial t} + \StromDichte[v]\right) = 0
       \end{equation*}
     
     \end{itemize}
@@ -138,8 +138,8 @@
 \begin{itemize}[<+->]
 \item Aus Pointcaré (2):
   \begin{align*}
-    \divergenz \left( \frac{\partial \verschiebung[v]}{\partial t} + \elstromdichte[v]\right) = 0 \to \frac{\partial \verschiebung[v]}{\partial t} + \elstromdichte[v] = \rotation\magfeld[v] &\\
-    \Aboxed{\rotation\magfeld[v] &- \frac{\partial \verschiebung[v]}{\partial t} = \elstromdichte[v]} 
+    \divergenz \left( \frac{\partial \DFeld[v]}{\partial t} + \StromDichte[v]\right) = 0 \to \frac{\partial \DFeld[v]}{\partial t} + \StromDichte[v] = \rotation\HFeld[v] &\\
+    \Aboxed{\rotation\HFeld[v] &- \frac{\partial \DFeld[v]}{\partial t} = \StromDichte[v]} 
     \end{align*}
 \end{itemize}
 \end{frame}
@@ -149,16 +149,16 @@
 \begin{itemize}[<+->]
 \item Definition der Ladungsdichte und Poincaré (3) folgt sofort eine Gleichung in der Form des Coulomb-Gauß-Gesetzes (\dots es gibt eine Vektorfeld D, so dass\dots):
   \begin{equation*}
-    \divergenz\verschiebung[v]=\laddichte{V}
+    \divergenz\DFeld[v]=\laddichte{V}
 \end{equation*}
   
 \item Mit dem Axiom der Ladungserhaltung und Poincaré (2) und der obigen Beziehung folgt (\dots es gibt ein Vektorfeld H, so dass \dots ):
   \begin{equation*}
-    \rotation\magfeld[v] - \frac{\partial \verschiebung[v]}{\partial t} = \elstromdichte[v]
+    \rotation\HFeld[v] - \frac{\partial \DFeld[v]}{\partial t} = \StromDichte[v]
 \end{equation*}
   
-\item Elektrische Anregung (historisch: dielektrische Verschiebung): \(\verschiebung[v] \)
-\item Magnetische Anregung (historisch: Magnetfeld): \(\magfeld[v] \) 
+\item Elektrische Anregung (historisch: dielektrische Verschiebung): \(\DFeld[v] \)
+\item Magnetische Anregung (historisch: Magnetfeld): \(\HFeld[v] \) 
 \item Bisher keinen Rückgriff auf Kräfte gemacht
 \item Ladungserhaltung gilt auch mikrophysikalisch \(\to\) die inhomogenen Maxwellgleichungen gelten auch mikrophysikalisch \(\to\) elektrische und magnetische Anregung sind mikrophysikalische Größen
 \item Ladung ist auch relativistisch invariant \(\to\) inhomogene Maxwell-Gleichungen können auch relativistisch invariant formuliert werden
@@ -171,7 +171,7 @@
 \begin{itemize}[<+->]
 \item Die experimentell hervorragend bestätigtet \textbf{Lorenzkraft} wird als axiomatisch angenommen:
   \begin{equation*}
-    \kraft[v] = q \left( \efeld[v] + \vec{u} \times \tetB[v] \right)
+    \kraft[v] = q \left( \EFeld[v] + \vec{u} \times \BFeld[v] \right)
   \end{equation*}
 \item Hierbei wird die \textbf{elektrische Feldstärke} eingeführt
 \item \textbf{Relativitätsprinzip}: Physikalische Gesetze sind unabhängig vom Inertialsystem
@@ -179,14 +179,14 @@
 \item Betrachte zwei Inertialsysteme: Laborsystem (Größen ohne ´) bewegt sich mit v   relativ zum Ruhesystem der Ladung q (Größen mit ´)
 \item Annahme: keine elektrische Feldstärke im Ruhesystem; es gilt offensichtlich
  \begin{equation*}
-    \kraft[v]' = q \left( \efeld[v]' + \vec{u}' \times \tetB[v]' \right) = \vec{0}
+    \kraft[v]' = q \left( \EFeld[v]' + \vec{u}' \times \BFeld[v]' \right) = \vec{0}
   \end{equation*}
 
 \item Dann muss diese Kraft auch im Laborsystem verschwinden:
  \begin{equation*}
-    \kraft[v] = q \left( \efeld[v] + \vec{u} \times \tetB[v] \right) = \vec{0} \to \efeld[v] = - \vec{u} \times \tetB[v]
+    \kraft[v] = q \left( \EFeld[v] + \vec{u} \times \BFeld[v] \right) = \vec{0} \to \EFeld[v] = - \vec{u} \times \BFeld[v]
   \end{equation*}
-\item Die beiden Feldstärken \(\efeld[v]\) und \(\tetB[v]\) (hist: magnetische Induktion) sind \textbf{nicht unabhängig} voneinander!
+\item Die beiden Feldstärken \(\EFeld[v]\) und \(\BFeld[v]\) (hist: magnetische Induktion) sind \textbf{nicht unabhängig} voneinander!
 \end{itemize}
 \end{itemize}
 \end{frame}
@@ -196,16 +196,16 @@
 \begin{itemize}[<+->]
 \item Magnetischer Fluss durch Fläche:
   \(\displaystyle
-    \Phi = \iint_S \tetB[v]\cdot \upd\vec{A}
+    \Phi = \iint_S \BFeld[v]\cdot \upd\vec{A}
     \)
-\item Flusserhaltung analog zur Ladungserhaltung: \(\displaystyle \dfrac{\partial \Phi}{\partial t} + \oiint_{O(S)} \elstromdichte[v]^\Phi \cdot \upd\vec{s} = 0\)
+\item Flusserhaltung analog zur Ladungserhaltung: \(\displaystyle \dfrac{\partial \Phi}{\partial t} + \oiint_{O(S)} \StromDichte[v]^\Phi \cdot \upd\vec{s} = 0\)
 
-\item Stokes-Theorem: \(\displaystyle \iint_S \frac{\partial \tetB[v]}{\partial t}\cdot\upd\vec{A} + \iint_{S} \rotation \elstromdichte[v]^\Phi \cdot \upd\vec{A} = 0 \to \frac{\partial \tetB[v]}{\partial t}+ \rotation \elstromdichte[v]^\Phi = \vec{0}\)
+\item Stokes-Theorem: \(\displaystyle \iint_S \frac{\partial \BFeld[v]}{\partial t}\cdot\upd\vec{A} + \iint_{S} \rotation \StromDichte[v]^\Phi \cdot \upd\vec{A} = 0 \to \frac{\partial \BFeld[v]}{\partial t}+ \rotation \StromDichte[v]^\Phi = \vec{0}\)
 
 
 \item Bildet man die Divergenz folgt (wegen \(\divergenz \rotation \ldots = 0\)):
 \begin{equation*}
-  \divergenz \frac{\partial \tetB[v]}{\partial t} = 0 \to \divergenz\tetB[v] = \rho_\text{mag} , \frac{\partial \rho_\text{mag}}{\partial t}=0
+  \divergenz \frac{\partial \BFeld[v]}{\partial t} = 0 \to \divergenz\BFeld[v] = \rho_\text{mag} , \frac{\partial \rho_\text{mag}}{\partial t}=0
 \end{equation*}
 
 \item Die magnetische Ladungsträgerdichte \(\rho_\text{mag} \) ist auf jeden Fall zeitlich invariant! 
@@ -220,19 +220,19 @@
 \begin{itemize}[<+->]
 \item Relativitätsprinzip:
 \begin{itemize}[<+->]
-\item Sei in einem System \(\displaystyle \frac{\partial \rho_\text{mag} (\ortsvektor[v])}{\partial t}=0\), dann gibt es an jedem Ort einen zeitlich konstanten Wert
+\item Sei in einem System \(\displaystyle \frac{\partial \rho_\text{mag} (\Ortsr[v])}{\partial t}=0\), dann gibt es an jedem Ort einen zeitlich konstanten Wert
   
 \item Für einen Beobachter in einem anderen Initialsystem würde sich die räumliche Verteilung aber zeitlich ändern.
 \item Dieser Widerspruch tritt nur dann nicht auf, wenn die magnetische Ladungsdichte eine räumliche Konstante ist. (für alle Orte und alle Zeiten gleich)
 \item Logische Konsequenz: 
 \begin{equation*}
-\rho_\text{mag}(\ortsvektor[v], t)=0 \to \boxed{\divergenz \tetB[v] = 0}
+\rho_\text{mag}(\Ortsr[v], t)=0 \to \boxed{\divergenz \BFeld[v] = 0}
 \end{equation*}
-\item Weiterhin noch nicht klar, was  \(\elstromdichte[v]^\Phi\) ist (hat die gleiche Dimension wie die elektrische Feldstärke)
+\item Weiterhin noch nicht klar, was  \(\StromDichte[v]^\Phi\) ist (hat die gleiche Dimension wie die elektrische Feldstärke)
 \begin{align*}
- \onslide<7->{\frac{\partial \tetB[v]}{\partial t}+ \rotation \elstromdichte[v]^\Phi = \vec{0}}
-  && \onslide<8->{\boxed{\rotation\efeld[v] + \frac{\partial \tetB[v]}{\partial t} = \vec{0}}}
-   && \onslide<9->{\efeld[v] \stackrel{?}{=} \elstromdichte[v]^\Phi \rule{1cm}{0pt}}\\
+ \onslide<7->{\frac{\partial \BFeld[v]}{\partial t}+ \rotation \StromDichte[v]^\Phi = \vec{0}}
+  && \onslide<8->{\boxed{\rotation\EFeld[v] + \frac{\partial \BFeld[v]}{\partial t} = \vec{0}}}
+   && \onslide<9->{\EFeld[v] \stackrel{?}{=} \StromDichte[v]^\Phi \rule{1cm}{0pt}}\\
   \onslide<7->{\text{Aus der Flusserhaltung}}
   && \onslide<8->{\text{MG: Induktion}}
   && \onslide<10->{\text{Ja! Folgt auch aus RP.}}
@@ -254,8 +254,8 @@
 \item Also: \textbf{6 dynamische Gleichungen für 12 Komponenten} 
 \item Was noch fehlt sind die sogenannten Materialgleichungen (constitutive relations) \(\to\) 6 weitere Gleichungen, z.B. für das Vakuum:
   \begin{equation*}
-    \boxed{\verschiebung[v] = \varepsilon_0\efeld[v] \qquad
-    \magfeld[v] = \frac{1}{\mu_0} \tetB[v]}
+    \boxed{\DFeld[v] = \varepsilon_0\EFeld[v] \qquad
+    \HFeld[v] = \frac{1}{\mu_0} \BFeld[v]}
     \end{equation*}
 \end{itemize}
 \end{frame}
@@ -274,8 +274,8 @@
 \item Dann (und in einer flachen Raumzeit), ergeben sich die Materialgleichungen in der bekannten Form:
 
   \begin{equation*}
-    \boxed{\verschiebung[v] = \varepsilon_0\efeld[v] \qquad
-    \magfeld[v] = \frac{1}{\mu_0} \tetB[v]}
+    \boxed{\DFeld[v] = \varepsilon_0\EFeld[v] \qquad
+    \HFeld[v] = \frac{1}{\mu_0} \BFeld[v]}
     \end{equation*}
 \end{itemize}
 \end{frame}

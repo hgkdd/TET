@@ -64,16 +64,16 @@
   \frametitle{Randwertproblem der Elektrostatik}
 
   \begin{itemize}[<+->]
-  \item Poisson-Gleichung: $\laplace_r \phi(\ortsvektor[v]) = -\frac{1}{\varepsilon_0} \laddichte{V}(\ortsvektor[v]) \Rightarrow \mathcal{L} = \laplace_r \text{ selbstadjungiert}$
-  \item Bestimmungsgleichung für Greensche Funktion: $\laplace_rG(\ortsvektor[v],\ortsvektor[vs]) = -\frac{1}{\varepsilon_0} \delta^3(\ortsvektor[v]-\ortsvektor[vs])$ (konstanter Faktor unbedeutend!)
-  \item Bekannte Identität: $\delta^3(\ortsvektor[v]-\ortsvektor[vs]) = -\frac{1}{4\pi}\laplace_r \frac{1}{|\ortsvektor[v]-\ortsvektor[vs]|}$
+  \item Poisson-Gleichung: $\laplace_r \phi(\Ortsr[v]) = -\frac{1}{\varepsilon_0} \laddichte{V}(\Ortsr[v]) \Rightarrow \mathcal{L} = \laplace_r \text{ selbstadjungiert}$
+  \item Bestimmungsgleichung für Greensche Funktion: $\laplace_rG(\Ortsr[v],\Ortsr[vs]) = -\frac{1}{\varepsilon_0} \delta^3(\Ortsr[v]-\Ortsr[vs])$ (konstanter Faktor unbedeutend!)
+  \item Bekannte Identität: $\delta^3(\Ortsr[v]-\Ortsr[vs]) = -\frac{1}{4\pi}\laplace_r \frac{1}{|\Ortsr[v]-\Ortsr[vs]|}$
   \item Damit ist \alert{eine} Greensche Funktion des Laplace-Operators bereits gefunden:
     $$
-   \boxed{ \laplace_r G(\ortsvektor[v],\ortsvektor[vs]) = -\frac{1}{\varepsilon_0} \delta^3(\ortsvektor[v]-\ortsvektor[vs]) \text{ gilt für } G(\ortsvektor[v],\ortsvektor[vs]) = \frac{1}{4\pi\varepsilon_0}\frac{1}{|\ortsvektor[v]-\ortsvektor[vs]|} } 
+   \boxed{ \laplace_r G(\Ortsr[v],\Ortsr[vs]) = -\frac{1}{\varepsilon_0} \delta^3(\Ortsr[v]-\Ortsr[vs]) \text{ gilt für } G(\Ortsr[v],\Ortsr[vs]) = \frac{1}{4\pi\varepsilon_0}\frac{1}{|\Ortsr[v]-\Ortsr[vs]|} } 
    $$
- \item Zu \alert{dieser speziellen} Greenschen Funktion kann jedes Element $\Gamma(\ortsvektor[v],\ortsvektor[vs])$ des Kerns des Laplace-Operators ($\laplace_r \Gamma(\ortsvektor[v],\ortsvektor[vs]) = 0$) addiert werden, wobei $\Gamma$ eine symmetrische Funktion sein muss (Laplace ist selbstadjungiert):
+ \item Zu \alert{dieser speziellen} Greenschen Funktion kann jedes Element $\Gamma(\Ortsr[v],\Ortsr[vs])$ des Kerns des Laplace-Operators ($\laplace_r \Gamma(\Ortsr[v],\Ortsr[vs]) = 0$) addiert werden, wobei $\Gamma$ eine symmetrische Funktion sein muss (Laplace ist selbstadjungiert):
    $$
-   \boxed{G(\ortsvektor[v],\ortsvektor[vs]) = \frac{1}{4\pi\varepsilon_0}\frac{1}{|\ortsvektor[v]-\ortsvektor[vs]|} + \Gamma(\ortsvektor[v],\ortsvektor[vs]) \text{ mit } \laplace_r \Gamma(\ortsvektor[v],\ortsvektor[vs]) = 0,\quad \Gamma(\ortsvektor[v],\ortsvektor[vs]) =\Gamma(\ortsvektor[vs],\ortsvektor[v])} 
+   \boxed{G(\Ortsr[v],\Ortsr[vs]) = \frac{1}{4\pi\varepsilon_0}\frac{1}{|\Ortsr[v]-\Ortsr[vs]|} + \Gamma(\Ortsr[v],\Ortsr[vs]) \text{ mit } \laplace_r \Gamma(\Ortsr[v],\Ortsr[vs]) = 0,\quad \Gamma(\Ortsr[v],\Ortsr[vs]) =\Gamma(\Ortsr[vs],\Ortsr[v])} 
    $$
     \end{itemize}
   \end{frame}
@@ -82,17 +82,17 @@
   \frametitle{Skalarpotential berechnen}
 
   \begin{itemize}[<+->]
-     \item Wir setzen (wieder) in die 2. Greenschen Identität ein: $f\to\phi(\ortsvektor[vs])$ und $g\to G(\ortsvektor[v],\ortsvektor[vs])$:
+     \item Wir setzen (wieder) in die 2. Greenschen Identität ein: $f\to\phi(\Ortsr[vs])$ und $g\to G(\Ortsr[v],\Ortsr[vs])$:
        \begin{align*}
-         \int_V \left[  \phi(\ortsvektor[vs]) \laplace_{\ortsvektor[s]} G(\ortsvektor[v],\ortsvektor[vs])  - G(\ortsvektor[v],\ortsvektor[vs]) \laplace_{\ortsvektor[s]}  \phi(\ortsvektor[vs]) \right] \upd^3\ortsvektor[s] &=  -\frac{1}{\varepsilon_0} \int_V  \phi(\ortsvektor[vs]) \delta (\ortsvektor[v] - \ortsvektor[vs]) \upd^3r' \\
-         &+ \frac{1}{\varepsilon_0} \int_V G(\ortsvektor[v],\ortsvektor[vs])\rho(\ortsvektor[vs]) \upd^3r'\\
-         &= \oint_{O(V)} \left[ \phi\frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'}
-                 - G(\ortsvektor[v],\ortsvektor[vs])\frac{\partial\phi}{\partial n'} \right] \upd^2r'
+         \int_V \left[  \phi(\Ortsr[vs]) \laplace_{\Ortsr[s]} G(\Ortsr[v],\Ortsr[vs])  - G(\Ortsr[v],\Ortsr[vs]) \laplace_{\Ortsr[s]}  \phi(\Ortsr[vs]) \right] \upd^3\Ortsr[s] &=  -\frac{1}{\varepsilon_0} \int_V  \phi(\Ortsr[vs]) \delta (\Ortsr[v] - \Ortsr[vs]) \upd^3r' \\
+         &+ \frac{1}{\varepsilon_0} \int_V G(\Ortsr[v],\Ortsr[vs])\rho(\Ortsr[vs]) \upd^3r'\\
+         &= \oint_{O(V)} \left[ \phi\frac{\partial G(\Ortsr[v],\Ortsr[vs])}{\partial n'}
+                 - G(\Ortsr[v],\Ortsr[vs])\frac{\partial\phi}{\partial n'} \right] \upd^2r'
        \end{align*}
      \item Somit:
        $$
-      \boxed{ \phi(\ortsvektor[v]) = \int_V
-   \laddichte{V}(\ortsvektor[vs]) G(\ortsvektor[v],\ortsvektor[vs]) \upd^3\ortsvektor[s] + \varepsilon_0 \oint_{O(V)} \left[ G(\ortsvektor[v],\ortsvektor[vs]) \frac{\partial\phi}{\partial n'} - \phi\frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'}\right] \upd^2r'}
+      \boxed{ \phi(\Ortsr[v]) = \int_V
+   \laddichte{V}(\Ortsr[vs]) G(\Ortsr[v],\Ortsr[vs]) \upd^3\Ortsr[s] + \varepsilon_0 \oint_{O(V)} \left[ G(\Ortsr[v],\Ortsr[vs]) \frac{\partial\phi}{\partial n'} - \phi\frac{\partial G(\Ortsr[v],\Ortsr[vs])}{\partial n'}\right] \upd^2r'}
  $$
  \item Freie Wahl von $\Gamma$! $\to$ Anpassung an gegebene Randbedingungen!
      \end{itemize}
@@ -101,76 +101,76 @@
 \begin{frame}
   \frametitle{Dirichlet-Randbedingungen; $\phi$ auf $O(V)$ vorgegeben}
        $$
-      \boxed{ \phi(\ortsvektor[v]) = \int_V
-   \laddichte{V}(\ortsvektor[vs]) G(\ortsvektor[v],\ortsvektor[vs]) \upd^3\ortsvektor[s] + \varepsilon_0 \oint_{O(V)} \left[ G(\ortsvektor[v],\ortsvektor[vs]) \frac{\partial\phi}{\partial n'} - \phi\frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'}\right] \upd^2r'}
+      \boxed{ \phi(\Ortsr[v]) = \int_V
+   \laddichte{V}(\Ortsr[vs]) G(\Ortsr[v],\Ortsr[vs]) \upd^3\Ortsr[s] + \varepsilon_0 \oint_{O(V)} \left[ G(\Ortsr[v],\Ortsr[vs]) \frac{\partial\phi}{\partial n'} - \phi\frac{\partial G(\Ortsr[v],\Ortsr[vs])}{\partial n'}\right] \upd^2r'}
  $$
  \begin{itemize}
- \item<2-> Wunsch: Wähle $\Gamma(\ortsvektor[v],\ortsvektor[vs])$ so, dass
+ \item<2-> Wunsch: Wähle $\Gamma(\Ortsr[v],\Ortsr[vs])$ so, dass
    $$
-   \oint_{O(V)} G(\ortsvektor[v],\ortsvektor[vs]) \frac{\partial\phi}{\partial n'} \upd^2r' = 0
+   \oint_{O(V)} G(\Ortsr[v],\Ortsr[vs]) \frac{\partial\phi}{\partial n'} \upd^2r' = 0
    $$
  \item<3-> Naheliegender (und häufig verwendeter) Ansatz:
    $$
-   G(\ortsvektor[v],\ortsvektor[vs]) = 0 \text{ für } \ortsvektor[vs] \in O(V) 
+   G(\Ortsr[v],\Ortsr[vs]) = 0 \text{ für } \Ortsr[vs] \in O(V) 
    $$
  \item<4-> Damit:
    $$
-   \boxed{ \phi(\ortsvektor[v]) = \int_V \laddichte{V}(\ortsvektor[vs]) G(\ortsvektor[v],\ortsvektor[vs]) \upd^3\ortsvektor[s] - \varepsilon_0 \oint_{O(V)}  \phi\frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'} \upd^2r'}
+   \boxed{ \phi(\Ortsr[v]) = \int_V \laddichte{V}(\Ortsr[vs]) G(\Ortsr[v],\Ortsr[vs]) \upd^3\Ortsr[s] - \varepsilon_0 \oint_{O(V)}  \phi\frac{\partial G(\Ortsr[v],\Ortsr[vs])}{\partial n'} \upd^2r'}
    $$
 \end{itemize}
 \end{frame}
 
 
 \begin{frame}
-  \frametitle{Neumann-Randbedingungen; $\frac{\partial \phi}{\partial n}=-\efeld[v]\cdot\vec{n}$ auf $O(V)$}
+  \frametitle{Neumann-Randbedingungen; $\frac{\partial \phi}{\partial n}=-\EFeld[v]\cdot\vec{n}$ auf $O(V)$}
        $$
-      \boxed{ \phi(\ortsvektor[v]) = \int_V
-   \laddichte{V}(\ortsvektor[vs]) G(\ortsvektor[v],\ortsvektor[vs]) \upd^3\ortsvektor[s] + \varepsilon_0 \oint_{O(V)} \left[ G(\ortsvektor[v],\ortsvektor[vs]) \frac{\partial\phi}{\partial n'} - \phi\frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'}\right] \upd^2r'}
+      \boxed{ \phi(\Ortsr[v]) = \int_V
+   \laddichte{V}(\Ortsr[vs]) G(\Ortsr[v],\Ortsr[vs]) \upd^3\Ortsr[s] + \varepsilon_0 \oint_{O(V)} \left[ G(\Ortsr[v],\Ortsr[vs]) \frac{\partial\phi}{\partial n'} - \phi\frac{\partial G(\Ortsr[v],\Ortsr[vs])}{\partial n'}\right] \upd^2r'}
  $$
  \begin{itemize}
- \item<2-> Wunsch: Wähle $\Gamma(\ortsvektor[v],\ortsvektor[vs])$ so, dass
+ \item<2-> Wunsch: Wähle $\Gamma(\Ortsr[v],\Ortsr[vs])$ so, dass
    $$
-   \oint_{O(V)} \phi\frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'} \upd^2r' = 0
+   \oint_{O(V)} \phi\frac{\partial G(\Ortsr[v],\Ortsr[vs])}{\partial n'} \upd^2r' = 0
    $$
  \item<3-> Naheliegender (und NICHT funktionierender) Ansatz:
    $$
-   \frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'} = 0 \text{ für } \ortsvektor[vs] \in O(V) 
+   \frac{\partial G(\Ortsr[v],\Ortsr[vs])}{\partial n'} = 0 \text{ für } \Ortsr[vs] \in O(V) 
    $$
  \item<4-> Einerseits:
    $$
-   \int_V \laplace_{r'}G(\ortsvektor[v],\ortsvektor[vs]) \upd^3\ortsvektor[s] = -\frac{1}{\varepsilon_0} \int_V \delta^3(\ortsvektor[v]-\ortsvektor[vs]) \upd^3\ortsvektor[s] = -\frac{1}{\varepsilon_0}  
+   \int_V \laplace_{r'}G(\Ortsr[v],\Ortsr[vs]) \upd^3\Ortsr[s] = -\frac{1}{\varepsilon_0} \int_V \delta^3(\Ortsr[v]-\Ortsr[vs]) \upd^3\Ortsr[s] = -\frac{1}{\varepsilon_0}  
    $$
  \item<5-> Andererseits:
   $$
-   \int_V \laplace_{r'}G(\ortsvektor[v],\ortsvektor[vs]) \upd^3\ortsvektor[s] = \oint_{O(V)} \gradient_{r'}G(\ortsvektor[v],\ortsvektor[vs]) \cdot\vec{n}' \upd^2\ortsvektor[s] = \oint_{O(V)} \frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'} \upd^2\ortsvektor[s]  
+   \int_V \laplace_{r'}G(\Ortsr[v],\Ortsr[vs]) \upd^3\Ortsr[s] = \oint_{O(V)} \gradient_{r'}G(\Ortsr[v],\Ortsr[vs]) \cdot\vec{n}' \upd^2\Ortsr[s] = \oint_{O(V)} \frac{\partial G(\Ortsr[v],\Ortsr[vs])}{\partial n'} \upd^2\Ortsr[s]  
    $$
  \ 
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Neumann-Randbedingungen; $\frac{\partial \phi}{\partial n}=-\efeld[v]\cdot\vec{n}$ auf $O(V)$}
+  \frametitle{Neumann-Randbedingungen; $\frac{\partial \phi}{\partial n}=-\EFeld[v]\cdot\vec{n}$ auf $O(V)$}
        $$
-      \boxed{ \phi(\ortsvektor[v]) = \int_V
-   \laddichte{V}(\ortsvektor[vs]) G(\ortsvektor[v],\ortsvektor[vs]) \upd^3\ortsvektor[s] + \varepsilon_0 \oint_{O(V)} \left[ G(\ortsvektor[v],\ortsvektor[vs]) \frac{\partial\phi}{\partial n'} - \phi\frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'}\right] \upd^2r'}
+      \boxed{ \phi(\Ortsr[v]) = \int_V
+   \laddichte{V}(\Ortsr[vs]) G(\Ortsr[v],\Ortsr[vs]) \upd^3\Ortsr[s] + \varepsilon_0 \oint_{O(V)} \left[ G(\Ortsr[v],\Ortsr[vs]) \frac{\partial\phi}{\partial n'} - \phi\frac{\partial G(\Ortsr[v],\Ortsr[vs])}{\partial n'}\right] \upd^2r'}
  $$
  \begin{itemize}
- \item<2-> Nächstbester Ansatz: Wähle $\Gamma(\ortsvektor[v],\ortsvektor[vs])$ so, dass
+ \item<2-> Nächstbester Ansatz: Wähle $\Gamma(\Ortsr[v],\Ortsr[vs])$ so, dass
    $$
-   -\varepsilon_0 \oint_{O(V)} \phi\frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'} \upd^2r' = \phi_0 \text{ mit } \phi_0 = \text{const.}
+   -\varepsilon_0 \oint_{O(V)} \phi\frac{\partial G(\Ortsr[v],\Ortsr[vs])}{\partial n'} \upd^2r' = \phi_0 \text{ mit } \phi_0 = \text{const.}
    $$
  \item<3-> Häufig gewählt:
    $$
-   \frac{\partial G(\ortsvektor[v],\ortsvektor[vs])}{\partial n'} = -\frac{1}{\varepsilon_0 S} \text{ für } \ortsvektor[vs] \in O(V), \quad S = \text{ Oberfläche} 
+   \frac{\partial G(\Ortsr[v],\Ortsr[vs])}{\partial n'} = -\frac{1}{\varepsilon_0 S} \text{ für } \Ortsr[vs] \in O(V), \quad S = \text{ Oberfläche} 
    $$
  \item<4-> damit:
    $$
-   \phi_0 = \frac{1}{S}\oint_{O(V)} \phi(\ortsvektor[vs]) \upd^2r'  
+   \phi_0 = \frac{1}{S}\oint_{O(V)} \phi(\Ortsr[vs]) \upd^2r'  
    $$
  \item<5-> Das ergibt dann:
   $$
-      \boxed{ \phi(\ortsvektor[v]) -\phi_0 = \int_V
-   \laddichte{V}(\ortsvektor[vs]) G(\ortsvektor[v],\ortsvektor[vs]) \upd^3\ortsvektor[s] + \varepsilon_0 \oint_{O(V)} G(\ortsvektor[v],\ortsvektor[vs]) \frac{\partial\phi}{\partial n'} \upd^2r'}
+      \boxed{ \phi(\Ortsr[v]) -\phi_0 = \int_V
+   \laddichte{V}(\Ortsr[vs]) G(\Ortsr[v],\Ortsr[vs]) \upd^3\Ortsr[s] + \varepsilon_0 \oint_{O(V)} G(\Ortsr[v],\Ortsr[vs]) \frac{\partial\phi}{\partial n'} \upd^2r'}
  $$
 \end{itemize}
 \end{frame}

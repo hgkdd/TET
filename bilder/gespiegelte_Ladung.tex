@@ -12,7 +12,7 @@
 	\coordinate (sl) at (-6,0);
 	% E-Feld um Ladung
 	\foreach \l in {0,30,60,90,120,150,180,210,240,270,300,330} \draw [color=red!30!white,->] (l) -- ++(\l:1);
-	\draw [color=red] ({6+cos(45)},{sin(45)}) node[anchor=south west] {$\efeld[v]$};
+	\draw [color=red] ({6+cos(45)},{sin(45)}) node[anchor=south west] {$\EFeld[v]$};
 	\coordinate (eu) at (0,{-6*tan(30)});
 	\coordinate (eo) at (0,{6*tan(30)});
 	\draw [color=red!60!white,dashed] (0,0) -- (7.5,0);
@@ -27,7 +27,7 @@
 	% E-Feld für Spiegelladung
 	% E-Feld um Ladung
 	\foreach \l in {0,30,60,90,120,150,180,210,240,270,300,330} \draw [color=blue!30!white,<-] ($(sl) + (\l:0.1)$) -- ++(\l:1);
-	\draw [color=blue] ({-6-cos(45)},{sin(45)}) node[anchor=south east] {$\efeld[v]\,'$};
+	\draw [color=blue] ({-6-cos(45)},{sin(45)}) node[anchor=south east] {$\EFeld[v]\,'$};
 	\draw [color=blue!60!white,dashed] (-7.5,0) -- (0,0);
 	\draw [color=blue!60!white,dashed] (eu) -- (-7.5,{1.5*tan(30)});
 	\draw [color=blue!60!white,dashed] (eo) -- (-7.5,{-1.5*tan(30)});

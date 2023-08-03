@@ -21,20 +21,20 @@
 \begin{frame}
   \frametitle{Problemstellung}
   \begin{itemize}[<+->]
-  \item Ausgangspunkt sind die Maxwellgleichungen im Rahmen der Magnetoquasistatik (MQS), also $\frac{\partial \tetB[v]}{\partial t}\ne \vec{0}$ und $\frac{\partial \verschiebung[v]}{\partial t} = \vec{0}$
+  \item Ausgangspunkt sind die Maxwellgleichungen im Rahmen der Magnetoquasistatik (MQS), also $\frac{\partial \BFeld[v]}{\partial t}\ne \vec{0}$ und $\frac{\partial \DFeld[v]}{\partial t} = \vec{0}$
     \begin{equation*}
-      \divergenz \tetB[v] = 0  \quad \rotation \magfeld[v] = \elstromdichte[v] \quad 
-      \divergenz \verschiebung[v] = \laddichte{V}  \quad \textcolor{red}{\rotation \efeld[v] = -\frac{\partial \tetB[v]}{\partial t}} 
+      \divergenz \BFeld[v] = 0  \quad \rotation \HFeld[v] = \StromDichte[v] \quad 
+      \divergenz \DFeld[v] = \laddichte{V}  \quad \textcolor{red}{\rotation \EFeld[v] = -\frac{\partial \BFeld[v]}{\partial t}} 
     \end{equation*}
-  \item Das \alert{Faradaysche Induktionsgesetz} gilt in der \alert{lokalen und instantanen} Formulierung $\rotation \efeld[v] = -\frac{\partial \tetB[v]}{\partial t}$ \alert{immer und überall}.
+  \item Das \alert{Faradaysche Induktionsgesetz} gilt in der \alert{lokalen und instantanen} Formulierung $\rotation \EFeld[v] = -\frac{\partial \BFeld[v]}{\partial t}$ \alert{immer und überall}.
   \item \alert{Aber:} Bei der Anwendung auf tatsächliche Problemstellungen, die natürlich \alert{ausgedehnt} sind und häufig \alert{Relativbewegungen} eine Rolle spielen, kommt es schnell zu Interpretationsproblemen und \alert{scheinbaren Paradoxien}.
     \begin{itemize}[<+->]
     \item Induzierte Spannung ist \alert{keine Potentialdifferenz}
     \item Ausgedehnte Anordnung, aber \alert{keine Relativbewegung}:
       $$
-      U_{ind} = \text{EMK} = \mathcal{E}=\oint_{C(A)} \efeld[v]\cdot\upd\vec{s} = - \frac{\upd }{\upd t} \iint_{A} \tetB[v] \cdot \upd \vec{A} = -\dot{\Phi} \to \text{problemlos}
+      U_{ind} = \text{EMK} = \mathcal{E}=\oint_{C(A)} \EFeld[v]\cdot\upd\vec{s} = - \frac{\upd }{\upd t} \iint_{A} \BFeld[v] \cdot \upd \vec{A} = -\dot{\Phi} \to \text{problemlos}
       $$
-      \item aber allgemein: $\rotation \efeld[v] = -\frac{\partial \tetB[v]}{\partial t} \to \oint_{\textcolor{red}{C(A(t))}} \efeld[v]\cdot\upd\vec{s} = -\iint_{\textcolor{red}{A(t)}} \frac{\partial \tetB[v]}{\partial t} \cdot \upd \vec{A}$
+      \item aber allgemein: $\rotation \EFeld[v] = -\frac{\partial \BFeld[v]}{\partial t} \to \oint_{\textcolor{red}{C(A(t))}} \EFeld[v]\cdot\upd\vec{s} = -\iint_{\textcolor{red}{A(t)}} \frac{\partial \BFeld[v]}{\partial t} \cdot \upd \vec{A}$
     \end{itemize}
   \end{itemize}
 \end{frame}
@@ -43,7 +43,7 @@
 \begin{frame}
   \frametitle{EMK vs Potentialdifferenz}
   \begin{itemize}[<+->]
-  \item Wegen $\rotation \efeld[v] = -\frac{\partial \tetB[v]}{\partial t} \ne \vec{0}$ ist das elektrische Feld \alert{kein Gradientenfeld}
+  \item Wegen $\rotation \EFeld[v] = -\frac{\partial \BFeld[v]}{\partial t} \ne \vec{0}$ ist das elektrische Feld \alert{kein Gradientenfeld}
   \item Spannungen im Sinne von \alert{Potentialdifferenzen} sind \alert{nicht definiert}, weil es kein dem E-Feld zugeordnetes Skalarpotential gibt.
     \item $\text{EMK} = U_{ind}=\mathcal{E}$ ist \alert{keine Potentialdifferenz} $\to$ Spannungsmessungen zwischen identischen Punkten sind \alert{nicht wegunabhängig.}
     \end{itemize}\pause
@@ -73,9 +73,9 @@
     \end{column}
     \begin{column}{.6\textwidth}
   \begin{itemize}[<+->]
-  \item Offenbar gilt $\frac{\partial \tetB[v]}{\partial t} = \vec{0}$:
+  \item Offenbar gilt $\frac{\partial \BFeld[v]}{\partial t} = \vec{0}$:
     $$
-    \to \oint_{C(A)} \efeld[v]\cdot\upd\vec{s} = -\iint_{A} \frac{\partial \tetB[v]}{\partial t} \cdot \upd \vec{A} = 0 \text{ \alert{???}}
+    \to \oint_{C(A)} \EFeld[v]\cdot\upd\vec{s} = -\iint_{A} \frac{\partial \BFeld[v]}{\partial t} \cdot \upd \vec{A} = 0 \text{ \alert{???}}
     $$
   \item Experiment: \alert{es wird eine Spannung induziert}
   \item Erklärungsausweg: \alert{Lorentzkraft} auf Ladungsträger im bewegtem Leiter
@@ -99,15 +99,15 @@
     $$
   \item 3D Form (Flanders, \enquote{Differentiation under the Integral Sign}, The American Mathematical Monthly, Vol. 80, No. 6, 615-627, (1973)):
     $$
-    \frac{\upd}{\upd t}  \iint_{A(t)} \vec{f} (\ortsvektor[v], t) \cdot \upd\vec{A} = \iint_{A(t)} \left( \frac{\partial}{\partial t}\vec{f}(\ortsvektor[v], t) + \left[ \divergenz\; \vec{f}(\ortsvektor[v], t) \right] \vec{v} \right) \cdot \upd\vec{A} - \oint\displaylimits_{C(A(t))}
-    \vec{v} \times  \vec{f}(\ortsvektor[v], t) \cdot \upd\vec{s}   $$
-  \item Hier \(\divergenz \tetB[v]=0\):
+    \frac{\upd}{\upd t}  \iint_{A(t)} \vec{f} (\Ortsr[v], t) \cdot \upd\vec{A} = \iint_{A(t)} \left( \frac{\partial}{\partial t}\vec{f}(\Ortsr[v], t) + \left[ \divergenz\; \vec{f}(\Ortsr[v], t) \right] \vec{v} \right) \cdot \upd\vec{A} - \oint\displaylimits_{C(A(t))}
+    \vec{v} \times  \vec{f}(\Ortsr[v], t) \cdot \upd\vec{s}   $$
+  \item Hier \(\divergenz \BFeld[v]=0\):
     $$
-    \frac{\upd}{\upd t}  \iint_{A(t)} \tetB[v] (\ortsvektor[v], t) \cdot \upd\vec{A} = \iint_{A(t)} \frac{\partial}{\partial t}\tetB[v](\ortsvektor[v], t) \cdot \upd\vec{A} - \oint\displaylimits_{C(A(t))}
-    \vec{v} \times \tetB[v](\ortsvektor[v], t) \cdot \upd\vec{s}   $$
+    \frac{\upd}{\upd t}  \iint_{A(t)} \BFeld[v] (\Ortsr[v], t) \cdot \upd\vec{A} = \iint_{A(t)} \frac{\partial}{\partial t}\BFeld[v](\Ortsr[v], t) \cdot \upd\vec{A} - \oint\displaylimits_{C(A(t))}
+    \vec{v} \times \BFeld[v](\Ortsr[v], t) \cdot \upd\vec{s}   $$
   \item Damit folgt dann:
     $$
-   \boxed{\mathcal{E}=\text{EMK}=U_\text{ind} = \oint\displaylimits_{C(A(t))} \left( \efeld[v] + \vec{v} \times \tetB[v]\right) \cdot\upd\vec{s} = - \frac{\upd}{\upd t}  \iint_{A(t)} \tetB[v] \cdot \upd\vec{A}  = -\dot{\Phi}}
+   \boxed{\mathcal{E}=\text{EMK}=U_\text{ind} = \oint\displaylimits_{C(A(t))} \left( \EFeld[v] + \vec{v} \times \BFeld[v]\right) \cdot\upd\vec{s} = - \frac{\upd}{\upd t}  \iint_{A(t)} \BFeld[v] \cdot \upd\vec{A}  = -\dot{\Phi}}
     $$
 \end{itemize}
 \end{frame}
@@ -142,19 +142,19 @@
   \item Es sei S' ein Inertialsystem, das sich mit $\vec{v}=\text{const.}$ relativ zum Laborsystem S bewegt
   \item Mit $\vec{v} = v \vu{v}$ können die Felder in S in longitudinale und transversale Anteile zerlegt werden:
     \begin{align*}
-      \efeld[v] & = \efeld[v]_\parallel + \efeld[v]_\perp = (\vu{v} \cdot \efeld[v]) \vu{v} + \vu{v} \times (\vu{v} \times \efeld[v]) \\  
-      \tetB[v] & = \tetB[v]_\parallel + \tetB[v]_\perp = (\vu{v} \cdot \tetB[v]) \vu{v} + \vu{v} \times (\vu{v} \times \tetB[v])
+      \EFeld[v] & = \EFeld[v]_\parallel + \EFeld[v]_\perp = (\vu{v} \cdot \EFeld[v]) \vu{v} + \vu{v} \times (\vu{v} \times \EFeld[v]) \\  
+      \BFeld[v] & = \BFeld[v]_\parallel + \BFeld[v]_\perp = (\vu{v} \cdot \BFeld[v]) \vu{v} + \vu{v} \times (\vu{v} \times \BFeld[v])
     \end{align*}
   \item Im System S' ergeben sich diese Felder dann zu:
     \begin{align*}
-      \efeld[v]' & = \efeld[v]_\parallel + \gamma ( \efeld[v]_\perp + \vec{v} \times \tetB[v]) & \tetB[v]' & = \tetB[v]_\parallel + \gamma ( \tetB[v]_\perp - \frac{1}{c^2}\vec{v} \times \efeld[v]) \\
-                 &= (\vu{v} \cdot \efeld[v]) \vu{v} + \gamma \left[\vu{v} \times (\vu{v} \times \efeld[v]) + \vec{v} \times \tetB[v] \right] &
-                &= (\vu{v} \cdot \tetB[v]) \vu{v} + \gamma \left[\vu{v} \times (\vu{v} \times \tetB[v]) - \frac{\vec{v}}{c^2} \times \efeld[v] \right]           
+      \EFeld[v]' & = \EFeld[v]_\parallel + \gamma ( \EFeld[v]_\perp + \vec{v} \times \BFeld[v]) & \BFeld[v]' & = \BFeld[v]_\parallel + \gamma ( \BFeld[v]_\perp - \frac{1}{c^2}\vec{v} \times \EFeld[v]) \\
+                 &= (\vu{v} \cdot \EFeld[v]) \vu{v} + \gamma \left[\vu{v} \times (\vu{v} \times \EFeld[v]) + \vec{v} \times \BFeld[v] \right] &
+                &= (\vu{v} \cdot \BFeld[v]) \vu{v} + \gamma \left[\vu{v} \times (\vu{v} \times \BFeld[v]) - \frac{\vec{v}}{c^2} \times \EFeld[v] \right]           
     \end{align*}
   \item Für $v \ll c$:
     \begin{align*}
-      \efeld[v]_\parallel' & = \efeld[v]_\parallel & \tetB[v]_\parallel' &= \tetB[v]_\parallel\\
-      \efeld[v]_\perp' &= \efeld[v]_\perp + \vec{v} \times \tetB[v] & \tetB[v]_\perp'  & = \tetB[v]_\perp  
+      \EFeld[v]_\parallel' & = \EFeld[v]_\parallel & \BFeld[v]_\parallel' &= \BFeld[v]_\parallel\\
+      \EFeld[v]_\perp' &= \EFeld[v]_\perp + \vec{v} \times \BFeld[v] & \BFeld[v]_\perp'  & = \BFeld[v]_\perp  
       \end{align*}
 \end{itemize}
 \end{frame}
@@ -169,14 +169,14 @@
   \begin{itemize}[<+->]
   \item Felder im Ruhesystem der Schleife (S'):
    \begin{align*}
-      \efeld[v]_\parallel' & = \efeld[v]_\parallel & \tetB[v]_\parallel' &= \tetB[v]_\parallel\\
-      \efeld[v]_\perp' &= \efeld[v]_\perp + \vec{v} \times \tetB[v] & \tetB[v]_\perp'  & = \tetB[v]_\perp  
+      \EFeld[v]_\parallel' & = \EFeld[v]_\parallel & \BFeld[v]_\parallel' &= \BFeld[v]_\parallel\\
+      \EFeld[v]_\perp' &= \EFeld[v]_\perp + \vec{v} \times \BFeld[v] & \BFeld[v]_\perp'  & = \BFeld[v]_\perp  
       \end{align*}
-    \item Es gilt $\frac{\partial \tetB[v]'}{\partial t} = \frac{\partial \tetB[v]}{\partial t} \ne \vec{0}$ in S'
+    \item Es gilt $\frac{\partial \BFeld[v]'}{\partial t} = \frac{\partial \BFeld[v]}{\partial t} \ne \vec{0}$ in S'
     \item Fläche ist zeitunabhängig in S'
   \item Damit folgt dann \alert{erneut}:
     $$
-   \boxed{U_\text{ind} = \oint\displaylimits_{C(A)} \left( \efeld[v] + \vec{v} \times \tetB[v]\right) \cdot\upd\vec{s} = - \frac{\upd}{\upd t}  \iint_{A} \tetB[v] \cdot \upd\vec{A}  = -\dot{\Phi}}
+   \boxed{U_\text{ind} = \oint\displaylimits_{C(A)} \left( \EFeld[v] + \vec{v} \times \BFeld[v]\right) \cdot\upd\vec{s} = - \frac{\upd}{\upd t}  \iint_{A} \BFeld[v] \cdot \upd\vec{A}  = -\dot{\Phi}}
     $$
   \item Mathematik (pure Logik) und Physik (aus Beobachtung abgeleitete Theorie) liefern \alert{identische Resultate}!
     

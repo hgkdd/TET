@@ -36,13 +36,6 @@
 }
 \makeatother 
 
-\ProvideDocumentCommand\tetE{o}{\qty{E}{#1}}
-\ProvideDocumentCommand\tetD{o}{\qty{D}{#1}}
-\ProvideDocumentCommand\tetB{o}{\qty{B}{#1}}
-\ProvideDocumentCommand\tetH{o}{\qty{H}{#1}}
-\ProvideDocumentCommand\tetr{o}{\qty{r}{#1}}
-\ProvideDocumentCommand\tetsP{o}{\qty{\phi}{#1}}
-\ProvideDocumentCommand\tetvP{o}{\qty{A}{#1}}
 
 
 % % % % % % % % % % % % % % % % % % %
@@ -163,14 +156,30 @@
 
 % % % % % % % % % % % %
 % Formelzeichen
+\ProvideDocumentCommand\EFeld{o}{\qty{E}{#1}}
+\ProvideDocumentCommand\DFeld{o}{\qty{D}{#1}}
+\ProvideDocumentCommand\BFeld{o}{\qty{B}{#1}}
+\ProvideDocumentCommand\HFeld{o}{\qty{H}{#1}}
+\ProvideDocumentCommand\Ortsr{o}{\qty{r}{#1}}
+\ProvideDocumentCommand\SkalarPot{o}{\qty{\phi}{#1}}
+\ProvideDocumentCommand\VektorPot{o}{\qty{A}{#1}}
+\ProvideDocumentCommand\StromDichte{o}{\qty{J}{#1}}
+\ProvideDocumentCommand\PoyntingVektor{o}{\qty{S}{#1}}
+\ProvideDocumentCommand\Magnetisierung{o}{\qty{M}{#1}}
+\ProvideDocumentCommand\Strom{o}{\qty{I}{#1}}
+\ProvideDocumentCommand\Spannung{o}{\qty{U}{#1}}
+\ProvideDocumentCommand\Widerstand{o}{\qty{R}{#1}}
+\ProvideDocumentCommand\Impedanz{o}{\qty{Z}{#1}}
+\ProvideDocumentCommand\Leistung{o}{\qty{P}{#1}}
+\ProvideDocumentCommand\Dipolmoment{o}{\qty{p}{#1}}
+\ProvideDocumentCommand\Dipoldichte{o}{\qty{m}{#1}}
+\ProvideDocumentCommand\Flaeche{o}{\qty{A}{#1}}
+\ProvideDocumentCommand\SpezialFlaeche{o}{\qty{F}{#1}}
+\ProvideDocumentCommand\Weg{o}{\qty{s}{#1}}
+\ProvideDocumentCommand\Geschwindigkeit{o}{\qty{v}{#1}}
+\ProvideDocumentCommand\Abstand{o}{\qty{R}{#1}}
+\ProvideDocumentCommand\Wellenzahl{o}{\qty{k}{#1}}
 
-% magnetische Flussdichte
-% \newcommand{\magflussd}[1][normal]{\IfStrEq{#1}{v}{\ensuremath{\vec{B}}}	% Vektor
-% 							{\IfStrEq{#1}{u}{\ensuremath{\underline{B}}}	% Unterstrichen
-% 							{\IfStrEq{#1}{uv}{\ensuremath{\underline{\vec{B}}}}	% Unterstrichener Vektor
-% 							{\IfStrEq{#1}{vs}{\ensuremath{\vec{B}'}}
-% 							{\IfStrEq{#1}{normal}{\ensuremath{B}}		% default
-% 							{\errmessage{Option nicht bekannt}}}}}}}	% Fehler
 
 % magnetischer Fluss
 \newcommand{\magfluss}[2][2 = normal, 1=n!n, usedefault]{
@@ -181,95 +190,12 @@
 								{\ensuremath{\dot{\Phi}_\mathrm{m}}}		% ohne Index
 								{\ensuremath{\dot{\Phi}_\mathrm{m,#1}}}}				% zusätzlicher Index
 								{\errmessage{Option nicht bekannt}}}}
-
-% Magnetisierung
-\newcommand{\magnetis}[1][normal]{\IfStrEq{#1}{v}{\ensuremath{\vec{M}}}	% Vektor
-								{\ensuremath{M}}}	% default
-
 							
-% dielektrische Verschiebung
-\newcommand{\verschiebung}[1][normal]{\IfStrEq{#1}{v}{\ensuremath{\vec{D}}}	% Vektor
-								{\IfStrEq{#1}{u}{\ensuremath{\underline{D}}}	% Unterstrichen
-								{\IfStrEq{#1}{uv}{\ensuremath{\underline{\vec{D}}}}	% Unterstrichener Vektor
-								{\IfStrEq{#1}{normal}{\ensuremath{D}}			% default
-								{\errmessage{Option nicht bekannt}}}}}}			% Fehler
-
-% elektrische Feldstärke
-
-\newcommand{\efeld}[1][normal]{\IfStrEq{#1}{v}{\ensuremath{\vec{E}}}		% Vektor
-						{\IfStrEq{#1}{u}{\ensuremath{\underline{E}}}	% Unterstrichen
-						{\IfStrEq{#1}{uv}{\ensuremath{\underline{\vec{E}}}}	% Unterstrichener Vektor
-						{\IfStrEq{#1}{vs}{\ensuremath{\vec{E}'}}		% Vektor gestrichen
-						{\IfStrEq{#1}{normal}{\ensuremath{E}}			% default
-						{\errmessage{Option nicht bekannt}}}}}}}		% Fehler
-
-
-% magnetische Feldstärke
-\newcommand{\magfeld}[1][normal]{\IfStrEq{#1}{v}{\ensuremath{\vec{H}}}	% Vektor
-							{\IfStrEq{#1}{u}{\ensuremath{\underline{H}}}	% Unterstrichen
-							{\IfStrEq{#1}{uv}{\ensuremath{\underline{\vec{H}}}}	% Unterstrichener Vektor
-							{\IfStrEq{#1}{normal}{\ensuremath{H}}			% default
-							{\errmessage{Option nicht bekannt}}}}}}			% Fehler
-
-% magnetisches Vektorpotential
-\newcommand{\magvekpot}[1][normal]{\IfStrEq{#1}{v}{\ensuremath{\vec{A}}}	% Vektor
-								{\IfStrEq{#1}{u}{\ensuremath{\underline{A}}}	% Unterstrichen
-								{\IfStrEq{#1}{uv}{\ensuremath{\underline{\vec{A}}}}	% Unterstrichener Vektor
-								{\IfStrEq{#1}{vs}{\ensuremath{\vec{A}\,'}}
-								{\IfStrEq{#1}{normal}{\ensuremath{A}}	% default
-								{\errmessage{Option nicht bekannt}}}}}}}			% Fehler
-
-
-% elektrische Stromdichte
-\newcommand{\elstromdichte}[1][normal]{\IfStrEq{#1}{v}{\ensuremath{\vec{J}}}	% Vektor
-								{\IfStrEq{#1}{u}{\ensuremath{\underline{J}}}	% Unterstrichen
-								{\IfStrEq{#1}{uv}{\ensuremath{\underline{\vec{J}}}}	% Unterstrichener Vektor
-								{\IfStrEq{#1}{normal}{\ensuremath{J}}	% default
-								{\errmessage{Option nicht bekannt}}}}}}			% Fehler
-								
-% poyntingscher Vektor
-\newcommand{\poyvec}[1][normal]{\IfStrEq{#1}{v}{\ensuremath{\vec{S}}}	% Vektor
-							{\IfStrEq{#1}{u}{\ensuremath{\underline{S}}}	% Unterstrichen
-							{\IfStrEq{#1}{uv}{\ensuremath{\underline{\vec{S}}}}	% Unterstrichener Vektor
-							{\IfStrEq{#1}{normal}{\ensuremath{S}}			% default
-							{\errmessage{Option nicht bekannt}}}}}}			% Fehler
-							
-% elektrischer Strom
-%\newcommand{\elstrom}{\ensuremath{I}}
-\newcommand{\elstrom}[1][normal]{\IfStrEq{#1}{u}{\ensuremath{\underline{I}}}	% Phasor
-							{\IfStrEq{#1}{normal}{\ensuremath{I}}			% default
-							{\errmessage{Option nicht bekannt}}}}			% Fehler
-
-% elektrisches Potential
-\newcommand{\elpotential}[1][normal]{\IfStrEq{#1}{normal}{\ensuremath{\phi}}
-							{\IfStrEq{#1}{u}{\ensuremath{\underline{\phi}}}
-							{\IfStrEq{#1}{s}{\ensuremath{\phi '}}
-							{\errmessage{Option nicht bekannt}}}}}			% Fehler
-							
-
 % magnetisches Potential
 \newcommand{\magpotential}[1][normal]{\IfStrEq{#1}{normal}{\ensuremath{\phi_\mathrm{m}}}		% ohne Index
 								{\ensuremath{\phi_\mathrm{m,#1}}}					% zusätzlicher Index
 								}
 
-
-% elektrische Spannung
-%\newcommand{\spannung}{\ensuremath{U}}
-\newcommand{\spannung}[1][normal]{\IfStrEq{#1}{u}{\ensuremath{\underline{U}}}	% Phasor
-							{\IfStrEq{#1}{normal}{\ensuremath{U}}			% default
-							{\errmessage{Option nicht bekannt}}}}			% Fehler
-
-% Widerstand
-\newcommand{\elwiderstand}[1][normal]{\IfStrEq{#1}{normal}{\ensuremath{R}}	% normal
-									{\IfStrEq{#1}{s}{\ensuremath{R'}}		% gestrichen
-									{\errmessage{Option nicht bekannt}}}}	% Fehler
-
-% Impedanz
-\newcommand{\impedanz}[1][normal]{\IfStrEq{#1}{normal}{\ensuremath{Z}}		% normal
-							{\IfStrEq{#1}{s}{\ensuremath{Z'}}				% gestrichen
-							{\IfStrEq{#1}{u}{\ensuremath{\underline{Z}}}	% Komplex
-							{\IfStrEq{#1}{us}{\ensuremath{\underline{Z}'}}	% Komplex, gestrichen
-							\errmessage{Option nicht bekannt}}}}}			% Fehler
 
 % elektrische Ladungsdichte
 \newcommand{\laddichte}[2][ ]{\IfStrEq{#2}{V}{\ensuremath{\rho_\mathrm{V#1}}}		% Volumendichte
@@ -293,11 +219,6 @@
 % Arbeit
 \newcommand{\arbeit}{\ensuremath{\Updelta A}}
 
-% elektrische Leistung
-\newcommand{\leistung}[1][normal]{\IfStrEq{#1}{v}{\ensuremath{\vec{P}}}	% Vektor
-							{\IfStrEq{#1}{normal}{\ensuremath{P}}			% default
-							{\errmessage{Option nicht bekannt}}}}			% Fehler
-							
 
 % Leistungsdichte
 \newcommand{\leistungsdichte}[1]{\IfStrEq{#1}{V}{\ensuremath{p_\mathrm{V}}}		% Volumendichte
@@ -340,79 +261,11 @@
 \newcommand{\drehmoment}[1][normal]{\IfStrEq{#1}{v}{\ensuremath{\vec{M}}}	% Vektor
 										{\ensuremath{M}}}		% Allgemein
 
-% Dipolmoment
-\newcommand{\dipolmoment}[1][normal]{\IfStrEq{#1}{v}{\ensuremath{\vec{p}}}	% Vektor
-								{\IfStrEq{#1}{u}{\ensuremath{\underline{p}}}	% Unterstrichen
-								{\IfStrEq{#1}{uv}{\ensuremath{\underline{\vec{p}}}}	% Unterstrichener Vektor
-								{\IfStrEq{#1}{normal}{\ensuremath{p}}	% default
-								{\errmessage{Option nicht bekannt}}}}}}			% Fehler
-
-% Dipoldichte
-\newcommand{\dipoldichte}[1][normal]{\IfStrEq{#1}{v}{\ensuremath{\vec{m}}}	% Vektor
-									{\IfStrEq{#1}{u}{\ensuremath{\underline{m}}}	% Unterstrichen
-									{\IfStrEq{#1}{uv}{\ensuremath{\underline{\vec{m}}}}	% Unterstrichener Vektor
-									{\IfStrEq{#1}{normal}{\ensuremath{m}}	% default
-									{\errmessage{Option nicht bekannt}}}}}}			% Fehler
-
-% Fläche
-\newcommand{\flaeche}[1][normal]{\IfStrEq{#1}{v}{\ensuremath{\vec{A}}}	% Vektor
-							{\IfStrEq{#1}{u}{\ensuremath{\underline{A}}}	% Unterstrichen
-							{\IfStrEq{#1}{uv}{\ensuremath{\underline{\vec{A}}}}	% Unterstrichener Vektor
-							{\IfStrEq{#1}{vs}{\ensuremath{\vec{A}\,'}}		% gestrichener Vektor
-							{\IfStrEq{#1}{normal}{\ensuremath{A}}			% default
-							{\errmessage{Option nicht bekannt}}}}}}}			% Fehler
-							
-% spezielle Fläche
-\newcommand{\spezflaeche}[1][normal]{\IfStrEq{#1}{v}{\ensuremath{\vec{F}}}	% Vektor
-									{\IfStrEq{#1}{u}{\ensuremath{\underline{F}}}	% Unterstrichen
-									{\IfStrEq{#1}{uv}{\ensuremath{\underline{\vec{F}}}}	% Unterstrichener Vektor
-									{\IfStrEq{#1}{vs}{\ensuremath{\vec{F}\,'}}		% gestrichener Vektor
-									{\IfStrEq{#1}{normal}{\ensuremath{F}}			% default
-									{\errmessage{Option nicht bekannt}}}}}}}		% Fehler
-
-% Weg
-\newcommand{\weg}[1][normal]{\IfStrEq{#1}{v}{\ensuremath{\vec{s}}}	% Vektor
-						{\IfStrEq{#1}{u}{\ensuremath{\underline{s}}}	% Unterstrichen
-						{\IfStrEq{#1}{uv}{\ensuremath{\underline{\vec{s}}}}	% Unterstrichener Vektor
-						{\IfStrEq{#1}{vs}{\ensuremath{\vec{s}\,'}}		% Vektor gestrichen
-						{\IfStrEq{#1}{s}{\ensuremath{s'}}				% gestrichen
-						{\IfStrEq{#1}{normal}{\ensuremath{s}}			% default
-						{\errmessage{Option nicht bekannt}}}}}}}}		% Fehler
-
-% Geschwindigkeit
-\newcommand{\geschw}[1][normal]{\IfStrEq{#1}{v}{\ensuremath{\vec{v}}}	% Vektor
-								{\IfStrEq{#1}{u}{\ensuremath{\underline{v}}}	% Unterstrichen
-								{\IfStrEq{#1}{uv}{\ensuremath{\underline{\vec{v}}}}	% Unterstrichener Vektor
-								{\IfStrEq{#1}{s}{\ensuremath{v'}}					% normal mit Strich
-								{\IfStrEq{#1}{vs}{\ensuremath{\vec{v}\,'}}			% Vektor mit Strich
-								{\IfStrEq{#1}{us}{\ensuremath{\underline{v}\,'}}	% unterstrichen mit Strich
-								{\IfStrEq{#1}{uvs}{\ensuremath{\underline{\vec{v}}\,'}}	% unterstrichener Vektor mit Strich
-								{\IfStrEq{#1}{normal}{\ensuremath{v}}			% default
-								{\errmessage{Option nicht bekannt}}}}}}}}}}		% Fehler
-
 % Masse
 \newcommand{\masse}{\ensuremath{m}}
 
 % Punkt
 \newcommand{\punkt}{\ensuremath{P}}
-
-% Ortsvektor
-\newcommand{\ortsvektor}[1][normal]{\IfStrEq{#1}{v}{\ensuremath{\vec{r}}}	% Vektor
-								{\IfStrEq{#1}{u}{\ensuremath{\underline{r}}}	% Unterstrichen
-								{\IfStrEq{#1}{uv}{\ensuremath{\underline{\vec{r}}}}	% Unterstrichener Vektor
-								{\IfStrEq{#1}{s}{\ensuremath{r'}}					% normal mit Strich
-								{\IfStrEq{#1}{vs}{\ensuremath{\vec{r}\,'}}			% Vektor mit Strich 
-								{\IfStrEq{#1}{vss}{\ensuremath{\vec{r}\,''}}			% Vektor mit Strich Strich 
-								{\IfStrEq{#1}{us}{\ensuremath{\underline{r}\,'}}	% unterstrichen mit Strich
-								{\IfStrEq{#1}{uvs}{\ensuremath{\underline{\vec{r}}\,'}}	% unterstrichener Vektor mit Strich
-								{\IfStrEq{#1}{normal}{\ensuremath{r}}			% default
-								{\errmessage{Option nicht bekannt}}}}}}}}}}}		% Fehler
-
-\newcommand{\abstandsvektor}[1][normal]{\IfStrEq{#1}{v}{\ensuremath{\vec{R}}}	% Vektor
-										{\IfStrEq{#1}{u}{\ensuremath{\underline{R}}}	% Unterstrichen
-										{\IfStrEq{#1}{uv}{\ensuremath{\underline{\vec{R}}}}	% Unterstrichener Vektor
-										{\IfStrEq{#1}{normal}{\ensuremath{R}}			% default
-										{\errmessage{Option nicht bekannt}}}}}}		% Fehler
 
 % absolute Temperatur
 \newcommand{\tempabs}{\ensuremath{T}}	
@@ -430,17 +283,6 @@
 %Brechungsindex
 \newcommand{\brechind}{\ensuremath{n}}
 
-%Wellenvektor / Wellenzahl
-\newcommand{\wellenzahl}[1][normal]{\IfStrEq{#1}{v}{\ensuremath{\vec{k}}}	% Vektor
-								{\IfStrEq{#1}{u}{\ensuremath{\underline{k}}}	% Unterstrichen
-								{\IfStrEq{#1}{uv}{\ensuremath{\underline{\vec{k}}}}	% Unterstrichener Vektor
-								{\IfStrEq{#1}{s}{\ensuremath{k'}}					% normal mit Strich
-								{\IfStrEq{#1}{vs}{\ensuremath{\vec{k}\,'}}			% Vektor mit Strich
-								{\IfStrEq{#1}{us}{\ensuremath{\underline{k}\,'}}	% unterstrichen mit Strich
-								{\IfStrEq{#1}{uvs}{\ensuremath{\underline{\vec{k}}\,'}}	% unterstrichener Vektor mit Strich
-								{\IfStrEq{#1}{normal}{\ensuremath{k}}			% default
-								{\errmessage{Option nicht bekannt}}}}}}}}}}		% Fehler
-
 \newcommand{\rand}{\ensuremath{C}}
 
 \newcommand{\oberfl}{O}
@@ -448,9 +290,9 @@
 \newcommand{\volumen}{V}
 
 % Integral nach
-\newcommand{\intweg}[1][normal]{\ensuremath{\, \upd \weg[#1]}}
+\newcommand{\intweg}[1][normal]{\ensuremath{\, \upd \Weg[#1]}}
 
-\newcommand{\intflaeche}[1][normal]{\ensuremath{\, \upd \flaeche[#1]}}
+\newcommand{\intflaeche}[1][normal]{\ensuremath{\, \upd \Flaeche[#1]}}
 
 \newcommand{\intvolumen}{\ensuremath{\, \upd \volumen}}
 
@@ -474,27 +316,6 @@
 										{\ensuremath{c}}}	% Allgemein
 
 \newcommand{\elladug}{\ensuremath{q_\mathrm{e}}}
-
-
-
-% % % % % % % % % % % % % % % % %
-% neue Umgebungen
-
-% Nummerierte Description
-\newcounter{listenzaehler}
-\newcommand{\listezaehlen}{\addtocounter{listenzaehler}{1}}
-\newcommand{\listeneinrueckung}{\quad}
-\newcommand{\itemnum}[1]{\item[\listezaehlen \listeneinrueckung \thelistenzaehler . #1]}
-\newenvironment{numdescription}[2][1=z, 2=n, usedefault] %
-	{\renewcommand{\listeneinrueckung}{\IfStrEq{#2}{n}{}{\IfStrEq{#2}{y}{\quad}{}}} % Einrücken oder nicht
-	 \IfStrEq{#1}{z}{\renewcommand{\thelistenzaehler}{\arabic{listenzaehler}}}	% Zählung mit Arabischen Zahlen
-	{\IfStrEq{#1}{A}{\renewcommand{\thelistenzaehler}{\Alph{listenzaehler}}}	% Große Buchstaben
-	{\IfStrEq{#1}{a}{\renewcommand{\thelistenzaehler}{\alph{listenzaehler}}}	% kleine Buchstaben
-	{\IfStrEq{#1}{R}{\renewcommand{\thelistenzaehler}{\Roman{listenzaehler}}}	% Große römische Buchtsaben
-	{\IfStrEq{#1}{r}{\renewcommand{\thelistenzaehler}{\roman{listenzaehler}}}{}	}}}}	% kleine römische Buchtsaben
-	\setcounter{listenzaehler}{0} % Zähler auf Null setzen
-	\begin{description}} % Anfang
-	{\end{description}} % Ende
 
 
 \DeclareDocumentCommand\vectorunit{ s m }{\IfBooleanTF{#1}{\boldsymbol{\vec{e}_{#2}}}{\vec{e}_{#2}}} % Unit vector [star for Greek and italic Roman]

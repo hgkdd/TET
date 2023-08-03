@@ -30,11 +30,11 @@
        \draw (a) -- (b);
        \draw[color=red, -stealth] (1.5,0) -- (1.5,.5) node[right] {$\vec{n}$}; 
        \draw[ -stealth] (O) -- (0,2) node[right] {$z$}; 
-       \draw[ -stealth] (O) -- (-1,1.5) node[left] {$\ortsvektor[v]$}; 
-       \draw[ dashed, -stealth] (O) -- (-1,-1.5) node[left] {$T(\ortsvektor[v])$}; 
-       \draw[ -stealth] (O) -- (1,2) node[below right] {$\ortsvektor[vs]_i$};
+       \draw[ -stealth] (O) -- (-1,1.5) node[left] {$\Ortsr[v]$}; 
+       \draw[ dashed, -stealth] (O) -- (-1,-1.5) node[left] {$T(\Ortsr[v])$}; 
+       \draw[ -stealth] (O) -- (1,2) node[below right] {$\Ortsr[vs]_i$};
        \filldraw [color=blue!70] (1,2) circle (1pt) node[above right] {$Q_i$}; 
-       \draw[ dashed, -stealth] (O) -- (1,-2) node[below right] {$T(\ortsvektor[vs]_i)$};
+       \draw[ dashed, -stealth] (O) -- (1,-2) node[below right] {$T(\Ortsr[vs]_i)$};
        \filldraw [color=red!70] (1,-2) circle (1pt) node[above right] {$Q_i^\star=-Q_i$}; 
 \draw(-1.5,0.5) node {$V_1$}; 
 \draw(-1.5,-0.5) node {$V_2$}; 
@@ -45,23 +45,23 @@
   \begin{itemize}[<+->]
   \item Abbildung $T$ intuitiv klar
     \begin{align*}
-      T:\; &\mathbb{R}^3 \to \mathbb{R}^3: \; \ortsvektor[v] \to T(\ortsvektor[v]) \nonumber\\
-      \Aboxed{&T(\ortsvektor[v]) = \ortsvektor[v] - 2 \vec{n} (\vec{n}\cdot \ortsvektor[v])}
+      T:\; &\mathbb{R}^3 \to \mathbb{R}^3: \; \Ortsr[v] \to T(\Ortsr[v]) \nonumber\\
+      \Aboxed{&T(\Ortsr[v]) = \Ortsr[v] - 2 \vec{n} (\vec{n}\cdot \Ortsr[v])}
     \end{align*}
   \item Funktion $\lambda$ intuitiv klar:
     \begin{align*}
-      \lambda:\; &V_1\cup O(V_2) \to \mathbb{R}: \ortsvektor[vs] \to \lambda(\ortsvektor[vs])\nonumber\\
-      \Aboxed{&\lambda(\ortsvektor[vs]) = 1}
+      \lambda:\; &V_1\cup O(V_2) \to \mathbb{R}: \Ortsr[vs] \to \lambda(\Ortsr[vs])\nonumber\\
+      \Aboxed{&\lambda(\Ortsr[vs]) = 1}
     \end{align*}
-    \item Anforderungen offensichtlich erfüllt: Bildladungen in $V_2$, $O(V_2)$ wird auf sich selbst abgebildet, $\lambda(\ortsvektor[vs]) = 1$ für $\ortsvektor[vs] \in O(V_2)$ 
+    \item Anforderungen offensichtlich erfüllt: Bildladungen in $V_2$, $O(V_2)$ wird auf sich selbst abgebildet, $\lambda(\Ortsr[vs]) = 1$ für $\Ortsr[vs] \in O(V_2)$ 
     \end{itemize}
   \end{column}
 \end{columns}
 \pause
 \begin{itemize}
-\item Für $\elpotential = 0$ auf $O(V_2)$: Umwälzen von Quellpunkt zum Aufpunkt:
+\item Für $\SkalarPot = 0$ auf $O(V_2)$: Umwälzen von Quellpunkt zum Aufpunkt:
   \begin{equation*}
-    \lambda(\ortsvektor[vs]_i) G(\ortsvektor[v],T(\ortsvektor[vs]_i)) \stackrel{!}{=}  \lambda(\ortsvektor[v]) G(T(\ortsvektor[v]),\ortsvektor[vs]_i) \text{ erfüllt, weil G nur vom Abstand abhängt}
+    \lambda(\Ortsr[vs]_i) G(\Ortsr[v],T(\Ortsr[vs]_i)) \stackrel{!}{=}  \lambda(\Ortsr[v]) G(T(\Ortsr[v]),\Ortsr[vs]_i) \text{ erfüllt, weil G nur vom Abstand abhängt}
     \end{equation*}
   \end{itemize}
 \end{frame}
@@ -70,23 +70,23 @@
 \frametitle{Umwälzung formal nachrechnen}
 
 \begin{itemize}[<+->]
-\item Nachrechnen, dass $T(T(\ortsvektor[v])) = \ortsvektor[v]$ ist:
+\item Nachrechnen, dass $T(T(\Ortsr[v])) = \Ortsr[v]$ ist:
   \begin{align*}
-    T(T(\ortsvektor[v])) &= T(\ortsvektor[v] - 2 \vec{n} (\vec{n}\cdot \ortsvektor[v]))\\
-    & = \ortsvektor[v] - 2 \vec{n} (\vec{n}\cdot \ortsvektor[v]) - 2 \vec{n} (\vec{n}\cdot \left\{ \ortsvektor[v] - 2 (\vec{n}\cdot \ortsvektor[v]) \vec{n}  \right\} )  \\ 
-    & = \ortsvektor[v] - 2 \vec{n} (\vec{n}\cdot \ortsvektor[v]) - 2 \vec{n} (\vec{n}\cdot \ortsvektor[v] - 2 \vec{n}\cdot \ortsvektor[v])\\   
-                         & = \ortsvektor[v] - 2 \vec{n} (\vec{n}\cdot \ortsvektor[v]) - 2 \vec{n} (- \vec{n}\cdot \ortsvektor[v]) = \ortsvektor[v]
+    T(T(\Ortsr[v])) &= T(\Ortsr[v] - 2 \vec{n} (\vec{n}\cdot \Ortsr[v]))\\
+    & = \Ortsr[v] - 2 \vec{n} (\vec{n}\cdot \Ortsr[v]) - 2 \vec{n} (\vec{n}\cdot \left\{ \Ortsr[v] - 2 (\vec{n}\cdot \Ortsr[v]) \vec{n}  \right\} )  \\ 
+    & = \Ortsr[v] - 2 \vec{n} (\vec{n}\cdot \Ortsr[v]) - 2 \vec{n} (\vec{n}\cdot \Ortsr[v] - 2 \vec{n}\cdot \Ortsr[v])\\   
+                         & = \Ortsr[v] - 2 \vec{n} (\vec{n}\cdot \Ortsr[v]) - 2 \vec{n} (- \vec{n}\cdot \Ortsr[v]) = \Ortsr[v]
   \end{align*}
-\item Betrag von $\left|T(\ortsvektor[v])\right|$:
+\item Betrag von $\left|T(\Ortsr[v])\right|$:
   \begin{equation*}
-    \left|T(\ortsvektor[v])\right| = \left| \ortsvektor[v] - 2 (\vec{n}\cdot \ortsvektor[v]) \vec{n} \right| = \left| \ortsvektor[v] \right| \text{ weil nur Vorzeichen der Normalkomponente geändert}
+    \left|T(\Ortsr[v])\right| = \left| \Ortsr[v] - 2 (\vec{n}\cdot \Ortsr[v]) \vec{n} \right| = \left| \Ortsr[v] \right| \text{ weil nur Vorzeichen der Normalkomponente geändert}
     \end{equation*}
   \item Umwälzung nachrechnen:
     \begin{align*}
-      G(\ortsvektor[v], T(\ortsvektor[vs])) &= \frac{1}{4\pi\varepsilon_1} \frac{1}{\left|\ortsvektor[v] -  T(\ortsvektor[vs]) \right|} = \frac{1}{4\pi\varepsilon_1} \frac{1}{\left|T(T(\ortsvektor[v])) - T(\ortsvektor[vs]) \right|} \text{ wegen } T(T(\ortsvektor[v])) = \ortsvektor[v]\\
-      &= \frac{1}{4\pi\varepsilon_1} \frac{1}{\left|T( T(\ortsvektor[v]) - \ortsvektor[vs] )\right|} \text{ weil } T \text{ linear ist}\\
-                                          &= \frac{1}{4\pi\varepsilon_1} \frac{1}{\left| T(\ortsvektor[v]) - \ortsvektor[vs] \right|} \text{ weil } \left|T(\ortsvektor[v])\right| = \left| \ortsvektor[v] \right| \\
-                                            &= G(T(\ortsvektor[v]), \ortsvektor[vs])
+      G(\Ortsr[v], T(\Ortsr[vs])) &= \frac{1}{4\pi\varepsilon_1} \frac{1}{\left|\Ortsr[v] -  T(\Ortsr[vs]) \right|} = \frac{1}{4\pi\varepsilon_1} \frac{1}{\left|T(T(\Ortsr[v])) - T(\Ortsr[vs]) \right|} \text{ wegen } T(T(\Ortsr[v])) = \Ortsr[v]\\
+      &= \frac{1}{4\pi\varepsilon_1} \frac{1}{\left|T( T(\Ortsr[v]) - \Ortsr[vs] )\right|} \text{ weil } T \text{ linear ist}\\
+                                          &= \frac{1}{4\pi\varepsilon_1} \frac{1}{\left| T(\Ortsr[v]) - \Ortsr[vs] \right|} \text{ weil } \left|T(\Ortsr[v])\right| = \left| \Ortsr[v] \right| \\
+                                            &= G(T(\Ortsr[v]), \Ortsr[vs])
     \end{align*}
    
   \end{itemize}
@@ -101,13 +101,13 @@
 \begin{itemize}[<+->]
 \item Problemangepasste Greensche-Funktion:
       \begin{align*}
-         G^\star(\ortsvektor[v],\ortsvektor[vs]_i) & = G(\ortsvektor[v],\ortsvektor[vs]_i) -\lambda(\ortsvektor[v]) G(T(\ortsvektor[v]),\ortsvektor[vs]_i)\\
-         & = G(\ortsvektor[v],\ortsvektor[vs]_i) -\lambda(\ortsvektor[vs]_i) G(\ortsvektor[v],  T(\ortsvektor[vs]_i))
+         G^\star(\Ortsr[v],\Ortsr[vs]_i) & = G(\Ortsr[v],\Ortsr[vs]_i) -\lambda(\Ortsr[v]) G(T(\Ortsr[v]),\Ortsr[vs]_i)\\
+         & = G(\Ortsr[v],\Ortsr[vs]_i) -\lambda(\Ortsr[vs]_i) G(\Ortsr[v],  T(\Ortsr[vs]_i))
       \end{align*}
 
-    \item Mit $\lambda(\ortsvektor[vs]) = 1$ und $T(\ortsvektor[vs]) = \ortsvektor[vs] - 2  \vec{n}  (\vec{n}\cdot \ortsvektor[vs])$ folgt:
+    \item Mit $\lambda(\Ortsr[vs]) = 1$ und $T(\Ortsr[vs]) = \Ortsr[vs] - 2  \vec{n}  (\vec{n}\cdot \Ortsr[vs])$ folgt:
       \begin{equation*}
-        G^\star(\ortsvektor[v],\ortsvektor[vs]) = \frac{1}{4\pi\varepsilon_1}  \left(  \frac{1}{\left|\ortsvektor[v] -  \ortsvektor[vs] \right|}  - \frac{1}{\left|\ortsvektor[v] -  \left[ \ortsvektor[vs] - 2 \vec{n} (\vec{n}\cdot \ortsvektor[vs]) \right] \right|}\right)
+        G^\star(\Ortsr[v],\Ortsr[vs]) = \frac{1}{4\pi\varepsilon_1}  \left(  \frac{1}{\left|\Ortsr[v] -  \Ortsr[vs] \right|}  - \frac{1}{\left|\Ortsr[v] -  \left[ \Ortsr[vs] - 2 \vec{n} (\vec{n}\cdot \Ortsr[vs]) \right] \right|}\right)
       \end{equation*}
     \item Mit Hilfe der problemangepassten Greenschen Funktion kann das \alert{Diricletsche Randwertproblem} in $V_1 \cup O(V_2)$ als \alert{Freiraumproblem} gelöst werden. Die Randwerte (hier: Skalarpotential ist Null auf dem Rand) werden automatisch erfüllt.
     \item Das so gefundene Potential ist \alert{keine Lösung} in $V_2 \setminus O(V_2)$.
@@ -136,10 +136,10 @@
     \pause
     Problemangepasste Greensche-Funktion:
     \begin{align*}
-      G^\star(\ortsvektor[v], \ortsvektor[vs])  =\quad & G (\ortsvektor[v], \ortsvektor[vs]) & \text{Greensche-Funktion des Freiraums} \\
-      & - G (\ortsvektor[v], T_{\vec{n}_1}(\ortsvektor[vs])) & \text{Spiegelung an Ebene } \vec{n}_1\\ 
-                                               & - G (\ortsvektor[v], T_{\vec{n}_2}(\ortsvektor[vs])) & \text{Spiegelung an Ebene } \vec{n}_2\\
-     & \underbrace{+}_{(-)( -)}  G (\ortsvektor[v], T_{\vec{n}_2}(T_{\vec{n}_1}(\ortsvektor[vs]))) & \text{Spiegelung der Spiegelung}
+      G^\star(\Ortsr[v], \Ortsr[vs])  =\quad & G (\Ortsr[v], \Ortsr[vs]) & \text{Greensche-Funktion des Freiraums} \\
+      & - G (\Ortsr[v], T_{\vec{n}_1}(\Ortsr[vs])) & \text{Spiegelung an Ebene } \vec{n}_1\\ 
+                                               & - G (\Ortsr[v], T_{\vec{n}_2}(\Ortsr[vs])) & \text{Spiegelung an Ebene } \vec{n}_2\\
+     & \underbrace{+}_{(-)( -)}  G (\Ortsr[v], T_{\vec{n}_2}(T_{\vec{n}_1}(\Ortsr[vs]))) & \text{Spiegelung der Spiegelung}
   \end{align*}
 \end{frame}
 
@@ -160,8 +160,8 @@
   \begin{columns}
     \begin{column}{.35\textwidth}
       \begin{tikzpicture}[line width = 1.2pt, line join=round,>=stealth]
-        \filldraw [color=blue!70] (30:2.5) circle (1pt) node[above] {$Q, \ortsvektor[vs]$}; 
-        \filldraw [color=blue!70] (2,-1.5) circle (1pt) node[right] {$\ortsvektor[v]$}; 
+        \filldraw [color=blue!70] (30:2.5) circle (1pt) node[above] {$Q, \Ortsr[vs]$}; 
+        \filldraw [color=blue!70] (2,-1.5) circle (1pt) node[right] {$\Ortsr[v]$}; 
         \draw [-stealth] (0,0) -- (30:2.5); 
         \draw [-stealth] (0,0) -- (2,-1.5); 
         \draw (0,0) circle (1.5);
@@ -172,7 +172,7 @@
         \draw(0,1.05) node {$V_2$};
         \draw(0,1.3) node{$\kappa_2 \to \infty$};
         \draw(0,2.0) node[align=center] {$V_1$\\$\varepsilon=\varepsilon_1$}; 
-       \draw [color=red] (20:1.2) node[below, fill=white] {$-\lambda Q, T(\ortsvektor[vs])$}; 
+       \draw [color=red] (20:1.2) node[below, fill=white] {$-\lambda Q, T(\Ortsr[vs])$}; 
 
        \draw [-stealth,color=red] (0,0) -- (30:0.9); 
        \filldraw [color=red] (30:0.9) circle (1pt);
@@ -182,21 +182,21 @@
         \begin{itemize}[<+->]
         \item Versuche die \alert{Kelvin-Transformation}:
           \begin{align*}
-            T & :  \mathbb{R}^3 \to \mathbb{R}^3 : \ortsvektor[vs] \to T(\ortsvektor[vs]) = \frac{a^2}{\left| \ortsvektor[vs]\right|^2} \ortsvektor[vs] = a \frac{a}{\ortsvektor[s]} \vu{\ortsvektor[s]}\\
-            \lambda & :  \mathbb{R}^3 \to \mathbb{R} : \ortsvektor[vs] \to \lambda(\ortsvektor[vs]) = \frac{a}{\left| \ortsvektor[vs]\right|}  
+            T & :  \mathbb{R}^3 \to \mathbb{R}^3 : \Ortsr[vs] \to T(\Ortsr[vs]) = \frac{a^2}{\left| \Ortsr[vs]\right|^2} \Ortsr[vs] = a \frac{a}{\Ortsr[s]} \vu{\Ortsr[s]}\\
+            \lambda & :  \mathbb{R}^3 \to \mathbb{R} : \Ortsr[vs] \to \lambda(\Ortsr[vs]) = \frac{a}{\left| \Ortsr[vs]\right|}  
           \end{align*}
-        \item Für $\ortsvektor[vs] \in O(V_2)$: $T(\ortsvektor[vs]) = \ortsvektor[vs]$
-        \item $T(T(\ortsvektor[vs])) = T(a \frac{a}{\ortsvektor[vs]} \vu{\ortsvektor[vs]}) =  a \frac{a}{a \frac{a}{\ortsvektor[vs]}} \vu{\ortsvektor[vs]} = \ortsvektor[vs]$
+        \item Für $\Ortsr[vs] \in O(V_2)$: $T(\Ortsr[vs]) = \Ortsr[vs]$
+        \item $T(T(\Ortsr[vs])) = T(a \frac{a}{\Ortsr[vs]} \vu{\Ortsr[vs]}) =  a \frac{a}{a \frac{a}{\Ortsr[vs]}} \vu{\Ortsr[vs]} = \Ortsr[vs]$
         \item Regel der \alert{reziproken Radien}:
           \begin{equation*}
-            \boxed{\left| \ortsvektor[vs] \right| \left| T(\ortsvektor[vs]) \right| = a^2}
+            \boxed{\left| \Ortsr[vs] \right| \left| T(\Ortsr[vs]) \right| = a^2}
             \end{equation*}
           \end{itemize}
         \end{column}
       \end{columns}
       \begin{itemize}[<+->]
         \item Die grundlegenden Bedingungen an die Transformation sind erfüllt. 
-        \item Hinreichende Bedingung für $\elpotential = 0$ auf $O(V_2)$: Umwälzung von Quellpunkt und Aufpunkt
+        \item Hinreichende Bedingung für $\SkalarPot = 0$ auf $O(V_2)$: Umwälzung von Quellpunkt und Aufpunkt
         \end{itemize}
 \end{frame}
 
@@ -205,20 +205,20 @@
   \begin{itemize}[<+->]
   \item Zu zeigen:
     \(
-      \lambda(\ortsvektor[vs]) G(\ortsvektor[v], T(\ortsvektor[vs])) \stackrel{!}{=} \lambda(\ortsvektor[v]) G(T(\ortsvektor[v]), \ortsvektor[vs]) 
+      \lambda(\Ortsr[vs]) G(\Ortsr[v], T(\Ortsr[vs])) \stackrel{!}{=} \lambda(\Ortsr[v]) G(T(\Ortsr[v]), \Ortsr[vs]) 
     \)
   \item Zunächst:
     \begin{align*}
-      \left| T(\ortsvektor[v]) - \ortsvektor[vs]  \right|^2 & = \left| \frac{a^2}{\left| \ortsvektor[v]\right|^2} \ortsvektor[v] - \ortsvektor[vs] \right|^2 = \frac{a^4}{\left| \ortsvektor[v]\right|^2} - \frac{2a^2}{\left| \ortsvektor[v]\right|^2} \ortsvektor[v] \cdot \ortsvektor[vs] + \left| \ortsvektor[vs]\right|^2 \\
-                                                              & = \frac{\left| \ortsvektor[vs]\right|^2}{\left| \ortsvektor[v]\right|^2} \left[  \frac{a^4}{\left| \ortsvektor[vs]\right|^2} - \frac{2a^2}{\left| \ortsvektor[vs]\right|^2} \ortsvektor[v] \cdot \ortsvektor[vs] + \left| \ortsvektor[v]\right|^2 \right] = \frac{\left| \ortsvektor[vs]\right|^2}{\left| \ortsvektor[v]\right|^2} \left| \ortsvektor[v] - \frac{a^2}{\left| \ortsvektor[vs]\right|^2} \ortsvektor[vs]\right|^2\\
-      & = \frac{\left| \ortsvektor[vs]\right|^2}{\left| \ortsvektor[v]\right|^2} \left| \ortsvektor[v]   - T(\ortsvektor[vs]) \right|^2
+      \left| T(\Ortsr[v]) - \Ortsr[vs]  \right|^2 & = \left| \frac{a^2}{\left| \Ortsr[v]\right|^2} \Ortsr[v] - \Ortsr[vs] \right|^2 = \frac{a^4}{\left| \Ortsr[v]\right|^2} - \frac{2a^2}{\left| \Ortsr[v]\right|^2} \Ortsr[v] \cdot \Ortsr[vs] + \left| \Ortsr[vs]\right|^2 \\
+                                                              & = \frac{\left| \Ortsr[vs]\right|^2}{\left| \Ortsr[v]\right|^2} \left[  \frac{a^4}{\left| \Ortsr[vs]\right|^2} - \frac{2a^2}{\left| \Ortsr[vs]\right|^2} \Ortsr[v] \cdot \Ortsr[vs] + \left| \Ortsr[v]\right|^2 \right] = \frac{\left| \Ortsr[vs]\right|^2}{\left| \Ortsr[v]\right|^2} \left| \Ortsr[v] - \frac{a^2}{\left| \Ortsr[vs]\right|^2} \Ortsr[vs]\right|^2\\
+      & = \frac{\left| \Ortsr[vs]\right|^2}{\left| \Ortsr[v]\right|^2} \left| \Ortsr[v]   - T(\Ortsr[vs]) \right|^2
     \end{align*}
   \item Damit:
     \begin{align*}
-      \lambda(\ortsvektor[vs]) G(\ortsvektor[v], T(\ortsvektor[vs])) &= \frac{a}{\left| \ortsvektor[vs]\right|} \frac{1}{4\pi\varepsilon_1}\frac{1}{\left| \ortsvektor[v]   - T(\ortsvektor[vs]) \right|} = \frac{a}{\left| \ortsvektor[vs]\right|} \frac{1}{4\pi\varepsilon_1} \frac{\left| \ortsvektor[vs]\right|}{\left| \ortsvektor[v]\right|} \frac{1}{\left|  T(\ortsvektor[v]) - \ortsvektor[vs] \right|} \\
-      &= \frac{a}{\left| \ortsvektor[v]\right|} \frac{1}{4\pi\varepsilon_1} \frac{\left| \ortsvektor[vs]\right|}{\left| \ortsvektor[vs]\right|} \frac{1}{\left|  T(\ortsvektor[v]) - \ortsvektor[vs] \right|} = \lambda(\ortsvektor[v]) G(T(\ortsvektor[v]), \ortsvektor[vs]) 
+      \lambda(\Ortsr[vs]) G(\Ortsr[v], T(\Ortsr[vs])) &= \frac{a}{\left| \Ortsr[vs]\right|} \frac{1}{4\pi\varepsilon_1}\frac{1}{\left| \Ortsr[v]   - T(\Ortsr[vs]) \right|} = \frac{a}{\left| \Ortsr[vs]\right|} \frac{1}{4\pi\varepsilon_1} \frac{\left| \Ortsr[vs]\right|}{\left| \Ortsr[v]\right|} \frac{1}{\left|  T(\Ortsr[v]) - \Ortsr[vs] \right|} \\
+      &= \frac{a}{\left| \Ortsr[v]\right|} \frac{1}{4\pi\varepsilon_1} \frac{\left| \Ortsr[vs]\right|}{\left| \Ortsr[vs]\right|} \frac{1}{\left|  T(\Ortsr[v]) - \Ortsr[vs] \right|} = \lambda(\Ortsr[v]) G(T(\Ortsr[v]), \Ortsr[vs]) 
     \end{align*}
-    \item Problemangepasste Greensche Funktion: $G^\star(\ortsvektor[v], \ortsvektor[vs]) = G(\ortsvektor[v], \ortsvektor[vs]) - \lambda(\ortsvektor[vs]) G(\ortsvektor[v], T(\ortsvektor[vs])) $
+    \item Problemangepasste Greensche Funktion: $G^\star(\Ortsr[v], \Ortsr[vs]) = G(\Ortsr[v], \Ortsr[vs]) - \lambda(\Ortsr[vs]) G(\Ortsr[v], T(\Ortsr[vs])) $
     \end{itemize}
   \end{frame}
 
@@ -228,14 +228,14 @@
     \item Bisher: \alert{geerdete Kugel} $\to$ beim Einbringen der Punktladung ändert sich die Ladung der Kugel durch elektrostatische Influenz.
     \item Kann man auch eine \alert{isolierte Kugel} behandeln?
     \item Bei der isolierten Kugel bleibt die Gesamtladung der Kugel beim Einbringen der Punktladung unverändert. Z.B. vorher Null $\to$ nachher Null.
-    \item Die Bildladung $Q^\star = -\lambda(\ortsvektor[vs]) Q$ verändert aber die Ladung im Volumen $V_2$
+    \item Die Bildladung $Q^\star = -\lambda(\Ortsr[vs]) Q$ verändert aber die Ladung im Volumen $V_2$
     \item Für eine (zusätzliche) Ladung im Zentrum der Kugel ist die Kugeloberfläche eine \alert{Äquipotentialfläche} $\to$ Potentialänderung nur um Konstante
     \item Größe der Ladung: $-Q^\star$
     \item Problemangepasste Greensche Funktion:
       \begin{align*}
-        G^\star(\ortsvektor[v], \ortsvektor[vs]) & =  G(\ortsvektor[v], \ortsvektor[vs]) - \lambda(\ortsvektor[vs]) G(\ortsvektor[v], T(\ortsvektor[vs])) + \lambda(\ortsvektor[vs]) G(\ortsvektor[v], \vec{0}) \\
-& = G(\ortsvektor[v], \ortsvektor[vs]) - \frac{a}{\abs{\ortsvektor[vs]}} \left( G\left(\ortsvektor[v], \frac{a^2}{\abs{\ortsvektor[vs]}^2} \ortsvektor[vs]\right) - G(\ortsvektor[v], \vec{0}) \right) \\
-& = \frac{1}{4\pi\varepsilon_1} \left[ \frac{1}{\abs{\ortsvektor[v] - \ortsvektor[vs]}} - \frac{a}{\abs{\ortsvektor[vs]}} \left( \frac{1}{\abs{\ortsvektor[v]- \frac{a^2}{\abs{\ortsvektor[vs]}^2} \ortsvektor[vs]}} - \frac{1}{ \abs{\ortsvektor[v]}} \right) \right]
+        G^\star(\Ortsr[v], \Ortsr[vs]) & =  G(\Ortsr[v], \Ortsr[vs]) - \lambda(\Ortsr[vs]) G(\Ortsr[v], T(\Ortsr[vs])) + \lambda(\Ortsr[vs]) G(\Ortsr[v], \vec{0}) \\
+& = G(\Ortsr[v], \Ortsr[vs]) - \frac{a}{\abs{\Ortsr[vs]}} \left( G\left(\Ortsr[v], \frac{a^2}{\abs{\Ortsr[vs]}^2} \Ortsr[vs]\right) - G(\Ortsr[v], \vec{0}) \right) \\
+& = \frac{1}{4\pi\varepsilon_1} \left[ \frac{1}{\abs{\Ortsr[v] - \Ortsr[vs]}} - \frac{a}{\abs{\Ortsr[vs]}} \left( \frac{1}{\abs{\Ortsr[v]- \frac{a^2}{\abs{\Ortsr[vs]}^2} \Ortsr[vs]}} - \frac{1}{ \abs{\Ortsr[v]}} \right) \right]
       \end{align*}
       \end{itemize}
 \end{frame}
@@ -245,20 +245,20 @@
     \begin{itemize}[<+->]
     \item Problemangepasste Greensche Funktion:
       \begin{align*}
-        G^\star(\ortsvektor[v], \ortsvektor[vs])  & = \frac{1}{4\pi\varepsilon_1} \left[ \frac{1}{\abs{\ortsvektor[v] - \ortsvektor[vs]}} - \frac{a}{\abs{\ortsvektor[vs]}} \left( \frac{1}{\abs{\ortsvektor[v]- \frac{a^2}{\abs{\ortsvektor[vs]}^2} \ortsvektor[vs]}} - \frac{1}{ \abs{\ortsvektor[v]}} \right) \right] \\
+        G^\star(\Ortsr[v], \Ortsr[vs])  & = \frac{1}{4\pi\varepsilon_1} \left[ \frac{1}{\abs{\Ortsr[v] - \Ortsr[vs]}} - \frac{a}{\abs{\Ortsr[vs]}} \left( \frac{1}{\abs{\Ortsr[v]- \frac{a^2}{\abs{\Ortsr[vs]}^2} \Ortsr[vs]}} - \frac{1}{ \abs{\Ortsr[v]}} \right) \right] \\
                                                   & = \frac{1}{4\pi\varepsilon_1} \left[
-                                                    \frac{1}{\abs{\ortsvektor[v] - \ortsvektor[vs]}}
-                                                    - \frac{a}{\abs{\ortsvektor[v]}} \frac{1}{\abs{\frac{a^2}{\abs{\ortsvektor[v]}^2} \ortsvektor[v] - \ortsvektor[vs]}}
-                                                    +\frac{a}{\abs{\ortsvektor[vs]}} \frac{1}{ \abs{\ortsvektor[v]}}
+                                                    \frac{1}{\abs{\Ortsr[v] - \Ortsr[vs]}}
+                                                    - \frac{a}{\abs{\Ortsr[v]}} \frac{1}{\abs{\frac{a^2}{\abs{\Ortsr[v]}^2} \Ortsr[v] - \Ortsr[vs]}}
+                                                    +\frac{a}{\abs{\Ortsr[vs]}} \frac{1}{ \abs{\Ortsr[v]}}
                                                     \right]
       \end{align*}
     \item Auf der Oberfläche der Kugel kompensieren sich (nach Konstruktion) die ersten beiden Beiträge:
       \begin{equation*}
-        \left. G^\star(\ortsvektor[v], \ortsvektor[vs])\right|_{\abs{\ortsvektor[v]}=a} = \frac{1}{4\pi\varepsilon_1} \frac{1}{\abs{\ortsvektor[vs]}} = G(0,\ortsvektor[vs]) \text{ konstant auf } O(V_2) 
+        \left. G^\star(\Ortsr[v], \Ortsr[vs])\right|_{\abs{\Ortsr[v]}=a} = \frac{1}{4\pi\varepsilon_1} \frac{1}{\abs{\Ortsr[vs]}} = G(0,\Ortsr[vs]) \text{ konstant auf } O(V_2) 
       \end{equation*}
       \item Potential auf der Oberfläche
       \begin{equation*}
-        \left. \elpotential(\ortsvektor[v])\right|_{\abs{\ortsvektor[v]}=a} = \frac{1}{4\pi\varepsilon_1} \frac{Q}{\abs{\ortsvektor[vs]}} \quad \to \text{ Potential im Ursprung ohne Kugel} 
+        \left. \SkalarPot(\Ortsr[v])\right|_{\abs{\Ortsr[v]}=a} = \frac{1}{4\pi\varepsilon_1} \frac{Q}{\abs{\Ortsr[vs]}} \quad \to \text{ Potential im Ursprung ohne Kugel} 
       \end{equation*}
       \end{itemize}
 \end{frame}
@@ -283,7 +283,7 @@
     \draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
     \draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=east]{$z$};
     \tdplotsetcoord{P}{1}{30}{60}
-    \draw plot [mark=*, mark size=0.2] (P) node [above] {\scriptsize$\ortsvektor[v]=(\rho,\varphi,z)$};
+    \draw plot [mark=*, mark size=0.2] (P) node [above] {\scriptsize$\Ortsr[v]=(\rho,\varphi,z)$};
     \draw[thick, ->] (O) -- (P);
     \draw[dashed, color=black] (O) -- (Pxy) node [below right] {$\rho$};
     \draw[dashed, color=black] (Pxy) -- (P) node [below right] {$z$};
@@ -298,14 +298,14 @@
   \begin{itemize}[<+->]
   \item Für das Skalarpotential gilt:
     \begin{equation*}
-      \elpotential(\ortsvektor[v]) = -\frac{\rho_L}{2\pi\varepsilon_1} \ln\left(\frac{\rho}{\rho_B} \right)
+      \SkalarPot(\Ortsr[v]) = -\frac{\rho_L}{2\pi\varepsilon_1} \ln\left(\frac{\rho}{\rho_B} \right)
     \end{equation*}
-  \item Bezugsabstand $\rho_B$: $\elpotential(\ortsvektor[v]=(\rho_B,\varphi,z)) = 0$
-  \item $\elpotential$ nur von $\rho$ abhängig. $\to$ Betrachtung in Ebene $z=0$ ausreichend $\to$ $\ortsvektor[v]\cdot \vu{z} = 0$
-  \item Damit: $\elpotential(\ortsvektor[v]) = -\frac{\rho_L}{2\pi\varepsilon_1} \ln\left(\frac{\left|\ortsvektor[v]\right|}{\rho_B} \right)$
-  \item Linienladung durch $\ortsvektor[vs]$ (auch in Ebene $z=0$!):
+  \item Bezugsabstand $\rho_B$: $\SkalarPot(\Ortsr[v]=(\rho_B,\varphi,z)) = 0$
+  \item $\SkalarPot$ nur von $\rho$ abhängig. $\to$ Betrachtung in Ebene $z=0$ ausreichend $\to$ $\Ortsr[v]\cdot \vu{z} = 0$
+  \item Damit: $\SkalarPot(\Ortsr[v]) = -\frac{\rho_L}{2\pi\varepsilon_1} \ln\left(\frac{\left|\Ortsr[v]\right|}{\rho_B} \right)$
+  \item Linienladung durch $\Ortsr[vs]$ (auch in Ebene $z=0$!):
     \begin{equation*}
-      \boxed{\elpotential(\ortsvektor[v]) = -\frac{\rho_L}{2\pi\varepsilon_1} \ln\left(\frac{\left|\ortsvektor[v]-\ortsvektor[vs]\right|}{\rho_B} \right)}
+      \boxed{\SkalarPot(\Ortsr[v]) = -\frac{\rho_L}{2\pi\varepsilon_1} \ln\left(\frac{\left|\Ortsr[v]-\Ortsr[vs]\right|}{\rho_B} \right)}
       \end{equation*}
 \end{itemize}
   \end{column}
@@ -317,11 +317,11 @@
   \begin{itemize}[<+->]
   \item Potential
     \begin{equation*}
-     \elpotential(\ortsvektor[v]) = -\frac{\rho_L}{2\pi\varepsilon_1} \ln\left(\frac{\left|\ortsvektor[v]-\ortsvektor[vs]\right|}{\rho_B} \right) \text{ mit } \ortsvektor[s]\cdot \vu{z} = 0
+     \SkalarPot(\Ortsr[v]) = -\frac{\rho_L}{2\pi\varepsilon_1} \ln\left(\frac{\left|\Ortsr[v]-\Ortsr[vs]\right|}{\rho_B} \right) \text{ mit } \Ortsr[s]\cdot \vu{z} = 0
    \end{equation*}
  \item Aus dieser Lösung ergibt sich sofort die \alert{Greensche Funktion des 2D-Freiraums} $G_2$ (eingebettet in den 3D-Raum). Dies ist die 3D-Greensche Funktion für Probleme, die unabhängig von einer Koordinatenrichtung (hier: $z$) sind:
     \begin{equation*}
-     \boxed{G_2(\ortsvektor[v], \ortsvektor[vs])= -\frac{1}{2\pi\varepsilon_1} \ln\left(\frac{\left|\ortsvektor[v]-\ortsvektor[vs]\right|}{\rho_B} \right) }
+     \boxed{G_2(\Ortsr[v], \Ortsr[vs])= -\frac{1}{2\pi\varepsilon_1} \ln\left(\frac{\left|\Ortsr[v]-\Ortsr[vs]\right|}{\rho_B} \right) }
    \end{equation*}
    \item Analogie: Punktladung vor Kugel $\leftrightarrow$ Linienladung vor Zylinder
   \end{itemize}
@@ -334,8 +334,8 @@
   \begin{columns}
     \begin{column}{.25\textwidth}
       \begin{tikzpicture}[line width = 1.2pt, line join=round,>=stealth]
-        \filldraw [color=blue!70] (30:2.5) circle (1pt) node[above] {$\rho_L, \ortsvektor[vs]$}; 
-        \filldraw [color=blue!70] (2,-1.5) circle (1pt) node[right] {$\ortsvektor[v]$}; 
+        \filldraw [color=blue!70] (30:2.5) circle (1pt) node[above] {$\rho_L, \Ortsr[vs]$}; 
+        \filldraw [color=blue!70] (2,-1.5) circle (1pt) node[right] {$\Ortsr[v]$}; 
         \draw [-stealth] (0,0) -- (30:2.5); 
         \draw [-stealth] (0,0) -- (2,-1.5); 
         \draw (0,0) circle (1.5);
@@ -346,7 +346,7 @@
         \draw(0,1.05) node {$V_2$};
         \draw(0,1.3) node{$\kappa_2 \to \infty$};
         \draw(0,2.0) node[align=center] {$V_1$\\$\varepsilon=\varepsilon_1$}; 
-       \draw [color=red] (20:1.2) node[below, fill=white] {$-\lambda \rho_L, T(\ortsvektor[vs])$}; 
+       \draw [color=red] (20:1.2) node[below, fill=white] {$-\lambda \rho_L, T(\Ortsr[vs])$}; 
 
        \draw [-stealth,color=red] (0,0) -- (30:0.9); 
        \filldraw [color=red] (30:0.9) circle (1pt);
@@ -356,16 +356,16 @@
         \begin{itemize}[<+->]
         \item Versuche wieder die \alert{Kelvin-Transformation}:
           \begin{equation*}
-            T(\ortsvektor[vs]) = \frac{a^2}{\left| \ortsvektor[vs]\right|^2} \ortsvektor[vs] = \frac{a^2}{(\rho^\prime)^2} \ortsvektor[vs] 
+            T(\Ortsr[vs]) = \frac{a^2}{\left| \Ortsr[vs]\right|^2} \Ortsr[vs] = \frac{a^2}{(\rho^\prime)^2} \Ortsr[vs] 
           \end{equation*}
         \item Für das Potential gilt dann ($\lambda$ noch unbekannt)
           \begin{align*}
-            \elpotential(a\vu{\rho}) & = -\frac{1}{2\pi\varepsilon_1}  \rho_L\left[\ln\left(\frac{\rho - a}{\rho_B} \right) -\lambda \ln\left(\frac{a - T(a\vu{\rho})}{\rho_B} \right)  \right] \stackrel{!}{=} 0 \\
+            \SkalarPot(a\vu{\rho}) & = -\frac{1}{2\pi\varepsilon_1}  \rho_L\left[\ln\left(\frac{\rho - a}{\rho_B} \right) -\lambda \ln\left(\frac{a - T(a\vu{\rho})}{\rho_B} \right)  \right] \stackrel{!}{=} 0 \\
             & \ln\left(\rho - a \right) -\lambda \ln(a - T(a\vu{\rho})) \stackrel{!}{=} 0 \\
             & \ln\left(\rho - a \right) -\lambda \ln(a - \frac{a^2}{\rho^2}\rho)) \stackrel{!}{=} 0 \\
             & \rho - a \stackrel{!}{=}  \left( a - \frac{a^2}{\rho}\right)^\lambda 
             \end{align*}
-        \item Es gibt kein $\lambda$, das $\elpotential = 0$ auf der Oberfläche erzeugt.
+        \item Es gibt kein $\lambda$, das $\SkalarPot = 0$ auf der Oberfläche erzeugt.
           \end{itemize}
         \end{column}
       \end{columns}
@@ -374,46 +374,46 @@
     \end{frame}
   
     \begin{frame}
-\frametitle{Linienladung vor Zylinder: $\lambda(\ortsvektor[v])=1$}
+\frametitle{Linienladung vor Zylinder: $\lambda(\Ortsr[v])=1$}
 \begin{itemize}[<+->]
 \item Es gibt kein $\lambda$, das zusammen mit der Kelvin-Transformation das gewünschte Potential auf der Oberfläche des Zylinders erzeugt.
-\item Trotzdem den Weg weiter beschreiten: setze $\lambda(\ortsvektor[v])=1$
+\item Trotzdem den Weg weiter beschreiten: setze $\lambda(\Ortsr[v])=1$
 \item Wir hatten bereits:
   \begin{equation*}
-    \left| T(\ortsvektor[v]) - \ortsvektor[vs]  \right| = \frac{\left| \ortsvektor[vs]\right|}{\left| \ortsvektor[v]\right|} \left| \ortsvektor[v]   - T(\ortsvektor[vs]) \right|
+    \left| T(\Ortsr[v]) - \Ortsr[vs]  \right| = \frac{\left| \Ortsr[vs]\right|}{\left| \Ortsr[v]\right|} \left| \Ortsr[v]   - T(\Ortsr[vs]) \right|
   \end{equation*}
 \item Damit:
   \begin{align*}
-    G_2(\ortsvektor[v], T(\ortsvektor[vs])) & = -\frac{1}{2\pi\varepsilon_1} \ln\left(\frac{\left|\ortsvektor[v] - T(\ortsvektor[vs])\right|  }{\rho_B} \right)  = -\frac{1}{2\pi\varepsilon_1} \ln\left(\frac{\left|T(\ortsvektor[v]) - \ortsvektor[vs]\right|  \left| \ortsvektor[v]\right| }{\rho_B \left| \ortsvektor[vs]\right|} \right) \\
-                                            &= -\frac{1}{2\pi\varepsilon_1} \left[ \ln\left(\frac{\left|T(\ortsvektor[v]) - \ortsvektor[vs]\right| }{\rho_B } \right) + \ln\left(\frac{ \left| \ortsvektor[v]\right| }{\rho_B } \right) - \ln\left(\frac{ \left| \ortsvektor[vs]\right| }{\rho_B } \right)  \right]\\
-    &= G_2(T(\ortsvektor[v]), \ortsvektor[vs]) + G_2(\ortsvektor[v], \vec{0}) - G_2(0, \ortsvektor[vs])    
+    G_2(\Ortsr[v], T(\Ortsr[vs])) & = -\frac{1}{2\pi\varepsilon_1} \ln\left(\frac{\left|\Ortsr[v] - T(\Ortsr[vs])\right|  }{\rho_B} \right)  = -\frac{1}{2\pi\varepsilon_1} \ln\left(\frac{\left|T(\Ortsr[v]) - \Ortsr[vs]\right|  \left| \Ortsr[v]\right| }{\rho_B \left| \Ortsr[vs]\right|} \right) \\
+                                            &= -\frac{1}{2\pi\varepsilon_1} \left[ \ln\left(\frac{\left|T(\Ortsr[v]) - \Ortsr[vs]\right| }{\rho_B } \right) + \ln\left(\frac{ \left| \Ortsr[v]\right| }{\rho_B } \right) - \ln\left(\frac{ \left| \Ortsr[vs]\right| }{\rho_B } \right)  \right]\\
+    &= G_2(T(\Ortsr[v]), \Ortsr[vs]) + G_2(\Ortsr[v], \vec{0}) - G_2(0, \Ortsr[vs])    
   \end{align*}
 \item Damit ist das Potential
   \begin{align*}
-    \elpotential(\ortsvektor[v]) & = \rho_L G_2(\ortsvektor[v], \ortsvektor[vs]) -\rho_L G_2(\ortsvektor[v], T(\ortsvektor[vs])) \\
-    &= \rho_L \left[ G_2(\ortsvektor[v], \ortsvektor[vs]) - G_2(T(\ortsvektor[v]), \ortsvektor[vs]) - G_2(\ortsvektor[v], \vec{0}) + G_2(0, \ortsvektor[vs])\right]
+    \SkalarPot(\Ortsr[v]) & = \rho_L G_2(\Ortsr[v], \Ortsr[vs]) -\rho_L G_2(\Ortsr[v], T(\Ortsr[vs])) \\
+    &= \rho_L \left[ G_2(\Ortsr[v], \Ortsr[vs]) - G_2(T(\Ortsr[v]), \Ortsr[vs]) - G_2(\Ortsr[v], \vec{0}) + G_2(0, \Ortsr[vs])\right]
     \end{align*}
   \end{itemize}
       \end{frame}
 
     \begin{frame}
-\frametitle{Linienladung vor Zylinder: $\elpotential$ auf der Oberfläche}
+\frametitle{Linienladung vor Zylinder: $\SkalarPot$ auf der Oberfläche}
 \begin{itemize}[<+->]
 \item Wir hatten das Potential berechnet:
   \begin{equation*}
-    \elpotential(\ortsvektor[v]) = \rho_L \left[ G_2(\ortsvektor[v], \ortsvektor[vs]) - G_2(T(\ortsvektor[v]), \ortsvektor[vs]) - G_2(\ortsvektor[v], \vec{0}) + G_2(0, \ortsvektor[vs])\right]
+    \SkalarPot(\Ortsr[v]) = \rho_L \left[ G_2(\Ortsr[v], \Ortsr[vs]) - G_2(T(\Ortsr[v]), \Ortsr[vs]) - G_2(\Ortsr[v], \vec{0}) + G_2(0, \Ortsr[vs])\right]
   \end{equation*}
-\item Wegen $T(\ortsvektor[v])=\ortsvektor[v]$ für $\ortsvektor[v] =a\vu{\rho} $ kompensieren sich die ersten beiden Terme auf der Oberfläche:
+\item Wegen $T(\Ortsr[v])=\Ortsr[v]$ für $\Ortsr[v] =a\vu{\rho} $ kompensieren sich die ersten beiden Terme auf der Oberfläche:
   \begin{equation*}
-    \left.\elpotential(\ortsvektor[v])\right|_{\ortsvektor[v] =a\vu{\rho}} = \rho_L \left[ - G_2(a\vu{\rho}, \vec{0}) + G_2(0, \ortsvektor[vs])\right] = \frac{\rho_L}{2\pi\varepsilon_1} \ln\left(\frac{a}{\abs{\ortsvektor[vs]}} \right) 
+    \left.\SkalarPot(\Ortsr[v])\right|_{\Ortsr[v] =a\vu{\rho}} = \rho_L \left[ - G_2(a\vu{\rho}, \vec{0}) + G_2(0, \Ortsr[vs])\right] = \frac{\rho_L}{2\pi\varepsilon_1} \ln\left(\frac{a}{\abs{\Ortsr[vs]}} \right) 
   \end{equation*}
 \item Vergleich mit Potential einer Linienladung auf der $z$-Achse:
   \begin{equation*}
-      \elpotential(\ortsvektor[v]) = -\frac{\rho_L}{2\pi\varepsilon_1} \ln\left(\frac{\rho}{\rho_B} \right) \rightarrow \left.\elpotential(\ortsvektor[v])\right|_{\ortsvektor[v] =a\vu{\rho}} = -\frac{\rho_L}{2\pi\varepsilon_1} \ln\left(\frac{a}{\rho_B} \right)
+      \SkalarPot(\Ortsr[v]) = -\frac{\rho_L}{2\pi\varepsilon_1} \ln\left(\frac{\rho}{\rho_B} \right) \rightarrow \left.\SkalarPot(\Ortsr[v])\right|_{\Ortsr[v] =a\vu{\rho}} = -\frac{\rho_L}{2\pi\varepsilon_1} \ln\left(\frac{a}{\rho_B} \right)
     \end{equation*}
-  \item Offenbar lässt sich $\elpotential =0$ auf der Zylinderoberfläche durch eine zusätzliche Linenladung auf der $z$-Achse erreichen. Mit diesem Zusatz funktioniert hier also die Kelvin-Transformation mit $\lambda = 1$. $\to$ \alert{Problemangepasste Greensche-Funktion gefunden:}
+  \item Offenbar lässt sich $\SkalarPot =0$ auf der Zylinderoberfläche durch eine zusätzliche Linenladung auf der $z$-Achse erreichen. Mit diesem Zusatz funktioniert hier also die Kelvin-Transformation mit $\lambda = 1$. $\to$ \alert{Problemangepasste Greensche-Funktion gefunden:}
     \begin{equation*}
-      G^\star (\ortsvektor[v], \ortsvektor[vs]) = G_2(\ortsvektor[v], \ortsvektor[vs]) - G_2(\ortsvektor[v], \frac{a^2}{(\rho^\prime)^2}\ortsvektor[vs] )+ \left.G_2(\ortsvektor[v], \vec{0})\right|_{\rho_B = \abs{\ortsvektor[vs]}}
+      G^\star (\Ortsr[v], \Ortsr[vs]) = G_2(\Ortsr[v], \Ortsr[vs]) - G_2(\Ortsr[v], \frac{a^2}{(\rho^\prime)^2}\Ortsr[vs] )+ \left.G_2(\Ortsr[v], \vec{0})\right|_{\rho_B = \abs{\Ortsr[vs]}}
       \end{equation*}
   \end{itemize}
       \end{frame}
