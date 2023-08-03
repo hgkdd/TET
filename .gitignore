@@ -9,6 +9,7 @@
 
 # Latexmk
 *.fdb_latexmk
+latexmkrc
 
 # SyncTeX
 *.synctex.gz
