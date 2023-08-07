@@ -15,6 +15,7 @@ latexmkrc
 *.synctex.gz
 
 # LaTeX Beamer
+tudbeamer.cls
 *.snm
 *.vrb
 *.nav
