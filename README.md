@@ -7,7 +7,9 @@ Zugehörige Videos finden Sie auf [YouTube](https://www.youtube.com/channel/UCDW
 
 ## Installation
 
-`latexmk -pdf` sollte alles bauen. 
+Ich verwende die Klasse `tudbeamer.cls` von Lukas Baron aus diesem [Repository](https://git.agtele.eats.et.tu-dresden.de/agtele-public/latex/de.tud.et.ifa.latex.ifaslides). Andere Klassen erfordern Anpassungen.
+
+Danach sollte `latexmk -pdf` sollte alles bauen können. 
 
 ## Kontakt
 
