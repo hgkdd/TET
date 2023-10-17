@@ -2,6 +2,7 @@
 
 ## Die neuesten Änderungen stehen oben.
 
+- Vorwissen, Folie 12, erste Formelzeile, Fehlende Kennzeichnung des Skalarproduktes zwischen \vec{e}_r und \vec{A}
 - Wellenleiter II - Klassische Leitungstheorie, Folie 12, erste Formelzeile: Vorzeichen korrigiert
 - Wellenleiter I - Zylindrische Wellenleiter, Folie 11: dritter Anstrich: E-Feld durch Skalarpotential ersetzt.
 - Wellenleiter I - Zylindrische Wellenleiter, Folie 7: Hinweis zum Entkoppeln der Gleichungen korrigiert -> zweite Ableitung nach z war falsch.
