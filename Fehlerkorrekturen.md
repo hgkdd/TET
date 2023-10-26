@@ -2,6 +2,7 @@
 
 ## Die neuesten Änderungen stehen oben.
 
+- Elektrostatik-I: Folie 6: fehlendes 'd' bei einem 'das'; Folie 8 Dopplung von 'kann'
 - Vorwissen, Folie 12, erste Formelzeile, Fehlende Kennzeichnung des Skalarproduktes zwischen \vec{e}_r und \vec{A}
 - Wellenleiter II - Klassische Leitungstheorie, Folie 12, erste Formelzeile: Vorzeichen korrigiert
 - Wellenleiter I - Zylindrische Wellenleiter, Folie 11: dritter Anstrich: E-Feld durch Skalarpotential ersetzt.
