@@ -26,20 +26,20 @@
   \item Sei $\mathcal{L}=\mathcal{L}(x)$ ein \alert{linearer Differentialoperator} der auf Funktionen (besser Distributionen) angewendet wird, die auf einen Teilraum $\Omega$ des $\mathbb{R}^n$ definiert sind.
   \item  Eine \alert{Greensche Funktion} oder \alert{Fundamentallösung} $G=G(x,s)$ zum Operator $\mathcal{L}$ am Punkt $s\in \Omega$ ist \alert{jede Lösung} der Gleichung
     $$
-    \mathcal{L}G(x,s) = \delta(x-s)
+    \mathcal{L}G(x,s) = \delta^n(x-s)
     $$
   \item Die Bedeutung der Greenschen Funktionen für die Lösung inhomogener partieller Differentialgleichungen wird folgendermaßen klar:
   \item Multiplikation mit beliebiger Funktion $f(s)$ und Integration über $s$:
     $$
-    \int \mathcal{L}G(x,s)f(s) \upd s = \int \delta(x-s) f(s) \upd s = f(x)
+    \int \mathcal{L}G(x,s)f(s) \upd^n s = \int \delta^n(x-s) f(s) \upd^n s = f(x)
     $$
   \item Der Operator $\mathcal{L}$ ist linear und wirkt nur auf x:
     $$
-    \mathcal{L}\left[ \int G(x,s)f(s) \upd s  \right] = f(x)
+    \mathcal{L}\left[ \int G(x,s)f(s) \upd^n s  \right] = f(x)
     $$
-  \item Sucht man also eine Lösung der inhomogenen lineare Differentialgleichung $\mathcal{L} y(x) = f(x)$, und kennt eine Greensche Funktion (Fundamentallösung) $G(x,s)$ - also $\mathcal{L}G(x,s)=\delta(x-s)$, so gilt:
+  \item Sucht man also eine Lösung der inhomogenen lineare Differentialgleichung $\mathcal{L} y(x) = f(x)$, und kennt eine Greensche Funktion (Fundamentallösung) $G(x,s)$ - also $\mathcal{L}G(x,s)=\delta^n(x-s)$, so gilt:
     $$
-    \boxed{y(x) = \int G(x,s)f(s)\upd s \text{ ist Lösung von } \mathcal{L} y(x) = f(x)}
+    \boxed{y(x) = \int G(x,s)f(s)\upd^n s \text{ ist Lösung von } \mathcal{L} y(x) = f(x)}
     $$
   \end{itemize}
   
@@ -49,7 +49,7 @@
 \begin{frame}
   \frametitle{Eigenschaften von Greenschen Funktionen}
   \begin{itemize}[<+->]
-  \item Wenn der \alert{Kern} von $\mathcal{L}$ nicht trivial (nur die Null-Funktion) ist, hat das Problem $\mathcal{L}G(x,s)=\delta(x-s)$ \alert{unendlich} viele Lösungen $G(x,s)$ (Addition von Elementen des Kerns)
+  \item Wenn der \alert{Kern} von $\mathcal{L}$ nicht trivial (nur die Null-Funktion) ist, hat das Problem $\mathcal{L}G(x,s)=\delta^n(x-s)$ \alert{unendlich} viele Lösungen $G(x,s)$ (Addition von Elementen des Kerns)
   \item Im Allgemeinen hat ein Operator $\mathcal{L}$ keine eindeutige Greensche Funktion
   \item Diese Mehrdeutigkeit werden wir bei der Lösung von \alert{Randwertproblemen} ausnutzen!
   \item Ohne Beweis: Greensche Funktionen sind \alert{adjungiert symmetrisch}: $G(x,s)=G^\star(s,x)$
@@ -84,7 +84,7 @@
   \begin{itemize}[<+->]
      \item Wir setzen (wieder) in die 2. Greenschen Identität ein: $f\to\phi(\Ortsr[vs])$ und $g\to G(\Ortsr[v],\Ortsr[vs])$:
        \begin{align*}
-         \int_V \left[  \phi(\Ortsr[vs]) \laplace_{\Ortsr[s]} G(\Ortsr[v],\Ortsr[vs])  - G(\Ortsr[v],\Ortsr[vs]) \laplace_{\Ortsr[s]}  \phi(\Ortsr[vs]) \right] \upd^3\Ortsr[s] &=  -\frac{1}{\varepsilon_0} \int_V  \phi(\Ortsr[vs]) \delta (\Ortsr[v] - \Ortsr[vs]) \upd^3r' \\
+         \int_V \left[  \phi(\Ortsr[vs]) \laplace_{\Ortsr[s]} G(\Ortsr[v],\Ortsr[vs])  - G(\Ortsr[v],\Ortsr[vs]) \laplace_{\Ortsr[s]}  \phi(\Ortsr[vs]) \right] \upd^3\Ortsr[s] &=  -\frac{1}{\varepsilon_0} \int_V  \phi(\Ortsr[vs]) \delta^3 (\Ortsr[v] - \Ortsr[vs]) \upd^3r' \\
          &+ \frac{1}{\varepsilon_0} \int_V G(\Ortsr[v],\Ortsr[vs])\rho(\Ortsr[vs]) \upd^3r'\\
          &= \oint_{O(V)} \left[ \phi\frac{\partial G(\Ortsr[v],\Ortsr[vs])}{\partial n'}
                  - G(\Ortsr[v],\Ortsr[vs])\frac{\partial\phi}{\partial n'} \right] \upd^2r'
