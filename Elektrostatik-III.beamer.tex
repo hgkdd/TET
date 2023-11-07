@@ -59,7 +59,7 @@
      \item Beziehung für die $\delta$-Funktion (Distribution): $\delta^3(\Ortsr[v] - \Ortsr[vs]) = -\frac{1}{4\pi}\laplace\frac{1}{|\Ortsr[v] - \Ortsr[vs]|}$
      \item Um die Poisson-Gleichung in eine Integralgleichung umzuwandeln, setzen wir in der 2. Greenschen Identität $f\to\phi(\Ortsr[vs])$ und $g\to \frac{1}{|\Ortsr[v] - \Ortsr[vs]|}$:
        \begin{align*}
-         \int_V \left[  \phi(\Ortsr[vs]) \laplace_{\Ortsr[s]} \frac{1}{|\Ortsr[v] - \Ortsr[vs]|}  - \frac{1}{|\Ortsr[v] - \Ortsr[vs]|} \laplace_{\Ortsr[s]}  \phi(\Ortsr[vs]) \right] \upd^3\Ortsr[s] &=  -4\pi \int_V  \phi(\Ortsr[vs]) \delta (\Ortsr[v] - \Ortsr[vs]) \upd^3r' \\
+         \int_V \left[  \phi(\Ortsr[vs]) \laplace_{\Ortsr[s]} \frac{1}{|\Ortsr[v] - \Ortsr[vs]|}  - \frac{1}{|\Ortsr[v] - \Ortsr[vs]|} \laplace_{\Ortsr[s]}  \phi(\Ortsr[vs]) \right] \upd^3\Ortsr[s] &=  -4\pi \int_V  \phi(\Ortsr[vs]) \delta^3 (\Ortsr[v] - \Ortsr[vs]) \upd^3r' \\
          &+ \frac{1}{\varepsilon_0} \int_V \frac{\rho(\Ortsr[vs])}{|\Ortsr[v] - \Ortsr[vs]|} \upd^3r'\\
                                                                                                                                                                                                                                                    &= \oint_{O(V)} \left[\phi\frac{\partial}{\partial n'}\frac{1}{|\Ortsr[v] - \Ortsr[vs]|}
                                                                                                                                                                                                                                                      - \frac{1}{|\Ortsr[v] - \Ortsr[vs]|}\frac{\partial\phi}{\partial n'} \right] \upd^2r'

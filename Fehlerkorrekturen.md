@@ -2,6 +2,7 @@
 
 ## Die neuesten Änderungen stehen oben.
 
+- Elektrostatik-III: Folie 3, 5. Anstrich: \delta -> \delta^3 (Vereinheitlichung der Bezeichnung)
 - Elektrostatik II: Folie 7, zweiter Anstrich: in der Formel für Gradient wurde einmal theta statt vartheta verwendet.
 - Elektrostatik-II: Folie 10, erste Formelzeile, letzter Summand: epsilon -> epsilon^3
 - Elektrostatik-I: Folie 6: fehlendes 'd' bei einem 'das'; Folie 8 Dopplung von 'kann'
