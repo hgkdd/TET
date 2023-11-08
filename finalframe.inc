@@ -14,6 +14,6 @@
       \item Wenn Sie einen Fehler entdecken, freue ich mich über einen kurzen
         Hinweis an \url{mailto:tetemv@tu-dresden.de}!
         \item Das Video zu dieser Lerneinheit (und zu weiteren) finden
-          Sie entweder auf dem Videocampus Sachsen (\url{https://videocampus.sachsen.de/album/view/aid/287}) oder auf YouTube (\url{https://www.youtube.com/channel/UCDWsIsdJSggNXdYc9d1k65Q}).
+          Sie entweder auf dem Videocampus Sachsen (\url{https://videocampus.sachsen.de/album/view/aid/287}) oder auf YouTube (\url{https://www.youtube.com/c/TET4TUD}).
       \end{itemize}
       \end{finalframe}}
