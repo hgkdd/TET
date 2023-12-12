@@ -2,6 +2,8 @@
 
 ## Die neuesten Änderungen stehen oben.
 
+- Handout: Quasistationäre Felder I und II waren vertauscht
+- Elektrostatik IV: symbol für Adjunktion geändert von * auf \dag
 - Elektrostatik IV: Folien 1-3: \delta -> \delta^n und d s -> d^n s nachgepflegt
 - Elektrostatik-III: Folie 3, 5. Anstrich: \delta -> \delta^3 (Vereinheitlichung der Bezeichnung)
 - Elektrostatik II: Folie 7, zweiter Anstrich: in der Formel für Gradient wurde einmal theta statt vartheta verwendet.
