@@ -106,7 +106,7 @@
   \end{frame}
 
   \begin{frame}
-  \frametitle{Divergenz des Vektorpotentials}
+  \frametitle{Divergenz des Vektorpotentials - einfache Fälle}
   \begin{itemize}[<+->]
   \item In den allgemeinen Bestimmungsgleichungen~(\ref{eq:skalarpotallg},~\ref{eq:vektorpotallg}) für die Potentiale $\SkalarPot$ und $\VektorPot[v]$
     \begin{equation*}
@@ -131,6 +131,27 @@
   \ 
   \end{frame}
 
+  \begin{frame}
+  \frametitle{Divergenz des Vektorpotentials -- allgemeiner Fall}
+  \begin{itemize}[<+->]
+  \item Gerade gezeigt: Divergenz des Vektorpotentials kann auf beliebige Werte gesetzt werden.
+  \item Was ist aber, wenn die Divergenz des Vektorpotentials auch eine \alert{Funktion des Skalarpotentials} sein soll ($\to$ Lorenz-Eichung, $v$-Eichung)?
+  \item Sei $\divergenz \VektorPot[v] = f(\Ortsr[v], t, \SkalarPot)$.
+  \item Dann rechnet man
+    \begin{equation}
+      \begin{aligned}
+        \divergenz \VektorPot[v]^\prime = \divergenz\left( \VektorPot[v] +\gradient\psi\right) = \divergenz \VektorPot[v] +\laplace\psi &\stackrel{!}{=} f(\Ortsr[v], t, \SkalarPot^\prime)  \\
+        &=f(\Ortsr[v], t, \SkalarPot-\frac{\partial \psi}{\partial t})
+        \end{aligned}
+      \end{equation}
+    \item Dies ist im allgemeinen keine Poisson-Gleichung!
+    \item Die Bestimmungsgleichung ist erst bekannt, wenn eine konkrete Abhängigkeit von $\SkalarPot$ gefordert wird.
+      \item Dan muss die Existenz von $\psi$ gezeigt werden!
+  \end{itemize}
+  \end{frame}
+
+
+  
   \begin{frame}
   \frametitle{Coulomb-Eichung (Charles Augustin de Coulomb, 1786--1806)}
   \begin{itemize}[<+->]
@@ -391,6 +412,30 @@ $\StromDichte[v]_t (\Ortsr[v], t) = \rotation \left( \frac{1}{4\pi} \iiint \frac
           \end{equation}
   \end{itemize}
 \end{frame}
-    
+
+\begin{frame}
+  \frametitle{$v$-Eichung: Eichfunktion $v_1 \to v_2$}
+  \begin{itemize}[<+->]
+  \item Nachdem Coulomb-Eichung ($v\to\infty$) und Lorenz-Eichung ($v=c$) als Spezialfälle der $v$-Eichung identifiziert wurden, lohnt es sich die Bestimmungsgleichung der Eichfunktion $\psi$ zum Übergang von einer $v_1$-Eichung zu einer $v_2$-Eichung abzuleiten.
+  \item Allgemein gilt für die Eichtransformation~\eqref{eq:eichtrafo}:
+    \begin{equation*}
+            \SkalarPot \to \SkalarPot^\prime = \SkalarPot - \frac{\partial \psi}{\partial t} \quad\quad \VektorPot[v] \to \VektorPot[v]^\prime = \VektorPot[v] + \gradient\psi 
+      \end{equation*}
+  \item Die Potentiale seien in $v_1$-Eichung ($v_1 \neq 0$) bekannt. In $v_1$-Eichung gilt:
+    \begin{equation}
+      \divergenz \VektorPot[v]_{v_1} = -\frac{1}{v_1^2} \frac{\partial \SkalarPot _{v_1}}{\partial t} 
+    \end{equation}
+  \item Es gilt dann für $v_2 \neq 0$:
+    \begin{equation}
+      \begin{aligned}
+        \divergenz \VektorPot[v]_{v_2} &= \divergenz \left( \VektorPot[v]_{v_1} + \gradient\psi\right) &\stackrel{!}{=}& -\frac{1}{v_2^2} \frac{\partial \SkalarPot _{v_2}}{\partial t} \\
+        &= -\frac{1}{v_1^2} \frac{\partial \SkalarPot _{v_1}}{\partial t} + \laplace \psi &=& -\frac{1}{v_2^2} \frac{\partial \SkalarPot _{v_1}}{\partial t} +\frac{1}{v_2^2} \frac{\partial^2 \psi}{\partial t^2}\\
+      & \Rightarrow\quad \laplace \psi -\frac{1}{v_2^2} \frac{\partial^2 \psi}{\partial t^2} &=& \left(\frac{1}{v_1^2}  -\frac{1}{v_2^2} \right) \frac{\partial \SkalarPot _{v_1}}{\partial t}
+        \end{aligned}
+      \end{equation}
+  \end{itemize}
+\end{frame}
+
+
 \input{finalframe.inc}
 \end{document}
