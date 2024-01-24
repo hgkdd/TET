@@ -1,0 +1,396 @@
+\input{head-vertiefung.inc}
+\usepackage{tikz-3dplot}
+% Präambelbefehle für die Präsentation
+\title[TET Vertiefung: Eichung]{Eichung in der klassischen elektromagnetischen Feldtheorie}
+
+\begin{document}
+% 
+% Frontmatter 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%% inserts the title page and the table of contents
+\maketitle
+
+% 
+% Content 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Eichung}
+
+\begin{frame}
+  \frametitle{Ausgangspunkt}
+
+    \begin{itemize}[<+->]
+    \item Die klassische elektromagnetische Feldtheorie beschäftigt sich mit der großen Vielzahl der Lösungen der \alert{Maxwell-Gleichungen}. Wir betrachten hier die mikroskopischen Maxwellgleichungen im Vakuum:
+      \begin{equation}
+        \begin{aligned}
+        \text{räumliche Ableitungen}  &&\multicolumn{2}{c}{\text{homogen}} &\multicolumn{2}{c}{\text{inhomogen}}\\
+      \text{von }\EFeld[v]:&\quad &\rotation \EFeld[v] + \frac{\partial \BFeld[v]}{\partial t} &= \vec{0} &\quad \divergenz \EFeld[v] &= \frac{\laddichte{V}}{\varepsilon_0}\\
+      \text{von }\BFeld[v]: &\quad  &\divergenz \BFeld[v] &= 0 &\quad \rotation \BFeld[v] - \varepsilon_0\mu_0 \frac{\partial \EFeld[v]}{\partial t} &= \mu_0 \StromDichte[v]
+    \end{aligned}
+    \label{eq:maxwell}
+    \end{equation}
+    \item Hierbei sind die Felder und die Quellen stetig differenzierbare Funktionen des Ortes $\Ortsr[v]$ und der Zeit $t$.
+  \item Über die zeitlichen Ableitungen der Feldgrößen $\EFeld[v]$ und $\BFeld[v]$ sind die Gleichungen verkoppelt.
+  \item Die Feldkonstanten $\mu_0$ und $\varepsilon_0$ sind mit der Lichtgeschwindigkeit im Vakuum $c$ verknüpft:
+    $$
+    \varepsilon_0\mu_0 = \frac{1}{c^2} \text{ mit } c = \SI{299792458}{\metre\per\second} \approx  \SI{3e8}{\metre\per\second}
+    $$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Potentiale}
+  \begin{itemize}[<+->]
+  \item Es ist hilfreich, das \alert{Skalarpotentials} $\SkalarPot$ und das \alert{Vektorpotentials} $\VektorPot[v]$ einzuführen:
+    \begin{equation}
+      \EFeld[v] = -\gradient \SkalarPot - \frac{\partial \VektorPot[v]}{\partial t} \quad\quad \BFeld[v] = \rotation \VektorPot[v]
+      \label{eq:PotDef}
+    \end{equation}
+  \item Mit der so definierten Beziehung zwischen den Feldern und den Potentialen ist garantiert, dass die homogenen Maxwellgleichungen automatisch erfüllt werden:
+    \begin{equation}
+      \begin{aligned}
+        \divergenz\BFeld[v] &= \divergenz\rotation\VektorPot[v] \equiv 0 \quad \text{ für beliebiges } \VektorPot[v] \\
+        \rotation \EFeld[v] + \frac{\partial \BFeld[v]}{\partial t} &= \rotation \left( -\gradient \SkalarPot - \frac{\partial \VektorPot[v]}{\partial t} \right) + \frac{\partial}{\partial t} \left( \rotation \VektorPot[v]\right)\\
+        &= -\rotation \left( \frac{\partial \VektorPot[v]}{\partial t} \right) + \frac{\partial}{\partial t} \left( \rotation \VektorPot[v]\right) \equiv \vec{0} \quad \text{ für beliebiges } \SkalarPot \text{ und }\VektorPot[v]
+        \label{eq:FelderInvariant}
+        \end{aligned}
+      \end{equation}
+    \end{itemize}
+    \end{frame}
+      
+\begin{frame}
+  \frametitle{Bestimmungsgleichungen der Potentiale}
+  \begin{itemize}[<+->]
+    \item Das Einsetzen der Gleichungen~\eqref{eq:PotDef} in die inhomogenen Maxwellgleichungen~\eqref{eq:maxwell} ergibt unter Nutzung der Identität $\rotation\rotation \vec{a} = \gradient\divergenz\vec{a}-\laplace\vec{a}$ die Bestimmungsgleichungen für die Potentiale:
+      \begin{equation}
+           \divergenz \left(  -\gradient \SkalarPot - \frac{\partial \VektorPot[v]}{\partial t} \right)
+           =  \frac{\laddichte{V}}{\varepsilon_0}\to \boxed{\laplace \SkalarPot + \divergenz \frac{\partial \VektorPot[v]}{\partial t} = -\frac{\laddichte{V}}{\varepsilon_0}}
+           \label{eq:skalarpotallg}
+         \end{equation}
+         \begin{multline}
+           \rotation\left(\rotation\VektorPot[v]\right) -\varepsilon_0\mu_0 \frac{\partial}{\partial t}\left( -\gradient \SkalarPot - \frac{\partial \VektorPot[v]}{\partial t}\right)
+           = \mu_0 \StromDichte[v]\\
+           \to \boxed{\laplace\VektorPot[v] -\varepsilon_0 \mu_0\frac{\partial^2\VektorPot[v]}{\partial t^2} = -\mu_0\StromDichte[v] +\gradient\left( \varepsilon_0\mu_0\frac{\partial\SkalarPot}{\partial t} + \divergenz\VektorPot[v]\right)}
+         \label{eq:vektorpotallg}
+       \end{multline}
+     \item Störend ist hier die Verkopplung der beiden Gleichungen.
+       \item Dies führt zur \alert{Eichung}.
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+  \frametitle{Eichtransformation -- Eichinvarianz}
+  \begin{itemize}[<+->]
+  \item Wir betrachten eine bezüglich $\Ortsr[v]$ und $t$ zweifach stetig differenzierbare Funktion $\psi = \psi(\Ortsr[v], t)$.
+  \item Mit Hilfe dieser Funktion $\psi$ definieren wir folgende \alert{Eichtransformation}:
+    \begin{equation}
+      \SkalarPot \to \SkalarPot^\prime = \SkalarPot - \frac{\partial \psi}{\partial t} \quad\quad \VektorPot[v] \to \VektorPot[v]^\prime = \VektorPot[v] + \gradient\psi 
+\label{eq:eichtrafo}
+\end{equation}
+\item Mit der Transformation~\eqref{eq:eichtrafo} ergibt sich sofort die \alert{Eichinvarianz} der Felder:
+  \begin{equation}
+    \BFeld[v] \to \BFeld[v]^\prime = \rotation \VektorPot[v]^\prime = \rotation\left( \VektorPot[v] + \gradient\psi \right) = \rotation\VektorPot[v] + \underbrace{\rotation \gradient\psi}_{\equiv \vec{0}} = \BFeld[v] 
+\label{eq:EichInvB}
+  \end{equation}
+  \begin{equation}
+    \begin{aligned}
+      \EFeld[v] \to \EFeld[v]^\prime = -\gradient \SkalarPot^\prime - \frac{\partial \VektorPot[v]^\prime}{\partial t} & = -\gradient\left(\SkalarPot - \frac{\partial \psi}{\partial t}\right) - \frac{\partial }{\partial t}\left(  \VektorPot[v] + \gradient\psi\right)\\
+      & = -\gradient\SkalarPot +\gradient \frac{\partial \psi}{\partial t} - \frac{\partial \VektorPot[v]}{\partial t}  - \frac{\partial }{\partial t}\gradient\psi\\
+      &= -\gradient\SkalarPot - \frac{\partial \VektorPot[v]}{\partial t} = \EFeld[v]
+      \end{aligned}
+    \label{EichInvE}
+    \end{equation}
+\end{itemize}
+  \end{frame}
+
+  \begin{frame}
+  \frametitle{Divergenz des Vektorpotentials}
+  \begin{itemize}[<+->]
+  \item In den allgemeinen Bestimmungsgleichungen~(\ref{eq:skalarpotallg},~\ref{eq:vektorpotallg}) für die Potentiale $\SkalarPot$ und $\VektorPot[v]$
+    \begin{equation*}
+      \laplace \SkalarPot + \divergenz \frac{\partial \VektorPot[v]}{\partial t} = -\frac{\laddichte{V}}{\varepsilon_0} \quad\quad \laplace\VektorPot[v] -\varepsilon_0 \mu_0\frac{\partial^2\VektorPot[v]}{\partial t^2} = -\mu_0\StromDichte[v] +\gradient\left( \varepsilon_0\mu_0\frac{\partial\SkalarPot}{\partial t} + \divergenz\VektorPot[v]\right)
+    \end{equation*}
+    spielt $\divergenz\VektorPot[v]$ eine wichtige Rolle.
+  \item Sei nun $\divergenz\VektorPot[v] = \alpha(\Ortsr[v],t)$ die tatsächliche Divergenz des Vektorpotentials $\VektorPot[v]$. Gibt es dann für beliebiges $\beta(\Ortsr[v],t)$ eine durch $\psi$ induzierte Eichtransformation, so dass $\divergenz\VektorPot[v]^\prime = \beta(\Ortsr[v],t)$ ist?
+  \item Man rechnet aus:
+    \begin{equation}
+      \begin{aligned}
+        \divergenz\VektorPot[v]^\prime = \divergenz\left( \VektorPot[v] +\gradient\psi \right) &= \divergenz\VektorPot[v] &+& \laplace\psi &\\
+        &=\alpha &+& \laplace\psi &\stackrel{!}{=} \beta\\
+        \Rightarrow \boxed{\laplace\psi = \beta - \alpha}
+\end{aligned}
+\end{equation}
+\item Diese \alert{Poisson-Gleichung} für $\psi$ ist immer (und für jeden Zeitpunkt) lösbar.
+\item Die Lösung ist nicht eindeutig (Addition einer Lösung der Laplace-Gleichung)! \\
+  $\to$ \alert{Eichklasse}
+  \item \alert{Die Divergenz des Vektorpotentials $\divergenz \VektorPot[v]$ kann auf beliebige Werte gesetzt werden!}
+  \end{itemize}
+
+  \ 
+  \end{frame}
+
+  \begin{frame}
+  \frametitle{Coulomb-Eichung (Charles Augustin de Coulomb, 1786--1806)}
+  \begin{itemize}[<+->]
+  \item Unter \alert{Coulomb-Eichung} versteht man eine Eichtransformation induziert durch $\psi_C$, so dass für das transformiere Vektorpotential $\VektorPot[v]_C$ gilt
+    \begin{equation}
+      \divergenz\VektorPot[v]_C = 0
+      \label{eq:CoulombEichung}
+    \end{equation}
+  \item Die allgemeinen Bestimmungsgleichungen~(\ref{eq:skalarpotallg},~\ref{eq:vektorpotallg}) der Potentiale vereinfachen sich dann zu
+    \begin{equation}
+      \boxed{\laplace \SkalarPot_C = -\frac{\laddichte{V}}{\varepsilon_0}} \quad\quad \boxed{\laplace\VektorPot[v]_C -\varepsilon_0 \mu_0\frac{\partial^2\VektorPot[v]_C}{\partial t^2} = -\mu_0\StromDichte[v] +\varepsilon_0\mu_0 \gradient\frac{\partial\SkalarPot_C}{\partial t}} 
+      \label{eq:PotCoulombEichung}
+    \end{equation}
+  \item Die Lösung für das Skalarpotential $\SkalarPot_C$ ergibt sich unmittelbar aus der Kenntnis der Greensche-Funktion des Laplace Operators zu
+    \begin{equation}
+      \boxed{\SkalarPot_C (\Ortsr[v], t) = \frac{1}{4\pi\varepsilon_0} \iiint \frac{\laddichte{V}(\Ortsr[v]^\prime, t)}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime}
+      \label{eq:SkPotC}
+    \end{equation}
+    \item Will man eine explizite Lösung für das Vektorpotential $\VektorPot[v]_C$ in Coulomb-Eichung angeben, muss man in der Bestimmungsgleichung~\eqref{eq:PotCoulombEichung} das Skalarpotential $\SkalarPot_C$ eliminieren.
+    \end{itemize}
+
+    \ 
+  \end{frame}
+    
+  \begin{frame}
+  \frametitle{Coulomb-Eichung: Entkoppeln der Gleichungen}
+  \begin{itemize}[<+->]
+  \item Betrachte die Bestimmungsgleichung des Vektorpotentials $\VektorPot[v]_C$:
+    \begin{equation*}
+      \laplace\VektorPot[v]_C -\varepsilon_0 \mu_0\frac{\partial^2\VektorPot[v]_C}{\partial t^2} = -\mu_0\StromDichte[v] +\varepsilon_0\mu_0 \gradient\frac{\partial\SkalarPot_C}{\partial t}
+      \end{equation*}
+    \item \alert{Helmholtz-Theorem:} Zerlegung eine Vektorfeldes $\vec{f}(\Ortsr[v],t)$ in einen longitudinalen, rotationsfreien Anteil $\vec{f}_l(\Ortsr[v],t)=\vec{\alpha}(\Ortsr[v],t)$ und einen transversalen, divergenzfreien Anteil $\vec{f}_t(\Ortsr[v],t)=\vec{\beta}(\Ortsr[v],t)$.
+      \begin{equation}
+        \vec{f}(\Ortsr[v],t) = \vec{\alpha}(\Ortsr[v],t) + \vec{\beta}(\Ortsr[v],t) \text{ mit }  \begin{cases}\rotation\vec{\alpha} = 0 \to \vec{\alpha} = -\gradient a\\
+                                                                                                          \divergenz\vec{\beta} = 0 \to \vec{\beta} = \rotation \vec{b}\end{cases} 
+          \label{eq:helmholtz1}
+         \end{equation}
+        Die Felder $a$ und $\vec{b}$ werden folgendermaßen berechnet ($\to$ Greensche Funktion des Laplace-Operators!):
+        \begin{equation}
+          a = \frac{1}{4\pi} \iiint \frac{\divergenz_{\Ortsr^\prime}\vec{f}(\Ortsr^\prime, t)}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime, \quad
+          \vec{b} = \frac{1}{4\pi} \iiint \frac{\rotation_{\Ortsr^\prime}\vec{f}(\Ortsr^\prime, t)}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime
+          \label{eq:helmholtz2}
+          \end{equation}
+    \end{itemize}
+  \end{frame}
+
+    \begin{frame}
+  \frametitle{Coulomb-Eichung: Entkoppeln der Gleichungen (...)}
+  \begin{itemize}[<+->]
+  \item Die Zerlegung~\eqref{eq:helmholtz1} mit den Beziehungen~\eqref{eq:helmholtz2} kann nun auf die Stromdichte $\StromDichte[v]$ angewendet werden:
+    \begin{equation}
+      \StromDichte[v] = \StromDichte[v]_l + \StromDichte[v]_t \text{ mit }
+      \begin{cases}
+        \StromDichte[v]_l (\Ortsr[v], t) = -\gradient \left( \frac{1}{4\pi} \iiint \frac{\divergenz_{\Ortsr^\prime}\StromDichte[v](\Ortsr^\prime, t)}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime \right)\\
+        \StromDichte[v]_t (\Ortsr[v], t) = \rotation \left( \frac{1}{4\pi} \iiint \frac{\rotation_{\Ortsr^\prime}\StromDichte[v](\Ortsr^\prime, t)}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime \right) 
+        
+      \end{cases}
+      \label{eq:ZerlegungJ}
+      \end{equation}
+    \item Betrachte erneut das Skalarpotential $\SkalarPot_C$ in Gleichung~\eqref{eq:SkPotC}
+      \begin{equation*}
+        \SkalarPot_C (\Ortsr[v], t) = \frac{1}{4\pi\varepsilon_0} \iiint \frac{\laddichte{V}(\Ortsr[v]^\prime, t)}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime
+      \end{equation*}
+      \item Für die Zeitableitung folgt dann mit Hilfe der \alert{Kontinuitätsgleichung} $\frac{\partial \laddichte{V}}{\partial t} + \divergenz \StromDichte[v] = 0$
+        \begin{equation}
+          \frac{\partial \SkalarPot_C (\Ortsr[v], t)}{\partial t} = \frac{1}{4\pi\varepsilon_0} \iiint \frac{\frac{\partial \laddichte{V}(\Ortsr[v]^\prime, t)}{\partial t}}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime    =
+          - \frac{1}{4\pi\varepsilon_0} \iiint \frac{\divergenz_{\Ortsr^\prime} \StromDichte[v](\Ortsr[v]^\prime, t)}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime       \label{eq:Abl_t_SkalarPot}
+          \end{equation}
+      \end{itemize}
+  \end{frame}
+
+    \begin{frame}
+  \frametitle{Coulomb-Eichung: Entkoppeln der Gleichungen (...)}
+  \begin{itemize}[<+->]
+  \item Der Vergleich der longitudinalen Stromdichte in~\eqref{eq:ZerlegungJ} mit der Zeitableitung des Skalarpotentials in Gleichung~\eqref{eq:Abl_t_SkalarPot} liefert schließlich einen Ausdruck für den Gradienten der Zeitableitung des Skalarpotentials:
+    \begin{equation}
+      \gradient \frac{\partial \SkalarPot_C (\Ortsr[v], t)}{\partial t} = \frac{1}{\varepsilon_0} \StromDichte[v]_l (\Ortsr[v], t)
+    \end{equation}
+  \item Die Bestimmungsgleichung~\eqref{eq:PotCoulombEichung} des Vektorpotentials in Coulombeichung
+    \begin{equation*}
+      \laplace\VektorPot[v]_C -\varepsilon_0 \mu_0\frac{\partial^2\VektorPot[v]_C}{\partial t^2} = -\mu_0\StromDichte[v] +\varepsilon_0\mu_0 \gradient\frac{\partial\SkalarPot_C}{\partial t}
+    \end{equation*}
+    wird damit entkoppelt und stellt sich als Wellengleichung dar, wobei die rechte Seite durch den trasversalen Anteil der Stromdichte bestimmt ist:
+    \begin{equation}
+      \laplace\VektorPot[v]_C -\varepsilon_0 \mu_0\frac{\partial^2\VektorPot[v]_C}{\partial t^2} = -\mu_0\StromDichte[v] +\varepsilon_0\mu_0 \gradient\frac{\partial\SkalarPot_C}{\partial t} = -\mu_0\left( \StromDichte[v] - \StromDichte[v]_l\right) = -\mu_0 \StromDichte[v]_t
+    \end{equation}
+  \item Die Lösung dieser Wellengleichung ist das \alert{retardierte Vektorpotential} ($\to$ Greensche Funktion des Wellenoperators)
+    \begin{equation}
+     \boxed{ \VektorPot[v]_C(\Ortsr[v], t) = \frac{\mu_0}{4\pi} \iiint \frac{\StromDichte[v]_t (\Ortsr[v]^\prime, t_{\text{ret}})}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime} \text{ mit } t_{\text{ret}} = t - \sqrt{\varepsilon_0\mu_0} \abs{\Ortsr[v]-\Ortsr[v]^\prime} = t - \frac{\abs{\Ortsr[v]-\Ortsr[v]^\prime}}{c}
+      \end{equation}
+      \end{itemize}
+  \end{frame}
+
+      \begin{frame}
+  \frametitle{Coulomb-Eichung: Zusammenfassung}
+  \begin{itemize}[<+->]
+  \item Beziehung Felder -- Potentiale: $\EFeld[v] = -\gradient \SkalarPot_C - \frac{\partial \VektorPot[v]_C}{\partial t}$, $\BFeld[v] = \rotation \VektorPot[v]_C$
+  \item Eichfestlegung: $\divergenz \VektorPot[v]_C = 0$
+  \item Potentiale in Coulomb-Eichung:
+    \begin{equation*}
+      \begin{aligned}
+        \SkalarPot_C (\Ortsr[v], t) &= \frac{1}{4\pi\varepsilon_0} \iiint \frac{\laddichte{V}(\Ortsr[v]^\prime, t)}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime\\
+        \VektorPot[v]_C(\Ortsr[v], t) &= \frac{\mu_0}{4\pi} \iiint \frac{\StromDichte[v]_t (\Ortsr[v]^\prime, t_{\text{ret}})}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime, \quad t_{\text{ret}}= t - \frac{\abs{\Ortsr[v]-\Ortsr[v]^\prime}}{c}
+        \end{aligned}
+      \end{equation*}
+    \item Für Probleme mit $\divergenz\StromDichte[v] = 0$ ist $\StromDichte[v]_t = \StromDichte[v]$!
+    \item Allgemein: $\StromDichte[v]_t (\Ortsr[v], t) = \rotation \left( \frac{1}{4\pi} \iiint \frac{\rotation_{\Ortsr^\prime}\StromDichte[v](\Ortsr^\prime, t)}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime \right)$
+    \item Vektorpotential in Coulomb-Eichung ist retardiert mit Geschwindigkeit $c$ $\to$ \alert{kausal}
+    \item Skalarpotential in Coulomb-Eichung ist instantan $\to$ \alert{nicht kausal}
+      \item Kausalität der Felder ist über das Vektorpotential sichergestellt!
+      \end{itemize}
+  \end{frame}
+
+\begin{frame}
+  \frametitle{Lorenz-Eichung (Ludvig Valentin Lorenz, 1829--1891)}
+  \begin{itemize}[<+->]
+  \item Allgemein gelten die Gleichungen~\eqref{eq:skalarpotallg} und~\eqref{eq:vektorpotallg} als Bestimmungsgleichungen für die Potentiale:
+    \begin{equation*}
+      \laplace \SkalarPot + \divergenz \frac{\partial \VektorPot[v]}{\partial t} = -\frac{\laddichte{V}}{\varepsilon_0},\quad \laplace\VektorPot[v] -\varepsilon_0 \mu_0\frac{\partial^2\VektorPot[v]}{\partial t^2} = -\mu_0\StromDichte[v] +\gradient\left( \varepsilon_0\mu_0\frac{\partial\SkalarPot}{\partial t} + \divergenz\VektorPot[v]\right)
+    \end{equation*}
+  \item Divergenz des Vektorpotentials kann beliebig gesetzt werden. $\to$ \alert{Lorenz-Eichung}:
+    \begin{equation}
+      \divergenz\VektorPot[v]_L = -\varepsilon_0\mu_0\frac{\partial\SkalarPot_L}{\partial t}
+    \end{equation}
+  \item Damit nehmen die Bestimmungsgleichungen jeweils sofort die Form von Wellengleichungen an:
+    \begin{equation}
+      \begin{aligned}
+        \laplace \SkalarPot_L - \varepsilon_0\mu_0 \frac{\partial^2 \SkalarPot_L}{\partial t^2} &= -\frac{\laddichte{V}}{\varepsilon_0}\\
+        \laplace\VektorPot[v]_L -\varepsilon_0 \mu_0\frac{\partial^2\VektorPot[v]_L}{\partial t^2} &= -\mu_0\StromDichte[v]
+        \end{aligned}
+      \end{equation}
+    \item Retardierte (kausale) Lösungen mit $ t_{\text{ret}} = t - \sqrt{\varepsilon_0\mu_0} \abs{\Ortsr[v]-\Ortsr[v]^\prime} = t - \frac{\abs{\Ortsr[v]-\Ortsr[v]^\prime}}{c}$:
+      \begin{equation}
+        \SkalarPot_L(\Ortsr[v], t) = \frac{1}{4\pi\varepsilon_0} \iiint \frac{\laddichte{V} (\Ortsr[v]^\prime, t_{\text{ret}})}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime, \quad 
+        \VektorPot[v]_L(\Ortsr[v], t) = \frac{\mu_0}{4\pi} \iiint \frac{\StromDichte[v] (\Ortsr[v]^\prime, t_{\text{ret}})}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime 
+        \end{equation}
+      \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Lorenz-Eichung: Bedingung immer erfüllbar?}
+  \begin{itemize}[<+->]
+  \item Lässt sich die \alert{Eichbedingung} $\divergenz\VektorPot[v]_L = -\varepsilon_0\mu_0\frac{\partial\SkalarPot_L}{\partial t}$ immer erfüllen?
+  \item Annahme: $\divergenz\VektorPot[v] + \varepsilon_0\mu_0\frac{\partial\SkalarPot}{\partial t} = \alpha \neq 0$
+  \item Eichtransformation: $\SkalarPot_L = \SkalarPot - \frac{\partial \psi}{\partial t}$ und $\VektorPot[v]_L = \VektorPot[v] + \gradient\psi$
+  \item Einsetzen ergibt:
+    \begin{equation*}
+      \begin{aligned}
+        &\divergenz\VektorPot[v]_L + \varepsilon_0\mu_0\frac{\partial\SkalarPot_L}{\partial t} = \divergenz \VektorPot[v] + \laplace\psi + \varepsilon_0\mu_0\frac{\partial\SkalarPot}{\partial t} - \varepsilon_0\mu_0 \frac{\partial^2 \psi}{\partial t^2}\\
+        \Rightarrow\quad & \laplace\psi - \varepsilon_0\mu_0 \frac{\partial^2 \psi}{\partial t^2} = -\alpha \quad \to \text{ Lösung existiert}
+        \end{aligned}
+      \end{equation*}
+    \item \alert{Eichklasse}: $\psi \to \psi + \chi$ mit $\laplace\chi - \varepsilon_0\mu_0 \frac{\partial^2 \chi}{\partial t^2} = 0$, Lösung der homogenen Wellengleichung
+      \item Auch diese (Eich-)Bedingung an die Divergenz des Vektorpotentials ist also immer erfüllbar! 
+      \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{$v$-Eichung}
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \textbf{Coulomb-Eichung}: $\divergenz \VektorPot[v]_C = 0$\\
+             $ \SkalarPot_C (\Ortsr[v], t) = \frac{1}{4\pi\varepsilon_0} \iiint \frac{\laddichte{V}(\Ortsr[v]^\prime, t)}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime$\\
+             $ \VektorPot[v]_C(\Ortsr[v], t) = \frac{\mu_0}{4\pi} \iiint \frac{\StromDichte[v]_t (\Ortsr[v]^\prime, t_{\text{ret}})}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime$\\
+             $t_{\text{ret}}= t - \frac{\abs{\Ortsr[v]-\Ortsr[v]^\prime}}{c}$\\
+$\StromDichte[v]_t (\Ortsr[v], t) = \rotation \left( \frac{1}{4\pi} \iiint \frac{\rotation_{\Ortsr^\prime}\StromDichte[v](\Ortsr^\prime, t)}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime \right)$
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \textbf{Lorenz-Eichung}: $\divergenz \VektorPot[v]_L =  - \frac{1}{c^2}\frac{\partial\SkalarPot_L}{\partial t}$ \\
+      $ \SkalarPot_L(\Ortsr[v], t) = \frac{1}{4\pi\varepsilon_0} \iiint \frac{\laddichte{V} (\Ortsr[v]^\prime, t_{\text{ret}})}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime$\\
+      $\VektorPot[v]_L(\Ortsr[v], t) = \frac{\mu_0}{4\pi} \iiint \frac{\StromDichte[v] (\Ortsr[v]^\prime, t_{\text{ret}})}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime $\\
+             $t_{\text{ret}}= t - \frac{\abs{\Ortsr[v]-\Ortsr[v]^\prime}}{c}$\\
+      \phantom{$\StromDichte[v]_t (\Ortsr[v], t) = \rotation \left( \frac{1}{4\pi} \iiint \frac{\rotation_{\Ortsr^\prime}\StromDichte[v](\Ortsr^\prime, t)}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime \right)$}
+      \end{column}
+    \end{columns}
+    
+    \hrule
+
+    \pause
+  \begin{itemize}[<+->]
+  \item Verallgemeinerung von Coulomb- und Lorenz-Eichung $\to$ \alert{$v$-Eichung}:
+    \begin{equation}
+      \boxed{\divergenz \VektorPot[v]_v =  - \frac{1}{v^2}\frac{\partial\SkalarPot_v}{\partial t}} \text{ für } v \neq 0
+    \end{equation}
+  \item Offensichtlich sind Coulomb- und Lorenz-Eichung Spezialfälle der v-Eichung:
+  \item $v\to\infty$: Coulomb-Eichung
+    \item $v=c$: Lorenz-Eichung
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Potentiale in $v$-Eichung}
+  \begin{itemize}[<+->]
+  \item Allgemein gelten die Gleichungen~\eqref{eq:skalarpotallg} und~\eqref{eq:vektorpotallg} als Bestimmungsgleichungen für die Potentiale:
+    \begin{equation*}
+      \laplace \SkalarPot + \divergenz \frac{\partial \VektorPot[v]}{\partial t} = -\frac{\laddichte{V}}{\varepsilon_0},\quad \laplace\VektorPot[v] -\frac{1}{c^2}\frac{\partial^2\VektorPot[v]}{\partial t^2} = -\mu_0\StromDichte[v] +\gradient\left( \varepsilon_0\mu_0\frac{\partial\SkalarPot}{\partial t} + \divergenz\VektorPot[v]\right)
+    \end{equation*}
+  \item Mit der \alert{Eichbedingung} $\divergenz \VektorPot[v]_v =  - \frac{1}{v^2}\frac{\partial\SkalarPot_v}{\partial t}$ folgt:
+        \begin{equation}
+      \begin{aligned}
+        \laplace \SkalarPot_v - \frac{1}{v^2} \frac{\partial^2 \SkalarPot_v}{\partial t^2} &= -\frac{\laddichte{V}}{\varepsilon_0}\\
+        \laplace\VektorPot[v]_v -\frac{1}{c^2}\frac{\partial^2\VektorPot[v]_v}{\partial t^2} &= -\mu_0\StromDichte[v] + \gradient\left(\frac{1}{c^2}\frac{\partial \SkalarPot_v}{\partial t} - \frac{1}{v^2}\frac{\partial \SkalarPot_v}{\partial t}\right)\\
+        &= -\mu_0\StromDichte[v] + \frac{1-\nicefrac{c^2}{v^2}}{c^2} \gradient\frac{\partial \SkalarPot_v}{\partial t}
+        \end{aligned}
+      \end{equation}
+    \item Die Lösung für das Skalarpotential ist wieder ein retardiertes Potential, wobei jetzt aber $ t_{\text{ret,v}} = t - \frac{\abs{\Ortsr[v]-\Ortsr[v]^\prime}}{v}$ ist:
+      \begin{equation}
+        \boxed{%
+        \SkalarPot_v(\Ortsr[v], t) = \frac{1}{4\pi\varepsilon_0} \iiint \frac{\laddichte{V} (\Ortsr[v]^\prime, t_{\text{ret,v}})}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime}
+      \label{eq:SkalarPot_v}
+        \end{equation}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Lösung für das Vektorpotential in $v$-Eichung}
+  \begin{itemize}[<+->]
+  \item Wie bei Coulomb-Eichung: Aufteilung in transversale (divergenzfreie) und longitudinale (wirbelfreie) Stromdichte:
+        \begin{equation*}
+      \StromDichte[v] = \StromDichte[v]_l + \StromDichte[v]_t \text{ mit }
+      \begin{cases}
+        \StromDichte[v]_l (\Ortsr[v], t) = -\gradient \left( \frac{1}{4\pi} \iiint \frac{\divergenz_{\Ortsr^\prime}\StromDichte[v](\Ortsr^\prime, t)}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime \right)\\
+        \StromDichte[v]_t (\Ortsr[v], t) = \rotation \left( \frac{1}{4\pi} \iiint \frac{\rotation_{\Ortsr^\prime}\StromDichte[v](\Ortsr^\prime, t)}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime \right) 
+        
+      \end{cases}
+      \end{equation*}
+    \item Mit Hilfe der Kontinuitätsgleichung $\frac{\partial \laddichte{V}}{\partial t} + \divergenz \StromDichte[v] = 0$, Lösung des Skalarpotentials~\eqref{eq:SkalarPot_v} und $\frac{\partial \laddichte{V}(t_{\text{ret,v}})}{\partial t}=\frac{\partial \laddichte{V}(t_{\text{ret,v}})}{\partial t_{\text{ret,v}}}\frac{\partial t_{\text{ret,v}}}{\partial t}=\frac{\partial \laddichte{V}(t_{\text{ret,v}})}{\partial t_{\text{ret,v}}}=\frac{\partial \laddichte{V}(t)}{\partial t}$:
+      \begin{equation}
+        \begin{aligned}
+          \gradient \frac{\partial \SkalarPot_v}{\partial t}(\Ortsr[v], t) &= \gradient \frac{\partial}{\partial t} \left(\frac{1}{4\pi\varepsilon_0} \iiint \frac{\laddichte{V} (\Ortsr[v]^\prime, t_{\text{ret,v}})}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime \right)\\
+          &= \frac{1}{\varepsilon_0} \gradient \left[ -\frac{1}{4\pi}\iiint \frac{\divergenz_{\Ortsr^\prime} \StromDichte[v](\Ortsr[v]^\prime, t)}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime\right]\\
+          &=\frac{1}{\varepsilon_0} \StromDichte[v]_l(\Ortsr[v], t)
+          \end{aligned}
+        \end{equation}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Lösung für das Vektorpotential in $v$-Eichung (...)}
+  \begin{itemize}[<+->]
+  \item Die Bestimmungsgleichung des Vektorpotentials war:
+    \begin{equation*}
+      \laplace\VektorPot[v]_v -\frac{1}{c^2}\frac{\partial^2\VektorPot[v]_v}{\partial t^2} = -\mu_0\StromDichte[v] + \frac{1-\nicefrac{c^2}{v^2}}{c^2} \gradient\frac{\partial \SkalarPot_v}{\partial t}
+      \end{equation*}
+    \item Mit der gerade gefundenen Beziehung für $\gradient\frac{\partial \SkalarPot_v}{\partial t}$ folgt somit:
+      \begin{equation}
+        \begin{aligned}
+          \laplace\VektorPot[v]_v -\frac{1}{c^2}\frac{\partial^2\VektorPot[v]_v}{\partial t^2} &= -\mu_0\StromDichte[v](\Ortsr[v], t) + \frac{1-\nicefrac{c^2}{v^2}}{c^2}\frac{1}{\varepsilon_0} \StromDichte[v]_l(\Ortsr[v], t)\\
+          &=-\mu_0\left[ \StromDichte[v]_t(\Ortsr[v], t) + \StromDichte[v]_l(\Ortsr[v], t) - \frac{1-\nicefrac{c^2}{v^2}}{c^2}\frac{1}{\varepsilon_0\mu_0} \StromDichte[v]_l(\Ortsr[v], t) \right]\\
+          &= -\mu_0\left[ \StromDichte[v]_t(\Ortsr[v], t) + \frac{c^2}{v^2} \StromDichte[v]_l(\Ortsr[v], t)\right]
+          \end{aligned}
+        \end{equation}
+      \item Die Lösung ergibt sich wieder als retardierte Potential (mit Geschwindigkeit $c$!): $t_{\text{ret}} = t - \frac{\abs{\Ortsr[v]-\Ortsr[v]^\prime}}{c}$:
+        \begin{equation}
+          \boxed{%
+          \VektorPot[v]_v(\Ortsr[v], t) = \frac{\mu_0}{4\pi} \iiint \frac{\StromDichte[v]_t (\Ortsr[v]^\prime, t_{\text{ret}}) +\frac{c^2}{v^2} \StromDichte[v]_l (\Ortsr[v]^\prime, t_{\text{ret}})}{\abs{\Ortsr[v]-\Ortsr[v]^\prime}} \upd^3\Ortsr^\prime}
+          \end{equation}
+  \end{itemize}
+\end{frame}
+    
+\input{finalframe.inc}
+\end{document}
