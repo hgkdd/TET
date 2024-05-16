@@ -2,6 +2,9 @@
 
 ## Die neuesten Änderungen stehen oben.
 
+- Tippfehler
+- Elektromagnetische Wellen VI - Kugelwellen: Folie 4, 2. Anstrich, Nummer 4: fehlendes Gleichheitszeichen eingefügt
+- Elektromagnetische Wellen VI - Kugelwellen: Folie 6, 4. Anstrich, Formel für div E korrigiert und auf die anderen Summanden (die wegfallen) hingewiesen 
 - Handout: Quasistationäre Felder I und II waren vertauscht
 - Elektrostatik IV: symbol für Adjunktion geändert von * auf \dag
 - Elektrostatik IV: Folien 1-3: \delta -> \delta^n und d s -> d^n s nachgepflegt

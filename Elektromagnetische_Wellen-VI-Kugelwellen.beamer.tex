@@ -71,7 +71,7 @@
     \item Phase: \(\varphi_\pm = \omega t \pm kr \to \) nur abhängig von \(\Ortsr =|\Ortsr[v]| \Rightarrow \) \alert{Die Phasenflächen sind Kugelflächen}
     \item Amplitude: \(\propto \dfrac{1}{\Ortsr}\)
     \item Für \alert{harmonische Zeitabhängigkeit}: \(\underline{\Psi}_\pm = \dfrac{1}{r}\underline{A}_\pm\euler^{\komplex(\omega t \pm kr)}\) \ergo Kugelwellen im engeren Sinne
-    \item Phasengeschwindigkeit: \(\Geschwindigkeit_p = \mp \dfrac{\omega}{k} \mp \dfrac{c}{n} =\Geschwindigkeit_c\)
+    \item Phasengeschwindigkeit: \(\Geschwindigkeit_p = \mp \dfrac{\omega}{k} = \mp \dfrac{c}{n} =\Geschwindigkeit_c\)
       \item Abstand von Flächen gleicher Phase (Wellenlänge): \(\Wellenzahl \lambda = 2\pi\)
       \end{enumerate}
     \end{itemize}
@@ -112,9 +112,9 @@
     \end{equation*}
   \item Dann folgt wegen \(\divergenz \EFeld[uv] = 0\) und \(\divergenz\BFeld[uv]=0\) z.B. für das elektrische Feld:
      \begin{align*}
-      \divergenz \EFeld[uv]  & = \frac{1}{r^2} \frac{\d}{\d r} \left( r^2 \EFeld[uv]_0 \frac{1}{r} \euler^{\komplex(\omega t -kr)} \right) \cdot \einheitsvek{r} \\
-                             &= \left( \EFeld[uv]_0 \cdot \Ortsr[v] \right) \frac{1}{r} \euler^{\komplex(\omega t -kr)} \left(1- kr \right) \stackrel{!}{=} 0 \text{ für alle } k \text{ und } r  \\
-       \Rightarrow \quad & \boxed{\EFeld[v] \perp \Ortsr[v]} \text{ und analog } \boxed{\BFeld[v] \perp \Ortsr[v]} \Rightarrow \text{ \alert{beide trasversal!}}
+      \divergenz \EFeld[uv]  & = \frac{1}{r^2} \frac{\d}{\d r} \left( r^2 \EFeld[uv]_0 \frac{1}{r} \euler^{\komplex(\omega t -kr)} \right) \cdot \einheitsvek{r} \quad\to\text{Was passiert mit den anderen Summanden?}\\
+                             &= \left( \EFeld[uv]_0 \cdot \einheitsvek{r} \right) \frac{1}{r^2} \euler^{\komplex(\omega t -kr)} \left(1- \komplex kr \right) \stackrel{!}{=} 0 \text{ für alle } k \text{ und } r  \\
+       \Rightarrow \quad & \boxed{\EFeld[v] \perp \Ortsr[v]} \text{ und analog } \boxed{\BFeld[v] \perp \Ortsr[v]} \Rightarrow \text{ \alert{beide transversal!}}
        \end{align*}
      \end{itemize}
   \end{frame}
