@@ -180,15 +180,15 @@
 \end{column}
 \begin{column}{.65\textwidth}
   \begin{itemize}[<+->]
-  \item \(\EFeld[uv]_1 = \EFeld[uv]_0 \euler^{\komplex (\omega t - \Wellenzahl[v]_1\cdot\Ortsr[v])} = \EFeld[u]_{0} \einheitsvek{x} \euler^{\komplex (\omega t - \Wellenzahl[v]_1\cdot\Ortsr[v])}\) und
-    \( \BFeld[uv]_1 = \dfrac{\Wellenzahl[v]}{\omega}\times\EFeld[uv]_1=\dfrac{1}{\Geschwindigkeit_p} \left( \einheitsvek{k_1} \times \EFeld[uv]_0 \euler^{-\komplex \Wellenzahl[v]_1\cdot\Ortsr[v]}\right) \euler^{\komplex \omega t }\)
+  \item \(\EFeld[uv]_1 = \EFeld[uv]_0 \euler^{\komplex (\omega t - \Wellenzahl[c]_1\cdot\Ortsr[v])} = \EFeld[u]_{0} \einheitsvek{x} \euler^{\komplex (\omega t - \Wellenzahl[v]_1\cdot\Ortsr[v])}\) und
+    \( \BFeld[uv]_1 = \dfrac{\Wellenzahl[v]}{\omega}\times\EFeld[uv]_1=\dfrac{1}{\Geschwindigkeit_c} \left( \einheitsvek{k_1} \times \EFeld[uv]_0 \euler^{-\komplex \Wellenzahl[v]_1\cdot\Ortsr[v]}\right) \euler^{\komplex \omega t } , \quad \Geschwindigkeit_c = \Geschwindigkeit_p \)
   \item \(\EFeld[uv]_2 = \EFeld[uv]_0 \euler^{\komplex (\omega t - \Wellenzahl[v]_2\cdot\Ortsr[v])} = \EFeld[u]_{0}\einheitsvek{x}\euler^{\komplex (\omega t - \Wellenzahl[v]_2\cdot\Ortsr[v])}\) und
-    \( \BFeld[uv]_2 = \dfrac{\Wellenzahl[v]}{\omega}\times\EFeld[uv]_2=\dfrac{1}{\Geschwindigkeit_p} \left( \einheitsvek{k_2} \times \EFeld[uv]_0 \euler^{-\komplex \Wellenzahl[v]_2\cdot\Ortsr[v]}\right) \euler^{\komplex \omega t }\)
-  \item \( \Wellenzahl[v]_1 = -\Wellenzahl_y\einheitsvek{y} + \Wellenzahl_z\einheitsvek{z}  \) und \( \Wellenzahl[v]_2 = \Wellenzahl_y\einheitsvek{y} + \Wellenzahl_z\einheitsvek{z}  \)
+    \( \BFeld[uv]_2 = \dfrac{\Wellenzahl[v]}{\omega}\times\EFeld[uv]_2=\dfrac{1}{\Geschwindigkeit_c} \left( \einheitsvek{k_2} \times \EFeld[uv]_0 \euler^{-\komplex \Wellenzahl[v]_2\cdot\Ortsr[v]}\right) \euler^{\komplex \omega t }\)
+  \item \( \Wellenzahl[v]_1 = -\Wellenzahl_y\einheitsvek{y} + \Wellenzahl_z\einheitsvek{z}  \) und \( \Wellenzahl[v]_2 = \Wellenzahl_y\einheitsvek{y} + \Wellenzahl_z\einheitsvek{z}  , \quad \Geschwindigkeit_c = \Geschwindigkeit_p \)
   \item \alert{Überlagerung} der beiden Wellen:
     \begin{align*}
       \EFeld[uv] &= 2\EFeld[u]_{0}\cos(\Wellenzahl_yy) \einheitsvek{x} \euler^{\komplex(\omega t - \Wellenzahl_z z)} \\
-      \BFeld[uv] &= \frac{2\EFeld[u]_{0}}{\Wellenzahl \Geschwindigkeit_p} \left( \Wellenzahl_z \cos(\Wellenzahl_y y) \einheitsvek{y} + \komplex \Wellenzahl_y\sin(\Wellenzahl_y y) \einheitsvek{z}\right) \euler^{\komplex(\omega t - \Wellenzahl_z z)}
+      \BFeld[uv] &= \frac{2\EFeld[u]_{0}}{\Wellenzahl \Geschwindigkeit_c} \left( \Wellenzahl_z \cos(\Wellenzahl_y y) \einheitsvek{y} + \komplex \Wellenzahl_y\sin(\Wellenzahl_y y) \einheitsvek{z}\right) \euler^{\komplex(\omega t - \Wellenzahl_z z)}
     \end{align*}
   \item \alert{TE-Welle}, Propagation in z-Richtung (H-Wellen) \\
     analog: \alert{TM-Wellen} (E-Welle)

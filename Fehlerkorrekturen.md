@@ -2,6 +2,7 @@
 
 ## Die neuesten Änderungen stehen oben.
 
+- Elektromagnetische Wellen VI - Kugelwellen: Folie 8, Keine Fehlerkorrektur, aber v_p vs v_c deutlicher gemacht
 - Elektromagnetische Wellen VI - Kugelwellen: Folie 8, Gesamt B-Feld: Vorzeichen des Imaginärteils korrigiert und v_p an Stelle von v_c 
 - Tippfehler
 - Elektromagnetische Wellen VI - Kugelwellen: Folie 4, 2. Anstrich, Nummer 4: fehlendes Gleichheitszeichen eingefügt
