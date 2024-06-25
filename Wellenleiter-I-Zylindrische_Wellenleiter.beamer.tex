@@ -412,7 +412,7 @@
      \end{equation*}
     \item Hieraus folgt mit \(\EFeld[uv] = -\gradient\SkalarPot\), dass \(\EFeld[uv] = \EFeld[uv]_t\) aus der \alert{Lösung der zweidimensionalen Laplace-Gleichung} für \(\SkalarPot\) folgt
       \begin{equation*}
-        \boxed{\laplace_t \SkalarPot = \laplace_t \SkalarPot_t = 0} \quad \text{ Lösungsmethoden aus Elektrostatik bekannt}
+        \boxed{\laplace_t \SkalarPot = 0} \quad \text{ Lösungsmethoden aus Elektrostatik bekannt}
        \end{equation*}
      \end{itemize}
 \end{frame}
@@ -421,8 +421,8 @@
    \frametitle{TEM-Lösungen -- Zusammenfassung}
    \begin{itemize}[<+->]
    \item Dispersionsrelation: \( \Wellenzahl = \Wellenzahl_0 = \omega \sqrt{\varepsilon\mu} \)
-   \item Rotationsfreiheit in der Transversalebene: \( \rotation_t \EFeld[uv] = \vec{0} \to \EFeld[uv] =\EFeld[uv]_t= -\gradient\SkalarPot\)
-  \item Laplace-Lösung: \( \laplace_t \SkalarPot = \laplace_t \SkalarPot_t = 0 \)
+   \item Rotationsfreiheit in der Transversalebene: \( \rotation_t \EFeld[uv] = \vec{0} \to \EFeld[uv] =\EFeld[uv]_t= -\gradient_t\SkalarPot\)
+  \item Laplace-Lösung: \( \laplace_t \SkalarPot = 0 \)
    \item Aus der Transversalkomponente des Induktionsgesetz folgt zusammen mit der Dispersionsrelation
      \begin{equation*}
        \gradient_t \underbrace{\EFeld[u]_{z}}_{=0} - \underbrace{\frac{\partial}{\partial z}\EFeld[uv]_t}_{=\pm\komplex\Wellenzahl_0 \EFeld[uv]}
