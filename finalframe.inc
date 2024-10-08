@@ -1,7 +1,7 @@
 \mode<beamer | trans>{
     \begin{finalframe}
       \begin{itemize}
-      \item Diese Präsentation steht unter der Lizenz CC BY 3.0 DE.
+      \item Diese Präsentation, mit Ausnahme der über Quellangaben gekennzeichneten Teile, steht unter der Lizenz CC BY 3.0 DE.
 
       Details hierzu finden Sie unter
       \url{https://creativecommons.org/licenses/by/3.0/deed.de}.

@@ -1,6 +1,6 @@
     \begin{finalframe}
       \begin{itemize}
-      \item Dieses Handout steht unter der Lizenz CC BY 3.0 DE.
+      \item Dieses Handout, mit Ausnahme der über Quellangaben gekennzeineten Teile,  steht unter der Lizenz CC BY 3.0 DE.
 
       Details hierzu finden Sie unter
       \url{https://creativecommons.org/licenses/by/3.0/deed.de}.
