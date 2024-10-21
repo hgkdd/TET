@@ -2,6 +2,8 @@
 
 ## Die neuesten Änderungen stehen oben.
 
+- Handout: Kapitelmarken wiederhergestellt
+- Handout: Vorwissen und Axiomatische Grundlagen waren vertauscht
 - Wellenleiter I - Zylindrische Wellenteiter: Folie 10 und 11: "\phi_t" eliminiert. Transversale Komponente eines skalaren Feldes ergibt keinen Sinn.
 - Elektromagnetische Wellen VI - Kugelwellen: Folie 8, Keine Fehlerkorrektur, aber v_p vs v_c deutlicher gemacht
 - Elektromagnetische Wellen VI - Kugelwellen: Folie 8, Gesamt B-Feld: Vorzeichen des Imaginärteils korrigiert und v_p an Stelle von v_c 
