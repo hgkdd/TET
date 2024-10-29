@@ -1,7 +1,18 @@
 \input{head.inc}
 \usepackage{pdfpages}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+\fancypagestyle{importedpages}{%
+  \fancyhf{}% Clear header/footer
+  \renewcommand{\headrulewidth}{0pt}% Remove header rule
+  \renewcommand{\footrulewidth}{0pt}% Remove footer rule (default)
+  \fancyfoot[R]{\raisebox{.75\baselineskip}[0pt][0pt]{{\color{gray}\fontsize{6}{7} \selectfont Seite \thepage}}}% Lower page number into position
+}
+
 \begin{document}
-\includepdfset{pages=-,fitpaper}
+\fancyfootoffset{-1.26cm}
+\includepdfset{pages=-,fitpaper,pagecommand={\thispagestyle{importedpages}}}
 \includepdf{Titel-tet1.handout.pdf} 
 \section{Begriffsbestimmung}
 \includepdf{Begriffsbestimmung.handout.pdf}
